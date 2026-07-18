@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+"""Verify LYG-中-T125 cadre statistics table tail."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "中" / "data" / "LYG-中-T125.json"
+
+COLUMNS = ["类别", "项目", "1984", "1985", "1986", "1987", "1988", "1989", "1990"]
+
+ROWS = [
+    ["政治情况", "共产党员", "19494", "22374", "24630", "26867", "23970", "24764", "25069"],
+    ["政治情况", "共青团员", "6554", "7501", "8450", "10092", "8370", "9579", "10340"],
+    ["政治情况", "民主党派", "146", "231", "267", "339", "296", "356", "354"],
+    ["政治情况", "无党派", "19312", "19734", "19540", "22148", "19803", "21085", "23077"],
+    ["分布情况", "党政群团", "3737", "3926", "3941", "4256", "8498", "8739", "8793"],
+    ["分布情况", "政法", "2314", "2506", "3041", "3195", "3075", "3267", "3346"],
+    ["分布情况", "工业", "13402", "14719", "15219", "17324", "7137", "7681", "7666"],
+    ["分布情况", "交通邮电", "2371", "2318", "2568", "2994", "3313", "3615", "3729"],
+    ["分布情况", "基本建设", "412", "1687", "1703", "2015", "1458", "1943", "2039"],
+    ["分布情况", "农林水气", "2050", "2862", "3589", "3768", "1602", "1791", "2039"],
+    ["分布情况", "财贸金融", "5386", "5524", "6139", "6847", "3852", "4317", "5360"],
+    ["分布情况", "文卫体科", "14522", "15865", "16296", "18260", "22878", "23594", "25198"],
+    ["分布情况", "其他", "1312", "433", "391", "787", "626", "837", "670"],
+]
+
+PATCH = {
+    "title": "1977~1990年连云港市干部统计表续表",
+    "table_number": "表41-13",
+    "page": 1861,
+    "pages": [1861],
+    "part": "part02",
+    "vol": "中",
+    "volume": "中",
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/中/part02/page_0441.txt；表题、表号和年份表头承接 workbench/ocr/paddle_ocr/中/part02/page_0439.txt、page_0440.txt。并参考 raw 坐标OCR workbench/ocr/raw/中/part02/page_0441.json 与 raw 文本 workbench/table_entries/中/raw/LYG-中-T125_1861.txt。本条原为单列占位，实际为表41-13尾页；仅录入 page_0441 可见的政治情况与分布情况记录。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != "LYG-中-T125":
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

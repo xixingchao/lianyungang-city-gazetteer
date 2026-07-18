@@ -1,0 +1,20 @@
+{
+  "book": "连云港市志",
+  "volume": "第五十九卷 方言",
+  "mode": "fresh_redo_from_original_only",
+  "source_pdf": "E:\\codex_Learing\\17_project_数字化工作站\\连云港志原件\\连云港志下_2.pdf",
+  "source_pdf_sha256": "d1c1dc637c0ce21154c2f41527ffba9d7eb1e173ee1a57a75ee1aa54c4310e50",
+  "extracted_pdf": "E:\\codex_Learing\\17_project_数字化工作站\\projects\\lianyungang-city-gazetteer-volume59-fresh\\input\\source\\连云港市志_第五十九卷方言_源页_全新重做.pdf",
+  "extracted_pdf_sha256": "5c0d9bd3c81409df9f0c420da6235eaa059ab18a01b4da5813b366acc900b2fb",
+  "source_pdf_pages": [
+    295,
+    342
+  ],
+  "volume_pages": [
+    1,
+    48
+  ],
+  "page_count": 48,
+  "dpi": 300,
+  "note": "No old OCR, old redo ledger, or old rearranged text was used to create these source artifacts."
+}

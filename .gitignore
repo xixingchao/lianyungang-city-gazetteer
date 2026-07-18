@@ -1,0 +1,11 @@
+# Local artifacts not meant for GitHub
+input/pdf/
+**/__pycache__/
+*.pyc
+workbench/tmp/
+workbench/tmp_*/
+workbench/dialect_ipa_review/
+workbench/ocr/tesseract_check/
+output/reports/
+output/final_reader/obsolete/
+*.zip

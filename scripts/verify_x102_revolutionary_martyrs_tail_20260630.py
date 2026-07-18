@@ -1,0 +1,94 @@
+# -*- coding: utf-8 -*-
+"""Verify LYG-下-T102 revolutionary martyrs continuation page."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "下" / "data" / "LYG-下-T102.json"
+
+COLUMNS = [
+    "姓名", "性别", "出生年月", "籍贯", "参加革命年月", "入党团年月",
+    "牺牲时所在军队及其职务", "牺牲时间、地点、原因", "何时何单位授何奖励", "备注",
+]
+
+ROWS = [
+    ["王永德", "男", "", "云台区大浦镇", "1948.11", "", "华东野战军四纵十师二十八团战士", "1948年12月淮海战役牺牲", "", ""],
+    ["蒋云田", "男", "", "云台区板桥镇", "1945.8", "", "三十九军一一五师三四四团副排长", "1949年1月平津战役牺牲", "", ""],
+    ["王建业", "男", "1922.5", "云台区猴嘴镇", "1948.10", "", "三十军战士", "1949年5月上海浦东战斗牺牲", "", ""],
+    ["郁学恒", "男", "1927.4", "云台区云台乡小村", "1940.2", "", "三十军八十八师二六四团二营班长", "1949年5月上海战役失踪", "1960年2月追认", ""],
+    ["赵绍发", "男", "1911", "云台区云台乡", "1945.8", "", "志愿军三十八军一一四师炮兵排长", "1950年朝鲜战场失踪", "1961年追认", ""],
+    ["赵斯叶", "男", "1920", "云台区云台乡曹庄", "1949.3", "", "志愿军二十军六十师一七四团炮兵连班长", "1950年朝鲜战场失踪", "1982年追认", ""],
+    ["庞金华", "男", "", "云台区板桥镇", "1941", "", "志愿军三十八军一一四师团卫生队副队长", "1950年11月朝鲜战场牺牲", "", ""],
+    ["孙忠发", "男", "1918", "云台区云台乡", "1947.2", "", "志愿军四十军一一八师三五三团一营战士", "1950年11年朝鲜隅星战斗牺牲", "", ""],
+    ["金大东", "男", "1932.4", "云台区中云乡东巷", "1949.5", "", "志愿军二十六军七十七师二二九团二营通讯员", "1950年11月朝鲜泗水里战斗牺牲", "", ""],
+    ["李宽", "男", "1919", "云台区中云乡焦庄", "1948.11", "党员", "志愿军二十七军八十一师二四三团副排长", "1951年4月朝鲜九里山战斗牺牲", "立二、三、四等功各一次", ""],
+    ["王同柱", "男", "1932.2", "云台区猴嘴镇", "1948", "", "志愿军二十军六十师一七八团通讯员", "1951年5月朝鲜战场牺牲", "", ""],
+    ["孙靠山", "男", "1926", "云台区大浦镇", "1948.12", "", "志愿军三十军八十八师二六三团战士", "1951年朝鲜战场牺牲", "", ""],
+    ["赵绍创", "男", "1930", "云台区云台乡大村", "1949.4", "团员", "志愿军三十六军一零七师三二一团战士", "1951年9月朝鲜战场牺牲", "", ""],
+    ["胡盛安", "男", "1916", "云台区朝阳乡沙集", "1948", "党员", "志愿军战士", "1953年朝鲜战场失踪", "1961年追认", ""],
+]
+
+PATCH = {
+    "title": "连云港市市区革命烈士简况表（续表）",
+    "table_number": "",
+    "page": 2838,
+    "pages": [2838],
+    "part": "part02",
+    "vol": "下",
+    "volume": "下",
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/下/part02/page_0406.txt；表题依据本表首页 workbench/ocr/paddle_ocr/下/part02/page_0401.txt；并参考 raw 坐标 OCR：workbench/ocr/raw/下/part02/page_0406.json 与 raw 文本 workbench/table_entries/下/raw/LYG-下-T102_2838.txt。此条仅录入 page_0406 可见的连云港市市区革命烈士简况表续页记录。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != "LYG-下-T102":
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

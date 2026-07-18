@@ -1,0 +1,115 @@
+# -*- coding: utf-8 -*-
+"""Verify grain inventory continuation table."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA_DIR = ROOT / "workbench" / "table_entries" / "中" / "data"
+
+PATCHES = {
+    "LYG-中-T101": {
+        "title": "1953~1990年连云港市粮食（原粮）库存统计表（续表）",
+        "table_number": "表36-14",
+        "page": 1661,
+        "pages": [1661],
+        "part": "part02",
+        "vol": "中",
+        "volume": "中",
+        "columns": ["年份", "合计(吨)", "市区(吨)", "赣榆县(吨)", "东海县(吨)", "灌云县(吨)"],
+        "rows": [
+            ["1957", "82815", "30700", "19035", "14880", "18200"],
+            ["1958", "47875", "16260", "11135", "10505", "9975"],
+            ["1959", "64155", "12100", "19970", "16545", "15540"],
+            ["1960", "45330", "14080", "11760", "9175", "10315"],
+            ["1961", "50115", "14315", "14290", "12545", "8965"],
+            ["1962", "44115", "9695", "12805", "11430", "10185"],
+            ["1963", "53554", "19083", "13153", "9194", "12124"],
+            ["1964", "46095", "11490", "11000", "11535", "12070"],
+            ["1965", "34060", "5895", "14670", "8555", "4940"],
+            ["1966", "94185", "29680", "22940", "15945", "25620"],
+            ["1967", "127505", "36655", "30730", "22750", "37370"],
+            ["1968", "113105", "29110", "29190", "31160", "23645"],
+            ["1969", "83840", "28945", "13890", "14710", "26295"],
+            ["1970", "79840", "30945", "11400", "15135", "22360"],
+            ["1971", "130330", "38475", "29230", "37210", "25415"],
+            ["1972", "124275", "22405", "39925", "45305", "16640"],
+            ["1973", "182105", "34875", "52715", "54275", "40240"],
+            ["1974", "146605", "28295", "32470", "40655", "45185"],
+            ["1975", "105465", "25545", "20215", "27725", "31980"],
+            ["1976", "81425", "27925", "5625", "4240", "43635"],
+            ["1977", "71765", "32465", "12190", "3850", "23260"],
+            ["1978", "75510", "37095", "17895", "-8155", "28675"],
+            ["1979", "145860", "49405", "32090", "25895", "38470"],
+            ["1980", "103795", "39350", "19765", "2735", "41945"],
+            ["1981", "66585", "49270", "13055", "-14135", "18395"],
+            ["1982", "107390", "51220", "30415", "20570", "5185"],
+            ["1983", "178810", "42410", "38620", "84930", "12850"],
+            ["1984", "254945", "59305", "34595", "120760", "40285"],
+            ["1985", "289338", "46530", "53071", "126343", "63394"],
+            ["1986", "236698", "68212", "44448", "77289", "46749"],
+            ["1987", "274866", "57504", "46844", "118409", "52109"],
+            ["1988", "250892", "58338", "47015", "114844", "30695"],
+            ["1989", "247161", "60763", "42769", "113796", "29833"],
+            ["1990", "315741", "79428", "55296", "145434", "35583"],
+        ],
+        "status": "verified",
+        "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/中/part02/page_0241.txt，并参考 raw OCR：workbench/table_entries/中/raw/LYG-中-T101_1661.txt。表题、表号、单位和列组依据前页 page_0240.txt。原JSON误沿用农村集体储备粮表题且为单列骨架；本页实际为表36-14续表。",
+    }
+}
+
+for patch in PATCHES.values():
+    patch["row_count"] = len(patch["rows"])
+    patch["col_count"] = len(patch["columns"])
+
+
+def patch_entry(entry: dict) -> bool:
+    patch = PATCHES.get(entry.get("table_id"))
+    if not patch:
+        return False
+    changed = False
+    for key, value in patch.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    changed = 0
+    for table_id in PATCHES:
+        path = DATA_DIR / f"{table_id}.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if patch_entry(data):
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            changed += 1
+    return changed
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,25 @@
+book_title: "连云港市志"
+volume_title: "第五十九卷 方言"
+project_mode: "fresh_redo"
+source_policy: "from_original_only"
+
+source:
+  original_root: "E:/codex_Learing/17_project_数字化工作站/连云港志原件"
+  pdf: "E:/codex_Learing/17_project_数字化工作站/连云港志原件/连云港志下_2.pdf"
+  source_pdf_pages:
+    start: 295
+    end: 342
+  volume_pages:
+    start: 1
+    end: 48
+
+render:
+  dpi: 300
+  image_format: "jpg"
+  jpeg_quality: 92
+
+rules:
+  do_not_use_old_ocr: true
+  do_not_use_old_redo_ledger: true
+  do_not_mark_pass_without_double_review: true
+  preserve_unknown_marker: "□"

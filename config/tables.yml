@@ -1,0 +1,11 @@
+tables: []
+
+rules:
+  table_id_pattern: "LYG-{volume}-T{index:000}"
+  cross_page_tables_require_continuation_anchor: true
+  final_reader_embeds_structured_tables: true
+  status_values:
+    - "draft"
+    - "checked"
+    - "needs-review"
+    - "blocked"

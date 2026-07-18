@@ -1,0 +1,30 @@
+{
+  "table_id": "LYG-下-T063",
+  "title": "1990年连云港市成人教育基本情况表（跨页续表已并入LYG-下-T062）",
+  "table_number": "表50-20",
+  "page": 2371,
+  "pages": [
+    2371
+  ],
+  "part": "part01",
+  "vol": "下",
+  "columns": [
+    "主表ID",
+    "主表题",
+    "本页来源",
+    "备注"
+  ],
+  "rows": [
+    [
+      "LYG-下-T062",
+      "1990年连云港市成人教育基本情况表",
+      "workbench/ocr/paddle_ocr/下/part01/page_0400.txt；workbench/table_entries/下/raw/LYG-下-T063_2371.txt",
+      "本页为表50-20的跨页续表内容，已在主表 LYG-下-T062 中按 5 列、23 行完整核录，本条保留交叉引用，不重复造表。"
+    ]
+  ],
+  "row_count": 1,
+  "col_count": 4,
+  "status": "verified",
+  "notes": "本页为跨页表50-20续表，已在 LYG-下-T062 中完整核录，证据见 scripts/verify_x062_adult_education_20260630.py、workbench/ocr/paddle_ocr/下/part01/page_0399.txt、page_0400.txt 及 raw OCR workbench/table_entries/下/raw/LYG-下-T063_2371.txt。原条目题名串章为筑路养护机械表，本次更正为成人教育表续页引用。",
+  "volume": "下"
+}

@@ -1,0 +1,3935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>连云港市志 · 第五十九卷《方言》· 全卷数字化版 (2579–2626)</title>
+<style>
+  /* === 设计令牌 === */
+  :root {
+    --bg: #f5f4f1;
+    --card: #ffffff;
+    --text: #2b2b2b;
+    --text-2: #6b6b6b;
+    --text-3: #a0a0a0;
+    --accent: #8c2f2f;
+    --accent-2: #a64545;
+    --accent-bg: #faf0f0;
+    --ink: #1a1a1a;
+    --border: #e8e5e0;
+    --border-2: #d5d2cc;
+    --note-bg: #fffdf5;
+    --note-border: #e0b341;
+    --code-bg: #f2efe9;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+    --shadow-md: 0 2px 6px rgba(0,0,0,.05), 0 8px 20px rgba(0,0,0,.03);
+    --radius: 10px;
+    --radius-sm: 6px;
+    --serif: "Noto Serif SC","Songti SC","SimSun","STSong",serif;
+    --sans: "Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+    --mono: "JetBrains Mono","Noto Sans Mono","Consolas","Courier New",monospace;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior:smooth; scroll-padding-top:70px; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === 顶部封面 === */
+  .cover {
+    background: linear-gradient(160deg, #fff 0%, var(--accent-bg) 100%);
+    text-align: center;
+    padding: 48px 24px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .cover .vol-tag {
+    display:inline-block; font-size:12px; letter-spacing:3px; color:var(--accent);
+    border:1px solid var(--accent); border-radius:20px; padding:3px 16px; margin-bottom:16px;
+  }
+  .cover h1 {
+    font-family: var(--serif);
+    font-size: 34px; font-weight:700; color: var(--ink);
+    letter-spacing: 8px; margin-bottom: 6px;
+  }
+  .cover .subtitle { font-size:14px; color:var(--text-2); letter-spacing:1px; }
+  .cover .meta-row {
+    margin-top:18px; font-size:12.5px; color:var(--text-3);
+    display:flex; justify-content:center; gap:24px; flex-wrap:wrap;
+  }
+  .cover .meta-row span { display:inline-flex; align-items:center; gap:4px; }
+
+  /* === 目录导航 === */
+  #toc-nav {
+    position: sticky; top:0; z-index:100;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+  }
+  #toc-nav .toc-inner { max-width:920px; margin:0 auto; padding:0 24px; }
+  #toc-nav summary {
+    cursor:pointer; font-weight:600; font-size:13px; color:var(--accent);
+    user-select:none; list-style:none;
+  }
+  #toc-nav summary::before { content:"B8 "; font-size:10px; }
+  #toc-nav details[open] summary::before { content:"BE "; }
+  #toc-nav summary::-webkit-details-marker { display:none; }
+  #toc-list { margin-top:10px; max-height:200px; overflow-y:auto; }
+  .toc-group { margin-bottom:6px; }
+  .toc-ch { font-size:12px; font-weight:600; color:var(--ink); margin-right:8px; }
+  .toc-page {
+    display:inline-block; padding:2px 9px; margin:2px 3px;
+    border-radius:4px; background:var(--bg); color:var(--text-2);
+    text-decoration:none; font-size:12px; font-family:var(--mono);
+    transition: all .15s;
+  }
+  .toc-page:hover { background:var(--accent); color:#fff; transform:translateY(-1px); }
+
+  /* === 主内容区 === */
+  .main-wrap { max-width:920px; margin:0 auto; padding:28px 24px 60px; }
+
+  /* === 页面卡片 === */
+  .page-section {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 22px;
+    overflow: hidden;
+    transition: box-shadow .2s;
+  }
+  .page-section:hover { box-shadow: 0 4px 12px rgba(0,0,0,.06), 0 12px 32px rgba(0,0,0,.04); }
+
+  .page-bar {
+    display:flex; justify-content:space-between; align-items:center;
+    padding: 8px 18px;
+    background: var(--accent-bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .pg-num {
+    font-size:13px; font-weight:600; color:var(--accent);
+    font-family: var(--mono); letter-spacing:.5px;
+  }
+  .btn-copy {
+    padding:3px 12px; font-size:11.5px;
+    border:1px solid var(--border-2); border-radius:20px;
+    background:var(--card); color:var(--text-2);
+    cursor:pointer; transition: all .15s; font-family:var(--sans);
+  }
+  .btn-copy:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .btn-copy.copied { background:#2d7a46; color:#fff; border-color:#2d7a46; }
+
+  .page-body { padding: 20px 26px 24px; }
+
+  /* === 标题层级 === */
+  h2.page-heading {
+    font-family: var(--serif);
+    font-size:21px; font-weight:700; color:var(--ink);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom:8px; margin:0 0 16px;
+  }
+  h3.section-title {
+    font-family: var(--serif);
+    font-size:17px; font-weight:600; color:var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left:12px; margin:20px 0 10px;
+  }
+  h4.sub-title {
+    font-size:14.5px; font-weight:600; color:var(--ink);
+    margin:14px 0 6px;
+  }
+
+  /* === 注释/元信息 === */
+  .meta-note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--note-border);
+    padding:8px 14px; margin:12px 0;
+    font-size:12.5px; color:var(--text-2);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  hr.divider { border:none; border-top:1px dashed var(--border-2); margin:16px 0; }
+
+  /* === 双栏（第四章词典式） === */
+  .cols-wrap { display:flex; gap:28px; margin:8px 0; }
+  .cols-wrap .col { flex:1; min-width:0; }
+  .cols-wrap .col.left { border-right:1px solid var(--border); padding-right:18px; }
+  .cols-wrap .col.right { padding-left:0; }
+  .col-label {
+    display:inline-block; font-size:11px; font-weight:600;
+    color:var(--accent); background:var(--accent-bg);
+    padding:2px 10px; border-radius:10px; margin-bottom:8px;
+    letter-spacing:1px;
+  }
+
+  /* === 词典条目标题（#### 级） === */
+  .entry-title {
+    font-family: var(--serif);
+    font-size:14.5px; font-weight:700; color:var(--ink);
+    margin:8px 0 2px; padding-left:8px;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* === 词典条目行 === */
+  .entry-line {
+    margin:3px 0; padding:4px 8px;
+    border-radius: var(--radius-sm);
+    font-size:13.5px; line-height:1.7;
+    transition: background .12s;
+  }
+  .entry-line:hover { background: var(--bg); }
+  .entry-head {
+    font-weight:700; color:var(--ink);
+    font-family: var(--serif);
+    margin-right:4px;
+  }
+  .entry-body { color:var(--text); }
+  .entry-body strong { color:var(--accent); }
+
+  /* === 表格 === */
+  table.data-table {
+    width:100%; border-collapse:collapse; margin:12px 0 16px;
+    font-size:13px; background:transparent;
+    border-radius: var(--radius-sm); overflow:hidden;
+  }
+  table.data-table th {
+    background: var(--accent-bg);
+    text-align:left; padding:7px 12px;
+    font-weight:600; color:var(--accent);
+    border-bottom: 2px solid var(--accent);
+    white-space:nowrap; font-size:12.5px;
+  }
+  table.data-table td {
+    padding:6px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align:top; font-size:13px;
+  }
+  table.data-table tr:last-child td { border-bottom:none; }
+  table.data-table tr:nth-child(even) td { background: var(--bg); }
+  table.data-table tr:hover td { background: var(--accent-bg); }
+  table.data-table strong { color:var(--ink); }
+
+  /* === 段落与行内 === */
+  p { margin:6px 0; text-align:justify; font-size:14px; }
+  strong { color:var(--ink); font-weight:600; }
+  code {
+    background: var(--code-bg);
+    padding:1px 6px; border-radius:3px;
+    font-size:.85em; font-family:var(--mono);
+    color: var(--accent);
+  }
+
+  /* === 回到顶部 === */
+  #back-top {
+    position:fixed; bottom:28px; right:28px;
+    width:40px; height:40px; border-radius:50%;
+    background:var(--card); border:1px solid var(--border-2);
+    box-shadow: var(--shadow-md);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; opacity:0; pointer-events:none;
+    transition: all .25s; z-index:90;
+    font-size:18px; color:var(--accent);
+  }
+  #back-top.show { opacity:1; pointer-events:auto; }
+  #back-top:hover { background:var(--accent); color:#fff; transform:translateY(-2px); }
+
+  /* === 页脚 === */
+  .footer {
+    text-align:center; font-size:12px; color:var(--text-3);
+    padding:24px 0 40px; border-top:1px solid var(--border);
+    margin-top:24px;
+  }
+
+  /* === 响应式 === */
+  @media (max-width:680px) {
+    .cols-wrap { flex-direction:column; gap:14px; }
+    .cols-wrap .col.left { border-right:none; border-bottom:1px solid var(--border); padding-right:0; padding-bottom:14px; }
+    .page-body { padding:14px 16px; }
+    .cover h1 { font-size:26px; letter-spacing:4px; }
+  }
+
+  @media print {
+    body { background:#fff; } .main-wrap { max-width:none; padding:0; }
+    .page-section { box-shadow:none; border:1px solid #ddd; break-inside:avoid; }
+    #toc-nav, #back-top, .btn-copy { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 封面 -->
+<div class="cover">
+  <span class="vol-tag">第五十九卷</span>
+  <h1>方 言</h1>
+  <div class="subtitle">连云港市志 · 数字化校订版</div>
+  <div class="meta-row">
+    <span>数字化整理版</span>
+    <span>共 48 节</span>
+    <span>数字化工作站</span>
+  </div>
+</div>
+
+<!-- 目录 -->
+<nav id="toc-nav">
+<div class="toc-inner">
+<details open>
+<summary>目录导航（共 48 页 · 点击页码跳转）</summary>
+<div id="toc-list">
+<div class="toc-group"><a href="#p2579" class="toc-ch">卷首 · 概述 · 音系说明</a></div>
+<div class="toc-group"><a href="#p2587" class="toc-ch">第三章 · 方言词汇（前段）</a></div>
+<div class="toc-group"><a href="#p2597" class="toc-ch">第四章 · 方言词汇</a></div>
+<div class="toc-group"><a href="#p2623" class="toc-ch">第五章 · 语法特点</a></div>
+</div>
+</details>
+</div>
+</nav>
+
+<!-- 正文 -->
+<div class="main-wrap">
+<section class="page-section" id="p2579">
+<div class="page-bar"><button class="btn-copy" data-pid="2579">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">概述</h3>
+<p>连云港市境内方言有两类，一类是属于中原官话郑曹片的青泉（青口、温泉）小片，另一类是属于江淮官话洪巢片的海伊（海州、伊山）小片。青泉小片包括赣榆县和东海县的南辰、石梁河、黄川、浦南（西北部）、青湖、横沟、石榴、温泉、李埝、李埝林场、双店、山左口、桃林、石埠、洪庄、石湖等乡镇（场），其方言特征是没有入声，古入声清音字及次浊字今读阴平、全浊字今读阳平。海伊小片包括灌云县及新浦、海州、云台、连云四区和东海县的安峰、房山（南部）、平明（南部）、张湾、浦南（东南部）等乡镇，其方言特征是有入声，除少数入声字变成舒声外，入声自成一类。东海县的种畜场、曲阳、牛山乡、牛山镇、房山（北部）、平明（北部）、驼峰、白塔、岗埠农场等乡镇（场）处于两类方言的过渡带，其方言特征是越往南的村庄入声字越多，越往北的村庄入声字越少。青泉小片的方言与海伊小片的方言在语音方面差异较大，在词汇方面也有明显的不同，比如海州人能听懂赣榆话，但赣榆人要听懂海州话却不太容易。</p>
+<p>连云港市处在南北方言的交接过渡地带，这里的方言既有北方方言的特点，又受南方方言的影响。这和政区沿革、人口迁徙、经济文化的交流很有关系。近几十年来，随着城市的发展，大量的外地人、特别是附近市县的人定居城区，使连云港市方言发展变化加快，有向普通话靠拢的明显趋势。</p>
+<p>本卷首先简述境内的方言差异，然后详细论述市政府驻地的新浦话。记音用国际音标。</p></div>
+</section>
+<section class="page-section" id="p2580">
+<div class="page-bar"><button class="btn-copy" data-pid="2580">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">第一章 方言差别</h3>
+<h4 class="sub-title">第一节 语音差别</h4>
+<div class="entry-title">一、声母</div>
+<p>1. f、xu 的分混。在青泉小片和牛山、房山、张湾等乡镇 f、xu 不混。海伊小片的大部分地区是 xu 混入 f，但灌云东南一线是 f 混入 xu。例如：</p>
+<table class="data-table">
+<tr><th>例字</th><th>土城</th><th>双店</th><th>曲阳</th><th>新浦</th><th>板浦</th><th>伊山</th><th>杨集</th></tr>
+<tr><td>呼 夫</td><td>xu²¹⁴ fu²¹⁴</td><td>xu²¹³ fu²¹³</td><td>xu³¹³ fu³¹³</td><td>xu³¹³ fu³¹³</td><td>fu³¹³ fu³¹³</td><td>xu³¹³ xu³¹³</td><td>xu³¹³ xu³¹³</td></tr>
+<tr><td>灰 飞</td><td>xuei²¹⁴ fei²¹⁴</td><td>xuei²¹³ fei²¹³</td><td>xuei³¹³ fei³¹³</td><td>fei³¹³ fei³¹³</td><td>fei³¹³ fei³¹³</td><td>xuei³¹³ xuei³¹³</td><td>xuei³¹³ xuei³¹³</td></tr>
+<tr><td>荒 方</td><td>xuɑŋ²¹⁴ fɑŋ²¹⁴</td><td>xuɑŋ²¹³ fɑŋ²¹³</td><td>xuɑŋ³¹³ fɑŋ³¹³</td><td>fɑŋ³¹³ fɑŋ³¹³</td><td>fɑŋ³¹³ fɑŋ³¹³</td><td>xuɑŋ³¹³ xuɑŋ³¹³</td><td>xuɑŋ³¹³ xuɑŋ³¹³</td></tr>
+</table>
+<p>2. n、l 的分混。n、l 在青泉小片及方言的过渡地带不混，在海伊小片往往是 n 混入 l。例如：</p>
+<table class="data-table">
+<tr><th>例字</th><th>青口</th><th>大篓</th><th>房山</th><th>张湾</th><th>海州</th><th>板浦</th><th>伊山</th></tr>
+<tr><td>南 兰</td><td>nan⁵⁵ lan⁵⁵</td><td>na⁵⁵ la⁵⁵</td><td>nɛ²¹ lɛ²⁴</td><td>lɛ³¹ æ³⁵</td><td>lɑ³¹ lɑ³⁵</td><td>læ³¹ lɛ³⁵</td><td>læ³¹ lɛ³⁵</td></tr>
+<tr><td>年 连</td><td>nian⁵⁵ lian⁵⁵</td><td>nia⁵⁵ lia⁵⁵</td><td>ni²⁴ li²⁴</td><td>liɛ³⁵ liɛ³⁵</td><td>liɛ³⁵ liɛ³⁵</td><td>liɛ³⁵ liɛ³⁵</td><td>liɛ³⁵ liɛ³⁵</td></tr>
+</table>
+<p>3. 尖团音的分混。赣榆话分尖团，东海鲁兰河以北的一些村庄也分尖团，即古声母精组和见晓组在今细音前声母不同。在分尖团的地区，海头、龙河、官河、土城、城头、夹山以北的乡镇尖音是 tθ tθʰ，青口、朱堵、门河、班庄以南的乡镇尖音是 ts tsʰ。除此之外的市内其他地方则不分尖团。例如：</p>
+<table class="data-table">
+<tr><th>例字</th><th>土城</th><th>青口</th><th>墩尚</th><th>黄川</th><th>青湖</th><th>新浦</th></tr>
+<tr><td>酒 九</td><td>tθiu²¹⁴ tɕiəu²¹⁴</td><td>tsiəu²¹⁴ tɕiəu²¹⁴</td><td>tsiəu³⁵ tɕiəu³⁵</td><td>tsiəu³⁵ tɕiəu³⁵</td><td>tɕiəu³⁵ tɕiəu³⁵</td><td>tɕiəu⁴¹ tɕiəu⁴¹</td></tr>
+<tr><td>千 牵</td><td>tθiɛ²¹⁴ tɕiɛ²¹⁴</td><td>tsiɛ²¹⁴ tɕiɛ²¹⁴</td><td>tsiɛ²¹⁴ tɕiɛ²¹⁴</td><td>tsiɑn²¹³ tɕiɑn²¹³</td><td>tɕiɑn²¹³ tɕiɑn²¹³</td><td>tɕiɛ³¹³ tɕiɛ³¹³</td></tr>
+<tr><td>须 虚</td><td>tθy²¹⁴ ɕy²¹⁴</td><td>tsy²¹⁴ ɕy²¹⁴</td><td>tsy²¹⁴ ɕy²¹⁴</td><td>tsy²¹³ ɕy²¹³</td><td>tsy²¹³ ɕy²¹³</td><td>ɕy³¹³ ɕy³¹³</td></tr>
+</table>
+<p>4. ts、tʂ 两组声母的分混。海伊小片的多数地区是古精组声母混入知庄章三组声母</p></div>
+</section>
+<section class="page-section" id="p2581">
+<div class="page-bar"><button class="btn-copy" data-pid="2581">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">连云港市志·第五十九卷《方言》书页 2581（逐图精修版）</h2>
+<h3 class="section-title">第一章　方言差别</h3>
+<p>中，杨集、图河、燕尾等地是知庄章三组声母混入精组声母中。青泉小片的欢墩、班庄、大岭、沙河以南地区及方言的过渡带 <code>ts</code>、<code>ʂ</code> 两组声母不混。例如：</p>
+<table class="data-table">
+<tr><th>例字</th><th>张湾</th><th>伊山</th><th>杨集</th><th>房山</th><th>大篓</th><th>毛墩</th><th>沙河</th></tr>
+<tr><td>资 支</td><td>tsʅ313 tsʅ313</td><td>tsʅ313 tsʅ313</td><td>tsʅ313 tsʅ313</td><td>tsʅ313 tsʅ313</td><td>tsʅ213 tsʅ213</td><td>tsʅ213 tsʅ213</td><td>tsʅ213 tsʅ213</td></tr>
+<tr><td>此 齿</td><td>tsʰʅ41 tsʰʅ41</td><td>tsʰʅ41 tsʰʅ41</td><td>tsʰʅ41 tsʰʅ41</td><td>tsʰʅ41 tsʰʅ41</td><td>tsʰ35 tsʰ35</td><td>tsʰ35 tsʰ35</td><td>tsʰ35 tsʰ35</td></tr>
+<tr><td>四 事</td><td>sʅ55 sʅ55</td><td>sʅ55 sʅ55</td><td>sʅ55 sʅ55</td><td>sʅ55 sʅ55</td><td>sʅ41 sʅ41</td><td>sʅ41 sʅ41</td><td>sʅ41 sʅ51</td></tr>
+</table>
+<p>赣榆县大部分地区，古精组声母与知庄章三组声母区别清楚，而且知庄章三组声母今音又分为 <code>ʂ</code>、<code>tʂ</code>、<code>tʂʰ</code> 两组。<code>ʂ</code> 组声母包括庄组、知组开口二等、章组止摄开口和知章两组合口（遇摄除外），<code>tʂ</code> 组包括知组开口三等、章组开口（止摄除外）和知章两组遇摄合口，有少数字例外。青口、赣马一带的新派把 <code>tʂ</code> 组声母字归到见系细音字声母 <code>tɕ</code> 组中。</p>
+<p>5. 日母字的读音。日母止摄开口三等字“儿耳二”等，在青泉小片的夹山、城头、土城、龙河以北是 <code>lə</code>，赣马、班庄以南的地方是 <code>ɚ</code>，墩尚是 <code>ə</code>；在方言的过渡带及云台、连云区是 <code>ɑ</code>，在海伊小片的其他地方则是 <code>ɛ</code>。除此之外的日母字，如“人日如软”等，赣榆县是零声母，东海、灌云两县和市区是 <code>z</code>。</p>
+<h3 class="section-title">二、韵母</h3>
+<p>1. 果摄一等见系开口、合口字的今韵母，在青泉小片及方言的过渡带一般不混，开合分明，“饿”字例外；在海伊小片则是开口字混入合口字中。例如：</p>
+<table class="data-table">
+<tr><th>例字</th><th>黑林</th><th>墩尚</th><th>大篓</th><th>毛墩</th><th>张湾</th><th>海州</th><th>伊山</th></tr>
+<tr><td>哥 锅</td><td>kə214 kuə214</td><td>kə313 kuə313</td><td>kə213 kuə213</td><td>kə213 kuə213</td><td>ko313 ko313</td><td>ko313 ko313</td><td>ko313 ko313</td></tr>
+<tr><td>贺 祸</td><td>xə51 xuə51</td><td>xə41 xuə41</td><td>xə41 xuə41</td><td>xə41 xuə41</td><td>xo55 xo55</td><td>xo55 xo55</td><td>xo55 xo55</td></tr>
+<tr><td>饿 卧</td><td>ə51 uə51</td><td>ə41 uə41</td><td>ə41 uə41</td><td>ə41 uə41</td><td>o55 o55</td><td>o55 o55</td><td>o55 o55</td></tr>
+</table>
+<p>2. 房山、平明、白塔、驼峰、牛山等乡镇的许多村庄受沭阳话的影响，流摄来母一、三等字相混，如“刘 = 楼 <code>cləu</code>、柳 = 楼 <code>ləu</code>、馏 = 漏 <code>ləu³</code>”。图河、燕尾一带，“牛”念 <code>ŋəu35</code>、“刘”念 <code>ləu35</code>。</p>
+<p>3. 在海伊小片，咸山两摄的舒声字今音合流，失掉鼻音韵尾，成为鼻化韵，分为 <code>ẽ</code>、<code>ɛ̃</code>、<code>ɔ̃</code> 三个韵部。分部的条件大致是古韵的开合等，开口一二等、合口二等并为 <code>ẽ</code> 部，合口一等、合口三等知系并为 <code>ɔ̃</code> 部，开口三四等并为 <code>ɛ̃</code> 部；合口三四等或并于合口一等，或并于开口三四等。古咸山两摄舒声字在青泉小片则合为一个韵部，在方言的过渡带也大多合为一个韵部。例如：</p>
+<table class="data-table">
+<tr><th>例字</th><th>伊山</th><th>新浦</th><th>张湾</th><th>房山</th><th>毛墩</th><th>双店</th><th>土城</th></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2582">
+<div class="page-bar"><button class="btn-copy" data-pid="2582">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">连云港市志·第五十九卷《方言》书页 2582（逐图精修版）</h2>
+<h3 class="section-title">二、韵母（续）</h3>
+<h4 class="sub-title">3. 咸山两摄舒声字（续表）</h4>
+<p>表头见书页 2581（伊山、新浦、张湾、房山、毛墩、双店、土城七列）。本页为表体续页。</p>
+<table class="data-table">
+<tr><th>例字</th><th>伊山</th><th>新浦</th><th>张湾</th><th>房山</th><th>毛墩</th><th>双店</th><th>土城</th></tr>
+<tr><td>班 般</td><td>pæ³¹³</td><td>pæ³¹³</td><td>pæ³¹³</td><td>pæ³¹³</td><td>pæ³¹³</td><td>pæ³¹³</td><td>pæ²¹³</td></tr>
+<tr><td>关 官</td><td>kuæ³¹³</td><td>kuæ³¹³</td><td>kuæ³¹³</td><td>kuæ³¹³</td><td>kuæ²¹³</td><td>kuæ²¹³</td><td>kuə²¹⁴</td></tr>
+<tr><td>弯 豌</td><td>uæ³¹³</td><td>uæ³¹³</td><td>uæ³¹³</td><td>uæ³¹³</td><td>uæ³¹³</td><td>uæ³¹³</td><td>uæ²¹³</td></tr>
+<tr><td>艰 坚</td><td>tɕiæ³¹³</td><td>tɕiæ³¹³</td><td>tɕiæ³¹³</td><td>tɕiæ³¹³</td><td>tɕiæ³¹³</td><td>tɕiæ³¹³</td><td>tɕiæ²¹⁴</td></tr>
+<tr><td>雁 燕</td><td>iæ⁵⁵</td><td>iæ⁵⁵</td><td>iæ⁵⁵</td><td>iæ⁵⁵</td><td>iæ⁵⁵</td><td>iæ⁵⁵</td><td>iæ⁵⁵</td></tr>
+</table>
+<p>4. 深臻两摄和曾梗通（唇音）三摄今开口、齐齿两呼舒声字，在海伊小片为 ən 尾韵；青泉小片的大部分地区的韵尾分为 n、ŋ 两个，但赣榆北部夹山到黑林、徐福、石桥、柘汪，前鼻音韵母失掉 n 尾、主元音鼻化。这类字在土城、朱堵、城头（东部）、徐山（东部）、厉庄（南部）等乡镇合为一个韵部，失掉 n 尾、主元音鼻化；官河、龙河、海头一带的情况与海伊小片相同。例如：</p>
+<table class="data-table">
+<tr><th>例字</th><th>黑林</th><th>土城</th><th>龙河</th><th>青口</th><th>温泉</th><th>房山</th><th>海州</th></tr>
+<tr><td>根 耕</td><td>kən²¹⁴ kər²¹⁴</td><td>kən²¹⁴ kər²¹⁴</td><td>kər²¹⁴ kər²¹⁴</td><td>kən²¹⁴ kər²¹⁴</td><td>kən²¹³ kər²¹³</td><td>kən²¹³ kər²¹³</td><td>kər³¹³ kər³¹³</td></tr>
+<tr><td>神 绳</td><td>ʂʅ⁵⁵ ʂʅ⁵⁵</td><td>ʂʅ⁵⁵ ʂʅ⁵⁵</td><td>ʂʅ⁵⁵ ʂʅ⁵⁵</td><td>ʂʅ⁵⁵ ʂʅ⁵⁵</td><td>ʂʅ⁵⁵ ʂʅ⁵⁵</td><td>ʂʅ⁵⁵ ʂʅ⁵⁵</td><td>ʂʅ⁵⁵ ʂʅ⁵⁵</td></tr>
+<tr><td>分 风</td><td>fə²¹⁴ fə²¹⁴</td><td>fə²¹⁴ fə²¹⁴</td><td>fə²¹⁴ fə²¹⁴</td><td>fə²¹⁴ fə²¹⁴</td><td>fə²¹³ fə²¹³</td><td>fə²¹³ fə²¹³</td><td>fə³¹³ fə³¹³</td></tr>
+<tr><td>锦 景</td><td>tɕiə²¹⁴ tɕiə²¹⁴</td><td>tɕiə²¹⁴ tɕiə²¹⁴</td><td>tɕiə²¹⁴ tɕiə²¹⁴</td><td>tɕiə²¹⁴ tɕiə²¹⁴</td><td>tɕiə²¹³ tɕiə²¹³</td><td>tɕiə²¹³ tɕiə²¹³</td><td>tɕiə³¹³ tɕiə³¹³</td></tr>
+<tr><td>信 姓</td><td>sə⁵¹ sə⁵¹</td><td>sə⁵¹ sə⁵¹</td><td>sə⁵¹ sə⁵¹</td><td>sə⁵¹ sə⁵¹</td><td>sə⁵¹ sə⁵¹</td><td>sə⁵¹ sə⁵¹</td><td>sə⁵¹ sə⁵¹</td></tr>
+</table>
+<p>5. 曾梗通三摄舒声合口字在赣榆（靠近山东省及东海县的乡镇除外）话中是闭口韵 um、ym，在市内其他地方则是 ŋ 尾韵。如"东同笼公工董桶总冬宋农忠充弓众龙从松冲供重巩颂轰宏弘（以上 um 韵）、穷雄熊融胸凶容用兄荣永（以上 ym 韵）"。在赣榆中部前后鼻音不分的地方还有臻摄舒声合口字，如"昆婚魂滚春唇纯顺（以上 um 韵）、旬巡均菌允君军勋云训韵晕（以上 ym 韵）"。在石桥、黑林、夹山、徐山（西部）、班庄、欢墩等乡镇的许多村庄，曾梗通（非唇音）三摄舒声合口字混入开口字，如"东 = 灯 ctə、虫 = 城 cʂə、巩 = 耿 ckən、熊 = 行 ccin"。</p>
+<p>三、声　调</p>
+<p>1. 阴平。图河、燕尾一线是低降调；市内其他地方则是降升调，除靠近山东省的少数村庄之外，人们念阴平字时喉头有发紧的感觉，特别是海伊小片的方音。阴平字在赣榆北部的调值是 214，在赣榆南部及东海县的西北部一般是 213，在海伊小片多数是 313。</p>
+<p>2. 阳平。在青泉小片是高平调，在海伊小片及方言的过渡带是中升调或高升调。</p>
+<p>3. 上声。黑林到徐福、海头以北地区其调值是 213，青口、城东、城南、宋庄一带的新</p></div>
+</section>
+<section class="page-section" id="p2583">
+<div class="page-bar"><button class="btn-copy" data-pid="2583">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">三、声　调（续）</h3>
+<p>3. 上声（续）。黑林到徐福、海头以北地区其调值是 213，青口、城东、城南、宋庄一带的新派是 213、这一带的老派及青泉小片的其他地方是 35。海伊小片多数是 41。</p>
+<p>4. 去声。在青泉小片是高降调，在海伊小片是高平调。</p>
+<p>5. 入声。分布在海伊小片及方言过渡带的南部，有长调、短调的差异。新浦、海州、云台山区、墟沟、连云到板浦、伊山是 24，灌云的东部、东南部是 4，张湾、龙苴到南岗是 3。</p>
+<h3 class="section-title">第二节　词汇语法差别</h3>
+<p>1. 青泉小片、海伊小片在词汇方面的差别主要表现在同义异形上，即方言之间意义相同、词形不同的词较多。这也反映了两片方言文化背景的差别。例如：</p>
+<table class="data-table">
+<tr><th>海伊片</th><th>青泉片</th><th>普通话</th></tr>
+<tr><td>爷</td><td>叔</td><td>叔叔</td></tr>
+<tr><td>据澡</td><td>抹澡</td><td>擦澡</td></tr>
+<tr><td>老嫚子</td><td>老嬤嬷</td><td>老妇女</td></tr>
+<tr><td>懂</td><td>知道</td><td>知道</td></tr>
+<tr><td>舅爹</td><td>舅老爷</td><td>外祖父</td></tr>
+<tr><td>关照</td><td>告诉</td><td>叮嘱</td></tr>
+<tr><td>我</td><td>俺</td><td>我</td></tr>
+<tr><td>揽</td><td>摔</td><td>摔</td></tr>
+<tr><td>耳虱子</td><td>耳芯子</td><td>耳垢</td></tr>
+<tr><td>长鱼</td><td>血鳝</td><td>黄蟮</td></tr>
+<tr><td>侃空</td><td>撒谎</td><td>撒谎</td></tr>
+<tr><td>山芋</td><td>地瓜</td><td>甘薯</td></tr>
+<tr><td>翅拐子</td><td>翅膀</td><td>翅膀</td></tr>
+<tr><td>望葵</td><td>照葵</td><td>向日葵</td></tr>
+<tr><td>癞蛄子</td><td>癩蛤蟆</td><td>蟾蜍</td></tr>
+<tr><td>信壳子</td><td>信皮子</td><td>信封</td></tr>
+<tr><td>仰脸虫</td><td>坷螬</td><td>蛴螬</td></tr>
+<tr><td>银开子</td><td>银角(ekə)子</td><td>硬币</td></tr>
+<tr><td>芦秫</td><td>秫秫</td><td>高梁</td></tr>
+<tr><td>坑得了</td><td>糟了</td><td>糟了</td></tr>
+<tr><td>桑枣子</td><td>桑仁子</td><td>桑椹</td></tr>
+<tr><td>家天子</td><td>当天子</td><td>庭院</td></tr>
+<tr><td>早星</td><td>早上</td><td>早晨</td></tr>
+<tr><td>塘灰</td><td>孛土</td><td>灰尘</td></tr>
+</table>
+<p>2. 青泉小片有儿化韵，有一大批儿尾词，如"花儿、一下儿、瓜儿、坡儿、猫儿、鸟儿、豆儿、歌儿、菜儿、被儿、味儿、脸蛋儿、一点儿、花园儿、根儿、裙儿、亮儿、瓶儿、熊儿"。海伊小片没有儿化韵，也就没有儿尾词，但子尾词却比青泉小片的话丰富，下边列举的词在青泉小片一般不说。</p>
+<p><strong>子尾词举例：</strong></p>
+<table class="data-table">
+<tr><th>子尾词</th><th>子尾词</th><th>子尾词</th></tr>
+<tr><td>拳头子</td><td>肚脐子</td><td>脊梁子</td></tr>
+<tr><td>袖头子</td><td>翅膀子</td><td>孙女子</td></tr>
+<tr><td>今天子</td><td>抽屉子</td><td>戏迷子</td></tr>
+<tr><td>风镜子</td><td>葱白子</td><td>屋脊子</td></tr>
+<tr><td>泉眼子</td><td>明天子</td><td></td></tr>
+</table>
+<p>3. 青泉小片第一人称代词"俺"的使用频率高于"我"，"俺"既表示单数，又表示复数。海伊小片第一人称用"我"不用"俺"，但城区的青少年用"俺们"表示第一人称的复数。灌云话第一人称"喝"既表示单数，又表示复数。例如：</p>
+<table class="data-table">
+<tr><th></th><th>赣榆</th><th>新浦</th><th>灌云</th></tr>
+<tr><td>单数</td><td>俺哥今日娶媳子了。</td><td>我大哥今天带媳妇。</td><td>喝哥今天带媳妇了。</td></tr>
+<tr><td>复数</td><td>他不去俺两人去。</td><td>我们两个去。</td><td>喝开会吧，不等他们两个了。</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2584">
+<div class="page-bar"><button class="btn-copy" data-pid="2584">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">第二章　语音系统</h3>
+<h4 class="sub-title">第一节　声韵调</h4>
+<div class="entry-title">一、声母（18）</div>
+<table class="data-table">
+<tr><th>声母</th><th>例字</th></tr>
+<tr><td>p</td><td>帮鼻板布别</td></tr>
+<tr><td>pʰ</td><td>坡瓶浦怕魄</td></tr>
+<tr><td>m</td><td>妈明米梦木</td></tr>
+<tr><td>f</td><td>翻肥粉富福</td></tr>
+<tr><td>t</td><td>灯端顶度笛</td></tr>
+<tr><td>tʰ</td><td>涛同挺兔铁</td></tr>
+<tr><td>l</td><td>拉泥鲁虑糯</td></tr>
+<tr><td>ts</td><td>招贼主坐织</td></tr>
+<tr><td>tsʰ</td><td>村蚕吵醋册</td></tr>
+<tr><td>s</td><td>桑时扫睡拾</td></tr>
+<tr><td>z</td><td>扔人软锐热</td></tr>
+<tr><td>tɕ</td><td>精军酒贱杰</td></tr>
+<tr><td>tɕʰ</td><td>秋桥请去确</td></tr>
+<tr><td>ɕ</td><td>兴贤小线席</td></tr>
+<tr><td>k</td><td>赶根广贵国</td></tr>
+<tr><td>kʰ</td><td>开狂砍库渴</td></tr>
+<tr><td>x</td><td>花红海汇黑</td></tr>
+<tr><td>Ø</td><td>牙二然硬闰</td></tr>
+</table>
+<p><strong>声母说明：</strong></p>
+<p>1. n、l 不分，多数情况下念 l。</p>
+<p>2. tʂ 的发音部位略靠前，接近 ts tsʰ。</p>
+<p>3. f、xu 混读，如"飞 = 灰 xuei³¹³、夫 = 呼 xu³¹³"。</p>
+<div class="entry-title">二、韵母（40）</div>
+<table class="data-table">
+<tr><th>韵母</th><th>例字</th></tr>
+<tr><td>ɿ</td><td>资支词四事</td></tr>
+<tr><td>i</td><td>批弟你齐椅</td></tr>
+<tr><td>u</td><td>肤图粗胡务</td></tr>
+<tr><td>y</td><td>侣剧墟玉</td></tr>
+<tr><td>ie</td><td>爹姐茄写夜</td></tr>
+<tr><td>a</td><td>巴爬打拉岔</td></tr>
+<tr><td>ia</td><td>俩加卡虾雅</td></tr>
+<tr><td>ua</td><td>抓挂跨华洼</td></tr>
+<tr><td>o</td><td>播罗锁哥鹅</td></tr>
+<tr><td>ɛ</td><td>排来财开耳</td></tr>
+<tr><td>iɛ</td><td>街界鞋蟹</td></tr>
+<tr><td>uɛ</td><td>揣帅快槐外</td></tr>
+<tr><td>ei</td><td>辈飞梅队岁</td></tr>
+<tr><td>uei</td><td>垂蕊桂会味</td></tr>
+<tr><td>ɔ</td><td>胞桃抄高傲</td></tr>
+<tr><td>iɔ</td><td>苗调票交谣</td></tr>
+<tr><td>əu</td><td>豆楼守沟后</td></tr>
+<tr><td>iəu</td><td>丢贸靴鸠油</td></tr>
+<tr><td>æ</td><td>班返胆敢安</td></tr>
+<tr><td>iæ</td><td>间铅咸限雁</td></tr>
+<tr><td>uæ</td><td>赚拴关晚</td></tr>
+<tr><td>ẽ</td><td>展缠闪然</td></tr>
+<tr><td>iẽ</td><td>坚牵线燕</td></tr>
+<tr><td>ɔ̃</td><td>般段船官完</td></tr>
+<tr><td>yɔ̃</td><td>绢全宣院</td></tr>
+<tr><td>ɑŋ</td><td>忙方唐上港</td></tr>
+<tr><td>iɑŋ</td><td>粮江墙香阳</td></tr>
+<tr><td>uɑŋ</td><td>庄床广皇忘</td></tr>
+<tr><td>ən</td><td>本登争恨恩</td></tr>
+<tr><td>iən</td><td>贫定亲辛影</td></tr>
+<tr><td>uən</td><td>洞龙春宫容</td></tr>
+<tr><td>yən</td><td>君穷胸允云</td></tr>
+<tr><td>aʔ</td><td>八发塔蜡喝</td></tr>
+<tr><td>iaʔ</td><td>夹恰侠鸭</td></tr>
+<tr><td>uaʔ</td><td>刷刮括滑袜</td></tr>
+<tr><td>əʔ</td><td>迫得室客额</td></tr>
+<tr><td>iəʔ</td><td>灭帖列歇叶</td></tr>
+<tr><td>uəʔ</td><td>目复夺说物</td></tr>
+<tr><td>yəʔ</td><td>律脚雪育月</td></tr>
+<tr><td>iʔ</td><td>笔密踢吉益</td></tr>
+</table>
+<p><strong>韵母说明：</strong></p>
+<p>1. ɿ 的舌位略前。</p>
+<p>2. ei、uei 的韵尾舌位较低，相当于 ɪ。</p></div>
+</section>
+<section class="page-section" id="p2585">
+<div class="page-bar"><button class="btn-copy" data-pid="2585">复制本节</button></div>
+<div class="page-body"><div class="entry-title">二、韵母（续）</div>
+<p><strong>韵母说明（续）：</strong></p>
+<p>3. ẽ 的鼻化程度，海州区的比新浦、云台、连云三区的重。</p>
+<p>4. 新浦的许多中年人、青年人没有 ə 韵，ə 韵字归入 i 韵中。在 uə、yə 两韵中，来自深臻曾梗通五摄的字，海州话是 uu、yu 两韵，与 uə、yə 分立，如：独 tuu¹³、夺 tuə¹³，突 tʰuu¹³、脱 tʰuə¹³，陆 luu¹³、洛 luə¹³，竹 tsuu¹³、捉 tuə¹³，叔 ʂuu¹³、说 ʂuə¹³，哭 kuu¹³、扩 kuə¹³，屋 uu¹³、握 uə¹³；律 luu¹³、略 luə¹³，菊 tɕyu¹³、绝 tɕyə¹³，屈 tʰyu¹³、确 tʰyə¹³，蓄 ɕyu¹³、学 ɕyə¹³，育 yu¹³、月 yə¹³。这是新浦话与海州话的主要差别。</p>
+<div class="entry-title">三、声调（5）</div>
+<table class="data-table">
+<tr><th>代码</th><th>调类</th><th>调值</th><th>例字</th></tr>
+<tr><td>1</td><td>阴平</td><td>313</td><td>刚知专尊丁边安开超初粗天偏婚商三飞</td></tr>
+<tr><td>2</td><td>阳平</td><td>35</td><td>穷陈床才唐平寒时详扶鹅娘人龙难麻文</td></tr>
+<tr><td>3</td><td>上声</td><td>41</td><td>古展纸走短普好手死粉五女染老暖买武</td></tr>
+<tr><td>4</td><td>去声</td><td>55</td><td>近坐倍厚社父帐正汉送放助大害树饭岸</td></tr>
+<tr><td>5</td><td>入声</td><td>13</td><td>急职一出匹黑惜桌接说发岳纳物局食白</td></tr>
+</table>
+<p><strong>声调说明：</strong></p>
+<p>- 阴平字的调值，起头比北京音的上声起头高一点，下降后略微迟顿一下，然后快速升高；在下降和迟顿阶段，喉头有明显的收紧动作。</p>
+<p>- 去声的调值是 445，记作 55。</p>
+<p>- 入声是长调，不带喉塞音，比阳平字的调值略低一点，应记作 24。</p>
+<h4 class="sub-title">第二节　连读变调</h4>
+<p>这里描写的连读变调，不包括含轻声字的两字组、三字组。为了行文方便，下文用代码表示调类，1、2、3、4、5 分别表示阴平、阳平、上声、去声、入声。两字组的连读变调规律见表 59-1。表左标明前字调类，表端标明后字调类。表中同一横行组合的前字调类相同，同一竖行组合的后字调类相同。变调相同的，不再用线条分开。两字组连调共有 25 种组合，前字变调，后字一律不变调，但阴平加上声和阴平加去声的组合前字不变调。举例排在表下。</p>
+<p><strong>表 59-1　新浦话两字组连读变调表</strong></p>
+<p><strong>表结构（行列顺序）：</strong></p>
+<p>- 列（从左到右）：1 阴平 313 → 2 阳平 35 → 5 入声 13 → 3 上声 41 → 4 去声 55</p>
+<p>- 行（从上到下）：1 阴平 313 → 4 去声 55 → 5 入声 13 → 2 阳平 35 → 3 上声 41</p>
+<p><strong>变调值：</strong></p>
+<table class="data-table">
+<tr><th>前字＼后字</th><th>1 阴平 313</th><th>2 阳平 35</th><th>5 入声 13</th><th>3 上声 41</th><th>4 去声 55</th></tr>
+<tr><td>1 阴平 313</td><td>21</td><td>21</td><td>21</td><td>313</td><td>313</td></tr>
+<tr><td>4 去声 55</td><td>21</td><td>21</td><td>21</td><td>313</td><td>313</td></tr>
+<tr><td>5 入声 13</td><td>21</td><td>21</td><td>21</td><td>21</td><td>55</td></tr>
+<tr><td>2 阳平 35</td><td>55</td><td>55</td><td>55</td><td>55</td><td>55</td></tr>
+<tr><td>3 上声 41</td><td>55</td><td>55</td><td>55</td><td>55</td><td>55</td></tr>
+</table>
+<p>规律：阴平/去声/入声作前字时，后字为阴平/阳平/入声 → 前字变 21；后字为上声/去声 → 前字变 313（阴平+上声/去声实际为不变调，去声/入声+上声/去声变 313）。入声作前字时，后字为上声 → 变 21，后字为去声 → 变 55。阳平/上声作前字 → 全部变 55。</p>
+<p><strong>例字：</strong></p>
+<table class="data-table">
+<tr><th>组合</th><th>变调</th><th>例字</th></tr>
+<tr><td>11</td><td>313→21, 313</td><td>知音 tsʅ iŋ｜阴天 i tiẽ｜花生 xua saŋ｜丁香 tin siaŋ</td></tr>
+<tr><td>12</td><td>313→21, 35</td><td>知名 tsʅ min｜猪皮 tu pʰi｜汪塘 uɑŋ tɑŋ｜推头 tʰei təu</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2586">
+<div class="page-bar"><button class="btn-copy" data-pid="2586">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">第二节　连读变调（续）</h3>
+<p><strong>例字（续）：</strong></p>
+<table class="data-table">
+<tr><th>组合</th><th>变调</th><th>例字</th></tr>
+<tr><td>15</td><td>313→21, 13</td><td>知足 tsuə｜生铁 saŋ tʰiə｜钢笔 kaŋ piə｜锅屋 ko uə</td></tr>
+<tr><td>41</td><td>55→21, 313</td><td>自卑 tsʰə pei｜汽车 tɕʰi tɕʰei｜认生 zəŋ səŋ｜是非 ʂʅ fei</td></tr>
+<tr><td>42</td><td>55→21, 35</td><td>自由 tsʰə iəu｜泡茶 pʰɔ tɕʰa｜算盘 suə pʰo｜树皮 ʂu pʰi</td></tr>
+<tr><td>45</td><td>55→21, 13</td><td>自杀 tsʰə sa｜罪恶 tsʰə ɔ｜大雪 ta ɕyə｜树叶 ʂu iə</td></tr>
+<tr><td>43</td><td>55→313, 41</td><td>自满 tsʰə mɔ｜上火 ʂaŋ xo｜豆饼 təu piŋ｜报纸 po tsʰɿ</td></tr>
+<tr><td>44</td><td>55→313, 55</td><td>自爱 tsʰə ɛ｜犯罪 faŋ tsei｜菜地 tsʰɛ ti｜地蛋 ti tæ</td></tr>
+<tr><td>51</td><td>13→21, 313</td><td>职工 tʂə koŋ｜竹杆 tuə kaŋ｜读书 tuə ʂu｜蜜蜂 mi fəŋ</td></tr>
+<tr><td>52</td><td>13→21, 35</td><td>职权 tʂə tɕʰyəŋ｜出头 tʂʰə təu｜学堂 yə tʰaŋ｜屋梁 uə liaŋ</td></tr>
+<tr><td>55</td><td>13→21, 13</td><td>职业 tʂə iə｜积木 tɕiə muə｜蜡烛 laŋ tʂuə｜月食 yə ʂʅ</td></tr>
+<tr><td>53</td><td>13→21, 41</td><td>职守 tʂə ʂəu｜滴水 tiʔ ʂuei｜石板 ʂʅ pʰaŋ｜节省 tɕiə saŋ</td></tr>
+<tr><td>54</td><td>13→55, 55</td><td>职位 tʂə uei｜出汗 tʂʰə xæŋ｜国庆 kuə tɕʰiŋ｜立夏 li ɕia</td></tr>
+<tr><td>21</td><td>35→55, 313</td><td>辞书 tsʰʅ ʂu｜塘灰 tʰaŋ xuei｜茴香 xuei ɕiaŋ｜镰刀 liə tɔ</td></tr>
+<tr><td>22</td><td>35→55, 35</td><td>辞行 tsʰʅ ɕiŋ｜围棋 uei tɕʰi｜喉咙 xə loŋ｜煤油 mə iəu</td></tr>
+<tr><td>25</td><td>35→55, 13</td><td>辞职 tsʰʅ ʂʅ｜劳力 lɔ li｜墙壁 tɕʰiaŋ pʰi｜陪客 pʰei kʰə</td></tr>
+<tr><td>23</td><td>35→55, 41</td><td>辞典 tsʰʅ tʰiəŋ｜年底 liəŋ ti｜沿海 iəŋ xɛ｜床板 tʂʰuaŋ pʰaŋ</td></tr>
+<tr><td>24</td><td>35→55, 55</td><td>辞令 tsʰʅ liŋ｜城市 tʂʰəŋ ʂʅ｜麻袋 ma tɛ｜停电 tiŋ tʰiəŋ</td></tr>
+<tr><td>31</td><td>41→55, 313</td><td>子孙 tsʰɿ səŋ｜火车 xo tʂʰə｜剪刀 tɕiəŋ tɔ｜顶针 tiŋ tʂəŋ</td></tr>
+<tr><td>32</td><td>41→55, 35</td><td>子时 tsʰɿ ʂʅ｜酒瓶 tɕiəu pʰiŋ｜小娘 ɕiaŋ niaŋ｜买油 mə iəu</td></tr>
+<tr><td>35</td><td>41→55, 13</td><td>子目 tsʰɿ muə｜打发 ta fə｜解渴 tɕiə kʰə｜火药 xo yə</td></tr>
+<tr><td>33</td><td>41→55, 41</td><td>子女 tsʰɿ ly｜井水 tɕiŋ ʂuei｜老酒 lɔ tɕiəu｜土产 tʰu tʂʰaŋ</td></tr>
+<tr><td>34</td><td>41→55, 55</td><td>子弟 tsʰɿ ti｜冷静 laŋ tɕiŋ｜马路 ma lu｜老树 lɔ ʂu</td></tr>
+</table>
+<h3 class="section-title">第三节　声韵配合关系</h3>
+<p>新浦话声母、韵母的配合关系见表 59-2。表里把韵母分成开齐合撮四类，声母分成八类。空格表示声韵不相拼合。</p>
+<p><strong>表 59-2　新浦话声韵配合关系表</strong></p>
+<table class="data-table">
+<tr><th>声母</th><th>开口呼</th><th>齐齿呼</th><th>合口呼</th><th>撮口呼</th></tr>
+<tr><td>p pʰ m</td><td>包盘梦</td><td>标皮面</td><td>布普目</td><td></td></tr>
+<tr><td>f</td><td>翻</td><td></td><td>富</td><td></td></tr>
+<tr><td>t tʰ</td><td>多同</td><td>低田</td><td>度脱</td><td></td></tr>
+<tr><td>l</td><td>男</td><td>娘</td><td>路</td><td>女</td></tr>
+<tr><td>ts tsʰ s z</td><td>在愁婶软</td><td></td><td>祖锤霜如</td><td></td></tr>
+<tr><td>tɕ tɕʰ ɕ</td><td></td><td>鸡桥信</td><td></td><td>举渠选</td></tr>
+<tr><td>k kʰ x</td><td>哥口汉</td><td></td><td>姑葵荒</td><td></td></tr>
+<tr><td>Ø</td><td>文</td><td>羊</td><td>伟</td><td>玉</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2587">
+<div class="page-bar"><button class="btn-copy" data-pid="2587">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">第三章 同音字汇</h3>
+<p>本字汇收常用字 4400 多个，先按韵母分部，同韵的字按声母排列，声韵相同的字按声调排列。有音无字者用 <code>□</code> 表示，后加小字注解。举例时用 <code>~</code> 代替本字。字下加双线表示文读音，字下加单线表示白读音，字下加浪线表示特殊读音。数码 <code>①②③④⑤</code> 代表阴平、阳平、上声、去声、入声。</p>
+<h4 class="sub-title">韵母 i</h4>
+<div class="entry-title">声母 p</div>
+<p>② 鼻 ③ 比 彼 匕 ④ 闭 币 敝 蔽 毙 弊 算 痹 裨 婢 秘 便~ 泌~阳 避 陛</p>
+<div class="entry-title">声母 pʰ</div>
+<p>① 批 砒 丕 坯 胚 邳 披 ② 皮 疲 啤 脾 琵 枇 ③ 痞 庇 痹 ④ 屁 媲</p>
+<div class="entry-title">声母 m</div>
+<p>① 眯~眼 咪 笑~~ ② 迷 谜 眯 物入目中 糜 弥 猕 靡 □~量：比划 ③ 米 眯上~欲睡 ④ 昧~良心 泌 秘 □故意留下别人的东西</p>
+<div class="entry-title">声母 f</div>
+<p>① 夫 肤 麸 敷 ② 俘 孚 符 扶 芙 浮 孵 ③ 府 腑 俯 斧 釜 腐 辅 脯 杏~ ④ 父 赋 傅 赴 讣 付 附 咐 附 富 副 覆 妇 负 阜</p>
+<div class="entry-title">声母 t</div>
+<p>① 低 提~溜：拎 ③ 底 抵 砥 柢 邸 ④ 帝 缔 蒂 弟 递 第 地</p>
+<div class="entry-title">声母 tʰ</div>
+<p>① 梯 ② 堤 提 蹄 啼 题 ③ 体 ④ 替 剃 涕 屉 嚏</p>
+<div class="entry-title">声母 l</div>
+<p>① 哩~啷：边讲~骂、罗嗦 ② 尼 泥 呢 花达~ 倪 霓 犁 梨 黎 黧 蠡 离 分~ 漓 璃 厘 狸~猫 蜊 ③ 你 里 理 鲤 俚 狸 狐~ 李 礼 拟 ④ 利 痢 莉 离~开 例 厉 励 砺 丽 吏 腻 隶 荔</p>
+<div class="entry-title">声母 ts</div>
+<p>① 资 姿 咨 龇 兹 滋~生 孳 孜 辅 淄 知 蜘 栀 ② □~僵：物品僵硬 ③ 紫 姊 子 仔 梓 纸 只~有 咫 旨 指~南 趾 止 址 ④ 自 恣 字 治 滞 制 智 至 致 雉 挚 置 志 痣</p>
+<div class="entry-title">声母 tsʰ</div>
+<p>① 雌 滋~水 连跑：吓~了 痴 疵 眵 嗤 ② 词 祠 辞 迟 瓷 磁 慈 池 驰 弛 踟 持 刺~溜 ③ 此 齿 耻 匙 汤~ ④ 翅 刺 赐 次 伺~候 厕 炽 寺 洪门~</p>
+<div class="entry-title">声母 s</div>
+<p>① 诗 斯 撕 嘶 厮 私 司 丝 思 师 狮 尸 施 虱 ② 时 ③ 史 使 驶 始 矢 死 屎 ④ 四 驷 肆 伺 饲 嗣 似 祀 寺 恃 侍 世 势 誓 逝 氏 是 示 谥 视 嗜 士 仕 市 柿 事 试 社</p>
+<div class="entry-title">声母 tɕ</div>
+<p>① 鸡 稽 跻 嵇 羁 奇~数 几~乎 肌 饥 机 讥 支 枝 之 芝 肢 脂 指~头 ② □~僵：物品僵硬；叽 圾 箕 扒~子 姬 基 戟；□老~：鬼怪，吓唬小孩用语 ③ 紫 姊 子 仔 梓 纸 只~有 咫 旨 指~南 趾 止 址；挤 己 几~个 虮 济~南 ④ 自 恣 字 治 滞 制 智 至 致 雉 挚 置 志 痣；计 济 救~ 荠~菜 剂 继 系~鞋带 祭 际 寄 技 妓 髻 冀 骥 记 纪 忌 既 季 悸 箕</p>
+<div class="entry-title">声母 tɕʰ</div>
+<p>① 期 欺 妻 凄 栖 ② 齐 脐 蛴 奇 崎 骑 芪 祁 歧 其 祺 旗 麒 ③ 起 启 杞 岂 企 ④ 气 汽 弃 器 砌 契</p>
+<div class="entry-title">声母 ɕ</div>
+<p>① 西 牺 栖 犀 兮 羲 曦 嘻 嬉 熙 希 稀 ② 畦 奚 溪 携 ③ 喜 洗 玺 徙 ④ 戏 细 系~统</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 衣 依 医 伊 ② 宜 谊 仪 移 夷 姨 胰 疑 怡 贻 饴 沂 遗 彝 ③ 椅 倚 已 以 蚁 尾~巴 ④ 艺 亿 忆 诣 羿 义 议 蚁 易 肄 意 臆 薏 异 毅</p>
+<h4 class="sub-title">韵母 u</h4>
+<div class="entry-title">声母 p</div>
+<p>③ 补 哺 捕 谱 家~ ④ 布 怖 步 部 埠 薄</p>
+<div class="entry-title">声母 pʰ</div>
+<p>① 铺~设 谱 饭~了 捕 ② 葡 匍 蒲 菩 ③ 甫 浦 脯 胸~ 普 谱 歌~ ④ 铺 饭~</p>
+<div class="entry-title">声母 f</div>
+<p>① 夫 肤 麸 敷 ② 俘 孚 符 扶 芙 浮 孵 ③ 府 腑 俯 斧 釜 腐 辅 脯 杏~ ④ 父 赋 傅 赴 讣 付 附 咐 附 富 副 覆 妇 负 阜</p>
+<div class="entry-title">声母 t</div>
+<p>① 都 首~尿 □长时间煮：~豆腐 ② 嘟 拟声词 ③ 堵 赌 睹 肚 胃 ④ 度 渡 镀 妒 杜 肚 腹 蠹 吐~饭 喂小孩 拽~：态度生硬地拉扯摇晃</p>
+<div class="entry-title">声母 tʰ</div>
+<p>① □吞：鸭子吃食，整~ ② 图 徒 屠 途 涂 荼 ③ 土 吐 ④ 兔 菟</p>
+<div class="entry-title">声母 l</div>
+<p>① 哩~啷：边讲~骂、罗嗦 ② 尼 泥 呢 花达~ 倪 霓 犁 梨 黎 黧 蠡 离 分~ 漓 璃 厘 狸~猫 蜊 ③ 你 里 理 鲤 俚 狸 狐~ 李 礼 拟 ④ 利 痢 莉 离~开 例 厉 励 砺 丽 吏 腻 隶 荔</p></div>
+</section>
+<section class="page-section" id="p2588">
+<div class="page-bar"><button class="btn-copy" data-pid="2588">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">韵母 u（续）</h3>
+<p>本页接 2587 页韵母 u，补录剩余声母组。</p>
+<h4 class="sub-title">声母 l</h4>
+<p>① 捋~袖子 ② 炉 芦 庐 奴 努 蝼~蛄 卢 颅 ③ 鲁 橹 卤 乳 豆腐~ ④ 路 怒 努 赂 露~水</p>
+<h4 class="sub-title">声母 ts（知庄组）</h4>
+<p>① 朱 株 珠 诛 蛛 猪 诸 租 属~连 嘱 ③ 主 拄 祖 组 阻 煮 ④ 柱 住 注 驻 蛀 炷 铸 贮 著 箸 苧 助</p>
+<h4 class="sub-title">声母 pʰ</h4>
+<p>③ 秕</p>
+<h4 class="sub-title">声母 t</h4>
+<p>① 爹</p>
+<h4 class="sub-title">声母 tɕ</h4>
+<p>③ 姐 媞~螃：蝉 ④ 借 褯 这</p>
+<h4 class="sub-title">声母 tɕʰ</h4>
+<p>① 做 躺：~在地上 ③ 茄 邪 ④ 且</p>
+<h4 class="sub-title">声母 ts（精组）</h4>
+<p>① 粗 初 ② 除 锄 厨 橱 躇 储 雏 ③ 楚 础 暑 鼠 署 褚 姓 处 相~杵 □平 着 铲 起：~土 ④ 醋 处~所</p>
+<h4 class="sub-title">声母 Ø</h4>
+<p>① 椰 □小声哼哼 ② 爷 耶 ③ 野 也 冶 惹 ④ 夜</p>
+<h4 class="sub-title">声母 s</h4>
+<p>① 苏 酥 酥 书 叔 输 殊 抒 梳 疏 蔬 舒 枢 ② 黌 暑 署 薯 鼠 数~指头 ③ 树 素 啸 鸡~子 ④ 诉 庶 恕 墅 曙 数 漱 戍 竖 塑</p>
+<h3 class="section-title">韵母 a</h3>
+<h4 class="sub-title">声母 p</h4>
+<p>① 巴 呕 占：吃碟~碗 芭 钯 尻 屁 疤 粑 扒~皮 ② □婴儿 ③ 把~岗 靶 ④ 霸 把刀~ 耙 罢 爸 坝</p>
+<h4 class="sub-title">声母 pʰ</h4>
+<p>① 趴 ② 爬 钯 范 杷 枇~琶 耙 扒 ③ ~拥：微动 □~牯 ④ 怕</p>
+<h4 class="sub-title">声母 m</h4>
+<p>① 妈 脉 暗暗地查看：~ ② 麻 吗皮 用来安装柄的口：锄~，锨~ ~：调皮 ③ 马 码 蚂 玛 ④ 骂</p>
+<h4 class="sub-title">声母 f</h4>
+<p>① 夫 肤 麸 敷 ② 俘 孚 符 扶 芙 浮 孵 ③ 府 腑 俯 斧 釜 腐 辅 脯 杏~ ④ 父 赋 傅 赴 讣 付 附 咐 附 富 副 覆 妇 负 阜</p>
+<h4 class="sub-title">声母 t</h4>
+<p>① 套 □父亲 ③ 打 ④ 大</p>
+<h4 class="sub-title">声母 tʰ</h4>
+<p>① 他 她 它</p>
+<h4 class="sub-title">声母 l</h4>
+<p>① 拉 垃~圾 啦 哗~旯 ② 拿 ③ 哪 喇~叭 ④ 那 ☐两腿分开</p>
+<h4 class="sub-title">声母 Ø</h4>
+<p>① 乌 鸣 污 巫 诬 侮 ② 吴 吾 梧 鼯 蜈 无 芜 毋 ③ 五 伍 午 忤 武 舞 梧 鹉 ④ 务 雾 戊 误 悟 悟 暱 痞 恶 可~</p>
+<h4 class="sub-title">声母 ts（精组/知庄组）</h4>
+<p>① 楂 渣 馇 边煮边拌：~猪食 碴 两脚~地 喳 ~~叫爹~掌 咋~乎 作—~长 ③ 眨 砟 碳~子 ④ 乍 炸 诈 痄 榨 茬 树~</p>
+<h3 class="section-title">韵母 y</h3>
+<h4 class="sub-title">声母 l</h4>
+<p>① 捋~胡子 ② 驴 间 鱼 木~子 ③ 女 吕 侣 旅 缕 屡 ④ 虑 滤</p>
+<h4 class="sub-title">声母 t</h4>
+<p>① 拘 驹 居 车~马 炮 □粘住，靠紧，攀牢 ③ 举 莒 矩 ④ 具 惧 俱 锯 据 剧 踞 句 聚 巨 拒 距 苣 炬</p>
+<h4 class="sub-title">声母 tɕ</h4>
+<p>① 区 驱 躯 蛆 趋 岖 ② 渠 瞿 徐 ③ 取 聚 ④ 去 趣 觑</p>
+<h4 class="sub-title">声母 ʂ（卷舌音）</h4>
+<p>① 沙 纱 砂 鲨 洒 米~了 届 木~子 ② 啥 ③ 洒~水 车 傻 ④ 厦 大~沙 蚕~：蚕屎 □渗水 □锯：~树枝</p>
+<h4 class="sub-title">声母 ɕ</h4>
+<p>① 虚 墟 嘘 须 需 吁 长~短 叹 盱 糈 碚~子 ② 徐 ③ 许 栩 诩 ④ 序 叙 绪 絮 续 婿</p>
+<h4 class="sub-title">声母 k</h4>
+<p>① 旮 ② 尬 尴~蛤~蜊 生~古 □划：~火柴 尕 小、少一~~</p>
+<h4 class="sub-title">声母 kʰ</h4>
+<p>② 卡~车 咔~叽 □翻扣：~碗</p>
+<h4 class="sub-title">声母 x</h4>
+<p>① 哈~气 ② 哈 点头~腰 蛤~蟆 □~~斯：颤抖</p>
+<h4 class="sub-title">声母 Ø</h4>
+<p>① 淤 瘀 迂 裕 ② 鱼 渔 于 孟 余 愚 虞 娱 榆 愉 俞 於 予 我 ③ 语 与 屿 雨 宇 禹 羽 予 给 ④ 玉 御 驭 与 参~誉 豫 预 遇 寓 妪 芋 愈 喻 逾</p>
+<h4 class="sub-title">声母 Ø（零声母另一组）</h4>
+<p>① 腌~洒：垃圾</p>
+<h3 class="section-title">韵母 ĩ（右栏）</h3>
+<h4 class="sub-title">声母 p</h4>
+<p>③ 枇</p>
+<h4 class="sub-title">声母 t</h4>
+<p>① 爹</p>
+<h4 class="sub-title">声母 tsʰ</h4>
+<p>① 姐 蜍~蛸：蝉 ④ 借 褯 这</p>
+<h4 class="sub-title">声母 s</h4>
+<p>① 险~点：差点儿 ② 斜 邪 ③ 写 些 □ 敞：~怀 ④ 谢 卸 泻 赦 舍 宿~</p>
+<h4 class="sub-title">声母 Ø</h4>
+<p>① 椰 □小声哼哼 ② 爷 耶 ③ 野 也 冶 惹 ④ 夜</p>
+<h3 class="section-title">韵母 a（右栏）</h3>
+<h4 class="sub-title">声母 p</h4>
+<p>① 巴 呕 占：吃碟~碗 芭 钯 昵 屁 疤 粑 扒~皮 ② □婴儿 ③ 把~岗 靶 ④ 霸 把刀~ 耙 罢 爸 坝</p>
+<h4 class="sub-title">声母 pʰ</h4>
+<p>① 趴 ② 爬 钯 范 杷 枇~琶 酉配 机 ③ ~拥：微动 □~牯 ④ 怕</p>
+<h4 class="sub-title">声母 m</h4>
+<p>① 妈 脉 暗暗地查看：~ ② 麻 吗皮 ~调皮 ③ 马 码 蚂 玛 ④ 骂</p>
+<h4 class="sub-title">声母 t</h4>
+<p>① 套 □父亲 ③ 打 ④ 大</p>
+<h4 class="sub-title">声母 l</h4>
+<p>① 他 她 它</p>
+<h4 class="sub-title">声母 l（另一组）</h4>
+<p>① 拉 垃~垃 啦 哗~旯 ② 拿 ③ 哪 喇~叭 ④ 那 ☐两腿分开</p>
+<h4 class="sub-title">声母 ŋ（日母）</h4>
+<p>② 如 茹 儒 ③ 乳 汝 儒 孺</p>
+<h4 class="sub-title">声母 k</h4>
+<p>① 姑 菇 孤 箍 辜 ② 鸪 泣~~：鹁鸪 ③ 古 估 牯 股 鼓 膨 盅 贾 ④ 故 固 锢 雇 顾 □~拥：微动</p>
+<h4 class="sub-title">声母 kʰ</h4>
+<p>① 枯 骷 ③ 苦 ④ 库 裤 □金属农具上</p>
+<h4 class="sub-title">声母 x</h4>
+<p>① 呼 乎 怦 □依靠：~靠 ② 胡 湖 猢 糊 葫蝴 瑚 湖 狐 弧 壶 ③ 虎 琥 游 戽 泼：~水 ④ 户 护 沪 扈 互 估 瓠</p>
+<h4 class="sub-title">声母 ts</h4>
+<p>① 叉 鱼~权 木~衩~口：口袋 □~呱：交谈 差~别 ② 茶 搽 查 调~碴 茬~口 叉 挡：饭吃 衫 裤~子 ④ 岔 差错 叉~开腿 汊 权 树~衩 皮~子</p>
+<h4 class="sub-title">声母 ʂ</h4>
+<p>① 沙 纱 砂 鲨 洒 米~了 届 木~子 ② 啥 当~么：偷偷地查看 ③ 洒~水 车 傻 ④ 厦 大~沙 蚕~：蚕屎 □渗水 □锯：~树枝</p>
+<h4 class="sub-title">声母 ɕ</h4>
+<p>① 沙 纱 砂 鲨 洒 米~了 届 木~子 （注：与ʂ行可能有合并或分立，需复核原书）</p></div>
+</section>
+<section class="page-section" id="p2589">
+<div class="page-bar"><button class="btn-copy" data-pid="2589">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">韵母 ia</h3>
+<h4 class="sub-title">声母 l</h4>
+<p>① 俩 两个</p>
+<h4 class="sub-title">声母 tɕ（tc）</h4>
+<p>① 家 佳 加 枷 痂 嘉 袈 笳 ③ 假 贾 ④ 价 架 驾 嫁 稼</p>
+<h4 class="sub-title">声母 tɕʰ（tc'）</h4>
+<p>① 掐 一小~　② □靠武力抢夺：东西给他~去了　③ 卡 发~、鱼刺~着了　④ 卡~腰 站在路口</p>
+<h4 class="sub-title">声母 s / ɕ</h4>
+<p>① 虾 般~腰：弯腰 □被偷　② 霞 瑕 暇 遐 斜　④ 下 吓 夏 厦~门</p>
+<h4 class="sub-title">声母 k</h4>
+<p>① 哥 歌 锅 戈 过 走~了　② □发~：发呆　③ 果 镍 裹　④ 个 过~去</p>
+<h4 class="sub-title">声母 kʰ</h4>
+<p>① 棵 额 窠 科 蝌 苛 咳~嗽　② □蹉起一腿，用另一条腿跳　③ 可 坷　④ 课 骤 嗑~瓜子</p>
+<h4 class="sub-title">声母 x</h4>
+<p>① 呵~斥 □~奉：吹捧　② 河 何 荷~花 禾 和~平　③ 火 伙　④ 货 货 祸 荷 负~和~</p>
+<h4 class="sub-title">声母 Ø</h4>
+<p>① 邪 丫 桠　② 牙 伢 芽 蚜 衙 涯 天~崖 山~面　③ 雅 哑 讶　④ 亚</p>
+<h3 class="section-title">韵母 ua</h3>
+<h4 class="sub-title">声母 tsʰ（知庄）</h4>
+<p>① 抓 髽　② □轻轻地扫：~地　③ 爪~子</p>
+<h4 class="sub-title">声母 Ø</h4>
+<p>① 窝 莴 涡 蜗 屙 踒~了脚 倭 搂卷折：绳子~　② 蛾 鹅 俄 峨 娥 讹　③ 我　④ 饿 卧</p>
+<h4 class="sub-title">声母 s</h4>
+<p>① □猛地抓住：~个蝴蝶</p>
+<h4 class="sub-title">声母 §（sh 卷舌/特殊符号）</h4>
+<p>① 唰 象声词：雨~~的，字写~~的　③ 耍 玩</p>
+<h3 class="section-title">韵母 ε（ɛ）</h3>
+<h4 class="sub-title">左栏部分</h4>
+<div class="entry-title">声母 k</div>
+<p>① 瓜 呱~啦拉讲个不停　② □牵扯：衣服叫树枝~了个口子　③ 寡 剐 呱啦~　④ 挂 卦</p>
+<div class="entry-title">声母 p</div>
+<p>③ 摆 □略洗一下：~一手、~水果　④ 败 拜 湃 稗</p>
+<div class="entry-title">声母 pʰ</div>
+<p>④ 褂</p>
+<div class="entry-title">声母 kʰ</div>
+<p>① 夸 垮　③ 侉 山东~子　④ 挎 跨 胯</p>
+<div class="entry-title">声母 pʰ（另一组 pʰ）</div>
+<p>① □猛地坐下：一旋~地上 □双腿瘫痪：~了，~子　② 排 徘 脾　③ 跳 踢：~一脚　④ 派</p>
+<div class="entry-title">声母 x</div>
+<p>① 花 化 叫~子 蓟~开　② 华 桦 哗 划~船 □全、都：地上~是水　④ 画 化 话</p>
+<div class="entry-title">声母 m</div>
+<p>② 埋~伏　③ 买　④ 卖 迈</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 娲 挖 蛙 青~　② 娃 哇　③ 瓦~房 □舀：~饭 □搅：用指甲抓：脸~抓破了　④ 洼 瓦~匠</p>
+<div class="entry-title">声母 t</div>
+<p>① 呆 袋 口~　③ 歹 好~ 逮□在：~这块　④ 代 岱 贷 袋 黛 戴 待 怠 殆 迨 带 大~夫</p>
+<div class="entry-title">声母 tʰ</div>
+<p>① 胎 苔 舌~　② 台 抬 苔 蒜~　③ □清闲自在：透~　④ 太 汰 态 泰</p>
+<div class="entry-title">声母 p（另一组）</div>
+<p>① 波 菠 玻 播　③ 簸~米　④ 簸~箕</p>
+<div class="entry-title">声母 pʰ（又一组）</div>
+<p>① 坡 颇 剖　② 婆　④ 破</p>
+<div class="entry-title">声母 l</div>
+<p>① 奶牛~ □~汰：懒散，不洁　② 来 莱　③ 奶~ 乃　④ 耐 奈 赖 癞</p>
+<div class="entry-title">声母 m（另一组）</div>
+<p>① 摸　② 谟 模 馒 磨~刀 魔 摩 摹~仿　③ 亩 母 拇 牡 抹 涂~　④ 贸 磨 石~ 茂 墓 暮 慕 募 幕</p>
+<div class="entry-title">声母 ts</div>
+<p>① 灾 栽 斋　③ 宰 载 年~崽　④ 在 再 载 装~债 寨 瘵 □~子：手脚上的鸡眼 □钉：~鞋，钉子：鞋~子 □用清水冲洗：~碗</p>
+<div class="entry-title">声母 f</div>
+<p>② 否~决</p>
+<div class="entry-title">声母 tsʰ</div>
+<p>① 猜 差 出~钗 □嫁接：~树。杂交：~驴　② 才 财 材 豺 柴 裁 瘭枯、硬：手挺~　③ 采 彩 睬 踩　④ 菜 蔡</p>
+<div class="entry-title">声母 t（另一组）</div>
+<p>① 多　② 哆　③ 朵 躲 垛 墙~子　④ 舵 惰 剁 垛 草~跺 堕</p>
+<div class="entry-title">声母 tʰ（又一组）</div>
+<p>① 施　② 驮 坯 砣 驼 佗 陀　③ 妥 椭　④ 唾</p>
+<div class="entry-title">声母 s</div>
+<p>① 腮 鳃 筛 塞~入　④ 晒 赛 塞 边~</p>
+<div class="entry-title">声母 k（又一组）</div>
+<p>① 该 垓 赅　③ 改　④ 盖 丐 概 溉 赣</p>
+<div class="entry-title">声母 l（续）</div>
+<p>① 啰~嗦　② 罗 锣 箩 萝 逻 骡 螺 挪　③ ~榆</p>
+<h3 class="section-title">韵母 o / uo（右栏上部，接上页）</h3>
+<h4 class="sub-title">声母 tsʰ</h4>
+<p>② 昨　③ 左 佐　④ 做 坐 座</p>
+<h4 class="sub-title">声母 ts</h4>
+<p>① 搓 蹉~跎　② 矬　④ 错 措~施 锉</p>
+<h4 class="sub-title">声母 s</h4>
+<p>① 蓑 梭 唆 索 牛~子　② □围屯：用薪子~麦 子　③ 所 锁 琐</p>
+<h3 class="section-title">韵母 ε（右栏部分）</h3>
+<h4 class="sub-title">声母 p</h4>
+<p>① 摆 □略洗一下：~一手、~水果　④ 败 拜 涕 稗 褂</p>
+<h4 class="sub-title">声母 pʰ</h4>
+<p>① □猛地坐下：一旋~地上 □双腿瘫痪：~了，~子　② 排 徘 脾　③ 跳 踢：~一脚　④ 派</p>
+<h4 class="sub-title">声母 m</h4>
+<p>② 埋~伏　③ 买　④ 卖 迈</p>
+<h4 class="sub-title">声母 t</h4>
+<p>① 呆 袋 口~　③ 歹 好~ 逮□在：~这块　④ 代 贷 袋 戴 待 怠 殆 迨 带 大~夫</p>
+<h4 class="sub-title">声母 tʰ</h4>
+<p>① 胎 苔 舌~　② 台 抬 苔 蒜~　③ □清闲自在：透~　④ 太 汰 态 泰</p>
+<h4 class="sub-title">声母 l</h4>
+<p>① 奶牛~ □~汰：懒散，不洁　② 来 莱　③ 奶~ 乃　④ 耐 奈 赖 癞</p>
+<h4 class="sub-title">声母 tsʰ</h4>
+<p>① 猜 差 出~钗 □嫁接：~树。杂交：~驴　② 才 财 材 豺 柴 裁 瘭枯、硬：手挺~　③ 采 彩 睬 踩　④ 菜 蔡</p>
+<h4 class="sub-title">声母 f</h4>
+<p>② 否~决</p>
+<h4 class="sub-title">声母 ts</h4>
+<p>① 灾 栽 斋　③ 宰 载 年~崽　④ 在 再 载 装~债 寨 瘵 □~子：手脚上的鸡眼 □钉：~鞋，钉子：鞋~子 □用清水冲洗：~碗</p>
+<h4 class="sub-title">声母 t</h4>
+<p>① 多　② 哆　③ 朵 躲 垛 墙~子　④ 舵 惰 剁 垛 草~跺 堕</p>
+<h4 class="sub-title">声母 tʰ</h4>
+<p>① 施　② 驮 坯 砣 驼 佗 陀　③ 妥 椭　④ 唾</p>
+<h4 class="sub-title">声母 s</h4>
+<p>① 腮 鳃 筛 塞~入　④ 晒 赛 塞 边~</p>
+<h4 class="sub-title">声母 k</h4>
+<p>① 该 垓 赅　③ 改　④ 盖 丐 概 溉 赣</p></div>
+</section>
+<section class="page-section" id="p2590">
+<div class="page-bar"><button class="btn-copy" data-pid="2590">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">韵母 ε（续 2589）</h4>
+<div class="entry-title">声母 kʰ</div>
+<p>①开楷　②□~奸：不合作、暗中破坏　③凯恺铠慨楷~模　④忾□推诿：两人~起来了</p>
+<div class="entry-title">声母 l</div>
+<p>①□打~~：赶牛时的吆喝号子　②雷擂~鼓　③磊蕾馁垒累积~儡　④类内累劳~泪擂打~</p>
+<div class="entry-title">声母 x</div>
+<p>①□在人多的地方偷窃：~逮手　②孩核~心还~是　③海□坏了、糟了：弄~得了　④害亥</p>
+<div class="entry-title">声母 t</div>
+<p>①遮　②贼　③嘴者　④罪柘最醉蔗这</p>
+<div class="entry-title">声母 tsʰ</div>
+<p>①崔摧催车马~　②随~他去　③扯　④脆翠粹翠瘁</p>
+<div class="entry-title">声母 Ø</div>
+<p>①哀唉~哟挨~号　②儿而崖挨~打被：~他拿去了　③矮耳饵尔蔼霭　④艾碍爱暖二贰隘</p>
+<div class="entry-title">声母 s</div>
+<p>①虽尿赊奢　②谁蛇余隋随　③舍~弃髓纬布边散开　④岁碎隧穗祟社舍房</p>
+<h4 class="sub-title">韵母 ie</h4>
+<div class="entry-title">声母 ʐ</div>
+<p>③惹</p>
+<div class="entry-title">声母 tɕ</div>
+<p>①街皆阶秸　③解~放　④介芥界疥届戒诫械解押~</p>
+<div class="entry-title">声母 tɕ（续）</div>
+<p>②鞋谐　④蟹懈邂解识文~字械</p>
+<div class="entry-title">声母 k</div>
+<p>②克</p>
+<h4 class="sub-title">韵母 uei</h4>
+<div class="entry-title">声母 tɕ</div>
+<p>③遣楷大~字</p>
+<div class="entry-title">声母 ts</div>
+<p>①追锥椎脊~　④坠缝缀赘　③□筋~的：肌肉或食物结实有弹性</p>
+<div class="entry-title">声母 tsʰ</div>
+<p>①吹炊　②垂捶棰锤槌椎~鼓儿：萝卜~子　④拽</p>
+<div class="entry-title">声母 s</div>
+<p>①摔　②谁　③水　④睡税瑞</p>
+<div class="entry-title">声母 tsʰ（二组）</div>
+<p>①搋~面揣　④踹白最~確</p>
+<div class="entry-title">声母 l</div>
+<p>④税芮蕊瑞</p>
+<div class="entry-title">声母 s（二组）</div>
+<p>①衰摔　③甩□无能：~子，这人太~　④帅率~领</p>
+<div class="entry-title">声母 k</div>
+<p>①规归龟硅圭闺□~腰：弯腰　③鬼诡轨　④桂瑰跪柜贵刽</p>
+<div class="entry-title">声母 kʰ</div>
+<p>①盔亏　②葵魁奎逵　④愧溃</p>
+<div class="entry-title">声母 x</div>
+<p>①灰恢复辉徽　②回茴蛔　③毁悔诲　④会绘烩汇慧惠贿秽讳晦卉溃</p>
+<div class="entry-title">声母 Ø</div>
+<p>①威偎煨葳巍萎人穷自~　②伟韦围违苇维惟唯帷微危桅为圩　③委诿萎~靡尾结~　④位卫未味为~什么伪喂胃渭谓慰尉</p>
+<h4 class="sub-title">韵母 uai</h4>
+<div class="entry-title">声母 k</div>
+<p>①乖□碰、打、接触：别~他□叫~子：烟蝎　③拐□~古：脾气怪　④怪身挎：~着书包</p>
+<div class="entry-title">声母 kʰ</div>
+<p>③抗蒯　④块快筷会~计刽</p>
+<div class="entry-title">声母 x</div>
+<p>②槐怀淮徊　③□~拉：态度生硬地拉扯摇晃　④坏</p>
+<div class="entry-title">声母 Ø</div>
+<p>①歪□~~：蛤蜊、河蚌　②蛙~子：青蛙□坐在地上挪蹬　③脚~了~老将：下棋时出将　④外</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">韵母 au</h4>
+<div class="entry-title">声母 p</div>
+<p>①包胞苞雹褒　③保堡葆褓鸨宝饱　④抱范~鸡刨~床鲍报暴爆豹</p>
+<div class="entry-title">声母 pʰ</div>
+<p>①抛胖泡灯~　②袍刨~地　④炮泡~茶</p>
+<div class="entry-title">声母 m</div>
+<p>①猫夜~子：猫头鹰　面淮阴~子　②矛茅猫锚毛羊~髦　③卯铆毛一~钱　④冒帽貌</p>
+<div class="entry-title">声母 t</div>
+<p>①刀叨鱽□用筷子夹：~菜　③岛捣蹈祷倒导　④到倒~水道悼稻盗</p>
+<div class="entry-title">声母 tʰ</div>
+<p>①涛滔掏绦套被~：被胎　②桃逃淘陶</p>
+<h4 class="sub-title">韵母 ei</h4>
+<div class="entry-title">声母 p</div>
+<p>①碑卑杯悲　③□拨：~面鱼子　④倍臂贝辈背焙被备</p>
+<div class="entry-title">声母 pʰ</div>
+<p>②培陪赔裴　④沛配佩辔呸</p>
+<div class="entry-title">声母 m</div>
+<p>②梅枚媒煤莓霉玫眉嵋楣　③美镁每　④妹昧寐魅媚谜打哑~</p>
+<div class="entry-title">声母 f</div>
+<p>①飞妃非菲霏绯蜚　②肥　③匪诽翡　④肺废吠沸痱费</p>
+<div class="entry-title">声母 t</div>
+<p>①堆　③□咳嗽　④队对兑碓</p>
+<div class="entry-title">声母 tʰ</div>
+<p>①推　②颓　③腿　④蜕褪退</p>
+<h3 class="section-title">审核脚注（基于 OCR 文本比对，未经页图核对）</h3>
+<p>- <strong>uei·声母 ts ③</strong>：OCR 原文在「③□筋~的：肌肉或食物结实有弹性」与下一声母组之间另有一残字 <code>□T</code>，疑为 OCR 误捕或页边注，本稿暂未纳入，待页图核查。</p>
+<p>- <strong>ε·声母 kʰ</strong>：OCR 原文作 <code>k①开楷</code>，但「开楷凯恺铠慨」为送气音，应为 kʰ（与前几页 OCR 常漏 ʰ 一致），本稿已订正为 kʰ。</p>
+<p>- 本页左右栏 OCR 混读严重，uei/uai 与 au/ei 的分组边界均为人工推断，请对照原图确认。</p></div>
+</section>
+<section class="page-section" id="p2591">
+<div class="page-bar"><button class="btn-copy" data-pid="2591">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">连云港市志·第五十九卷 方言卷</h2>
+<h3 class="section-title">书页 2591 — 第三章 同音字汇（续）</h3>
+<p>&lt;!-- ==================== 左栏 ==================== --&gt;</p>
+<h4 class="sub-title">韵母 au（续上页）</h4>
+<p>页首续接行：陶萄讨 ④套　饺狡铰绞缴搅矫侥 ④叫较校~对教</p>
+<div class="entry-title">声母 l</div>
+<p>① 孬 捞 乱~：乱拿　② 劳 捞 打~ 唠 牢 挠 烧 ~育 窖 觉 睡~ 膏~油 饶　③ 老 佬 姥 恼 脑　④ 闹 涝 捞 取高处、运处的物品</p>
+<div class="entry-title">声母 ts（知庄组）</div>
+<p>① 召 昭 招 糟 遭 朝~阳 钊　③ 早 枣 澡 找 爪 沼　④ 照 皂 灶 造 罩 棹 笊 赵 兆 诏 躁 肇</p>
+<div class="entry-title">声母 ɕ（c）</div>
+<p>① 消 销 硝 霄 箫 嚣 枵 逍　② 肴 淆　③ 小 晓　④ 笑 效 校 学~孝 哮</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 妖 邀 腰 要~求 幺 吆　② 摇 谣 遥 窑 姚 尧 肴 淆　③ 咬 舀　④ 耀 跃 鹞 要重~</p>
+<div class="entry-title">声母 ts'（精组）</div>
+<p>① 操 杪 抄 钞 超 剿 巢 □用筷子从锅里~面　潮 嘲　③ 草 吵 炒　④ 糙 踔 跨：~沟 □磨擦：在沙里~~ 锨</p>
+<div class="entry-title">声母 s</div>
+<p>① 烧 骚 臊 狐~ 稍 捎 梢 □~瓜：夏季产的长形黄皮菜瓜　② 韶 绍 介~　③ 扫 嫂 少 多~　④ 哨 邵 少~年 沫 肖 臊 害~扫~帚 苕 速</p>
+<div class="entry-title">声母 t</div>
+<p>① 偷　② 头 投 揄引：~奶 俞 用细棍通：~炉 度快 □耳~子：耳垢 子　③ 敲 弄散：这捆给弄~了　④ 透</p>
+<div class="entry-title">声母 ʐ（z）</div>
+<p>② 饶 娆　③ 绕 围~ 扰　④ 绕~道</p>
+<div class="entry-title">声母 l（另一组）</div>
+<p>① 溜 满：~~一缸水　② 楼 搂~地 蝼 喽　③ 篓 搂~抱　④ 漏 露~出 陋 瘘</p>
+<div class="entry-title">声母 k</div>
+<p>① 高 羔 糕 茭~瓜 膏~药　③ 稿 搞 篙 镐 搅 膏药~　④ 告 膏~油</p>
+<div class="entry-title">声母 k'（kʰ）</div>
+<p>① 敲　③ 考 烤~火 拷　④ 靠 犒 铐 烤~</p>
+<div class="entry-title">声母 ʐ（z，知庄组）</div>
+<p>① 周 舟 州 洲 诌 胡~　③ 走 粥 扭 拧：~断了 肘　④ 奏 捣 纣 咒 皱 邹 焰 宙 昼 骤 胄 药 籀</p>
+<div class="entry-title">声母 ts（另一组，知庄？）</div>
+<p>① 抽 □让风吹干：衣服挂在外边~~　② 愁 酬 筹 踌 仇 惆　③ 丑 瞅　④ 臭 凑</p>
+<div class="entry-title">声母 x</div>
+<p>① 蒿 薅　② 毫 豪 嚎 耗 号~叫　③ 好~坏郝　④ 浩 皓 好 爱~号~码</p>
+<div class="entry-title">声母 s（另一组）</div>
+<p>① 收 搜 艘 嗖 飕 锂　③ 手 守 首 叟 擞　④ 受 授 瘦 兽 寿 售</p>
+<div class="entry-title">声母 Ø（au 末组）</div>
+<p>① 糖 ~菜　② 熬 鳌　③ 袄 懊~悔　④ 敖 傲 鏊 奧 澳 懊</p>
+<div class="entry-title">声母 ʐ（z，末组）</div>
+<p>② 柔 揉　④ 肉</p>
+<h4 class="sub-title">韵母 io</h4>
+<div class="entry-title">声母 k</div>
+<p>① 勾 沟 钩 佝 篝　③ 狗 苟 枸　④ 够 构 购 垢</p>
+<div class="entry-title">声母 k'（kʰ）</div>
+<p>① 扣 纽~ 抠~出来 眍　② □凶、厉害：这人吃~汤 太~　③ 口　④ 叩 扣~押 寇 蔻 豆~</p>
+<div class="entry-title">声母 x</div>
+<p>① 购　② 侯 喉 猴 瘊　③ 吼　④ 后 厚 候</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 欧 殴 讴 鸥 区姓 沤　③ 呕 偶 藕 烟~狼烟　④ 枢</p>
+<h4 class="sub-title">韵母 iau（iɑu）</h4>
+<div class="entry-title">声母 p</div>
+<p>① 标 膘 长~ 镖 骠 彪 飙 瞇 盯：~着他，别让跑了　③ 表 裱 婊　④ 標 鳔 膘油发过的猪皮：吃~汤</p>
+<div class="entry-title">声母 p'（pʰ）</div>
+<p>① 飘 漂~浮　② 瓢 嫖 剽　③ 瞟~上一眼　④ 票 漂~白</p>
+<div class="entry-title">声母 m</div>
+<p>② 苗 描 瞄 喵　③ 秒 眇 渺 藐　④ 庙 妙</p>
+<div class="entry-title">声母 t</div>
+<p>① 雕 凋 碉 刁 叼 貂　④ 吊 掉 钓 调~查 铫</p>
+<div class="entry-title">声母 t'（tʰ）</div>
+<p>① 挑~水　② 条 调~和 答 迢　③ 挑~选 窕　④ 跳 眺</p>
+<div class="entry-title">声母 l</div>
+<p>① 溜~走了　② 牛 流 刘 浏 琉 硫 留 榴 瘤 流六　③ 柳 纽 扭 络　④ 谬 馏 溜水~:流动的水</p>
+<div class="entry-title">声母 l（ʎ，来母细音）</div>
+<p>② 辽 疗 寥 聊 撩 嘹 獠 镣 缭 僚 燎~原　③ 鸟 袅 潦 燎灯~了头发了　④ 料 尿 撂 瘳</p>
+<div class="entry-title">声母 tɕ</div>
+<p>① 交 郊 茭 胶 娇 焦 蕉 礁 椒 浇 教~书　③ ⬚</p>
+<div class="entry-title">声母 tɕ'</div>
+<p>① 究 鸠 揪 颗 疾 纠 □小~：小孩　③ 洒</p>
+<p>&lt;!-- ==================== 右栏 ==================== --&gt;</p>
+<h4 class="sub-title">韵母 au（右栏）</h4>
+<p>页首续接行：饺狡铰绞缴搅矫侥 ④叫较校~对教</p>
+<p>·育窖觉~睡 ·膏~油 ·宵完整~罐 ·膏 ·油</p>
+<div class="entry-title">声母 tɕ'</div>
+<p>① 晓 铫 侧 缣·边敲　② 乔 侨 桥 荞 瞧 远处的物品　③ 巧　④ 俏 峭 鞘 悄 翘 窍 橇</p>
+<div class="entry-title">声母 ɕ（c）</div>
+<p>① 消 销 硝 霄 箫 嚣 枵 逍　② 肴 淆　③ 小 晓　④ 笑 效 校 学~孝 哮</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 妖 邀 腰 要~求 幺 吆　② 摇 谣 遥 窑 姚 尧 肴 淆　③ 咬 舀　④ 耀 跃 鹞 要重~</p>
+<div class="entry-title">声母 ts</div>
+<p>① 操 杪 抄 钞 超 剿 巢 □用筷子从锅里~面 条 嘈 莫~：外边有人听　② 曹 漕 槽 朝~南 潮 嘲　③ 草 吵 炒　④ 糙 跸 跨：~沟 □磨擦：在沙里~~ 锨</p>
+<div class="entry-title">声母 s（臊类）</div>
+<p>① 骚 臊 狐~ 稍 捎 梢 □~瓜：夏季产的长形黄皮菜瓜　② 韶 绍 介~　③ 扫 嫂 少 多~　④ 哨 邵 少~年 沫 肖 臊 害~扫~帚 苕 速</p>
+<div class="entry-title">声母 t（d? 端组）</div>
+<p>① 都~是兜　③ 斗 升~抖 蚪 陡　④ 豆 逗 痘 窦 斗~争，两块布~起来 □~巧：碰巧 □急~：着急、激动</p>
+<div class="entry-title">声母 ʂ</div>
+<p>① 饶 娆　③ 绕 围~ 扰　④ 绕~道</p>
+<div class="entry-title">声母 t'（透组）</div>
+<p>① 偷　② 头 投 揄 引：~奶 俞 用细棍通：~炉 度快 □耳~子：耳垢 子　③ 敲 弄散：这捆给弄~了　④ 透</p>
+<div class="entry-title">声母 ʐ（z）</div>
+<p>② 饶 娆　③ 绕 围~ 扰　④ 绕~道</p>
+<div class="entry-title">声母 l</div>
+<p>① 溜 满：~~一缸水　② 楼 搂~地 蝼 喽　③ 篓 搂~抱　④ 漏 露出 陋 瘘</p>
+<div class="entry-title">声母 k</div>
+<p>① 高 羔 糕 茭~瓜 膏~药　③ 稿 搞 篙 镐 搅 膏药~　④ 告 膏~油</p>
+<div class="entry-title">声母 k'（k'）</div>
+<p>① 敲　③ 考 烤~火 拷　④ 靠 犒 铐 烤~</p>
+<div class="entry-title">声母 ʐ（z，知庄组）</div>
+<p>① 周 舟 州 洲 诌 胡~　③ 走 粥 扭 拧：~断了 肘　④ 奏 捣 纣 咒 皱 邹 焰 宙 昼 骤 胄 药 籀</p>
+<div class="entry-title">声母 ts（彻/澄组?）</div>
+<p>① 抽 □让风吹干：衣服挂在外边~~　② 愁 酬 筹 踌 仇 惆　③ 丑 瞅　④ 臭 凑</p>
+<div class="entry-title">声母 x</div>
+<p>① 蒿 薅　② 毫 豪 嚎 耗 号~叫　③ 好~坏郝　④ 浩 皓 好 爱~号~码</p>
+<div class="entry-title">声母 s</div>
+<p>① 收 搜 艘 嗖 飕 锂　③ 手 守 首 叟 擞　④ 受 授 瘦 兽 寿 售</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 糖 ~菜　② 熬 鳌　③ 袄 懊~悔　④ 敖 傲 鏊 奧 澳 懊</p>
+<div class="entry-title">声母 ʐ（z，日母）</div>
+<p>② 柔 揉　④ 肉</p>
+<h4 class="sub-title">韵母 ou / iou（右栏中部）</h4>
+<div class="entry-title">声母 t</div>
+<p>① 都~是兜　③ 斗 升~抖 蚪 陡　④ 豆 逗 痘 窦 斗~争，两块布~起来 □~巧：碰巧 □急~：着急、激动</p>
+<div class="entry-title">声母 t'</div>
+<p>① 偷　② 头 投 揄 引：~奶 俞 用细棍通：~炉 度快 □耳~子：耳垢 子　③ 敲 弄散：这捆给弄~了　④ 透</p>
+<div class="entry-title">声母 l</div>
+<p>① 溜~走了　② 牛 流 刘 浏 琉 硫 留 榴 瘤 流六　③ 柳 纽 扭 络　④ 谬 馏 溜水~:流动的水</p>
+<div class="entry-title">声母 l（ʎ，来母细音）</div>
+<p>② 辽 疗 寥 聊 撩 嘹 獠 镣 缭 僚 燎~原　③ 鸟 袅 潦 燎灯~了头发了　④ 料 尿 撂 瘳</p>
+<div class="entry-title">声母 tɕ</div>
+<p>① 交 郊 茭 胶 娇 焦 蕉 礁 椒 浇 教~书　③ ⬚</p>
+<div class="entry-title">声母 tɕ'</div>
+<p>① 晓 铫 侧 缣·边敲　② 乔 侨 桥 荞 瞧 远处的物品　③ 巧　④ 俏 峭 鞘 悄 翘 窍 橇</p>
+<div class="entry-title">声母 ɕ（c）</div>
+<p>① 消 销 硝 霄 箫 嚣 枵 逍　② 肴 淆　③ 小 晓　④ 笑 效 校 学~孝 哮</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 妖 邀 腰 要~求 幺 吆　② 摇 谣 遥 窑 姚 尧 肴 淆　③ 咬 舀　④ 耀 跃 鹞 要重~</p>
+<div class="entry-title">声母 ʂ</div>
+<p>① 操 杪 抄 钞 超 剿 巢 □用筷子从锅里~面 条 嘈 莫~：外边有人听　② 曹 漕 槽 朝~南 潮 嘲　③ 草 吵 炒　④ 糙 踔 跨：~沟 □磨擦：在沙里~~ 锨</p>
+<div class="entry-title">声母 s</div>
+<p>① 骚 臊 狐~ 稍 捎 梢 □~瓜：夏季产的长形黄皮菜瓜　② 韶 绍 介~　③ 扫 嫂 少 多~　④ 哨 邵 少~年 沫 肖 臊 害~扫~帚 苕 速</p>
+<div class="entry-title">声母 ʂ（另一组）</div>
+<p>① 饶 娆　③ 绕 围~ 扰　④ 绕~道</p>
+<div class="entry-title">声母 ʐ（z）</div>
+<p>① □照：~头-棍　□扔：~过来　□理采：不~他</p>
+<div class="entry-title">声母 k</div>
+<p>① 勾 沟 钩 佝 篝　③ 狗 苟 枸　④ 够 构 购 垢</p>
+<div class="entry-title">声母 k'（k'）</div>
+<p>① 扣~抠·扳·出袈躯　② □凶、厉害：这人吃~汤 太~　③ 口　④ 叩 扣·押 寇 蔻 豆~</p>
+<div class="entry-title">声母 x</div>
+<p>① 购　② 侯 喉 猴 瘊　③ 吼　④ 后 厚 候</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 欧 殴 讴 鸥 区姓 沤　③ 呕 偶 藕 烟~狼烟　④ 枢</p>
+<h4 class="sub-title">韵母 iou / iəu（右栏下部）</h4>
+<div class="entry-title">声母 t</div>
+<p>① 丢</p>
+<div class="entry-title">声母 l</div>
+<p>① 溜~走了　② 牛 流 刘 浏 琉 硫 留 榴 瘤 流六　③ 柳 纽 扭 络　④ 谬 馏 溜水~:流动的水</p>
+<div class="entry-title">声母 l（ʎ）</div>
+<p>② 辽 疗 寥 聊 撩 嘹 獠 镣 缭 僚 燎~原　③ 鸟 袅 潦 燎灯~了头发了　④ 料 尿 撂 瘳</p>
+<div class="entry-title">声母 tɕ</div>
+<p>① 交 郊 茭 胶 娇 焦 蕉 礁 椒 浇 教~书　③ ⬚</p>
+<div class="entry-title">声母 tɕ'</div>
+<p>① 究 鸠 揪 颗 疾 纠 □小~：小孩　③ 洒</p>
+<div class="entry-title">声母 ɕ（c）</div>
+<p>① 消 销 硝 霄 箫 嚣 枵 逍　② 肴 淆　③ 小 晓　④ 笑 效 校 学~孝 哮</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 妖 邀 腰 要~求 幺 吆　② 摇 谣 遥 窑 姚 尧 肴 淆　③ 咬 舀　④ 耀 跃 鹞 要重~</p>
+<div class="entry-title">声母 ʂ</div>
+<p>① 操 杪 抄 钞 超 剿 巢 □用筷子从锅里~面条嘈莫~：外边有人听　② 曹漕槽朝~南潮嘲　③ 草吵炒　④ 糙踔跨：~沟□磨擦：在沙里~~锨</p>
+<div class="entry-title">声母 s</div>
+<p>① 骚臊狐~稍捎梢□~瓜：夏季产的长形黄皮菜瓜　② 韶绍介~　③ 扫嫂少多~　④ 哨邵少~年沫肖臊害~扫~帚苕速</p>
+<div class="entry-title">声母 ʂ</div>
+<p>① 饶娆　③ 绕围~扰　④ 绕~道</p>
+<div class="entry-title">声母 ʐ（z）</div>
+<p>① □照：~头-棍　□扔：~过来　□理采：不~他</p>
+<div class="entry-title">声母 k</div>
+<p>① 勾沟钩佝篝　③ 狗苟枸　④ 够构购垢</p>
+<div class="entry-title">声母 k'</div>
+<p>① 扣~抠·扳·出袈躯　② □凶、厉害：这人吃~汤太~　③ 口　④ 叩扣·押寇蔻豆~</p>
+<div class="entry-title">声母 x</div>
+<p>① 购　② 侯喉猴瘊　③ 吼　④ 后厚候</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 欧殴讴鸥区姓沤　③ 呕偶藕烟~狼烟　④ 枢</p>
+<div class="entry-title">声母 tɕ（底部末组）</div>
+<p>① 究鸠揪颗疚纠□小~：小孩　③ 洒</p>
+<h3 class="section-title">审核脚注</h3>
+<p>1. <strong>左右栏重复问题</strong>：au 韵母的多个声母组（如 l、k、k'、x、Ø、s、ts、ʐ 等）在左右两栏均有出现且内容高度相似，可能是左右栏各承载不同调类或同一组字的分栏排版。需用户对照原图确认去重或合并方式。</p>
+<p>4. <strong>tɕ' 第①声</strong>："晓铫侧缣·边敲"——"晓"字更可能归属 ɕ 组，此处可能为跨行混排</p>
+<p>5. <strong>iau 韵 t' 第④声</strong>："旐 宋~立交桥果"疑似跨页/跨行残留</p>
+<p>6. <strong>多处 □ 缺字框</strong>：表示原文模糊或无法辨认的字，保留原样不猜测</p></div>
+</section>
+<section class="page-section" id="p2592">
+<div class="page-bar"><button class="btn-copy" data-pid="2592">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">韵母 iə（或 iã）</h4>
+<div class="entry-title">声母 tɕ'</div>
+<p>① 秋 揪 瞅 楸 鳅 丘　② 求 球 仇 姓 囚 泗　③ 酋 瘸　④</p>
+<div class="entry-title">声母 c（ɕ）</div>
+<p>① 休 修 羞 靴　③ 朽 折：~树枝　④ 秀 绣 锈 袖</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 幽 优 忧 攸 悠 □扔　② 由 油 邮 尤 犹 游　③ 友 有 酉 莠　④ 又 右 佑 幼 宥 囿 黝 柚 釉</p>
+<h4 class="sub-title">韵母 æ</h4>
+<div class="entry-title">声母 p</div>
+<p>① 班 斑 癍 颁 扳　③ 板 版　④ 办 扮 瓣 □ ~嘴：争吵</p>
+<div class="entry-title">声母 p'</div>
+<p>① 攀　④ 盼 襻</p>
+<div class="entry-title">声母 m</div>
+<p>① 妈 ~~　② 蛮 鳗　③ 嫚 老~子：老太婆，老婆　④ 迈</p>
+<div class="entry-title">声母 f</div>
+<p>① 帆 番 翻　② 凡 矾 烦 繁 藩 樊　③ 反 返　④ 饭 贩 犯 范 泛</p>
+<div class="entry-title">声母 l（t?）</div>
+<p>① 丹 担~心 单 耽　③ 胆 掸　④ 淡 担~子 旦 但 诞 蛋 弹 氮</p>
+<div class="entry-title">声母 l'（t'? 送气）</div>
+<p>① 贪 坍 滩 摊　② 坛 潭 谭 檀 谈 痰 弹~琴　③ 毯 坦　④ 探 炭 碳 叹</p>
+<div class="entry-title">声母 ʐ</div>
+<p>① 然 燃　③ 染</p>
+<div class="entry-title">声母 s</div>
+<p>① 山 舢 三 叁 杉　③ 伞 散 松~徽产　④ 散~气</p>
+<div class="entry-title">声母 k</div>
+<p>① 甘 柑 干~湿 肝 竿 尴　③ 敢 橄 感 杆 秆 赶 擀　④ 干~部</p>
+<div class="entry-title">声母 k'</div>
+<p>① 刊 看~门 堪 勘　③ 砍 坎 槛 侃　④ 看~</p>
+<div class="entry-title">声母 x</div>
+<p>① 憨 酣 鼾　② 含 函 涵 寒 韩 衔~草　③ 罕 喊　④ 汉 汗 旱 捍 锝</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 安 鞍 庵 鹌　② □叹词，表示惊异　③ 俺 埯 掏 □应答声，是，对　④ 暗 岸 按 案</p>
+<h4 class="sub-title">韵母 u ã</h4>
+<div class="entry-title">声母 p</div>
+<p>① 栓 栓 删 闩　③ □选：把好的~出来　④ 涮 □抽选：~草 缮 屋</p>
+<div class="entry-title">声母 k</div>
+<p>① 关 鳏　④ 惯 惯</p>
+<div class="entry-title">声母 k'</div>
+<p>② 环 荣 壶~跪~腿</p>
+<div class="entry-title">声母 x</div>
+<p>① 欢　② 环 还~帐</p>
+<div class="entry-title">声母 t</div>
+<div class="entry-title">声母 Ø</div>
+<p>① 弯 湾　② 玩 顽　③ 晚 挽 娩　④ 万</p>
+<h4 class="sub-title">韵母 ē</h4>
+<div class="entry-title">声母 t</div>
+<p>① 占~卜 沾 粘 毡 瞻 战 轻剁：~肉　③ 展 振 黯　④ 占~领 战 颤</p>
+<div class="entry-title">声母 l</div>
+<p>② 男 南 兰 拦 栏 蓝 篮 难　③ 览 搅 榄 缆 奶 ~~　④ 烂 滥 难 灾~</p>
+<div class="entry-title">声母 ts（知庄组）</div>
+<p>② 蝉 禅~宗 婵 缠 蟾　③ 谄　④ 屋 善 膳 缮 蟮 单姓 禅~让 赡 骗~马 栈 蘸 站</p>
+<div class="entry-title">声母 s（一组）</div>
+<p>① 簪　③ 斩 崭 盎 攒~钱　④ 暂 赞 绽</p>
+<div class="entry-title">声母 s（另一组）</div>
+<p>① 扇 煽 膻 苫 草~子　③ 闪 陕　④ 扇 苫~</p>
+<div class="entry-title">声母 z（?）</div>
+<h4 class="sub-title">韵母 iē（左栏底部）</h4>
+<div class="entry-title">声母 ts（精组）</div>
+<p>① 掺 参~加 搀 餐 □啄：鸡~米 □钉：~鞋　② 蚕 惭 残 馋 谗 潺 □捣：~蒜　③ 产 铲　④ 灿 粲 插：把棍~在泥里</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">韵母 i ē</h4>
+<div class="entry-title">声母 tɕ</div>
+<p>① 间 空~艰 监~牢 奸　③ 拣 减 碱 简 柬　④ 涧 间~断 监~视 鉴 谏 舰</p>
+<div class="entry-title">声母 c（ɕ）</div>
+<p>① 铅　④ 嵌 槛 门~ 堑</p>
+<div class="entry-title">声母 Ø</div>
+<p>① 淹　② 颜　③ 眼　④ 雁</p>
+<div class="entry-title">声母 ʐ</div>
+<p>② 咸 闲 衔~接　③ 喊　④ 限 馅 陷 苋~菜</p>
+<h4 class="sub-title">韵母 u ã（右栏续）</h4>
+<div class="entry-title">声母 p</div>
+<p>① 般　③ ?　④ ?</p>
+<h4 class="sub-title">韵母 ε</h4>
+<div class="entry-title">声母 p</div>
+<p>① ?</p>
+<div class="entry-title">声母 p'</div>
+<p>① ?</p>
+<h4 class="sub-title">韵母 ē（右栏）</h4>
+<div class="entry-title">声母 ?</div>
+<h4 class="sub-title">韵母 iē（右栏主区）</h4>
+<div class="entry-title">声母 p</div>
+<p>① 边 编 鞭 □小~~ :蓖麻　③ 扁 编 匾 编　④ 褊 贬　④ 变 便 方~ 辨 辫 辞 卞 汴 遍 做一~</p>
+<div class="entry-title">声母 p'</div>
+<p>① 篇 偏 翩　② 便~宜　③ 遍 贬 笑~ :讽 刺　④ 片 骗 遍~地</p>
+<div class="entry-title">声母 k</div>
+<div class="entry-title">声母 m</div>
+<p>② 棉 绵 眠　③ 免 勉 娩 鞔 析起来缝：~边　④ 面 缅</p>
+<div class="entry-title">声母 k'</div>
+<div class="entry-title">声母 x</div>
+<div class="entry-title">声母 t</div>
+<p>① 掂 颠 癫 巅　③ 点 典 碘　④ 店 惦 垫 电 佃 甸 殿 靛 淀 奠 簟~箩：芦苇编的祭品</p>
+<div class="entry-title">声母 Ø</div>
+<div class="entry-title">声母 l</div>
+<p>② 连 涟 莲 年 粘~糕 鲇 怜 联 镰 廉 帘　③ 脸 埝 捻 撑 碾　④ 念 捻 灯~子 恋 练 链 殓 敛 悑</p>
+<div class="entry-title">声母 t'（l'?）</div>
+<p>① 天 添　② 田 恬 甜 填　③ 舔 腆　④ 添</p>
+<h3 class="section-title">审核脚注</h3></div>
+</section>
+<section class="page-section" id="p2593">
+<div class="page-bar"><button class="btn-copy" data-pid="2593">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">韵母 iē（接 2589 页）</h4>
+<p><strong>声母 tɕ</strong></p>
+<p>① 肩 捐 兼 尖 煎 犍 笺 坚 占 沾 粘 毡 占 瞻　③ 检 俭 捡 剪 茧 跃 展 据 黯　④ 件 贱 溅</p>
+<p><strong>声母 tɕ'</strong></p>
+<p>① 牵 千 迁 歼 纤~纬　② 钱 前 乾~坤 虔　③ 潜 钳 蝉 婵 禅 缠 蟾　④ 浅 遣 谄　④ 镞 羡 楦</p>
+<p><strong>声母 Ø</strong></p>
+<p>① 鸳 渊 冤　② 元 园 莞 员 圆 缘 原 源 袁 猿 辕 垣 援　③ 远　④ 院 愿 怨 苑</p>
+<p><strong>声母 c (ɕ)</strong></p>
+<p>① 先 仙 鲜 掀 扇 煽 膻 苫　② 贤 弦 涎　③ 显 闪 陕 险　④ 现 蚬 线 宪 腺 羡 扇 苫 善 膳 缮 蟮 单 禅 赡 骗</p>
+<h4 class="sub-title">韵母 an (ã)</h4>
+<p><strong>声母 Ø</strong></p>
+<p>① 烟 胭 咽~喉 焉 蔫 腌 醃 阉 淹　② 言 延 涎 筵 炎 盐 严 阎 研 沿 岩 檐 然 燃　③ 演 掩 衍 兖 染　④ 验 埝 艳 焰 酬 彦 谚 堰 砚 咽 燕 宴 □门~后：门背后</p>
+<h4 class="sub-title">韵母 õ (oŋ)</h4>
+<p><strong>声母 p</strong></p>
+<p>① 帮 邦 梆 傍~晚 浜 □补：~一块　③ 榜 绑 膀~子　④ 棒 谤 磅~秤 泵 棓</p>
+<p><strong>声母 p'</strong></p>
+<p>① □豆子泡~了　② 旁 螃 膀~胱 庞 彷　③ 榜旁乱说　④ 胖</p>
+<p><strong>声母 m</strong></p>
+<p>② 芒 茫 忙 盲 氓　③ 莽 蟒</p>
+<p><strong>声母 f</strong></p>
+<p>① 方 芳 坊 妨~人　② 房 防 坊 纺 妨~碍　③ 访 肪 仿 纺　④ 放</p>
+<p><strong>声母 t (d?)</strong></p>
+<p>① 当 应~裆　③ 党 挡 档　④ 当正~荡 砀 宕用两个容器来回倒，使流汁食物降温</p>
+<p><strong>声母 p（另一组，可能属不同调类）</strong></p>
+<p>① 潘　② 盘 磐 蟠　④ 叛 判</p>
+<p><strong>声母 m（另一组）</strong></p>
+<p>② 馒 瞒　③ 满　④ 漫 幔 镘</p>
+<p><strong>声母 t（端组 d?）</strong></p>
+<p>① 端　③ 短断拦路抢动：~路　④ 段 锻 煅 缎 断判~</p>
+<p><strong>声母 t'</strong></p>
+<p>① 汤 倘　② 堂口堂膛 镗 棠 唐 塘 糖 溏 搪 赤唐螗　③ 躺 淌　④ 烫 趟</p>
+<p><strong>声母 l (n?)</strong></p>
+<p>① 狼 黄~子嚷　② 狼蚁廊 囊　③ 朗 攘　④ 浪 囊□皱纹：一脸~子</p>
+<p><strong>声母 l' (l?)</strong></p>
+<p>② 蛮 孪 鸾 銮 栾　③ 暖 卵　④ 乱</p>
+<p><strong>声母 t（知庄组 ts?）</strong></p>
+<p>① 专 砖 肤　③ 转~达　④ 转~动 篆 传~</p>
+<p><strong>声母 ts（知庄组）</strong></p>
+<p>① 张 章 彰 蟑 樟 臧 脏 赃　③ 掌 长 生 涨~潮　④ 丈 仗 杖 帐 胀 涨 障 葬 脏 内~藏 西~</p>
+<p><strong>声母 ts'</strong></p>
+<p>① 穿 川 余 窜 东跑西～　② 船 传~达 椽　③ 喘　④ 串 窜~动 篡 纂</p>
+<p><strong>声母 s</strong></p>
+<p>① 酸　④ 算 蒜</p>
+<p><strong>声母 ş</strong></p>
+<p>① 桑 丧~事 伤 商 墒　③ 嗓 操 □塞：~满了　④ 丧~失 上 尚 徜</p>
+<p><strong>声母 ʐ (z.)</strong></p>
+<p>③ 软 阮</p>
+<p><strong>声母 ʐ (z)</strong></p>
+<p>① 让不用~，吃光了自己拿　② 瓤 穰□累：走~了　④ 让</p>
+<p><strong>声母 k</strong></p>
+<p>① 官 棺 观 参~ 冠衣~　③ 馆 管　④ 贯 罐 灌 冠</p>
+<p><strong>声母 k'</strong></p>
+<p>① 宽　③ 款</p>
+<p><strong>声母 x</strong></p>
+<p>① 欢 獾　② 桓　③ 缓　④ 换 唤 涣 焕 患 宦 幻</p>
+<p><strong>声母 Ø</strong></p>
+<p>① 豌 剜　② 完 丸 纨　③ 腕 白 宛 碗 宛 婉 惋</p>
+<h4 class="sub-title">韵母 aŋ (ang)</h4>
+<p><strong>声母 k</strong></p>
+<p>① 冈 刚 纲 钢 岗 南~:灌云地名 缸 豇 肛 缰　③ 港 讲 岗 站~□很，非常：~好了　④ 杠 虹 出~，天~起来了钢 把刀、锨之类工具回炉加钢□呛：香烟太~□垫高、夯实扛</p>
+<p><strong>声母 k'</strong></p>
+<p>① 康 慷 糠　③ □用头抵：~人　④ 抗 炕</p>
+<p><strong>声母 x</strong></p>
+<p>① 夯　② 航 杭 行 排~ 绗　④ 巷 项~圈</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">韵母 iē（续）</h4>
+<p><strong>声母 tɕ' 续（第 ④ 声及以下）</strong></p>
+<p>试~眷入娲~圈羊~绢蕈舅~母</p>
+<p><strong>声母 tɕ'（另组 / 或 Ø 组）</strong></p>
+<p>① 圆圆~　② 权 全 泉 拳 蜷 跪 颧　③ 　 ④ 饯 践 剑 见 建 腱 健 荐 渐 箭 占 战 颤 犬④劝券</p>
+<p><strong>声母 c (ɕ)</strong></p>
+<p>① 宣 喧 渲 轩　② 玄 悬 旋 漩 眩　④ 绚　欠 芡 歉 纤 拉~</p>
+<h4 class="sub-title">韵母 õ（右栏）</h4>
+<p><strong>声母 p</strong></p>
+<p>① 帮邦梆锑~贼张□朴:一块　③ 榜绑膀~子　④ 棒谤磅~秤泵棓</p>
+<p><strong>声母 p'</strong></p>
+<p>① 降豆子泡~了　② 旁螃膀~胱庞彷　③ 榜旁乱说　④ 胖</p>
+<p><strong>声母 m</strong></p>
+<p>② 芒茫忙盲氓　③ 莽蟒</p>
+<p><strong>声母 f</strong></p>
+<p>① 方芳坊妨~人　② 房防坊纺妨~碍　③ 访肪仿纺　④ 放</p>
+<p><strong>声母 t'</strong></p>
+<p>① 汤 倘　② 堂口膛篏棠唐塘糖溏搪赤唐螗　③ 躺淌　④ 烫趟</p>
+<p><strong>声母 l</strong></p>
+<p>① 浪糠~子嚷　② 狼蚁廊囊　③ 朗攘　④ 浪囊□皱纹：一脸~子</p>
+<p><strong>声母 l' (n?)</strong></p>
+<p>② 蛮孪鸾銮栾　③ 暖卵　④ 乱</p>
+<p><strong>声母 t (ts?)</strong></p>
+<p>① 张彰蟑樟臧脏赃　③ 掌长生涨~潮　④ 丈仗杖帐胀涨障葬脏内~藏西~</p>
+<p><strong>声母 ts (ts')</strong></p>
+<p>① 穿川余窜东跑西～　② 船传~达椽　③ 喘　④ 串窜~动篡纂</p>
+<p><strong>声母 s</strong></p>
+<p>① 酸　④ 算蒜</p>
+<p><strong>声母 ş</strong></p>
+<p>① 桑丧~事伤商墒　③ 嗓操□塞：~满了　④ 丧~失上尚徜</p>
+<p><strong>声母 z (ʐ)</strong></p>
+<p>① 让不用~，吃光了自己拿　② 瓤穰□累：走~了　④ 让</p>
+<p><strong>声母 k</strong></p>
+<p>① 官棺观参~冠衣~　③ 馆管　④ 贯罐灌冠</p>
+<h4 class="sub-title">韵母 aŋ（右栏续）</h4>
+<p><strong>声母 k'</strong></p>
+<p>① 康 慷 糠　③ □用头抵：~人　④ 抗 炕 扛</p>
+<p><strong>声母 x</strong></p>
+<p>① 夯　② 航 杭 行 排~ 绗　④ 巷 项~圈</p>
+<p>以上两组已归入 aŋ 续，从 õ 区移出。</p>
+<h4 class="sub-title">韵母 yǒ (右栏下部)</h4>
+<p><strong>声母 tɕ (tc?)</strong></p>
+<p>① 捐娟鹃涓　③ 卷~起来　④ 倦卷</p>
+<p><strong>声母 Ø</strong></p>
+<p>① 鸳渊冤　② 元园莞员圆缘原源袁猿辕垣援　③ 远　④ 院愿怨苑</p></div>
+</section>
+<section class="page-section" id="p2594">
+<div class="page-bar"><button class="btn-copy" data-pid="2594">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">韵母 iəŋ（iong）</h4>
+<p><strong>声母 Ø</strong></p>
+<p>① 肮　② 昂　③ 卬~们：我们，在青少年中使用□焚烧：草垛~了　④ 盎</p>
+<p><strong>声母 l (n)</strong></p>
+<p>② 娘 良 粮 凉 量~布 粱 梁　③ 两 俩　④ 亮 辆 晾 量数~ 酿</p>
+<p><strong>声母 tc (tɕ)</strong></p>
+<p>① 江 豇 姜 疆 僵 缰 礓 刚 将~来　③ 蒋 奖 耩 讲 跃 老~子　④ 匠 酱 将~军 降~雨 辈</p>
+<p><strong>声母 tc' (tɕ')</strong></p>
+<p>① 腔 羌 炝 呛 风~着了 枪　② 墙 蔷 樯 详 翔 强~弱　③ 抢 强~大 挑~面饼 □铲：~锅　④ 战 呛</p>
+<p><strong>声母 c (ɕ)</strong></p>
+<p>① 箱 厢 湘 相~好 乡 香 襄 镶　② 享 降~服　③ 想 响 饷　④ 向 象 像 橡 相~面 项</p>
+<p><strong>声母 Ø（二组）</strong></p>
+<p>① 央 秧 殃 鞅 嚷 阳 太~　② 羊 洋 氧 阳 扬 央 中当~ 鸯 疡　③ 养 痒 仰　④ 样 恙 漾</p>
+<h4 class="sub-title">韵母 uəŋ（uong）</h4>
+<p><strong>声母 ts（知庄组）</strong></p>
+<p>① 庄 桩 装 妆　③ 奘把成根的物体弄整齐：~筷子　④ 壮 状 撞 幢 僮~族　④ 状状撞幢僮~族</p>
+<p><strong>声母 ts'（知庄组）</strong></p>
+<p>① 窗 疮 □脸~黄：脸色很黄　② 床 童　③ 闯~过去　④ 创 闯~关东</p>
+<p><strong>声母 s</strong></p>
+<p>① 双 霜 孀　③ 爽凑沥水：把韭菜~~　④ 双</p>
+<p><strong>声母 k</strong></p>
+<p>① 光 胱 桄　③ 广　④ 逛 桄~线 ☐ ~脸</p>
+<p><strong>声母 k'</strong></p>
+<p>① 筐 匡 谁　② 狂　③ □坟坑　④ 矿 旷 况 框</p>
+<p><strong>声母 x</strong></p>
+<p>① 荒 慌　② 皇 惶 凰 黄 磺 簧 蝗　③ 谎 恍 幌　④ 晃</p>
+<p><strong>声母 Ø</strong></p>
+<p>① 汪 枉　② 王 亡 芒 麦~望到外边~~　③ 网 往~来　④ 忘 妄 往~东 旺 望 希~</p>
+<h4 class="sub-title">韵母 e / ee</h4>
+<p><strong>声母 p</strong></p>
+<p>① 崩 绷 嘣 奔~跑 锛 迸~火星 □溅：~一身水　③ 本　④ 笨 奔投~蹦 销 泵 蚌~埠</p>
+<p><strong>声母 p'</strong></p>
+<p>① 烹 怦 砰 喷~水　② 朋 棚 鹏 盆 彭 澎 膨 蓬　③ 捧　④ 碰 喷~香 □正在：~干 活</p>
+<p><strong>声母 m</strong></p>
+<p>① 闷少言寡语 ☐腐朽：木头一淋就~了　② 门 们 扪 蒙 溢 濛 矇 朦 萌 盟 □藏~~：捉迷藏</p>
+<p><strong>声母 f</strong></p>
+<p>① 丰 风 讽 枫 分区~吩 纷 芬 封 峰 烽 锋 蜂　② 坟 冯 焚 汾 逢 缝~补　③ 粉　④ 奉 凤 俸 缝裂~份 氛 粪 岔 愤 畚</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">韵母 õŋ（eng/ong）— 接续上页</h4>
+<p><strong>声母 f</strong></p>
+<p>① 丰 风 讽 枫 分区~吩 纷 芬 封 峰 烽 锋　② 冯 讽冯蔑汾逢缝~补　③ 粉　④ 奉凤俸缝裂~份氛粪岔愤畚</p>
+<p><strong>声母 t (d)</strong></p>
+<p>① 灯 登 凳 板~ 噔 蹬 敦 墩 吨 蹲　③ 等 盯 戳　④ 质 顿 囤 炖 磴 瞪 凳 邓</p>
+<p><strong>声母 t' (d')</strong></p>
+<p>① 吞 □ 通 腾 慢~~　② 疼 屯 豚 誉 腾飞~藤 臀　③ 在泥水里踩：~烂泥　④ 褪吞~子：嗓子</p>
+<p><strong>声母 l (n)</strong></p>
+<p>① 愣~子：呆子 扔~石头　② 能 仑 抢 伦 沦 纶 轮　③ 冷　④ 论 弄 恁 木 麦 愣 嫩</p>
+<p><strong>声母 ts（知庄组）</strong></p>
+<p>① 争 挣~扎 睁 峥 狰 筝 贞 侦 针 珍 诊 真 斟 正~月 征 砧 尊 遵 曾~祖 增 憎 赠 罾　③ 整 拯 枕~木 怎 尊　④ 郑 挣 牛~断了绳子 阵 振 震 镇 证 政 正~北 症 圳 枕~着书睡赠 □澄清：~水</p>
+<p><strong>声母 ts'（知庄组）</strong></p>
+<p>① 村 撑 抻 称~号 铛 饼~子　② 成 城 诚 盛~水 承 丞 呈 程 逞 乘~法 惩 沉 层 曾~经 存 臣 辰 晨 忱 陈 尘　③ 碜　④ 寸 衬 忖 蹭 磨~穿 桌~ 秤 称~心 趁</p>
+<p><strong>声母 s（一）</strong></p>
+<p>① 深 孙 升 僧 森 参 人~生 甥 笙 牲 申 伸 呻 绅 身 声　② 绳 神　③ 损 笋 榫 省 沈 审 婶　④ 胜 圣 甚 慎 盛~大 渗 疹 乘 史~剩 □~牛：公牛</p>
+<p>① 双 霜 孀　③ 爽凑沥水：把韭菜~~</p>
+<p><strong>声母 z (ʐ)</strong></p>
+<p>① 扔　② 人 仁 壬 任姓　③ 忍　④ 认 刃 纫 韧 任~务</p>
+<p><strong>声母 k</strong></p>
+<p>① 根 跟 更~改 粳 耕　③ 庚 艮 羹 耿 埂 梗 颈 脖~　④ 更~好</p>
+<p><strong>声母 k'</strong></p>
+<p>① 吭 坑 □低：头~着　③ 恳 垦 肯 啃　④ 指紧抓不放 □垢：茶~</p>
+<p><strong>声母 x</strong></p>
+<p>① 亨 哼　② 痕 恒 衡　③ 很 狠　④ 恨 □</p>
+<p><strong>声母 Ø</strong></p>
+<p>① 恩　② 嗯表示怀疑的语气词　③ 摁　④ 硬 嗯</p>
+<h4 class="sub-title">韵母 in（in）</h4>
+<p><strong>声母 p</strong></p>
+<p>① 兵 宾 滨 缤 镇 冰 斌 彬　③ 饼 丙 禀 秉　④ 病 柄 并 摽 摈 鬓 殡</p>
+<p><strong>声母 p'</strong></p>
+<p>① 拼 姘 乒　② 平 评 坪 萍 贫 凭 频 瓶 屏</p>
+<p><strong>声母 m</strong></p>
+<p>① 冈少言寡语 ☐腐败：木头一淋就~了　② 门 们 扪 蒙 溢 濛 矇 朦 萌 盟 □藏~~：捉迷藏</p>
+<p><strong>审核脚注：</strong></p></div>
+</section>
+<section class="page-section" id="p2595">
+<div class="page-bar"><button class="btn-copy" data-pid="2595">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">韵母 in</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>p'</td><td>③品　④聘 喷~香</td></tr>
+<tr><td>m</td><td>②明 名 铭 旻 萌 珉 缗 冥 瞑 螟　③敏 闽 悯 抿 皿　④命 谜 泼~：出谜语</td></tr>
+<tr><td>t</td><td>①丁 叮 盯 钉 玎 靳 疗　③顶 鼎　④定 旋 锭 订 钉~鞋</td></tr>
+<tr><td>t'</td><td>①听 厅　②亭 停 婷 庭 蜓 霆 莛　③挺 艇　④挺 挺打：~一顿</td></tr>
+<tr><td>l</td><td>①拎　②林 淋 琳 霖 玲 聆 龄 铃 伶 翎 凛 灵 棱 凌 陵 绫 零 宁 拧 凝 麟 磷 鳞 临　③领 岭 檩　④令 另 菱 赁 佞 棱 淋~病 宁~可</td></tr>
+<tr><td>tc (tɕ)</td><td>①今 衿 斤 巾 金 筋 这种布~穿 襟 京 惊 鲸 兢 经 痉 旌 荆 津 精 睛 晶 □土经：大土坯　③紧 井 阱 谨 锦 景 儆 警　④近 净 静 尽 烬 进 浸 妗 仅 噤 禁~止 劲 泾 颈 茎 径 竞 境 镜 敬</td></tr>
+<tr><td>tc' (tɕ')</td><td>①轻 青 清 蜻 菁 侵 亲~人 倾 卿　②情 晴 财 秦 寝 擎 勤 琴 禽 擒 芹 □~死：找死　③请 顷 苟　④庆 心 亲~家 磬</td></tr>
+<tr><td>c (ɕ)</td><td>①星 腥 惺 猩 新 薪 心 芯 笔~ 辛 欣 兴~起　②型 形 邢 刑 行 寻~思 □改嫁：~人了　③醒 携 省 反~　④信 性 姓 芯 灯~兴 幸 杏 卤 衅 讯</td></tr>
+<tr><td>Ø</td><td>①音 鹰 因 姻 洇 纸~ 茵 阴 荫 英 婴 缨 鹦 蚁 蚂~ 应~该　②银 迎 营 吟 淫 寅 蝇 盈 赢 莹 萤 荧　③影 引 蚓 饮~酒 隐 尹 颖　④印 饮~牛 应答~硬 映</td></tr>
+</table>
+<h4 class="sub-title">韵母 oŋ（on）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>t</td><td>①冬 东 咚　③董 懂　④动 洞 冻 栋 咚</td></tr>
+<tr><td>t'</td><td>①通　②同 铜 佟 彤 童 潼 僮 瞳　③统 捅 桶 筒　④痛 协</td></tr>
+<tr><td>l</td><td>②农 哝 浓 脓 龙 陇 胧 笼 聋 隆 窿　③拢 垄　④弄</td></tr>
+<tr><td>ts</td><td>①终 宗 综 踪 鬃 中~心 忠 盅 钟 衷　③总 准 谆 肿 种~子 怎 踵 □~火：使死火复燃　④众 重~视 纵 粽 粽 中~计 仲 种~地</td></tr>
+<tr><td>ts'</td><td>①春 椿 充 葱 匆 聪 囱 冲~茶　②从 丛 虫 重~阳 崇 纯 唇 谆 醇 鹑　③蠢 宠</td></tr>
+<tr><td>s</td><td>①松 嵩　②尿　③耸 □三嘲 二~　④送 顺 讼 颂 宋 诵 舜 瞬</td></tr>
+<tr><td>z</td><td>②荣 容 镕 蓉 戎 绒 融 茸 冗</td></tr>
+</table>
+<h4 class="sub-title">韵母 ion</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>tc (tɕ)</td><td>①军 君 均 钧　③菌 窘 迥　④郡 俊 骏 竣 峻</td></tr>
+<tr><td>t' (tɕ')</td><td>①倾 皴　②穷 琼 群 裙</td></tr>
+<tr><td>tc' (tɕ')</td><td>①胸 勋 兄 熏 凶 汹 匈　②熊 雄 寻 巡 旬 循　④尿 训 驯 讯 迅 汛 殉 逊</td></tr>
+<tr><td>x</td><td>①昏 婚 轰 烘 哄~笑 □变软：~柿子　②红 虹 洪 鸿 宏 横 魂 浑 馄 弘　③哄~骗　④江 哄起~</td></tr>
+<tr><td>Ø</td><td>①温 翁 嗡　②文 蚊 纹 条~闻　③稳 刎 吻 紊　④问 瓮</td></tr>
+</table>
+<h4 class="sub-title">韵母 e（入声，⑤）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>p</td><td>⑤八 拔 跋 霓</td></tr>
+<tr><td>m</td><td>⑤抹~布 沫 趺一直往前走，不停顿：从门口~过去了</td></tr>
+<tr><td>f</td><td>⑤发 法 乏 伐 堡 筏 阀 罚</td></tr>
+<tr><td>t</td><td>⑤答 搭 沓 一~纸 达 笪 套</td></tr>
+<tr><td>t'</td><td>⑤塔 褡 塌 踏 榻~本 溻 榻 遢 榻 汗~子 獭 □脱漏</td></tr>
+<tr><td>l</td><td>⑤腊 蜡 纳 捺 辣 痢 旯 邋 落遗留</td></tr>
+<tr><td>ts</td><td>⑤杂 闸 扎 札 轧 铡 炸~油条 砸 咂 折~断 浙 哲 蛰 惊~蜇 褶 辙 车~</td></tr>
+<tr><td>t (tʂ?)</td><td>⑤插 察 擦 嚓 撤 彻</td></tr>
+<tr><td>s (ʂ)</td><td>⑤杀 刹 撒 鞭 飒 卅 煞 霎 摄 涉 折~本 舌 没</td></tr>
+<tr><td>z</td><td>⑤热</td></tr>
+<tr><td>k</td><td>⑤鸽 蛤~蝠 割葛 各 阁 搁 胳 郭 □老~子：~儿</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">韵母 in（续）</h4>
+<div class="entry-title">声母 s</div>
+<p>&lt;p contenteditable="true"&gt;①松 嵩　②尿　③耸 □三嘲 二~　④送&lt;/p&gt;</p>
+<div class="entry-title">声母 z</div>
+<p>&lt;p contenteditable="true"&gt;②荣 容 镕 蓉 戎 绒 融 茸 冗&lt;/p&gt;</p>
+<div class="entry-title">声母 tc (tɕ)</div>
+<p>&lt;p contenteditable="true"&gt;①军 君 均 钧　③菌 窘 迥　④郡 俊 骏 竣 峻&lt;/p&gt;</p>
+<div class="entry-title">声母 t' (tɕ')</div>
+<p>&lt;p contenteditable="true"&gt;①倾 皴　②穷 琼 群 裙&lt;/p&gt;</p>
+<div class="entry-title">声母 tc' (tɕ')</div>
+<p>&lt;p contenteditable="true"&gt;①胸 勋 兄 熏 凶 汹 匈　②熊 雄 寻 巡 旬 循　④尿 训 驯 讯 迅 汛 殉 逊&lt;/p&gt;</p>
+<div class="entry-title">声母 x</div>
+<p>&lt;p contenteditable="true"&gt;①星 腥 惺 猩 新 薪 心 芯 笔~ 辛 欣 兴~起　②型 形 邢 刑 行 寻~思 □改嫁：~人了　③醒 携 省 反~　④信 性 姓 芯 灯~兴 幸 杏 卤 衅 讯&lt;/p&gt;</p>
+<div class="entry-title">声母 Ø</div>
+<p>&lt;p contenteditable="true"&gt;①拥 晕 措推：~门　②云 芸 耘 匀　③咏 泳 允 勇 涌 踊　④用 闰 润 佣 运 孕 韵 酝 蕴&lt;/p&gt;</p>
+<h4 class="sub-title">韵母 iə</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>k</td><td>①昆 坤 空　③孔 恐 捆　④困 空~子 控</td></tr>
+</table>
+<p>以上四组内容已标记为 <strong>OCR 混排，不可信</strong>，需对照原书补录。</p>
+<h4 class="sub-title">韵母 e（入声，⑤）— 右栏</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>k'</td><td>⑤壳 磕渴</td></tr>
+</table>
+<p>以上右栏 e(入) 区全部标记为 <strong>OCR 混排，不可信</strong>（仅 k' 组保留，因其未在左栏出现）。</p></div>
+</section>
+<section class="page-section" id="p2596">
+<div class="page-bar"><button class="btn-copy" data-pid="2596">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<p>页顶续接：小儿子轧结交纥</p>
+<h4 class="sub-title">韵母 iə（入声 · ⑤）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>k'</td><td>⑤磕 渴</td></tr>
+<tr><td>x</td><td>⑤合 盒 喝</td></tr>
+</table>
+<h4 class="sub-title">韵母 ie（入声 · ⑤）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>tc (tɕ)</td><td>⑤夹 挟 英 颊 甲 胛</td></tr>
+<tr><td>tc' (tɕ')</td><td>⑤恰 洽 掐</td></tr>
+<tr><td>c (ɕ)</td><td>⑤瞎 辖 匣 狎 狭 峡 侠 黠</td></tr>
+<tr><td>Ø</td><td>⑤压 押 鸭 轧 噎</td></tr>
+</table>
+<h4 class="sub-title">韵母 uə（入声 · ⑤）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>s</td><td>⑤刷</td></tr>
+<tr><td>k</td><td>⑤括 搜~ 刮 郭</td></tr>
+<tr><td>k'</td><td>⑤擋 括 包~ 刮</td></tr>
+<tr><td>x</td><td>⑤滑 猾 石 骨 划 计~</td></tr>
+<tr><td>Ø</td><td>⑤袜</td></tr>
+</table>
+<h4 class="sub-title">韵母 ɔ（入声 · ⑤）— 大组</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>p</td><td>⑤拨 钵 不 勃 孛 饽 脖 渤 孛~篮：浅圆形柳编用具</td></tr>
+<tr><td>p'</td><td>⑤泼 朴 仆 扑 迫 魄 拍 帕 曝 瀑</td></tr>
+<tr><td>m</td><td>⑤莫 膜 寞 摸 墨 默 陌 木 麦 脉 没</td></tr>
+<tr><td>f</td><td>⑤佛 弗 拂 绑</td></tr>
+<tr><td>t</td><td>⑤得 德 □紧：挤~~的 一小~ 焌火~手了</td></tr>
+<tr><td>t'</td><td>⑤特</td></tr>
+<tr><td>l</td><td>⑤肋 勒 搦~菜</td></tr>
+<tr><td>ts</td><td>⑤足 捉 卒 兵~ 烛 筑 逐 轴 祝 粥 妯 属~ 连 嘱 瞩 啄 琢 作 拙 桌 卓 凿 昨 柞 着 酌 浊 镯</td></tr>
+<tr><td>ts'</td><td>⑤出 黜 畜~牲 族 淑 缩 往后~ 促 触 猝 仓~ 怵 矗 戳 细切：~菜 绰 焯 煮：~菜 撮</td></tr>
+<tr><td>s</td><td>⑤俗 术 述 秫 熟 塾 肃 赎 续 速 宿~城 缩~小 叔 淑 束 粟 属 说 勺 汤~ 芍 索 朔 蜀</td></tr>
+<tr><td>z</td><td>⑤入 辱 褥 诺 若 弱</td></tr>
+<tr><td>ʂ</td><td>⑤执 汁 侄 秩 质 则 贼 泽 择 宅 窄 摘 责 掷 只 一~鸡 灸 塞 瓶~ 直 值 植 殖 职 织 ~识 式 饰 啬 色</td></tr>
+<tr><td>k</td><td>⑤骨 股 谷 聒 角—~钱</td></tr>
+<tr><td>k'</td><td>⑤哭 括 阔 窟 扩 廓 酷</td></tr>
+<tr><td>x</td><td>⑤忽 忽 斛 获 活 豁 核桃~ 霍 擢 藿 蓟 镬 或 惑</td></tr>
+<tr><td>ʐ</td><td>⑤日</td></tr>
+</table>
+<h4 class="sub-title">韵母 e（入声 · ⑤）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>t</td><td>⑤突 秃 脱 托 □烫：水~手</td></tr>
+<tr><td>l</td><td>⑤录 绿 禄 碌 六 陆 鹿 漉 麓 糯 诺 烙 骆 酪 洛 络 乐 欢~ 捋 搦 擘</td></tr>
+<tr><td>ts</td><td>⑤撮</td></tr>
+<tr><td>f</td><td>⑤福 幅 蝠 辐 复 腹 覆 服 伏 获 袱</td></tr>
+<tr><td>t</td><td>⑤独 读 毒 牍 犊 督 笃 掇 铎 踱 夺</td></tr>
+<tr><td>s</td><td>⑤十 拾 涩 瑟 虱 实 失 室 适 释 石 湿 食 塞 堵</td></tr>
+<tr><td>k</td><td>⑤格 革 隔 膈 嗝 给 把~你 鸽 虼 疙 角 豆~子 髁</td></tr>
+<tr><td>k'</td><td>⑤刻 克 客 磕 咳~嗽 须下 骨~:下巴壳</td></tr>
+<tr><td>x</td><td>⑤核~桃 黑 赫 口 赫 鹤 阖</td></tr>
+<tr><td>l</td><td>⑤律 略 掠 率 出勤~</td></tr>
+<tr><td>Ø</td><td>⑤屋 沃 机 物 勿 握</td></tr>
+</table>
+<h4 class="sub-title">韵母 yə（入声 · ⑤）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>tc (tɕ)</td><td>⑤菊 局 橘 倔~强 掘 绝 脚 决 厥 橛 噘 爵 觉 知~角 嚼 决 剧~本</td></tr>
+<tr><td>Ø</td><td>⑤额 恶 罪~ 扼 轭 鄂</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">韵母 ia（入声 · ⑤）</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+<tr><td>p</td><td>⑤别 憋 鳖</td></tr>
+<tr><td>p'</td><td>⑤撇</td></tr>
+<tr><td>m</td><td>⑤灭 篾 末 老~</td></tr>
+<tr><td>t</td><td>⑤跌 叠 碟 蝶 牒 谍</td></tr>
+<tr><td>t'</td><td>⑤铁 帖 贴</td></tr>
+<tr><td>l</td><td>⑤聂 镊 蹑 猎 摄 列 烈 裂 劣 捏 □锅盖~子：锅盖</td></tr>
+<tr><td>tc (tɕ)</td><td>⑤接 捷 劫 杰 揭 节 截 结 洁</td></tr>
+<tr><td>tc' (tɕ')</td><td>⑤妾 怯 切</td></tr>
+<tr><td>c (ɕ)</td><td>⑤协 瞎 辖 泄 歇 蝎 屑 不~一顾 楔~橛子 血</td></tr>
+<tr><td>Ø</td><td>⑤业 叶 页 孽</td></tr>
+</table>
+<h4 class="sub-title">韵母 ua / an / ε / en（入声 · ⑤）— 右栏中部</h4>
+<p><strong>待补录区域（原书右栏 ia 以下韵母区）：</strong></p>
+<p>- 右栏第2韵母区：ts, ts', s, z, ʂ, k, k', x, ʐ — 与左栏 ɔ 对应组完全重复（OCR 混排）</p>
+<p>- 右栏第3韵母区：p, m, f, t, t', l, s, z, ʂ, k, k', x, ʐ, Ø — 与左栏 ɔ/e 对应组完全重复（OCR 混排）</p>
+<p>- 右栏第4韵母区：k, k', x, l — 与左栏 e 对应组完全重复（OCR 混排）</p>
+<p>- 右栏第5韵母区：l, tc, Ø — 与左栏 e/yə 对应组完全重复（OCR 混排）</p>
+<h4 class="sub-title">韵母 ua（续 · 入声 ⑤）— 右栏下部</h4>
+<p>- p/m/f/t/t'/l/s/z/ʂ/k/k'/x/ʐ/Ø 各组均与左栏 ɔ/e 对应组完全重复</p>
+<p>- k/k'/x/l 各组均与左栏 e 对应组完全重复</p>
+<p>- l/tc/Ø 各组均与左栏 e/yə 对应组完全重复</p>
+<p>以上右栏全部标记为 <strong>OCR 混排，不可信</strong>。</p>
+<h4 class="sub-title">韵母 yə（入声 · ⑤）— 右栏</h4>
+<table class="data-table">
+<tr><th>声母</th><th>字汇</th></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2597">
+<div class="page-bar"><button class="btn-copy" data-pid="2597">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">第四章 方言词汇</h3>
+<p>本章记录连云港市城区的方言词约1600条，和普通话相同的则不收。词条按韵、声、调的次序排列。首字相同的同义词排在一起，第一条顶格，其他各词缩一格排列。字的右上角加“=”，表示用同音字代替。轻声音节不标调值。</p>
+<h3 class="section-title">左栏</h3>
+<h4 class="sub-title">声母 1（零声母 · Ø）</h4>
+<div class="entry-title">痴头寡脑 tʃ¹³¹³ tʃə³⁵ kua⁴¹ l⁴¹</div>
+<p>呆头呆脑，发愣的样子</p>
+<div class="entry-title">痴不愣嘲 tʃ¹³¹³ pʰə¹³ lɑŋ⁵⁵ tʃ⁵⁵</div>
+<div class="entry-title">痴不愣登 tʃ¹³¹³ pʰə¹³ lɑŋ⁵⁵ tɑŋ³¹³</div>
+<div class="entry-title">疵毛 tʃ¹³¹³ m³⁵</div>
+<p>低劣、差：这东西~</p>
+<div class="entry-title">支僵 tʃ¹³¹³ tʃiɑŋ³¹³</div>
+<p>僵硬</p>
+<div class="entry-title">□□ tʃ¹³¹³ tʃ¹³¹³</div>
+<p>形容快：小树~长大了</p>
+<div class="entry-title">嗞声 tʃ¹³¹³ sɑ⁰</div>
+<p>出声、讲话：莫~，外边来人了</p>
+<div class="entry-title">一 tʃ¹³¹³</div>
+<p>跑：上了路直~ | 吓~了</p>
+<div class="entry-title">跐 tʃ⁴¹</div>
+<p>滑：路不好走，一下~倒了</p>
+<div class="entry-title">子舅 tʃ¹³¹³ tʃiəu⁵⁵</div>
+<p>子女的舅舅</p>
+<div class="entry-title">翅拐子 tʃʰ⁵⁵ kuε⁴¹</div>
+<p>翅膀</p>
+<div class="entry-title">仔细鬼 tʃ¹³¹³ tʃi⁵⁵ kuei⁴¹</div>
+<p>①吝啬的人 ②形容心细的人</p>
+<div class="entry-title">□物 tʃ¹³¹³ u (=修)</div>
+<p>修理：~车子</p>
+<div class="entry-title">时气 tʃʰ³⁵ tʃʰi</div>
+<p>运气：这月~不好，老是掉钱</p>
+<div class="entry-title">志 tʃ⁵⁵</div>
+<p>①量：用竹杆子~~河有多深</p>
+<p>②复秤：管~秤，少一钱罚一斤</p>
+<div class="entry-title">死 s⁴¹</div>
+<p>①非常：~沉的，抬不动 | ~辈</p>
+<p>②在：你~哪块去了，找不到</p>
+<div class="entry-title">志号 tʃ⁵⁵ x⁵⁵</div>
+<p>记号：划道线留个~</p>
+<div class="entry-title">恣 tʃ⁵⁵</div>
+<p>舒服：透~</p>
+<div class="entry-title">死眼皮 s⁴¹ i⁴¹ pʰi³⁵</div>
+<p>不机灵，固执</p>
+<div class="entry-title">呲 tʃʰ¹³¹³</div>
+<p>讽刺、挖苦：说话~人</p>
+<div class="entry-title">死瘟贼 s⁴¹ uəŋ³¹³ tʃei³⁵</div>
+<p>沉默寡言的人</p>
+<div class="entry-title">使 s⁴¹</div>
+<p>①用：~啥写的</p>
+<p>②累：干活不多~要命</p>
+<div class="entry-title">泚 tʃʰ¹³¹³</div>
+<p>喷射：路边水管破了，直~</p>
+<div class="entry-title">痴痴霉霉 tʃ¹³¹³ tʃ¹³¹³ mei³⁵ mei³⁵</div>
+<p>呆头呆脑，发愣的样子</p>
+<div class="entry-title">四季莓 s⁵⁵ tʃʰi⁵⁵ mei³⁵</div>
+<p>芸豆</p>
+<div class="entry-title">四称 s⁵⁵ tʃʰ⁵⁵</div>
+<p>配合得当：这衣裳穿着</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">声母 1（零声母 · Ø）— 续</h4>
+<div class="entry-title">剔 tʰ¹³¹³</div>
+<p>特别：~直 | ~溜圆</p>
+<div class="entry-title">踢腾 tʰ¹³¹³ tʰəŋ⁰</div>
+<p>败坏：把钢笔~坏了</p>
+<div class="entry-title">提媒 tʰ¹³¹³ mei³⁵</div>
+<p>提亲</p>
+<div class="entry-title">哩唧 lʰi³¹³ lɑŋ³¹³</div>
+<p>边讲边骂，或发出别人听不清楚的埋怨的话</p>
+<div class="entry-title">理手 lʰi⁴¹ xu</div>
+<p>理采</p>
+<div class="entry-title">理菜 lʰi⁴¹ tʃʰ⁵⁵</div>
+<p>择菜</p>
+<div class="entry-title">理手划风 lʰi⁴¹ sou⁴¹ xu⁴¹ tʃʰ⁵⁵ fɑŋ³¹³</div>
+<p>说话时乱做手势的样儿</p>
+<div class="entry-title">里挤外拐 lʰi⁴¹ tʃi⁴¹ uε⁵⁵ kuε⁴¹</div>
+<p>不整齐：牙~</p>
+<div class="entry-title">利当 lʰi⁵⁵ tɑŋ</div>
+<p>利索</p>
+<div class="entry-title">利亮 lʰi⁵⁵ lɑŋ</div>
+<p>干净、清爽</p>
+<div class="entry-title">叽哇 tʃi³¹³ uɑ³¹³</div>
+<p>争吵，令人心烦的吵嚷</p>
+<div class="entry-title">叽吭 tʃi³¹³ kʰɑŋ³¹³</div>
+<p>顶嘴：鱼烂腥的提车上，问一声还~的</p>
+<div class="entry-title">湿 tʃʰ¹³¹³</div>
+<p>渗湿：衣服叫汗~透了</p>
+<div class="entry-title">湿索 tʃʰ¹³¹³ sɑ⁰</div>
+<p>不干不湿的程度：路上~的</p>
+<div class="entry-title">齐眉箍 tʃʰi³⁵ mei³⁵ ku³¹³</div>
+<p>刘海</p>
+<div class="entry-title">齐斩 tʃʰi³⁵ tʃɑ⁴¹</div>
+<p>整齐：把布剪~的</p>
+<div class="entry-title">起 tʃʰi⁴¹</div>
+<p>生：~香 | ~味</p>
+<div class="entry-title">起骒 tʃʰi⁴¹ kʰ⁵⁵</div>
+<p>马发情</p>
+<div class="entry-title">起窝 tʃʰi⁴¹ uɑ³¹³</div>
+<p>猫、狗发情</p>
+<div class="entry-title">起槽 tʃʰi⁴¹ tʃʰɑ⁰³⁵</div>
+<p>驴发情</p>
+<div class="entry-title">起栏 tʃʰi⁴¹ lɑ⁵⁵</div>
+<p>牛羊发情</p>
+<div class="entry-title">起圈 tʃʰi⁴¹ tʃʰyɑŋ³⁵</div>
+<p>猪发情</p>
+<div class="entry-title">汽露水 tʃʰi⁴¹ lu⁵⁵ suei⁴¹</div>
+<p>蒸气冷凝而成的水滴</p>
+<div class="entry-title">气 tʃʰi⁵⁵</div>
+<p>表示指引语气：去吃~，锅里有</p>
+<div class="entry-title">气噪头 tʃʰi⁵⁵ tʃʰɑ⁰ tʰi³¹³</div>
+<p>喉部</p>
+<div class="entry-title">气门嘴子 tʃʰi⁵⁵ mɑŋ³⁵ tʃuei⁴¹</div>
+<p>气门芯</p>
+<div class="entry-title">稀 ɕi³¹³</div>
+<p>很、非常，用在形容词之前：~累 | ~酸 | ~困 | ~热 | ~瘦 | ~干 | ~潮 | ~湿 | ~脏 | ~软 | ~松 | ~溜薄</p>
+<div class="entry-title">兮兮 ɕi³¹³ ɕi³¹³</div>
+<p>后缀，表示程度深：粘~</p></div>
+</section>
+<section class="page-section" id="p2598">
+<div class="page-bar"><button class="btn-copy" data-pid="2598">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">声母 Ø（续）</h4>
+<div class="entry-title">试花 ʂɿ⁵⁵ xua³¹³</div>
+<p>果树头一回开花</p>
+<div class="entry-title">试脉 ʂɿ⁵⁵ ma¹³</div>
+<p>切脉</p>
+<div class="entry-title">是 ʂɿ⁵⁵</div>
+<p>凡是：~亲三分向</p>
+<h4 class="sub-title">声母 i</h4>
+<div class="entry-title">鼻子 pi³⁵ tsɿ</div>
+<p>①五官之一 ②鼻涕</p>
+<div class="entry-title">鼻眼子 pi³⁵ iæ⁴¹ tsɿ</div>
+<p>鼻孔</p>
+<div class="entry-title">鼻眵 pi³⁵ tsʰɿ³¹³</div>
+<p>鼻垢</p>
+<div class="entry-title">避静 pi⁵⁵ tɕiŋ</div>
+<p>安静，没外来干扰：这段~</p>
+<div class="entry-title">跛 pʰ³¹³</div>
+<p>裂开：竹杆~了</p>
+<div class="entry-title">皮 pʰi³⁵</div>
+<p>调皮，乱玩一气</p>
+<div class="entry-title">皮麻 pʰi³⁵ ma³⁵</div>
+<div class="entry-title">皮衩子 pʰi³⁵ tʃʰ⁴¹ tsɿ</div>
+<p>下水摸鱼时穿的皮衣</p>
+<div class="entry-title">皮挂挂 pʰi³⁵ kua³¹³ kua³¹³</div>
+<p>因瘦皮肤松垂发绉的样子</p>
+<div class="entry-title">皮子 pʰi³⁵ tsɿ</div>
+<p>皮肤</p>
+<div class="entry-title">擗 pʰi⁴¹</div>
+<p>折：~树枝 | ~秸头</p>
+<div class="entry-title">屁头子 pʰi⁴¹ tʰi³⁵ tsɿ</div>
+<div class="entry-title">屁盘子 pʰi⁵⁵ pʰə³⁵ tsɿ</div>
+<div class="entry-title">屁精子 pʰi⁵⁵ tɕiŋ³¹³ tsɿ</div>
+<p>①不正派的人 ②长得女人相的男人</p>
+<div class="entry-title">眯 mi³¹³</div>
+<p>略睡一会：躺在这里~一下</p>
+<div class="entry-title">咪猫 mi³⁵ m³⁵</div>
+<p>母猫</p>
+<div class="entry-title">迷膛 mi³¹³ tʰɑŋ</div>
+<p>迷糊、神志不清：吓~了</p>
+<div class="entry-title">迷迷瞪瞪 mi³⁵ mi³⁵ tɑŋ³¹³ tɑŋ³¹³</div>
+<p>没睡好，神志不清的神态</p>
+<div class="entry-title">米面子 mi⁴¹ miẽ⁵⁵ tsɿ</div>
+<p>大米粉</p>
+<div class="entry-title">眯 mi⁵⁵</div>
+<p>困乏、想睡觉：上~了</p>
+<div class="entry-title">低失 ti³¹³</div>
+<p>①缓慢地、用力一根根地拔：~蒜薹 | ~头发 ②在众人中单独把一人喊出来：把他~出来谈谈，看怎想不通的</p>
+<div class="entry-title">地瓜花 ti⁵⁵ kuɑ³¹³ xua³¹³</div>
+<p>大丽花</p>
+<div class="entry-title">地蛋 ti⁵⁵ tæ⁵⁵</div>
+<p>土豆</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">声母 Ø（续）</h4>
+<div class="entry-title">剔 tʰi³¹³</div>
+<p>特别：~直 | ~溜圆</p>
+<div class="entry-title">踢腾 tʰi³¹³ tʰəŋ⁰</div>
+<p>败坏：把钢笔~坏了</p>
+<div class="entry-title">提媒 tʰi³⁵ mei³⁵</div>
+<p>提亲</p>
+<div class="entry-title">哩唧 li³¹³ lɑŋ³¹³</div>
+<p>边讲边骂，或发出别人听不清楚的埋怨的话</p>
+<div class="entry-title">理手 li⁴¹ xu</div>
+<p>理采</p>
+<div class="entry-title">理菜 li⁴¹ tsʰɿ⁵⁵</div>
+<p>择菜</p>
+<div class="entry-title">理手划风 li⁴¹ sou⁴¹ xua⁵⁵ fɑŋ³¹³</div>
+<p>说话时乱做手势的样儿</p>
+<div class="entry-title">里挤外拐 li⁴¹ tɕi⁴¹ uε⁵⁵ kuε⁴¹</div>
+<p>不整齐：牙~</p>
+<div class="entry-title">利当 li⁵⁵ tɑŋ</div>
+<p>利索</p>
+<div class="entry-title">利亮 li⁵⁵ lɑŋ</div>
+<p>干净、清爽</p>
+<div class="entry-title">叽哇 tɕi³¹³ uɑ³¹³</div>
+<p>争吵，令人心烦的吵嚷</p>
+<div class="entry-title">叽吭 tɕi³¹³ kʰɑŋ³¹³</div>
+<p>顶嘴：鱼烂腥的提车上，问一声还~的</p>
+<div class="entry-title">湿 ɕi³¹³</div>
+<p>渗湿：衣服叫汗~透了</p>
+<div class="entry-title">湿索 ɕi³¹³ sɑ⁰</div>
+<p>不干不湿的程度：路上~的</p>
+<div class="entry-title">齐眉箍 tɕʰi³⁵ mei³⁵ ku³¹³</div>
+<p>刘海</p>
+<div class="entry-title">齐斩 tɕʰi³⁵ tʃɑ⁴¹</div>
+<p>整齐：把布剪~的</p>
+<div class="entry-title">起 tɕʰi⁴¹</div>
+<p>生：~香 | ~味</p>
+<div class="entry-title">起骒 tɕʰi⁴¹ kʰɑ⁵⁵</div>
+<p>马发情</p>
+<div class="entry-title">起窝 tɕʰi⁴¹ uɑ³¹³</div>
+<p>猫、狗发情</p>
+<div class="entry-title">起槽 tɕʰi⁴¹ tɕʰaŋ³⁵</div>
+<p>驴发情</p>
+<div class="entry-title">起栏 tɕʰi⁴¹ lɑ⁵⁵</div>
+<p>牛羊发情</p>
+<div class="entry-title">起圈 tɕʰi⁴¹ tɕʰyɑŋ³⁵</div>
+<p>猪发情</p>
+<div class="entry-title">汽露水 tɕʰi⁴¹ lu⁵⁵ suei⁴¹</div>
+<p>蒸气冷凝而成的水滴</p>
+<div class="entry-title">气 tɕʰi⁵⁵</div>
+<p>表示指引语气：去吃~，锅里有</p>
+<div class="entry-title">气噪头 tɕʰi⁵⁵ tɕʰɑŋ⁴¹ tʰi³¹³</div>
+<p>喉部</p>
+<div class="entry-title">气门嘴子 tɕʰi⁵⁵ mɑŋ³⁵ tsei⁴¹ tsɿ</div>
+<p>气门芯</p>
+<div class="entry-title">稀 ɕi³¹³</div>
+<p>很、非常，用在形容词之前：~累 | ~酸 | ~困 | ~热 | ~瘦 | ~干 | ~潮 | ~湿 | ~脏 | ~软 | ~松 | ~溜薄</p>
+<div class="entry-title">兮兮 ɕi³¹³ ɕi³¹³</div>
+<p>后缀，表示程度深：粘~</p></div>
+</section>
+<section class="page-section" id="p2599">
+<div class="page-bar"><button class="btn-copy" data-pid="2599">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">声母 i（续）</h4>
+<div class="entry-title">兮兮 ɕi³¹³ ɕi³¹³（续）</div>
+<p>脏~ | 神经~</p>
+<div class="entry-title">西瓜萝卜 ɕi³¹³ kua³¹³ l³⁵ pə</div>
+<p>甜而脆的红心萝卜</p>
+<div class="entry-title">喜材 ɕi⁴¹ tsʰɛ⁵⁵</div>
+<p>老人在世时做好的棺材</p>
+<div class="entry-title">细 ɕi⁵⁵</div>
+<p>小气、吝啬</p>
+<div class="entry-title">恶寒 u⁵⁵ xɑ⁵⁵</div>
+<p>生病怕冷：到下午就~</p>
+<div class="entry-title">疑乎 i³⁵ xu</div>
+<p>①疑惑 ②犹豫</p>
+<div class="entry-title">姨侄 i³⁵ tsɿ¹³</div>
+<p>妻子的姐妹生的儿女：~婿</p>
+<h4 class="sub-title">声母 u</h4>
+<div class="entry-title">谱 pʰu³¹³</div>
+<p>溢：饭~了</p>
+<div class="entry-title">铺衬 pʰu³¹³ tsʰɑŋ</div>
+<p>碎布条</p>
+<div class="entry-title">肤皮 fu³¹³ pʰi</div>
+<p>头皮屑</p>
+<div class="entry-title">伏心天 fu³⁵ ɕiŋ³¹³ tiɛ³¹³</div>
+<p>中伏，夏天最热时</p>
+<div class="entry-title">副 fu⁵⁵</div>
+<p>次、份：你们别挤，我得一~一~卖 | 卖了三~</p>
+<div class="entry-title">吐 tʰu³¹³</div>
+<p>长时间煮：~鱼</p>
+<div class="entry-title">吐 tʰu⁵⁵</div>
+<p>①大人用嘴含着食物轻轻吐到婴儿口中 ②吐出：小孩~饭了</p>
+<div class="entry-title">土狗子 tʰu⁴¹ kəu⁴¹ tsɿ</div>
+<p>蝼蛄</p>
+<div class="entry-title">兔虎 tʰu⁵⁵ xu⁴¹</div>
+<p>老鹰</p>
+<div class="entry-title">芦秸 lu³⁵ tɕiɛ³¹³</div>
+<p>高粱秸</p>
+<div class="entry-title">芦秫 lu³⁵ ʂuə¹³</div>
+<p>高粱</p>
+<div class="entry-title">醋登子 tsʰu⁵⁵ tɑŋ³¹³ tsɿ</div>
+<p>盛醋的小碟子</p>
+<div class="entry-title">酥瓜 su³¹³ kua³¹³</div>
+<p>青色、长形带长条花纹的菜瓜，比黄瓜味甜，一般是生吃</p>
+<div class="entry-title">姑爹 ku³¹³ tɕiɛ³¹³</div>
+<p>父亲的姑父</p>
+<div class="entry-title">牯牛 ku⁴¹ liə³⁵</div>
+<p>未阉过的公牛</p>
+<div class="entry-title">孤拐 ku⁴¹ kuɛ⁴¹</div>
+<p>踝骨</p>
+<div class="entry-title">苦 kʰu⁴¹</div>
+<p>①挣、赚：~钱 ②很：~咸 | ~辣</p>
+<div class="entry-title">苦夏 kʰu⁴¹ ɕiɑ⁵⁵</div>
+<p>有些人在夏天食欲差、消瘦</p>
+<div class="entry-title">苦淫淫 kʰu⁴¹ i³⁵ in³⁵</div>
+<p>略有苦味：这药~的</p>
+<div class="entry-title">□ xu⁴¹</div>
+<p>①泼：~水 ②撒：~化肥 ③花费：钱~出去了</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">声母 u（续）</h4>
+<div class="entry-title">护襟子 xu⁵⁵ tɕiŋ³¹³ tsɿ</div>
+<p>大围嘴儿</p>
+<div class="entry-title">护力 xu⁵⁵ li⁴¹</div>
+<p>做事不肯出力</p>
+<div class="entry-title">五二鬼 u⁴¹ ɿ⁵⁵ kuei⁴¹</div>
+<p>不正经的人</p>
+<div class="entry-title">五月端 u⁴¹ yə¹³ tɔ⁵⁵</div>
+<p>端午节</p>
+<h4 class="sub-title">声母 y</h4>
+<div class="entry-title">缕缕 ly⁴¹ ly⁴¹</div>
+<p>连续、成群地向前：蚂蚁~的 | 汗~的 | ~带趟的</p>
+<div class="entry-title">趋 tɕy³¹³</div>
+<p>脚不离地往前挪动</p>
+<div class="entry-title">虚嚷 ɕy³¹³ zɑŋ³¹³</div>
+<p>表面上邀请一下：中午来吃饭，不~</p>
+<div class="entry-title">纡 y³¹³</div>
+<p>弯：~直了 | ~弯了</p>
+<div class="entry-title">鱼鸦 y³⁵ iɑ³¹³</div>
+<p>鱼鹰</p>
+<h4 class="sub-title">声母 I</h4>
+<div class="entry-title">爹 tɕiɛ³¹³</div>
+<p>祖父：我~在家</p>
+<div class="entry-title">□ tɕi³¹³</div>
+<p>用簸箕轻颠一下，把细小的筛出</p>
+<div class="entry-title">蜻蜋 tɕʰi³¹³ liɑŋ</div>
+<p>蝉</p>
+<div class="entry-title">蜻蜋猴 tɕʰi³¹³ liɑŋ xə³⁵</div>
+<p>蝉蛹</p>
+<div class="entry-title">做 tsʰu³¹³</div>
+<p>躺：~在地上</p>
+<div class="entry-title">□怀 ɕiɛ³¹³ xuɛ³⁵</div>
+<p>敞怀</p>
+<div class="entry-title">□合 ɕiɛ³¹³ xə</div>
+<p>敞着：怀~着</p>
+<div class="entry-title">爷 i⁵⁵</div>
+<p>叔：大~ | 二~ | 小~</p>
+<div class="entry-title">夜猫子 i⁵⁵ m³¹³ tsɿ</div>
+<p>猫头鹰，也喻夜间精力旺盛的人</p>
+<h4 class="sub-title">声母 a</h4>
+<div class="entry-title">巴察 pa³¹³ tʃʰa</div>
+<p>暗暗地查看</p>
+<div class="entry-title">钯 pa³¹³</div>
+<p>①补、钉：~盒铜锅 ②钉子：洋盆底打了个~子</p>
+<div class="entry-title">钯锡子 pa³¹³ ɕyə¹³ tsɿ</div>
+<p>铜子</p>
+<div class="entry-title">扒 pa³¹³</div>
+<p>照着样子剪：~鞋样子</p>
+<div class="entry-title">扒河 pa³¹³ xɔ⁵⁵</div>
+<p>挖河渠</p>
+<div class="entry-title">把 pa⁴¹</div>
+<p>①给、送：把东西~给他了 ②把守、查路：路上有人~岗 | 小鬼~门 ③次、回：再来一~（扑克） | 一~赢了十块</p>
+<div class="entry-title">□ xu⁴¹</div>
+<p>①泼：~水 ②撒：~化肥 ③花费：钱~出去了</p></div>
+</section>
+<section class="page-section" id="p2600">
+<div class="page-bar"><button class="btn-copy" data-pid="2600">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">声母 a（续）</h4>
+<div class="entry-title">麻快 ma³⁵ kuɛ⁵⁵</div>
+<p>赶快，迅速</p>
+<div class="entry-title">麻溜 ma³⁵ liə</div>
+<p>快，顺当：做事~</p>
+<div class="entry-title">麻筋 ma³⁵ tɕiŋ³¹³</div>
+<p>一碰即麻的穴位</p>
+<div class="entry-title">麻木 ma³⁵ mu³⁵</div>
+<p>不知天高地厚、得意忘形的神态：~神 | ~蛋子 | 穿件好衣裳~的</p>
+<div class="entry-title">麻雀 ma³⁵ tɕyə¹³</div>
+<p>小男孩外阴</p>
+<div class="entry-title">马渣冻 ma⁴¹ tsa³¹³ tɔŋ⁵⁵</div>
+<p>薄冰</p>
+<div class="entry-title">马牙子 ma⁴¹ i⁵⁵ tsɿ</div>
+<p>婴儿长牙前，牙床上因炎症而起的疙瘩</p>
+<div class="entry-title">马子 ma⁴¹ tsɿ</div>
+<p>马桶，一般指盛尿的小马子</p>
+<div class="entry-title">马菜 ma⁴¹ tsʰɛ⁵⁵</div>
+<p>马齿苋</p>
+<div class="entry-title">笑笑 ta³¹³ ta</div>
+<p>父亲</p>
+<div class="entry-title">打 ta⁴¹</div>
+<p>①一杆秤最多能称起的重量：这秤~五十斤 ②筑：~墙 | ~坝子</p>
+<div class="entry-title">打呓怔 ta⁴¹ i⁵⁵ tsɿ</div>
+<p>梦魇</p>
+<div class="entry-title">打粗 ta⁴¹ tsʰu³¹³</div>
+<p>家畜耐粗食</p>
+<div class="entry-title">打怵 ta⁴¹ tsʰu⁵⁵</div>
+<p>恐惧、胆怯</p>
+<div class="entry-title">打雨 ta⁴¹ y⁴¹</div>
+<p>潲雨</p>
+<div class="entry-title">打头 ta⁴¹ tʰəu³⁵</div>
+<p>摘除瓜果树木的顶头</p>
+<div class="entry-title">打方子 ta⁴¹ fɑŋ³¹³ tsɿ</div>
+<p>买中药</p>
+<div class="entry-title">打汪 ta⁴¹ uɑŋ³¹³</div>
+<p>水牛在泥水里泡着</p>
+<div class="entry-title">打吞子 ta⁴¹ tʰəu⁵⁵</div>
+<p>用咳嗽示意</p>
+<div class="entry-title">打信 ta⁴¹ ɕiŋ⁵⁵</div>
+<p>寄信</p>
+<div class="entry-title">打春 ta⁴¹ tʃʰuŋ³¹³</div>
+<p>立春：春打六九头</p>
+<div class="entry-title">打从 ta⁴¹ tsʰɔŋ³⁵</div>
+<p>自从：~上次起就卖三块</p>
+<div class="entry-title">大妈 ta⁵⁵ mɑ³¹³</div>
+<p>大伯母。伯母称妈，婶子称娘：二妈 | 三妈 | 二娘 | 小娘 ②对尊称亲长的妇女</p>
+<div class="entry-title">差翎 ta⁴¹ tʃʰiŋ³⁵</div>
+<p>禽鸟换毛：鸡~不下蛋了</p>
+<div class="entry-title">差蛋 ta⁴¹ tʰɑ⁵⁵</div>
+<p>家禽不按常规下蛋</p>
+<div class="entry-title">大姑姐 ta⁵⁵ ku tɕi³⁵</div>
+<p>丈夫的姐姐</p>
+<div class="entry-title">大膨腮 ta⁵⁵ ku⁴¹ sɛ³¹³</div>
+<p>腮腺炎</p>
+<div class="entry-title">犁牛 a³¹³ liə</div>
+<p>母黄牛</p>
+<div class="entry-title">大爷 ta⁵⁵ i⁵⁵</div>
+<p>大伯。二伯叫二~，三伯叫三~，余类推</p>
+<div class="entry-title">讴 ɔ³¹³</div>
+<p>①楔子：木~子 ②动词：~起来</p>
+<div class="entry-title">当么 ta⁵⁵ mɑ</div>
+<p>暗暗地查看</p>
+<div class="entry-title">撒花 sɑ³¹³ xua³¹³</div>
+<p>在盐田里撒上种盐，促进结晶</p>
+<div class="entry-title">大柴 ta⁵⁵ tsʰɛ⁵⁵</div>
+<p>芦苇</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">声母 a（续）</h4>
+<div class="entry-title">大雷 ta⁵⁵ lɛi³⁵</div>
+<p>编连成串的大个鞭炮</p>
+<div class="entry-title">大圈 ta⁵⁵ tɕʰyəŋ³¹³</div>
+<p>车轮上的钢圈</p>
+<div class="entry-title">大糖 ta⁵⁵ tʰɑŋ³⁵</div>
+<p>手工做的饴糖</p>
+<div class="entry-title">大伯头子 ta⁵⁵ pə¹³ tʰəu³⁵ tsɿ</div>
+<p>丈夫的哥哥</p>
+<div class="entry-title">拉馋 la³¹³ tsʰæ⁵⁵</div>
+<p>解馋</p>
+<div class="entry-title">拉弯子 la³¹³ uæn³¹³ tsɿ</div>
+<p>说和一下，使受窘的当事人好下台</p>
+<div class="entry-title">拉瓜 la³¹³ kua³¹³</div>
+<p>拔掉瓜秧时最后一次采摘的瓜</p>
+<div class="entry-title">落 la⁵⁵</div>
+<p>①昆虫产卵：蛾子~子 ②遗留：庄稼~了一地</p>
+<div class="entry-title">拿 la³⁵</div>
+<p>①推拿：~膀子 ②故意刁难：关键时~一把</p>
+<div class="entry-title">拿别别撬 la³⁵ piə¹³ piə¹³ tɕʰi⁵⁵</div>
+<p>故意刁难</p>
+<div class="entry-title">拉 la⁵⁵</div>
+<p>两腿分开站立：莫腿~着站在路上</p>
+<div class="entry-title">□巴 la⁵⁵ pɑ</div>
+<p>腿向两边分开着走：小孩走路~~的</p>
+<div class="entry-title">□当 la⁵⁵ tɑŋ</div>
+<div class="entry-title">踏 tʰa³¹³</div>
+<p>①踩：~了一脚泥 ②到：他一直不敢~来 | 长这么大没有~过上海</p>
+<div class="entry-title">炸 tʃa⁵⁵</div>
+<p>衣服缝接处的线断开：一蹬裤裆~开了</p>
+<div class="entry-title">□子 tsa³¹³ tsɿ</div>
+<p>玻璃及陶制器皿的碎片：瓦~ | 缸~ | 瓶~ | 碗~</p>
+<div class="entry-title">喳咕 tʃʰa³¹³ ku</div>
+<p>商量</p>
+<div class="entry-title">茶 tʃʰa⁵⁵</div>
+<p>白开水也叫茶</p>
+<div class="entry-title">狠 xɑŋ⁵⁵</div>
+<p>张开大嘴咬：~饭 | 狗~人</p>
+<div class="entry-title">差翎 tʃʰa⁵⁵ liŋ³⁵</div>
+<p>禽鸟换毛：鸡~不下蛋了</p>
+<div class="entry-title">差蛋 tʃʰa⁵⁵ tʰæ⁵⁵</div>
+<p>家禽不按常规下蛋：鸡吃雪会~</p>
+<div class="entry-title">牸牛 tsɿ⁵⁵ liə</div>
+<p>母黄牛</p>
+<div class="entry-title">讴 ɔ³¹³</div>
+<p>①楔子：木~子 ②动词：~起来</p>
+<div class="entry-title">管么 kuɑŋ⁵⁵ mɑ</div>
+<p>暗暗地查看</p>
+<div class="entry-title">撒花 sɑ³¹³ xua³¹³</div>
+<p>在盐田里撒上种盐，促进结晶</p></div>
+</section>
+<section class="page-section" id="p2601">
+<div class="page-bar"><button class="btn-copy" data-pid="2601">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">ka</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>□</td><td>ka³⁵</td><td>划：~洋火</td></tr>
+<tr><td>□气</td><td>ka³⁵tɕi⁵⁵</td><td>打嗝</td></tr>
+<tr><td>□</td><td>ka³¹³</td><td>用力倒出：菜从筐里~出来洗洗</td></tr>
+<tr><td>□</td><td>ka³⁵</td><td>翻扣：~碗｜怎端的，饭~到地上</td></tr>
+<tr><td>哈哈</td><td>xa³¹³xa³¹³</td><td>持续，顺当：农民工盖楼，说干，~的，连收麦也没停｜脚踏车骑~的</td></tr>
+<tr><td>哈</td><td>xa³⁵</td><td>表示请求的语气：对我好点~</td></tr>
+<tr><td>哈瑟</td><td>xa³⁵sə</td><td>①发抖：吓得直~ ②乱用：钱~光了 ③揭露，宣扬：把你的丑事~</td></tr>
+<tr><td>腌洒</td><td>a³¹³sa</td><td>垃圾</td></tr>
+</table>
+<h4 class="sub-title">ia</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>家鱼</td><td>tɕia³¹³y³⁵</td><td>大头鲢鱼</td></tr>
+<tr><td>家边</td><td>tɕia³¹³piε³¹³</td><td>邻居：~的小孩</td></tr>
+<tr><td>家天子</td><td>tɕia³¹³tiε³¹³tsɿ</td><td>家院儿</td></tr>
+<tr><td>假马</td><td>tɕia⁴¹ma⁴¹</td><td>故意装假，不懂装懂</td></tr>
+<tr><td>架势</td><td>tɕia⁵⁵ʂʅ⁵⁵</td><td>捧场，帮忙</td></tr>
+<tr><td>卡</td><td>tɕʰia³⁵</td><td>①以势压人：~人｜~强 ②抢夺：东西给他~去了</td></tr>
+<tr><td>般</td><td>tɕʰia³¹³</td><td>弯：~腰｜腰~下来</td></tr>
+<tr><td>下市</td><td>ɕia⁵⁵ʂʅ⁵⁵</td><td>集市散了</td></tr>
+<tr><td>下地</td><td>ɕia⁵⁵ti⁵⁵</td><td>下葬</td></tr>
+<tr><td>下雾</td><td>ɕia⁵⁵u⁵⁵</td><td>起雾</td></tr>
+<tr><td>下窝狗</td><td>ɕia⁵⁵o³¹³kəu⁴¹</td><td>刚生过小狗的母狗</td></tr>
+<tr><td>下料</td><td>ɕia⁵⁵liɔ⁵⁵</td><td>下流，不长进</td></tr>
+<tr><td>下三</td><td>ɕia⁵⁵sæ³¹³</td><td>下贱，无赖，没出息</td></tr>
+<tr><td>下三烂子</td><td>ɕia⁵⁵sæ³¹³læ⁵⁵tsɿ</td><td>品行不端，不成材的人</td></tr>
+<tr><td>下傍晚</td><td>ɕia⁵⁵pæŋ³¹³uæ⁴¹</td><td>下午天近黄昏时</td></tr>
+<tr><td>下骨颏子</td><td>ɕia⁵⁵kuə¹³kʰə¹³tsɿ</td><td>下巴</td></tr>
+<tr><td>丫</td><td>ia³¹³</td><td>刀刃上的缺口</td></tr>
+<tr><td>丫钢</td><td>ia³¹³kɑŋ³¹³</td><td>给刀刃加钢，使之耐磨</td></tr>
+</table>
+<h4 class="sub-title">ȵa（左栏底部）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>瓦不</td><td>ua⁴¹pu</td><td>卷曲、弓起发皱的样子：纸~</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">ka（右栏顶部）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>锋利</td><td>（释义）</td><td></td></tr>
+<tr><td>牙猪</td><td>ia³⁵tʂu³¹³</td><td>小公猪</td></tr>
+<tr><td>牙花子</td><td>ia³⁵xuɑ³¹³tsɿ</td><td>牙龈</td></tr>
+<tr><td>牙狗</td><td>ia³⁵kəu⁴¹</td><td>小公狗</td></tr>
+<tr><td>芽糖</td><td>ia³⁵tʰɑŋ³⁵</td><td>麦芽糖</td></tr>
+<tr><td>挜卖</td><td>ia⁵⁵mε⁵⁵</td><td>硬把东西送给或卖给别人</td></tr>
+</table>
+<h4 class="sub-title">ua</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>抓钩</td><td>tʂua³¹³kəu³¹³</td><td>三齿刨土工具</td></tr>
+<tr><td>□</td><td>tʂua³⁵</td><td>轻轻地扫：~地</td></tr>
+<tr><td>□</td><td>tʂʰua³¹³</td><td>猛地一抓：~只蜻蜻</td></tr>
+<tr><td>□</td><td>kua³¹³</td><td>舀：从锅里~饭｜屋里进水了，快~</td></tr>
+<tr><td>瓜扭子</td><td>kua³¹³liəu⁴¹tsɿ</td><td>刚谢花的小瓜</td></tr>
+<tr><td>瓜壳子</td><td>kua³¹³kʰo¹³tsɿ</td><td>瓜皮帽</td></tr>
+<tr><td>呱口国</td><td>kua³⁵kuə¹³</td><td>鹁鸪</td></tr>
+<tr><td>挂</td><td>kua³⁵</td><td>牵扯：衣服让树枝~破了</td></tr>
+<tr><td>挂</td><td>kua⁵⁵</td><td>辆：一~自行车｜一~汽车</td></tr>
+<tr><td>侉子</td><td>kʰua⁴¹</td><td>本地人称赣榆、山东一带口音的人为~：赣榆~</td></tr>
+<tr><td>挎耳旁</td><td>kʰua⁵⁵ε⁴¹pʰaŋ³⁵</td><td>部首"阝"</td></tr>
+<tr><td>花大姐</td><td>xua³¹³ta⁵⁵ʨi⁴¹</td><td>瓢虫</td></tr>
+<tr><td>花花招招</td><td>xua³¹³xua³¹³tʂɔ³¹³tʂɔ³¹³</td><td>①看不清楚：人老了，看东西~ ②不均匀：布染~的</td></tr>
+<tr><td>花油</td><td>xua³¹³iəu³⁵</td><td>网状的猪油</td></tr>
+<tr><td>□</td><td>xua⁵⁵</td><td>①全、都：地上~是水 ②只是：~吃肉，不吃菜</td></tr>
+<tr><td>华家</td><td>xua⁵⁵tɕia³¹³</td><td>同姓：我们是~</td></tr>
+<tr><td>哇呜叽糟</td><td>ua³¹³u³¹³tɕi³¹³tɕi³¹³</td><td>①很、后悔、无法挽救时的心情 ②内部无主张、混乱</td></tr>
+<tr><td>□</td><td>ua⁴¹</td><td>舀取干的、稠的东西：~米｜~饭</td></tr>
+<tr><td>□巴子</td><td>ua⁴¹pa³¹³tsɿ</td><td>小巴斗</td></tr>
+<tr><td>□</td><td>ua⁴¹</td><td>用指甲抓：~脸</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2602">
+<div class="page-bar"><button class="btn-copy" data-pid="2602">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">o</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>簸箕柳</td><td>po⁵⁵tɕi liəu⁴¹</td><td>杞柳</td></tr>
+<tr><td>抔</td><td>pʰo³⁵</td><td>用手掌向一处集拢收取碎物：~了沙子｜把豆子~起来</td></tr>
+<tr><td>破</td><td>pʰo⁵⁵</td><td>①折散：绳子~开了 ②整线换零钱：十块钱~成两个五块的</td></tr>
+<tr><td>破财</td><td>pʰo⁵⁵tsʰε⁵⁵</td><td>损失财物</td></tr>
+<tr><td>么</td><td>mo³⁵</td><td>什么的合音：做~的</td></tr>
+<tr><td>磨</td><td>mo⁵⁵</td><td>①把重物不离地面地移挪：把大石头~过去 ②掉转：小巷太窄，~不开身子 ③借：东借西~</td></tr>
+<tr><td>磨脐</td><td>mo⁵⁵tɕi³⁵</td><td>固定在石磨下扇中心上的轴</td></tr>
+<tr><td>磨眼</td><td>mo⁵⁵i ã⁴¹</td><td>磨的上扇装粮食的圆口</td></tr>
+<tr><td>多</td><td>to³¹³</td><td>很，表示程度大：~胖的｜~厚的</td></tr>
+<tr><td>多货</td><td>to³¹³xo⁵⁵</td><td>加在量词之后，表示有零头：天~｜斤~｜尺~</td></tr>
+<tr><td>躲灾</td><td>to⁴¹ɛ³¹³</td><td>①偷懒，躲过该做的事 ②躲避灾难</td></tr>
+<tr><td>躲蹦蹦</td><td>to⁴¹pæŋ⁵⁵pæŋ</td><td>捉迷藏</td></tr>
+<tr><td>拖油瓶</td><td>tʰo³¹³iəu³⁵pʰiŋ³⁵</td><td>母亲改嫁带到男方的孩子</td></tr>
+<tr><td>坨地</td><td>tʰo³⁵ti⁵⁵</td><td>盐场大量堆放海盐的平地</td></tr>
+<tr><td>跒</td><td>o³¹³</td><td>手、脚筋骨受伤：打球~手指头了</td></tr>
+<tr><td>驼</td><td>tʰo³⁵</td><td>弯：屋梁~了</td></tr>
+<tr><td>驼摞</td><td>tʰo³⁵lo⁵⁵</td><td>昆虫交配</td></tr>
+<tr><td>屙</td><td>o³¹³</td><td>~屎</td></tr>
+<tr><td>□</td><td>tʰo³⁵</td><td>藤蔓生长：~秧</td></tr>
+<tr><td>螺螺</td><td>lo³⁵lo</td><td>螺蛳</td></tr>
+<tr><td>罗罗眼</td><td>lo³⁵lo³⁵iæ⁴¹</td><td>角膜长云翳的眼睛</td></tr>
+<tr><td>昨朝子</td><td>tso⁴¹tʂɔ³¹³tsɿ</td><td>昨天</td></tr>
+<tr><td>卒</td><td>tso⁴¹</td><td>抓：~住绳子，莫叫羊跑了</td></tr>
+<tr><td>左不溜子</td><td>tso⁴¹pu liəu³¹³tsɿ</td><td>左撇子</td></tr>
+<tr><td>摆</td><td>pε⁴¹</td><td>洗：~菜｜~手｜~苹果</td></tr>
+</table>
+<h4 class="sub-title">uo</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>洼塌</td><td>ua⁵⁵tʰa¹³</td><td>凹下去的地面：~里有鱼</td></tr>
+<tr><td>锅屋</td><td>ko³¹³u³¹³</td><td>厨房</td></tr>
+<tr><td>过</td><td>ko³¹³</td><td>超过：走~了</td></tr>
+<tr><td>□</td><td>ko³⁵</td><td>发~：发呆</td></tr>
+<tr><td>不愣子</td><td>ko³⁵pə læŋ⁵tsɿ</td><td>呆头呆脑的人</td></tr>
+<tr><td>过</td><td>ko⁵⁵</td><td>传染：这病不~人</td></tr>
+<tr><td>过花</td><td>ko⁵⁵ xua³¹³</td><td>植物自然授粉</td></tr>
+<tr><td>过火</td><td>ko⁵⁵ xo⁴¹</td><td>草木灰</td></tr>
+<tr><td>过冬</td><td>ko⁵⁵ tʰoŋ³¹³</td><td>冬至</td></tr>
+<tr><td>窠猪</td><td>kʰo³¹³ tʂu³¹³</td><td>老母猪</td></tr>
+<tr><td>可</td><td>kʰo⁴¹</td><td>①好：干得好不好？~ ②很，用在动词、形容词前，表示程度深：~能干了｜~干净了 ③实在：~受不了啦，痛死啦</td></tr>
+<tr><td>坷垃</td><td>kʰo⁴¹ lə</td><td>小土块</td></tr>
+<tr><td>坷埌</td><td>kʰo⁴¹ lɑŋ³¹³</td><td>小洼坑：~里有几粒稻子</td></tr>
+<tr><td>多</td><td>to³¹³</td><td>很，表示程度大：~胖的｜~厚的</td></tr>
+<tr><td>多货</td><td>to³¹³xo⁵⁵</td><td>加在量词之后，表示有零头：天~｜斤~｜尺~</td></tr>
+<tr><td>河堆</td><td>xo³⁵ tei³¹³</td><td>河堤</td></tr>
+<tr><td>何犯于</td><td>xo³⁵fæ⁵⁵ y³⁵</td><td>不必要，何必</td></tr>
+<tr><td>火烧心</td><td>xo⁴¹ ʂɔ³¹³ ɕiŋ³¹³</td><td>急躁的样儿</td></tr>
+<tr><td>祸秧子</td><td>xo⁵⁵ iɑŋ³¹³ tsɿ</td><td>流星</td></tr>
+<tr><td>倭瓜</td><td>o³¹³ kua³¹³</td><td>南瓜</td></tr>
+<tr><td>莴苣苔子</td><td>o³¹³ tɕi tʰε³⁵ tsɿ</td><td>莴苣</td></tr>
+<tr><td>窝丝缠棉</td><td>o³¹³ sɿ³¹³ tʰʂʰ³⁵ miε³⁵</td><td>不利索，不果断，纠缠不休的样子</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">uo</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>坐小月子</td><td>tso⁵⁵ɕiɔ⁴¹yə¹³</td><td>因小产而休养的日子</td></tr>
+<tr><td>坐家三品</td><td>tso⁵⁵tɕia³¹³sæ³¹³ pʰiŋ⁴¹</td><td>在家乡以势欺侮外乡人</td></tr>
+<tr><td>□</td><td>sʰo³⁵</td><td>围囤：用甦子~粮食</td></tr>
+<tr><td>坏</td><td>pʰo³⁵</td><td>用手掌向一处集拢收取碎物：~了沙子｜把豆子~起来</td></tr>
+<tr><td>破</td><td>pʰo⁵⁵</td><td>①折散：绳子~开了 ②整线换零钱：十块钱~成两个五块的</td></tr>
+<tr><td>破财</td><td>pʰo⁵⁵tsʰε³⁵</td><td>损失财物</td></tr>
+<tr><td>过花</td><td>ko⁵⁵ xua³¹³</td><td>植物自然授粉</td></tr>
+<tr><td>么</td><td>mo³⁵</td><td>什么的合音：做~的</td></tr>
+<tr><td>磨</td><td>mo⁵⁵</td><td>①把重物不离地面地移挪：把大石头~过去 ②掉转：小巷太窄，~不开身子 ③借：东借西~</td></tr>
+<tr><td>磨脐</td><td>mo⁵⁵tɕi³⁵</td><td>固定在石磨下扇中心上的轴</td></tr>
+<tr><td>磨眼</td><td>mo⁵⁵i ã⁴¹</td><td>磨的上扇装粮食的圆口</td></tr>
+<tr><td>多</td><td>to³¹³</td><td>很，表示程度大：~胖的｜~厚的</td></tr>
+<tr><td>多货</td><td>to³¹³xo⁵⁵</td><td>加在量词之后，表示有零头：天~｜斤~｜尺~</td></tr>
+<tr><td>躲灾</td><td>to⁴¹ɛ³¹³</td><td>①偷懒，躲过该做的事 ②躲避灾难</td></tr>
+<tr><td>躲蹦蹦</td><td>to⁴¹pæŋ⁵⁵pæŋ</td><td>捉迷藏</td></tr>
+<tr><td>拖油瓶</td><td>tʰo³¹³iəu³⁵pʰiŋ³⁵</td><td>母亲改嫁带到男方的孩子</td></tr>
+<tr><td>委</td><td>o³¹³</td><td>弯曲、卷折：绳子~在手里</td></tr>
+<tr><td>坨地</td><td>tʰo³⁵ti⁵⁵</td><td>盐场大量堆放海盐的平地</td></tr>
+<tr><td>跒</td><td>o³¹³</td><td>手、脚筋骨受伤：打球~手指头了</td></tr>
+<tr><td>驼</td><td>tʰo³⁵</td><td>弯：屋梁~了</td></tr>
+<tr><td>驼摞</td><td>tʰo³⁵lo⁵⁵</td><td>昆虫交配</td></tr>
+<tr><td>屙</td><td>o³¹³</td><td>~屎</td></tr>
+<tr><td>□</td><td>tʰo³⁵</td><td>藤蔓生长：~秧</td></tr>
+<tr><td>螺螺</td><td>lo³⁵lo</td><td>螺蛳</td></tr>
+<tr><td>罗罗眼</td><td>lo³⁵lo³⁵iæ⁴¹</td><td>角膜长云翳的眼睛</td></tr>
+<tr><td>昨朝子</td><td>tso⁴¹tʂɔ³¹³tsɿ</td><td>昨天</td></tr>
+<tr><td>卒</td><td>tso⁴¹</td><td>抓：~住绳子，莫叫羊跑了</td></tr>
+<tr><td>左不溜子</td><td>tso⁴¹pu liəu³¹³tsɿ</td><td>左撇子</td></tr>
+<tr><td>摆</td><td>pɛ⁴¹</td><td>洗：~菜｜~手｜~苹果</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2603">
+<div class="page-bar"><button class="btn-copy" data-pid="2603">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">ε（续）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>败乎</td><td>pɛ⁵⁵ xu</td><td>损坏：家产~光了</td></tr>
+<tr><td>败相</td><td>pɛ⁵⁵ ɕiɑŋ</td><td>说别人不是，败坏别人声誉</td></tr>
+<tr><td>拜路祭</td><td>pɛ⁵⁵ lu⁵⁵ tɕi⁵⁵</td><td>送葬路上的祭奠</td></tr>
+<tr><td>□</td><td>pʰɛ³¹³</td><td>猛地坐下：一腚~在地上</td></tr>
+<tr><td>□</td><td>pʰɛ³¹³</td><td>量词：一~牛屎</td></tr>
+<tr><td>嘬</td><td>pʰɛ⁴¹</td><td>踢：~一脚</td></tr>
+<tr><td>派</td><td>pʰɛ⁵⁵</td><td>应该：他~来才是｜不~去</td></tr>
+<tr><td>派秋风</td><td>pʰɛ⁵⁵ tɕʰiəu³¹³ fɑŋ³¹³</td><td>卖东西的上门摊派</td></tr>
+<tr><td>才</td><td>tsʰɛ³⁵</td><td>非常：这人~喜欢孩子啦</td></tr>
+<tr><td>才刚</td><td>tsʰɛ³⁵ tɕiɑŋ³¹³</td><td>刚才：~来｜~还</td></tr>
+<tr><td>卖呆</td><td>mɛ⁵⁵ tɛ³¹³</td><td>呆看、发愣</td></tr>
+<tr><td>在这里</td><td>（释义）</td><td></td></tr>
+<tr><td>□</td><td>tɛ⁴¹</td><td>用小船渡人过河：~河</td></tr>
+<tr><td>逮瞎子</td><td>tɛ⁴¹ ɕiɑ³¹³</td><td>丢手帕的游戏</td></tr>
+<tr><td>逮惩</td><td>tɛ⁴¹ tʂʰəŋ⁵⁵</td><td>批评、大声喝叱：~人</td></tr>
+<tr><td>代</td><td>tɛ⁴¹</td><td>替 给：凭啥~他家干的</td></tr>
+<tr><td>踩</td><td>tsʰɛ⁴¹</td><td>象棋用语，吃子：马~炮</td></tr>
+<tr><td>带</td><td>tɛ⁵⁵</td><td>①看护：~小孩 ②跟、和：不~你玩 ③许可：光讲不~骂人的 ④关：临走~上门 ⑤家畜怀仔：~牛~羊~兔子</td></tr>
+<tr><td>该派</td><td>kɛ³¹³pɛ⁵⁵</td><td>应该：~你来你不来</td></tr>
+<tr><td>该败</td><td>kɛ³¹³ pɛ⁵⁵</td><td>妇女口头语，表示不满意</td></tr>
+<tr><td>带肚子</td><td>tɛ⁵⁵ tu⁵⁵ l</td><td>怀孕</td></tr>
+<tr><td>带肚女人</td><td>tɛ⁵⁵ tu⁵⁵l y⁴¹ zɑŋ³⁵</td><td>孕妇</td></tr>
+<tr><td>带女人</td><td>tɛ⁵⁵ l y⁴¹ zɑŋ³⁵</td><td>娶妻</td></tr>
+<tr><td>带新娘子</td><td>tɛ⁵⁵ ɕiɑŋ³¹³ liɑŋ³⁵ tsɿ</td><td></td></tr>
+<tr><td>带媳子</td><td>tɛ⁵⁵ ɕiɿ¹³ tsɿ</td><td></td></tr>
+<tr><td>带宝</td><td>tɛ⁵⁵ p⁴¹</td><td>赌博的一种方法</td></tr>
+<tr><td>太爹</td><td>tʰɛ⁵⁵ tiɛ³¹³</td><td>曾祖父</td></tr>
+<tr><td>太奶</td><td>tʰɛ⁵⁵ lɛ⁴¹</td><td>曾祖母</td></tr>
+<tr><td>太阴</td><td>tʰɛ⁵⁵ iɑŋ³¹³</td><td>太阳</td></tr>
+<tr><td>太阴地</td><td>tʰɛ⁵⁵ iɑŋ³¹³ ti⁵⁵</td><td>阳光照到的地方</td></tr>
+<tr><td>太阴白</td><td>tʰɛ⁵⁵ iɑŋ³¹³ pə¹³</td><td>太阳穴</td></tr>
+<tr><td>奶帮子</td><td>lɛ⁴¹ pɑŋ³¹³</td><td>乳房的外围</td></tr>
+<tr><td>来</td><td>lɛ³⁵</td><td>①玩：~扑克｜~墙蹦 ②遗：~尿</td></tr>
+<tr><td>耐心烦</td><td>lɛ⁵⁵ ɕiɑŋ³¹³ f⁵⁵</td><td>耐心</td></tr>
+<tr><td>癞葡萄</td><td>lɛ⁵⁵ pu³⁵ tʰu⁵⁵</td><td>苦瓜</td></tr>
+<tr><td>癞蛄子</td><td>lɛ⁵⁵ ku³⁵ tsɿ</td><td>蛤蟆</td></tr>
+<tr><td>癞蛄浆</td><td>lɛ⁵⁵ ku³⁵ tɕiɑŋ³¹³</td><td>蝌蚪</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">ε（续）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>癞乌子</td><td>lɛ⁵⁵ u³¹³ tsɿ</td><td></td></tr>
+<tr><td>癞蛙子</td><td>lɛ⁵⁵ uɛ³⁵ tsɿ</td><td>青蛙</td></tr>
+<tr><td>癞雕子</td><td>lɛ⁵⁵ tiɔ³¹³ tsɿ</td><td>老鹰</td></tr>
+<tr><td>栽花</td><td>tsɛ³¹³ xuɑ³¹³</td><td>种痘</td></tr>
+<tr><td>□</td><td>sɛ⁵⁵</td><td>用清水冲洗一下：碗洗过了再~</td></tr>
+<tr><td>在以早</td><td>tsʰɛ⁵⁵³¹³ tsʰɑŋ⁴¹</td><td>从前</td></tr>
+<tr><td>在早</td><td>tsʰɛ⁵⁵⁴¹</td><td></td></tr>
+<tr><td>□</td><td>tsʰɛ³¹³</td><td>①嫁接：~梨 ②杂交：~驴</td></tr>
+<tr><td>才</td><td>tsʰɛ³⁵</td><td>非常：这人~喜欢孩子啦</td></tr>
+<tr><td>才刚</td><td>tsʰɛ³⁵ tɕiɑŋ³¹³</td><td>刚才：~来｜~还</td></tr>
+<tr><td>柴</td><td>tʂʰɛ³⁵</td><td>芦苇</td></tr>
+<tr><td>柴</td><td>tʂʰɛ³⁵</td><td>干枯、硬：手很~</td></tr>
+<tr><td>柴楞楞</td><td>tʂʰɛ³⁵ lɑŋ⁵⁵ lɑŋ⁵⁵</td><td></td></tr>
+<tr><td>踩</td><td>tsʰɛ⁴¹</td><td>象棋用语，吃子：马~炮</td></tr>
+<tr><td>腮脑</td><td>sɛ³¹³ lɑŋ⁴¹</td><td>腮腺炎引起的脑膜炎</td></tr>
+<tr><td>腮盘子</td><td>sɛ³¹³ pʰɑŋ³⁵ tsɿ</td><td>腮帮子</td></tr>
+<tr><td>该派</td><td>kɛ³¹³pɛ⁵⁵</td><td>应该：~你来你不来</td></tr>
+<tr><td>该败</td><td>kɛ³¹³ pɛ⁵⁵</td><td>妇女口头语，表示不满意</td></tr>
+<tr><td>解怀</td><td>kɛ⁴¹ xuɛ³⁵</td><td>妇女初次生孩子</td></tr>
+<tr><td>改饶</td><td>kɛ⁴¹ zɔ³⁵</td><td>讨饶并表示改正</td></tr>
+<tr><td>开</td><td>kʰɛ³¹³</td><td>批发：~苹果</td></tr>
+<tr><td>开支</td><td>kʰɛ³¹³ tsʰɿ³¹³</td><td>发工资</td></tr>
+<tr><td>开味</td><td>kʰɛ³¹³ uɛi⁵⁵</td><td>开玩笑</td></tr>
+<tr><td>楷</td><td>kʰɛ³¹³</td><td>~桌子</td></tr>
+<tr><td>楷屁纸</td><td>kʰɛ³¹³ pʰi⁵⁵ tsɿ</td><td>手纸</td></tr>
+<tr><td>奸</td><td>kɛ³¹³ tɕi³¹³</td><td>不合作、刁难人</td></tr>
+<tr><td>□奸摸滑</td><td>kɛ³¹³ tɕi³¹³ mɑ¹³ xuɛ¹³</td><td>为人滑头</td></tr>
+<tr><td>□</td><td>kʰɛ⁵⁵</td><td>推诿：莫~，该干得干</td></tr>
+<tr><td>逮手</td><td>xɛ³¹³ tɛ⁴¹ səu⁴¹</td><td>手</td></tr>
+<tr><td>海</td><td>xɛ⁴¹</td><td>坏了、遭了：给弄~了</td></tr>
+<tr><td>海台了</td><td>xɛ⁴¹ tʰɛ⁵⁵ lə</td><td></td></tr>
+<tr><td>海得了</td><td>xɛ⁴¹ tə lə</td><td></td></tr>
+<tr><td>海英莱</td><td>xɛ⁴¹ iŋ³⁵ lɛ⁵⁵</td><td>盐地碱蓬，生长在沿海的荒野，可食</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2604">
+<div class="page-bar"><button class="btn-copy" data-pid="2604">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">uε</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>害伢子</td><td>xɛ⁵⁵ ia³⁵ tsɿ</td><td>妊娠反应</td></tr>
+<tr><td>害孩子</td><td>xɛ⁵⁵ xɛ⁵⁵ tsɿ</td><td></td></tr>
+<tr><td>害汗病</td><td>xɛ⁵⁵ x ɑ⁵⁵ pʰiŋ⁵⁵</td><td>伤寒</td></tr>
+<tr><td>挨号</td><td>ɛ³¹³ xo⁵⁵</td><td>排队</td></tr>
+<tr><td>怀子</td><td>xuɛ³⁵ tsɿ</td><td>怀孕</td></tr>
+<tr><td>儿狗</td><td>ɛ³⁵ kəu⁴¹</td><td>公狗</td></tr>
+<tr><td>挨</td><td>ɛ³⁵</td><td>被：~他拿出去了</td></tr>
+<tr><td>耳挖子</td><td>ɛ⁴¹ uɑ³¹³ tsɿ</td><td>掏耳垢的工具</td></tr>
+<tr><td>耳哨子</td><td>ɛ⁴¹ ʂo⁵⁵ tsɿ</td><td>耳垢</td></tr>
+<tr><td>耳眼子</td><td>ɛ⁴¹ i ã⁴¹ tsɿ</td><td>耳孔</td></tr>
+<tr><td>耳圈子</td><td>ɛ⁴¹ tɕy³¹³ tsɿ</td><td>耳环</td></tr>
+<tr><td>耳性</td><td>ɛ⁴¹ ɕiɑŋ⁵⁵</td><td>记性：人老了~不好</td></tr>
+<tr><td>唉嗝</td><td>ɛ⁵⁵ kə</td><td>打嗝</td></tr>
+<tr><td>二尾子</td><td>ɛ⁵⁵ uɛ⁴¹ tsɿ</td><td>阴阳人</td></tr>
+<tr><td>二五抹塌</td><td>ɛ⁵⁵ u⁴¹ mɛ¹³ tʰɑ¹³</td><td>做事马虎</td></tr>
+<tr><td>二半溜子</td><td>ɛ⁵⁵ pɑŋ⁵⁵ liəu³¹³ tsɿ</td><td>不大不小的</td></tr>
+<tr><td>二半吊子</td><td>ɛ⁵⁵ pɑŋ⁵⁵ tiɔ⁵⁵ tsɿ</td><td>手艺不精的人</td></tr>
+<tr><td>二伏</td><td>ɛ⁵⁵ fu³⁵</td><td>中伏：头伏萝卜~菜</td></tr>
+<tr><td>皆</td><td>tɕiɛ³¹³</td><td>大家~如此</td></tr>
+<tr><td>街滑子</td><td>tɕiɛ³¹³ xuɑ¹³ tsɿ</td><td>城镇中游手好闲，经常在街市上鬼混的人</td></tr>
+<tr><td>戒棒</td><td>tɕiɛ⁵⁵ pɑŋ⁵⁵</td><td>戒尺</td></tr>
+<tr><td>□</td><td>tɛi⁴¹</td><td>咳嗽</td></tr>
+<tr><td>兑</td><td>tɛi⁵⁵</td><td>冲帐</td></tr>
+<tr><td>对把</td><td>tɛi⁵⁵ pɑ⁴¹</td><td>手艺或势力相当</td></tr>
+<tr><td>对虾驹子</td><td>tɛi⁵⁵ ɕiɑŋ³¹³ tɕy³¹³ tsɿ</td><td>小对虾</td></tr>
+<tr><td>对味</td><td>tɛi⁵⁵ uɛi⁵⁵</td><td>脾气相投</td></tr>
+<tr><td>对眼</td><td>tɛi⁵⁵ i ɑŋ⁴¹</td><td></td></tr>
+<tr><td>推死</td><td>tʰɛi³¹³ sɿ⁴¹</td><td>在有事时装病</td></tr>
+<tr><td>推故</td><td>tʰɛi³¹³ ku⁵⁵</td><td>找借口有个小病~不上学</td></tr>
+<tr><td>白</td><td>tʰuɛ⁵⁵</td><td>粗春：~碓</td></tr>
+<tr><td>甩</td><td>suɛ⁴¹</td><td>无能、没本事：~子</td></tr>
+<tr><td>腿胫骨</td><td>tʰɛi⁴¹ tɕiɑŋ⁵⁵ kuə¹³</td><td>廉骨</td></tr>
+<tr><td>嘴头子</td><td>tsɛi⁴¹ təu³⁵ tsɿ</td><td>①口才 ②嘴巴</td></tr>
+<tr><td>拐磨花</td><td>kuɛ⁴¹ mo⁵⁵ xuɑ³¹³</td><td>矮牵牛花</td></tr>
+<tr><td>拐旮旯</td><td>kuɛ⁴¹ kɑ³¹³ lɑ³¹³</td><td>拐弯处</td></tr>
+<tr><td>拐角</td><td>kuɛ⁴¹ kuə¹³</td><td></td></tr>
+<tr><td>扯布</td><td>tʂʰɛi⁴¹ pu⁵⁵</td><td>买布</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">uε（续）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>身</td><td>kuɛ⁵⁵</td><td>挎：~着书包</td></tr>
+<tr><td>块</td><td>kuɛ⁵⁵</td><td>地方：这~｜那~</td></tr>
+<tr><td>块丁</td><td>kuɛ⁵⁵ tiŋ³¹³</td><td></td></tr>
+<tr><td>怀子</td><td>xuɛ³⁵ tsɿ</td><td>怀孕</td></tr>
+<tr><td>蛙子</td><td>uɛ³⁵ tsɿ</td><td>青蛙</td></tr>
+<tr><td>歪歪</td><td>uɛ³¹³ uɛ³¹³</td><td>河蚌</td></tr>
+<tr><td>歪嘴料</td><td>uɛ³¹³ tsɛi⁴¹ liɔ⁵⁵</td><td>嘴巧而不正干的人</td></tr>
+<tr><td>□</td><td>uɛ³⁵</td><td>坐在地上挪：~过来</td></tr>
+<tr><td>□</td><td>uɛ⁴¹</td><td>扭伤脚</td></tr>
+<tr><td>赔似</td><td>pɛi³⁵</td><td>赔嫁</td></tr>
+<tr><td>媒八嘴</td><td>mɛi³⁵ pɛ¹³ tɛi⁴¹</td><td>媒婆</td></tr>
+<tr><td>谜子</td><td>mɛi³⁵ tsɿ</td><td>头脑不清醒的人</td></tr>
+<tr><td>莓豆</td><td>mɛi³⁵ təu⁵⁵</td><td>芸豆</td></tr>
+<tr><td>眉毛箍</td><td>mɛi³⁵ mɔ⁵⁵ ku³¹³</td><td>刘海儿</td></tr>
+<tr><td>眉中</td><td>mɛi³⁵ tɕiɑŋ³¹³</td><td>人中</td></tr>
+<tr><td>飞子</td><td>fɛi³¹³</td><td>交钱后得到的作为购物凭证用的纸牌、木牌</td></tr>
+<tr><td>肺头子</td><td>fɛi⁵⁵ təu³⁵ tsɿ</td><td>肺</td></tr>
+<tr><td>□</td><td>tɛi⁴¹</td><td>咳嗽</td></tr>
+<tr><td>兑</td><td>tɛi⁵⁵</td><td>冲帐</td></tr>
+<tr><td>对把</td><td>tɛi⁵⁵ pɑ⁴¹</td><td>手艺或势力相当</td></tr>
+<tr><td>对虾驹子</td><td>tɛi⁵⁵ ɕiɑŋ³¹³ tɕy³¹³ tsɿ</td><td>小对虾</td></tr>
+<tr><td>对味</td><td>tɛi⁵⁵ uɛi⁵⁵</td><td>脾气相投</td></tr>
+<tr><td>对眼</td><td>tɛi⁵⁵ i ɑŋ⁴¹</td><td></td></tr>
+<tr><td>推死</td><td>tʰɛi³¹³ sɿ⁴¹</td><td>在有事时装病</td></tr>
+<tr><td>推故</td><td>tʰɛi³¹³ ku⁵⁵</td><td>找借口有个小病~不上学</td></tr>
+<tr><td>白</td><td>tʰuɛ⁵⁵</td><td>粗春：~碓</td></tr>
+<tr><td>甩</td><td>suɛ⁴¹</td><td>无能、没本事：~子</td></tr>
+<tr><td>腿胫骨</td><td>tʰɛi⁴¹ tɕiɑŋ⁵⁵ kuə¹³</td><td>廉骨</td></tr>
+<tr><td>嘴头子</td><td>tsɛi⁴¹ təu³⁵ tsɿ</td><td>①口才 ②嘴巴</td></tr>
+<tr><td>醉酣子</td><td>tsɛi⁵⁵ x ɑŋ³¹³ tsɿ</td><td>酒喝醉了的人</td></tr>
+<tr><td>拐磨花</td><td>kuɛ⁴¹ mo⁵⁵ xuɑ³¹³</td><td>矮牵牛花</td></tr>
+<tr><td>拐旮旯</td><td>kuɛ⁴¹ kɑ³¹³ lɑ³¹³</td><td>拐弯处</td></tr>
+<tr><td>拐角</td><td>kuɛ⁴¹ kuə¹³</td><td></td></tr>
+<tr><td>扯布</td><td>tʂʰɛi⁴¹ pu⁵⁵</td><td>买布</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2605">
+<div class="page-bar"><button class="btn-copy" data-pid="2605">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">uei（续）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>随</td><td>sɛi³⁵</td><td>相像：长得~他老子</td></tr>
+<tr><td>繻</td><td>sɛi⁴¹</td><td>布边散开</td></tr>
+<tr><td>碎碎叨叨</td><td>sɛi⁵⁵ sɛi⁵⁵ tɔ³¹³ tɔ³¹³</td><td>碎嘴子</td></tr>
+<tr><td>碎嘴碎舌</td><td>sɛi⁵⁵ tsɛi⁴¹ sɛi⁵⁵ ʂʅ¹³</td><td></td></tr>
+<tr><td>水</td><td>ʂuɛi⁴¹</td><td>①虚假：他的话~太大 ②哄骗、用好听的谎话使人上当入圈套：给他~倒了</td></tr>
+<tr><td>水臌病</td><td>ʂuɛi⁴¹ ku⁴¹ pʰiŋ⁵⁵</td><td>肾炎</td></tr>
+<tr><td>水焙子</td><td>ʂuɛi⁴¹ u⁵⁵ tsɿ</td><td>冬天装热水焐被窝的铜器，扁圆形</td></tr>
+<tr><td>水眼</td><td>ʂuɛi⁴¹ i ã⁴¹</td><td>泉眼</td></tr>
+<tr><td>归功</td><td>kuɛi³¹³ kɑŋ³¹³</td><td>行、合适：这样不~｜不打不~｜这事怎~</td></tr>
+<tr><td>龟</td><td>kuɛi³¹³</td><td>驼背：~腰｜腰~了</td></tr>
+<tr><td>龟腰子</td><td>kuɛi³¹³ iɔ³¹³ tsɿ</td><td>驼背的人</td></tr>
+<tr><td>龟腰虫</td><td>kuɛi³¹³ iɔ³¹³ tsʰɑŋ³⁵</td><td>尺蠖</td></tr>
+<tr><td>鬼打墙</td><td>kuɛi⁴¹ tɑ⁴¹ tɕiɑŋ³⁵</td><td>夜里迷路</td></tr>
+<tr><td>鬼风</td><td>kuɛi⁴¹ fəŋ³¹³</td><td>旋风</td></tr>
+<tr><td>灰条菜</td><td>xuɛi³¹³ tiɔ³⁵ ɛ⁵⁵</td><td>灰灰菜</td></tr>
+<tr><td>毁了</td><td>xuɛi⁴¹ lə</td><td>糟了：~，做不成了</td></tr>
+<tr><td>会谅</td><td>xuɛi⁵⁵ liɑŋ⁵⁵</td><td>醒悟</td></tr>
+<tr><td>煨罐子</td><td>uɛi³¹³ kɑŋ⁵⁵ tsɿ</td><td>放在灶堂炖热水的陶罐</td></tr>
+<tr><td>捕缝</td><td>uɛi³¹³ fəŋ⁵⁵</td><td>用水泥把砖、石墙的缝涂起来</td></tr>
+<tr><td>圩沟</td><td>uɛi³⁵ kəu³¹³</td><td>田野的排水沟</td></tr>
+<tr><td>圩堆</td><td>uɛi³⁵ tɛi³¹³</td><td>河、沟的堤坝</td></tr>
+<tr><td>卫计</td><td>uɛi⁵⁵ tɕi</td><td>爱护、照顾</td></tr>
+<tr><td>为</td><td>uɛi⁵⁵</td><td>因为：两人没~什么就吵起来了</td></tr>
+</table>
+<h4 class="sub-title">o（左栏底部）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>包菜</td><td>pɔ³¹³ tsʰɛ⁵⁵</td><td>结球甘蓝</td></tr>
+<tr><td>龅牙</td><td>pɔ⁵⁵ ia³⁵</td><td>过大的犬齿</td></tr>
+<tr><td>刨子</td><td>pɔ⁵⁵ tsɿ</td><td>砾床</td></tr>
+<tr><td>套</td><td>tʰɔ</td><td>缝棉衣：~袄｜~被子</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">uei（续）</h4>
+<table class="data-table">
+<tr><th>条目</th><th>IPA</th><th>释义</th></tr>
+<tr><td>刨屑子</td><td>pɔ⁵⁵ ɕiɛ¹³ tsɿ</td><td>刨花儿</td></tr>
+<tr><td>抛散</td><td>pɔ³¹³ sɑ</td><td>浪费，糟踏</td></tr>
+<tr><td>刨</td><td>pɔ⁵⁵</td><td>除：~去老本，净苦三千</td></tr>
+<tr><td>畜</td><td>mɔ³¹³</td><td>与侉音相对的口音：淮阴~｜扬州~子｜南~北侉</td></tr>
+<tr><td>□</td><td>mɔ³¹³</td><td>①超过：走~了，快回头 ②往：~高处打</td></tr>
+<tr><td>毛</td><td>mɔ³⁵</td><td>①惊慌、发愣 ②恼怒：别发~，消消气</td></tr>
+<tr><td>毛窝子</td><td>mɔ³⁵ ɔ³¹³ tsɿ</td><td>用芦缨加稻草编结成的御寒草鞋</td></tr>
+<tr><td>毛缨花子</td><td>mɔ³⁵ iŋ³¹³ xuɑ³¹³ tsɿ</td><td>芦花</td></tr>
+<tr><td>毛冬瓜</td><td>mɔ³⁵ tɑŋ³¹³ kuɑŋ³¹³</td><td>冬瓜</td></tr>
+<tr><td>茅房</td><td>mɔ⁵⁵ fɑŋ³⁵</td><td>厕所</td></tr>
+<tr><td>帽招子</td><td>mɔ⁵⁵ tsɔ³¹³ tsɿ</td><td>帽檐儿</td></tr>
+<tr><td>鱾鱼</td><td>tʂɔ³¹³ y³⁵</td><td>鲫鱼</td></tr>
+<tr><td>鱾壳子</td><td>tʂɔ³¹³ kʰo¹³ tsɿ</td><td></td></tr>
+<tr><td>刀客</td><td>tɔ³¹³ kʰə¹³</td><td>常替别人写诉状的人</td></tr>
+<tr><td>□</td><td>tɔ³¹³</td><td>用筷子夹：~菜｜~筷子</td></tr>
+<tr><td>螂</td><td>tɔ³¹³ lɑŋ</td><td>螳螂</td></tr>
+<tr><td>捣拐</td><td>tɔ⁴¹ kuɛ⁴¹</td><td>斗鸡，两人比耐力的游戏</td></tr>
+<tr><td>捣腿</td><td>tɔ⁴¹ tʰɛi⁴¹</td><td>两人各睡一头、合盖一床被子</td></tr>
+<tr><td>捣当</td><td>tɔ⁴¹ tɑŋ</td><td>调换</td></tr>
+<tr><td>倒头</td><td>tɔ⁴¹ təu³⁵</td><td>①人死了 ②名词前缀，有讨厌的意思，相当于鬼：~人｜~事｜~鞋｜~饭</td></tr>
+<tr><td>倒号</td><td>tɔ⁴¹ xɔ⁵⁵</td><td>店铺倒闭</td></tr>
+<tr><td>倒头饭</td><td>tɔ⁴¹ təu³⁵ fɑŋ⁵⁵</td><td>供祭死人头前的一碗米饭</td></tr>
+<tr><td>倒头灯</td><td>tɔ⁴¹ təu³⁵ tɑŋ³¹³</td><td>为死者点的长明灯</td></tr>
+<tr><td>到回</td><td>tɔ⁴¹ xuɛi³⁵</td><td>等一会儿：~再说</td></tr>
+<tr><td>桃花癣</td><td>tʰɔ⁵⁵ xuɑ³¹³ ɕyɛ⁴¹</td><td>春天起的癣</td></tr>
+<tr><td>跑牙</td><td>pɔ⁵⁵ ia³⁵</td><td>过大的犬齿</td></tr>
+<tr><td>套</td><td>tʰɔ</td><td>缝棉衣：~袄｜~被子</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2606">
+<div class="page-bar"><button class="btn-copy" data-pid="2606">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">n- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>孬天</td><td>nau³¹³ tʰiɛ³¹³</td><td>风雨天</td></tr>
+<tr><td>牢壮</td><td>lɔ³⁵ suɑŋ</td><td>牢固：家俱不~</td></tr>
+<tr><td>遭雨</td><td>tsau³¹³ y⁴¹</td><td>被雨淋了</td></tr>
+<tr><td>脑瓜子</td><td>nau⁴¹ kuə³¹³ tl</td><td>头颅</td></tr>
+<tr><td>早星</td><td>tsau⁴¹ ɕiŋ³¹³</td><td>早晨</td></tr>
+<tr><td>脑瓜盖子</td><td>nau⁴¹ kuə³¹³ kɛ⁵⁵ tl</td><td>头盖骨</td></tr>
+<tr><td>□</td><td>nau⁴¹</td><td>山西口音：南省北傍山西~子</td></tr>
+<tr><td>照蛋</td><td>tsau⁵⁵ tã⁵⁵</td><td>孵化过程中淘汰下来的禽蛋，有"头照子、二照子"之别</td></tr>
+<tr><td>脑头着子</td><td>nau⁴¹ tʰau³⁵ tua³¹³ tl</td><td>打脑后</td></tr>
+<tr><td>嘈</td><td>tsau³¹³</td><td>喧哗：莫~，开会了</td></tr>
+<tr><td>脑后窝</td><td>nau⁴¹ xəu⁵⁵ uo³¹³</td><td>后脑勺</td></tr>
+<tr><td>疾人</td><td>tsʰə⁵⁵ zə³⁵</td><td>胃里不舒服，有饥饿感：光吃萝卜~</td></tr>
+<tr><td>脑咽后</td><td>nau⁴¹ iɛ⁵⁵ xəu⁵⁵</td><td>（脑后的咽窝处）</td></tr>
+<tr><td>恼人</td><td>nau⁴¹ zən³⁵</td><td>得罪人</td></tr>
+<tr><td>痫汪汪</td><td>ɕiɛ³⁵ uɑŋ³¹³ uɑŋ³¹³</td><td>（形容口水流个不停）</td></tr>
+<tr><td>老□</td><td>lau⁴¹ tɕi³¹³</td><td>鬼怪，吓唬小孩时说：莫哭，~来了</td></tr>
+<tr><td>朝牌</td><td>tsʰau³⁵ pɛ³⁵</td><td>像朝笏样的发面烧饼，也叫烤牌</td></tr>
+<tr><td>老□</td><td>lau⁴¹ kʰa³¹³ kʰə³¹³</td><td>衰老的样子：脸~的</td></tr>
+<tr><td>草悟子</td><td>tsʰau⁴¹ u</td><td>冬天能放入饭锅保温的草器</td></tr>
+<tr><td>老太爷</td><td>lau⁴¹ tʰɛ⁵⁵ iɛ⁵⁵</td><td>曾祖父</td></tr>
+<tr><td>草驴</td><td>tsʰau⁴¹ ly³⁵</td><td>母驴</td></tr>
+<tr><td>老太太</td><td>lau⁴¹ tʰɛ⁵⁵ tʰɛ</td><td>曾祖母</td></tr>
+<tr><td>草狗</td><td>tsʰau⁴¹ kəu⁴¹</td><td>母狗</td></tr>
+<tr><td>老爹</td><td>lau⁴¹ tiɛ³¹³</td><td>祖父</td></tr>
+<tr><td>糟坊</td><td>tsau⁵⁴¹ fɑŋ³¹³</td><td>榨油、酿酒的作坊</td></tr>
+<tr><td>老拐子</td><td>lau⁴¹ kuɛ⁴¹</td><td>人贩子</td></tr>
+<tr><td>吵</td><td>tsʰau⁴¹</td><td>批评、训斥：挨老师~了</td></tr>
+<tr><td>老海</td><td>lau⁴¹ xɛ⁴¹</td><td>①大海：东~ ②大烟：~鬼子</td></tr>
+<tr><td>操</td><td>tsʰau⁵⁵</td><td>①捣乱：胡~、瞎~ ②詈语</td></tr>
+<tr><td>□</td><td>tsʰau⁵⁵</td><td>磨擦：铁锨锈了，在沙里~~</td></tr>
+<tr><td>老干皮味</td><td>lau⁴¹ kɛ³¹³ pi³⁵ uei⁵⁵</td><td>不知趣而自以为是</td></tr>
+<tr><td>踔</td><td>tsʰau³¹³</td><td>跨：~沟</td></tr>
+<tr><td>烧</td><td>sau³¹³</td><td>①被钱财弄昏头脑，不能自制 ②挥霍</td></tr>
+<tr><td>老嫚子</td><td>lau⁴¹ mɛ⁴¹ tl</td><td>老婆(中、老年)、老太婆</td></tr>
+<tr><td>捎瓜</td><td>sau³¹³ kuə</td><td>夏季的长形黄皮菜瓜</td></tr>
+<tr><td>老人了</td><td>lau⁴¹ zə³⁵ lə</td><td>死了老人了</td></tr>
+<tr><td>臊荤烂臭</td><td>sau³¹³ xuan³¹³ lɛ⁵⁵ tsʰəu⁵⁵</td><td>臊臭味</td></tr>
+<tr><td>老□子</td><td>lau⁴¹ kɛ³¹³</td><td>最小的孩子：小~</td></tr>
+<tr><td>臊荤烂腥</td><td>sau³¹³ xuan³¹³ lɛ⁵⁵ ɕiŋ³¹³</td><td>臊腥味</td></tr>
+<tr><td>老实头</td><td>lau⁴¹ ʂʅ³⁵ təu³⁵</td><td>老实人</td></tr>
+<tr><td>扫盐</td><td>sau⁴¹ iɛ³⁵</td><td>把盐田的盐堆积起来运走</td></tr>
+<tr><td>捞</td><td>lau³¹³</td><td>①取高处、远处的物品：太高，手~不到 ②得：那东西你~到啦</td></tr>
+<tr><td>扫尘</td><td>sau⁴¹ a³⁵</td><td>大扫除</td></tr>
+<tr><td>捞不到</td><td>lau⁴¹ pə³¹³ təu⁵⁵</td><td>没时间：我~去</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>愤当</td><td>fən⁵⁵ tɑŋ</td><td>走~点（快走）</td></tr>
+<tr><td>朝</td><td>tsɔ³¹³</td><td>天：十～半月</td></tr>
+<tr><td>饶</td><td>zau³⁵</td><td>购物时另外多给的部分</td></tr>
+<tr><td>朝暮</td><td>tsɔ⁵¹³ mə</td><td>从前</td></tr>
+<tr><td>高升</td><td>kau³¹³ səŋ³¹³</td><td>二踢脚</td></tr>
+<tr><td>朝暮子</td><td>tsʰau³¹³ mə tl</td><td>从前（带词缀）</td></tr>
+<tr><td>高木屐子</td><td>kau³¹³ mə³¹³ tɕi³¹³ tl</td><td>①木底高跟鞋 ②比喻奉承话：给你个~穿</td></tr>
+<tr><td>朝天</td><td>tsɔ³¹³ ma tie³¹³ tʂɿ</td><td>（朝天子的别称）</td></tr>
+<tr><td>朝今</td><td>tsɔ³¹³ tɕiŋ</td><td>（今义：方向）</td></tr>
+<tr><td>茭瓜</td><td>tɕiau³¹³ kuə³¹³</td><td>茭白</td></tr>
+<tr><td>朝日</td><td>tsɔ³¹³ zə</td><td>（日义：方向）</td></tr>
+<tr><td>搞嘴</td><td>kau⁵⁴¹ tɕei⁴¹</td><td>吵架</td></tr>
+</table>
+<p><strong>注</strong>：右栏 OCR 严重混排，部分条目顺序和 IPA 可信度较低，待二次审核对照源图确认。</p></div>
+</section>
+<section class="page-section" id="p2607">
+<div class="page-bar"><button class="btn-copy" data-pid="2607">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">k-/kʰ-/x- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>告帮</td><td>kau⁵⁵ pɑŋ³¹³</td><td>求援、借债</td></tr>
+<tr><td>告送</td><td>kau⁵⁵ suŋ⁵⁵</td><td>告诉</td></tr>
+<tr><td>□</td><td>kɛ³¹³</td><td>割：~凉粉、~块豆腐</td></tr>
+<tr><td>考盖子</td><td>kʰau⁴¹ kɛ⁵⁵ tl</td><td>结痂</td></tr>
+<tr><td>烤</td><td>kʰau⁵⁵</td><td>加热让水蒸发掉：~油、锅~干了</td></tr>
+<tr><td>靠</td><td>kʰau⁵⁵</td><td>①相持：看谁~过谁 ②等：不要死~，他不来了</td></tr>
+<tr><td>薅地</td><td>xau³¹³ ti⁵⁵</td><td>锄地</td></tr>
+<tr><td>好意</td><td>xau⁵⁵ i</td><td>有意：谁~这样干呀</td></tr>
+<tr><td>耗潮</td><td>xau³⁵ tsʰau³⁵</td><td>退潮</td></tr>
+</table>
+<h4 class="sub-title">t-/tʰ-/l- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>掉色</td><td>tiau⁵⁵ ʂɛ¹³</td><td>颜色脱落、变淡</td></tr>
+<tr><td>管把</td><td>kuɛ³⁵ pɛ⁴¹</td><td>笤帚</td></tr>
+<tr><td>条道</td><td>tʰiau³⁵ təu⁵⁵</td><td>做事有条理</td></tr>
+<tr><td>挑</td><td>tʰiau⁴¹</td><td>挖：~荠菜</td></tr>
+<tr><td>挑箩子</td><td>tʰiau⁵⁴¹ luə³⁵</td><td>把散在地上的草、庄稼用铁权挑成一堆一堆的</td></tr>
+<tr><td>挑河</td><td>tʰiau⁴¹ xə³⁵</td><td>开挖河渠</td></tr>
+<tr><td>挑</td><td>tʰiau⁴¹ tɑŋ³¹³</td><td>捞虾子的小网</td></tr>
+<tr><td>撩骚</td><td>liau³⁵ sau³¹³</td><td>挑逗</td></tr>
+<tr><td>燎泡</td><td>liau³⁵ pʰau⁵⁵</td><td>皮肤上烫起、磨起的水泡</td></tr>
+<tr><td>懊糟</td><td>au³⁵ tsau³¹³</td><td>懊悔</td></tr>
+<tr><td>了巴子</td><td>liau⁴¹ pə³¹³ t</td><td>最末的一个：小~</td></tr>
+<tr><td>拗</td><td>au⁵⁵</td><td>相持、比赛耐力：~手劲、~膀子</td></tr>
+<tr><td>了了</td><td>liau⁵⁴¹ liau⁵⁴¹</td><td>一点点：还有~的，不多了</td></tr>
+<tr><td>了了</td><td>liau⁵⁴¹ lə</td><td>完了：吃~</td></tr>
+<tr><td>撂</td><td>liau⁵⁵</td><td>①扔：~过来 ②遗失：钱~了</td></tr>
+<tr><td>撂瓢嘴巴</td><td>liau⁵⁵ pʰiau⁵³⁵ tɕei⁴¹ pə</td><td>大而斜的嘴巴</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">p-/pʰ- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>标</td><td>piau³¹³</td><td>目测、比划：~出一条直线</td></tr>
+<tr><td>摽</td><td>piau⁵⁵</td><td>①把绳子、铁丝绞紧：~锯、两根铁丝~起来 ②紧跟不舍，纠缠：我走到哪你~到哪，~到晚上也不给你买</td></tr>
+</table>
+<h4 class="sub-title">tɕ-/tɕʰ-/tɕ- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>焦</td><td>tɕiau³¹³</td><td>①十分着急：心里发~ ②很：~干、~粘、~酸 ③结合：两人~在一起干 ④攀比：你能和他~，人家有钱 ⑤攀牢：~在树上</td></tr>
+<tr><td>焦干</td><td>tɕiau³¹³ kɛ³¹³</td><td>①干燥：嘴~ ②实在：~的话</td></tr>
+<tr><td>交</td><td>tɕiau³¹³</td><td>人：~伏、~九</td></tr>
+<tr><td>交尾</td><td>tɕiau³¹³ uei⁴¹</td><td>昆虫交配</td></tr>
+<tr><td>叫</td><td>tɕiau⁵⁵</td><td>被：~他拿去了</td></tr>
+<tr><td>叫窝</td><td>tɕiau⁵⁵ uo³¹³</td><td>猫发情</td></tr>
+<tr><td>叫子</td><td>tɕiau⁵⁵ kuɛ³¹³ tl</td><td>蝈蝈</td></tr>
+<tr><td>校秤</td><td>tɕiau⁵⁵ tɕʰəŋ⁵⁵</td><td>复秤</td></tr>
+<tr><td>膏油</td><td>tɕiau⁵⁵ iə³⁵</td><td>给车轴注油</td></tr>
+<tr><td>吊秧子</td><td>tiau⁵⁵ iaŋ³¹³</td><td>狗交配</td></tr>
+<tr><td>焦</td><td>tɕiau³¹³</td><td>阉割母畜：~猪</td></tr>
+<tr><td>吊搭眼</td><td>tiau⁵⁵ tə³¹³ iɛ⁴¹</td><td>上眼皮松垂，也叫麻搭眼</td></tr>
+<tr><td>□贬</td><td>tɕiau³¹³ piɛ⁴¹</td><td>缺点、不足：你看这事还有什么~</td></tr>
+<tr><td>掉大精子</td><td>tiau⁵⁵ tə⁵⁵ tɕiŋ³¹³ tl</td><td>困紧张焦虑而精神恍惚</td></tr>
+<tr><td>翘</td><td>tɕʰiau⁵⁵</td><td>平板形物体受潮后变形弓起：~巴、板~了</td></tr>
+<tr><td>掉蛋</td><td>tiau⁵⁵ tɛ⁵⁵</td><td>调皮捣蛋</td></tr>
+<tr><td>俏紧</td><td>tɕʰiau⁵⁵ tɕiŋ³¹³</td><td>动作利索：走路~的</td></tr>
+<tr><td>掉向</td><td>tiau⁵⁵ ɕiaŋ⁵⁵</td><td>迷失了方向：一到新浦就~，解放路是向西南斜伸的</td></tr>
+<tr><td>俏刮</td><td>tɕʰiau⁵⁵ kuɛ³¹³</td><td>打扮得合体、美丽</td></tr>
+<tr><td>膘</td><td>piau⁵⁵</td><td>油发过的猪皮：吃~汤</td></tr>
+<tr><td>瓢不</td><td>pʰiau³⁵ pə</td><td>①薄板变形弓起：板受潮~了 ②说话不正常、胡说：喝几口酒嘴就~了</td></tr>
+<tr><td>吊三秋</td><td>tiau⁵⁵ sɛ³¹³ tɕiəu</td><td>过短的衣服</td></tr>
+<tr><td>吊线</td><td>tiau⁵⁵ ɕiɛ⁵⁵</td><td>用眼睛或线标出直线</td></tr>
+</table>
+<p><strong>注</strong>：右栏 OCR 末尾几条（膘/瓢不/吊三秋/吊线）顺序与左栏尾交错，待审核确认。</p></div>
+</section>
+<section class="page-section" id="p2608">
+<div class="page-bar"><button class="btn-copy" data-pid="2608">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏（"小"字头系列）</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>枵</td><td>ɕiau³¹³</td><td>薄纸溜~的</td></tr>
+<tr><td>枵脸皮</td><td>ɕiau³¹³ liɛ⁴¹ pi³⁵</td><td>爱面子、害羞</td></tr>
+<tr><td>小生日</td><td>ɕiau⁴¹ səŋ³¹³ zə</td><td>下半年出生，算周岁时可以虚两岁</td></tr>
+<tr><td>小饼子</td><td>ɕiau⁴¹ piŋ⁴¹ tl</td><td>膝盖骨</td></tr>
+<tr><td>小蹄爪子</td><td>ɕiau⁵⁴¹ ti³⁵ tua⁴¹ tl</td><td>猪蹄</td></tr>
+<tr><td>小停</td><td>ɕiau⁵⁴¹ tʰiŋ³⁵</td><td>慢慢地、轻轻地：~干活</td></tr>
+<tr><td>小鸡</td><td>ɕiau⁴¹ tɕi³¹³</td><td>男孩生殖器，也叫小拐球、小雀子</td></tr>
+<tr><td>小小停停</td><td>ɕiau⁴¹ ɕiau⁵⁴¹ tʰiŋ³⁵ tʰiŋ³⁵</td><td>不慌不忙</td></tr>
+<tr><td>小气八拉</td><td>ɕiau⁴¹ tɕʰi⁵⁵ pɛ³¹³ la³¹³</td><td>胸襟不宽、吝啬</td></tr>
+<tr><td>小性子</td><td>ɕiau⁵⁴¹ ɕiŋ⁵⁵ tl</td><td>脾气不好，常因小事发作</td></tr>
+<tr><td>小布</td><td>ɕiau⁴¹ pu⁵⁵</td><td>土布</td></tr>
+<tr><td>小姑子</td><td>ɕiau⁴¹ ku³¹³ tl</td><td>丈夫的妹妹</td></tr>
+<tr><td>小兄</td><td>ɕiau⁴¹ ɕiŋ³¹³</td><td>小弟弟</td></tr>
+<tr><td>小乌子</td><td>ɕiau⁴¹ u³¹³ tl</td><td>①小乌贼 ②蝌蚪</td></tr>
+<tr><td>小叔子</td><td>ɕiau⁴¹ ʂua³¹³ tl</td><td>丈夫的弟弟</td></tr>
+<tr><td>笑贬</td><td>ɕiau⁵⁵ piɛ⁴¹</td><td>讽刺、羞辱：~人</td></tr>
+<tr><td>小爷</td><td>ɕiau⁵⁴¹ iɛ⁵⁵</td><td>小叔叔</td></tr>
+<tr><td>酵头子</td><td>tɕiau⁵⁵ tʰəu³⁵ tl</td><td>发面引子</td></tr>
+<tr><td>小马子</td><td>ɕiau⁵⁴¹ ma⁴¹ tl</td><td>木质小马桶</td></tr>
+<tr><td>吆</td><td>iau³¹³</td><td>用声音驱赶：~鸡</td></tr>
+<tr><td>小他</td><td>ɕiau⁴¹ tʰa³¹³</td><td>人称泛指，不论男女，凡叫不出名子的人都可这样当面称呼</td></tr>
+<tr><td>咬</td><td>iau⁴¹</td><td>攀比：兵没当成，给人~下来了</td></tr>
+<tr><td>咬子</td><td>iau⁴¹</td><td>鱼追逐、受精</td></tr>
+<tr><td>小瓦</td><td>ɕiau⁴¹ ua⁴¹</td><td>筒瓦</td></tr>
+<tr><td>咬吊子</td><td>iau⁴¹ tiau⁵⁵</td><td>门搭扣</td></tr>
+<tr><td>小拇指头</td><td>ɕiau⁴¹ mo⁴¹ tl³¹³ təu</td><td>小手指</td></tr>
+<tr><td>要</td><td>iau⁵⁵</td><td>几根草顺方向放在一起挠几下，好捆物品：草~子</td></tr>
+<tr><td>小开子</td><td>ɕiau⁴¹ kɛ³¹³ tl</td><td>硬币</td></tr>
+<tr><td>小银开子</td><td>ɕiau⁴¹ iŋ³⁵ kɛ³¹³ tl</td><td>（银质硬币）</td></tr>
+<tr><td>兜子</td><td>təu³¹³</td><td>兜肚</td></tr>
+<tr><td>小银角子</td><td>ɕiau⁴¹ iŋ³⁵ kə³¹³ tl</td><td>（银角子）</td></tr>
+<tr><td>小嘴子</td><td>ɕiau⁴¹ tsei⁴¹</td><td>暗地传话的人</td></tr>
+</table>
+<h3 class="section-title">右栏（t-/tʰ-/təu- 组）</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>陡然</td><td>təu⁴¹ zɛ³⁵</td><td>忽然：~想起来了</td></tr>
+<tr><td>陡陡</td><td>təu⁴¹ təu⁴¹</td><td>~来病了</td></tr>
+<tr><td>小舍子</td><td>ɕiau⁴¹ sei⁵⁵ tl</td><td>田间简陋的草房</td></tr>
+<tr><td>斗篷</td><td>təu⁴¹ pʰəŋ</td><td>斗笠</td></tr>
+<tr><td>斗</td><td>təu⁵⁵</td><td>对接：两下~起来</td></tr>
+<tr><td>小鬼</td><td>ɕiau⁴¹ kuei⁴¹</td><td>扑克牌中的皇后</td></tr>
+<tr><td>□</td><td>təu⁵⁵</td><td>对、正确</td></tr>
+<tr><td>小草驴子</td><td>ɕiau⁴¹ tsʰau⁴¹ ly³⁵ tl</td><td>蝙蝠</td></tr>
+<tr><td>逗巧</td><td>təu⁵⁵ tɕʰiau⁴¹</td><td>碰巧</td></tr>
+<tr><td>小壕子</td><td>ɕiau⁴¹ xau³⁵</td><td>瓦质小马桶</td></tr>
+<tr><td>豆猴</td><td>təu⁵⁵ xəu³⁵</td><td>豆象</td></tr>
+<tr><td>小揪</td><td>ɕiau⁴¹ tɕiəu³¹³</td><td>小孩</td></tr>
+<tr><td>豆丹</td><td>təu⁵⁵ tã³¹³</td><td>吃黄豆叶儿的大青虫子</td></tr>
+<tr><td>小年</td><td>ɕiau⁴¹ liɛ³¹³</td><td>正月十五</td></tr>
+<tr><td>小园田</td><td>ɕiau⁴¹ yõ³⁵ tiɛ</td><td>农民的自留地</td></tr>
+<tr><td>偷嘴</td><td>tʰəu³¹³ tsei⁴¹</td><td>形容不正当的性关系</td></tr>
+<tr><td>小方子</td><td>ɕiau⁴¹ fɑŋ³¹³ tl</td><td>中药方</td></tr>
+<tr><td>小肠火</td><td>ɕiau⁵⁴¹ fɑŋ³⁵ xə⁴¹</td><td>尿道发炎、尿液发黄</td></tr>
+<tr><td>偷人</td><td>tʰəu³¹³ zən³⁵</td><td>偷汉子</td></tr>
+<tr><td>投口</td><td>tʰəu³⁵ kʰəu⁴¹</td><td>合口味</td></tr>
+<tr><td>小唱</td><td>ɕiau⁴¹ tʂʰɑŋ⁵⁵</td><td>民间小曲</td></tr>
+<tr><td>俞</td><td>təu³⁵</td><td>用细棍通：~炉子</td></tr>
+<tr><td>小粉子</td><td>ɕiau⁴¹ fən⁴¹</td><td>做食品时用的淀粉</td></tr>
+<tr><td>揄</td><td>təu³⁵</td><td>引：白虾子好~奶</td></tr>
+<tr><td>头</td><td>tʰəu³⁵</td><td>①动词后缀：没看~、有吃~ ②时间名词后缀，表示开始的部分：月~、年~ ③用在数量词前面，表示达到或接近相关的数量：又赚到~二十块</td></tr>
+</table>
+<p><strong>注</strong>：右栏"头"条释义跨页续至2609。</p></div>
+</section>
+<section class="page-section" id="p2609">
+<div class="page-bar"><button class="btn-copy" data-pid="2609">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">"头"字头系列（接上页）</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>手指盖子</td><td>ʂəu⁴¹ tʂʅ³¹³ kɛ⁵⁵</td><td>指甲</td></tr>
+<tr><td>手面子</td><td>ʂəu⁴¹ miɛ</td><td>手背</td></tr>
+<tr><td>手尖眼快</td><td>ʂəu⁴¹ tɕiɛ³¹³ iɛ⁵⁵ kuɛ⁵⁵</td><td>反应快、动作快</td></tr>
+<tr><td>头皮子</td><td>tʰəu³⁵ pi³⁵ tl</td><td>头屑</td></tr>
+<tr><td>头茬子</td><td>tʰəu³⁵ tsʰa</td><td>剃掉的短头发</td></tr>
+<tr><td>头水</td><td>tʰəu³⁵ suei⁴¹</td><td>头一次采摘的瓜果蔬菜：吃~、卖~</td></tr>
+<tr><td>头年子</td><td>tʰəu³⁵ liɛ³⁵</td><td>去年</td></tr>
+<tr><td>头年寒</td><td>tʰəu³⁵ liɛ³⁵ xɛ³⁵</td><td>去年冬天</td></tr>
+<tr><td>守</td><td>ʂəu⁴¹</td><td>等：~人、~车、~着</td></tr>
+<tr><td>守生婆</td><td>ʂəu⁴¹ səŋ³¹³ pʰə³⁵</td><td>接生婆</td></tr>
+<tr><td>头前</td><td>tʰəu³⁵ tɕiɛ³⁵</td><td>①从前：这事在~了还能办 ②在前边：~带路</td></tr>
+<tr><td>受</td><td>ʂəu⁵⁵</td><td>①耐：这人长不~看 ②受苦：活~</td></tr>
+<tr><td>头生子</td><td>tʰəu³⁵ səŋ³¹³ tl</td><td>头胎生的孩子</td></tr>
+<tr><td>瘦巴拉几</td><td>ʂəu⁵⁵ pə laŋ³¹³ tɕi</td><td>精瘦的样儿</td></tr>
+<tr><td>头生月</td><td>tʰəu³⁵ səŋ³¹³ yə³¹³</td><td>小孩满月</td></tr>
+<tr><td>敲</td><td>tʰəu⁴¹</td><td>散了：草个子~了</td></tr>
+<tr><td>瘦筋巴拉</td><td>ʂəu⁵⁵ tɕiŋ³¹³ pa³¹³ la³¹³</td><td>（精瘦的样儿）</td></tr>
+<tr><td>透</td><td>tʰəu³⁵</td><td>很，用在表示积极意义的形容词前边：~鲜、~肥、~活</td></tr>
+<tr><td>瘦精精</td><td>ʂəu⁵⁵ tɕiŋ³¹³ tɕiŋ³¹³</td><td>人瘦却有精神</td></tr>
+<tr><td>溜</td><td>ləu³¹³</td><td>满：~~一缸水</td></tr>
+<tr><td>□</td><td>zəu³¹³</td><td>①扔：把这截绳子~过去 ②打：~头一棍 ③理采：不~你（<strong>缺字待补：图中未确认到具体字形</strong>）</td></tr>
+<tr><td>露白</td><td>ləu⁵⁵ pɛ³¹³</td><td>显露：有财莫~，~会招贼</td></tr>
+<tr><td>肉刺</td><td>zəu⁵⁵ ʂʅ⁵⁵</td><td>田间劳动时，指甲沟附近被磨得根根象刺一样的皮肤</td></tr>
+<tr><td>周</td><td>tʂəu³¹³</td><td>周年：上~坟</td></tr>
+<tr><td>周正</td><td>tʂəu³¹³ tʂəŋ</td><td>端正：长~</td></tr>
+<tr><td>肉践践</td><td>zəu⁵⁵ tuɛ⁴¹ tuɛ⁴¹</td><td>肌肉丰满、结实</td></tr>
+<tr><td>扭</td><td>niəu⁴¹</td><td>拧：~罗丝、铁丝~断了</td></tr>
+<tr><td>肉头</td><td>zəu⁵⁵ tʰəu³⁵</td><td>①富而吝啬的人 ②壮丁</td></tr>
+<tr><td>扭子</td><td>niəu⁴¹</td><td>不合作、难相处的人</td></tr>
+<tr><td>扭丝头</td><td>niəu⁴¹ lɿ pʰəu⁵⁵ təu³⁵</td><td>①木材纹理不顺 ②指人不讲道理、难缠</td></tr>
+<tr><td>走尸鬼</td><td>təu⁴¹ ʂʅ³¹³ kuei⁴¹</td><td>起来行走的尸体</td></tr>
+<tr><td>走冻</td><td>təu⁴¹ təŋ⁵⁵</td><td>滑冰。也叫滑冻</td></tr>
+<tr><td>走色</td><td>təu⁴¹ ʂɛ³¹³</td><td>①褪色 ②因紧张而脸变色</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">k-/kʰ-/x- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>狗里肮脏</td><td>kəu⁴¹ li⁴¹ ɑŋ³¹³ tɑŋ³¹³</td><td>①脏、乱：地上弄~的 ②令人不满：这事办~的</td></tr>
+<tr><td>狗走槽子</td><td>kəu⁴¹ təu⁴¹ tsʰau³¹³</td><td>狗交配</td></tr>
+<tr><td>狗脸栽毛</td><td>kəu⁴¹ liɛ⁴¹ tsa³¹³ mau³⁵</td><td>易动怒变脸</td></tr>
+<tr><td>狗蝇</td><td>kəu⁴¹ iŋ³⁵</td><td>狗虱子</td></tr>
+<tr><td>够</td><td>kəu⁵⁵</td><td>拿高处、远处的物品：站在桌子上才能~着</td></tr>
+<tr><td>够人</td><td>kəu⁵⁵ zən³⁵</td><td>使人讨厌</td></tr>
+<tr><td>抠</td><td>kʰəu³¹³</td><td>吝啬</td></tr>
+<tr><td>□</td><td>kəu³⁵</td><td>脾气凶狠：~喳喳的</td></tr>
+<tr><td>臭蛋丸</td><td>tʂʰəu⁴¹ tɛ⁵⁵ uɛ³⁵</td><td>樟脑丸</td></tr>
+<tr><td>臭骨头</td><td>tʂʰəu⁴¹ kua³¹³ təu</td><td>狐臭</td></tr>
+<tr><td>瞅蛋</td><td>tʂʰəu⁴¹ tɛ⁵⁵</td><td>鳖交配</td></tr>
+<tr><td>抽风</td><td>tʂʰəu³¹³ fɑŋ³¹³</td><td>抽筋</td></tr>
+<tr><td>奏</td><td>səu³¹³</td><td>让风吹干：湿衣服挂出去~</td></tr>
+</table>
+<p><strong>注</strong>：右栏末尾"奏""□"两条 IPA 可信度较低，待审核确认。</p></div>
+</section>
+<section class="page-section" id="p2610">
+<div class="page-bar"><button class="btn-copy" data-pid="2610">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">k-/x- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>口面</td><td>kʰəu⁴¹ miɛ</td><td>布匹的宽度</td></tr>
+<tr><td>蚰子</td><td>iəu³⁵ tl</td><td>麦象，昆虫</td></tr>
+<tr><td>购受</td><td>xəu³¹³ ʂəu⁵⁵</td><td>后悔、埋怨</td></tr>
+<tr><td>油拉拉</td><td>iəu³⁵ la³¹³ la³¹³</td><td>油汪汪</td></tr>
+<tr><td>购咸</td><td>xəu³¹³ ɕiɛ³⁵</td><td>味儿很咸</td></tr>
+<tr><td>油滑嘴</td><td>iəu³⁵ xue³¹³ tɕei⁴¹</td><td>说话油滑，善于狡辩</td></tr>
+<tr><td>齁脖子</td><td>xəu³¹³ pə³¹³ tl</td><td>哮喘病人</td></tr>
+<tr><td>油果子</td><td>iəu³⁵ kə⁴¹ tl</td><td>油条</td></tr>
+<tr><td>猴</td><td>xəu³⁵</td><td>调皮：~蹦的、~出脑的</td></tr>
+<tr><td>油皮</td><td>iəu³⁵ pi³⁵</td><td>皮肤的表层</td></tr>
+<tr><td>厚</td><td>xəu⁵⁵</td><td>稠：粥饭太~了</td></tr>
+<tr><td>后襟头子</td><td>xəu⁵⁵ tɕiŋ³¹³ təu³⁵ tl</td><td>后襟</td></tr>
+<tr><td>后婚头子</td><td>xəu⁵⁵ xuən³¹³ tʰəu³⁵ tl</td><td>再婚的人</td></tr>
+<tr><td>烟</td><td>iɛ³¹³</td><td>有烟无明火地烧：~狼烟</td></tr>
+<tr><td>班辈</td><td>pɛ³¹³ pei⁵⁵</td><td>行辈</td></tr>
+<tr><td>沤酱</td><td>əu³¹³ tɕiaŋ⁵⁵</td><td>制酱</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">p-/f-/l-/tɕ- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>板牙</td><td>pɛ³¹³ iɑ³⁵</td><td>臼齿</td></tr>
+<tr><td>板正</td><td>pɛ⁴¹ tʂəŋ</td><td>①端正、整齐 ②正派、严肃</td></tr>
+<tr><td>丢松</td><td>tiəu³¹³ suŋ³¹³</td><td>放松：一~他就跑了</td></tr>
+<tr><td>番瓜</td><td>fæ³¹³ kuə³¹³</td><td>南瓜的一种，长弯形，前粗后细，成熟后表皮红色</td></tr>
+<tr><td>翻</td><td>fæ³¹³</td><td>搜查：我没拿，不信就~</td></tr>
+<tr><td>柳树绒子</td><td>liəu³⁵ su⁵⁵ zəŋ³⁵ tl</td><td>柳絮</td></tr>
+<tr><td>翻嘴吊舌</td><td>fæ³¹³ tɕei⁴¹ tiau⁵⁵ ʂə</td><td>狡辩，指晚辈向长辈争辩</td></tr>
+<tr><td>流球货</td><td>liəu³⁵ tɕiəu³⁵ xo⁵⁵</td><td>无懒</td></tr>
+<tr><td>牛繒</td><td>liəu³⁵ tsəŋ⁵⁵</td><td>牛缰绳</td></tr>
+<tr><td>翻臊</td><td>fæ³¹³ sau³¹³</td><td>说脏话</td></tr>
+<tr><td>牛嗡子</td><td>liəu³⁵ oŋ⁴¹ tl</td><td>水牛犊子</td></tr>
+<tr><td>翻头</td><td>fæ³¹³ təu³⁵</td><td>不守规矩、乱出新点子</td></tr>
+<tr><td>扭</td><td>liəu⁴¹</td><td>刚谢花的小瓜：瓜~子、刚打~</td></tr>
+<tr><td>翻单被</td><td>fæ³¹³ tɛ³¹³ pei⁵⁵</td><td>翻绳，游戏</td></tr>
+<tr><td>纽</td><td>liəu⁴¹</td><td>动词：把扣子~起来</td></tr>
+<tr><td>留门子</td><td>liəu⁵⁵ mən³⁵ tl</td><td>串门儿</td></tr>
+<tr><td>翻眼王</td><td>fæ³¹³ iɛ⁴¹ uɑŋ³⁵</td><td>易变脸发怒的人</td></tr>
+<tr><td>馏列子</td><td>liəu⁵⁵ liɛ³¹³</td><td>算列子</td></tr>
+<tr><td>溜活</td><td>liəu⁵⁵ xua³¹³</td><td>敏捷、勤快：腿~的</td></tr>
+<tr><td>翻跟虫</td><td>fæ³¹³ kən³¹³ tʰəŋ³⁵</td><td>蚊子的幼虫</td></tr>
+<tr><td>就</td><td>tɕiəu⁵⁵</td><td>①聚拢：两下~~，开会了 ②乘便：~汤下面 ③菜配合着酒、饭一起吃：鸭蛋~饭</td></tr>
+<tr><td>翻心</td><td>fæ³¹³ ɕiŋ³¹³</td><td>胃部难受，想吐</td></tr>
+<tr><td>烦神</td><td>fæ³⁵ ʂən³⁵</td><td>思虑、忧愁</td></tr>
+<tr><td>就子</td><td>tɕiəu⁵⁵ tl</td><td>菜肴</td></tr>
+<tr><td>犯犟</td><td>fæ⁵⁵ tɕiaŋ⁵⁵</td><td>犟嘴</td></tr>
+<tr><td>就地</td><td>tɕiəu⁵⁵ ti⁵⁵</td><td>地上：在~上</td></tr>
+<tr><td>饭牙</td><td>fæ⁵⁵ iɑ³⁵</td><td>恒牙</td></tr>
+<tr><td>就筋</td><td>tɕiəu⁵⁵ tɕiŋ³¹³</td><td>肌肉痉挛：腿肚子~了</td></tr>
+<tr><td>饭帚</td><td>fæ⁵⁵</td><td>刷锅洗碗用具，一般用脱过粒儿的高梁穗子扎成</td></tr>
+<tr><td>舅爹</td><td>tɕiəu⁵⁵ tiɛ³¹³</td><td>外祖父</td></tr>
+<tr><td>舅老爷</td><td>tɕiəu⁵⁵ lau⁴¹ iɛ</td><td>妻子的兄弟</td></tr>
+<tr><td>舅奶奶</td><td>tɕiəu⁵⁵ le⁴¹ le⁴¹</td><td>外祖母</td></tr>
+<tr><td>单</td><td>tɛ³¹³</td><td>①偏要：不要我去，~去 ②专：~看是谁干得坏事</td></tr>
+<tr><td>单怕</td><td>tɛ³¹³ pʰa⁵⁵</td><td>只怕：不怕一万，~一万</td></tr>
+</table>
+<p><strong>注</strong>：右栏末尾"单""单怕"为2610页最末，跨页接2611。</p></div>
+</section>
+<section class="page-section" id="p2611">
+<div class="page-bar"><button class="btn-copy" data-pid="2611">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>万一</td><td>uã⁵⁵ i</td><td></td></tr>
+<tr><td>□</td><td>tã³⁵</td><td>凿：~磨</td></tr>
+<tr><td>单溜</td><td>tæ³¹³ liəu³¹³</td><td>独自行动</td></tr>
+<tr><td>□</td><td>tã³⁵</td><td>①捣：~蒜 ②批评：你是大蒜剥皮找挨~</td></tr>
+<tr><td>单眼箍</td><td>tæ³¹³ iæ⁴¹ ku³¹³</td><td>单眼皮</td></tr>
+<tr><td>单饼</td><td>tæ³¹³ piŋ⁴¹</td><td>薄面饼</td></tr>
+<tr><td>馋虫</td><td>tʂʰæ³⁵ tʂʰuŋ³⁵</td><td>好吃的人</td></tr>
+<tr><td>单功</td><td>tæ³¹³ kuŋ³¹³</td><td>特意：~为你做的</td></tr>
+<tr><td>穆子</td><td>mu³¹³ tl</td><td>也指稗草</td></tr>
+<tr><td>单么</td><td>tæ³¹³ mə</td><td>可能：~是他干的</td></tr>
+<tr><td>椠</td><td>tɕʰiɛ³¹³</td><td>插：把棍~在地上</td></tr>
+<tr><td>单不了</td><td>tæ³¹³ pə⁴¹ lə⁴¹</td><td></td></tr>
+<tr><td>三只手</td><td>sæ³¹³ tl³¹³ səu⁴¹</td><td>小偷</td></tr>
+<tr><td>淡不拉叽</td><td>tæ⁵⁵ pə la³¹³ tɕi³¹³</td><td>味道淡</td></tr>
+<tr><td>三花两绕</td><td>sæ³¹³ xua³¹³ liaŋ⁴¹ zəu⁵⁵</td><td>三两下，快速：~就干完了</td></tr>
+<tr><td>旦麦</td><td>tæ⁵⁵ mə⁴¹</td><td>大麦</td></tr>
+<tr><td>三朝</td><td>sæ³¹³ tʂau³¹³</td><td>婴儿出生第三天</td></tr>
+<tr><td>但番</td><td>tæ⁵⁵ fæ³¹³</td><td>只要：你~认真，也不至于考不上重点中学</td></tr>
+<tr><td>三脚毛</td><td>sæ³¹³ tɕyə³¹³ mau³⁵</td><td>对某项技术所知甚少不精通的人</td></tr>
+<tr><td>蛋</td><td>tæ⁵⁵</td><td>睾丸</td></tr>
+<tr><td>山芋</td><td>sæ³¹³ y</td><td>甘薯</td></tr>
+<tr><td>摊</td><td>tʰæ³¹³</td><td>轮到：~你值班、~谁谁干</td></tr>
+<tr><td>山马菜</td><td>sæ³¹³ ma⁴¹ tsʰɛ⁵⁵</td><td>山坡上的野菜，叶比马齿苋叶大，可食</td></tr>
+<tr><td>弹绒</td><td>tʰæ³⁵ zuŋ³⁵</td><td>禽鸟交配</td></tr>
+<tr><td>山嘴子</td><td>sæ³¹³ tsei⁴¹</td><td>山脚伸出的地方</td></tr>
+<tr><td>叹性</td><td>tʰæ⁵⁵ ɕiŋ⁵⁵</td><td>失望：儿子一走不回，他也望~了</td></tr>
+<tr><td>山水牛牛</td><td>sæ³¹³ ʂuei⁴¹ liəu³⁵ liəu</td><td>天牛</td></tr>
+<tr><td>探网</td><td>tʰæ⁵⁵ uaŋ⁴¹</td><td>装上长竹杆的小鱼网</td></tr>
+<tr><td>懒龙</td><td>læ⁴¹ luŋ³⁵</td><td>懒汉</td></tr>
+<tr><td>山头</td><td>sæ³¹³ tʰəu³⁵</td><td>山墙的外部</td></tr>
+<tr><td>难为</td><td>næ³⁵ uei³⁵</td><td>愁：犯~</td></tr>
+<tr><td>山干冲子</td><td>sæ³¹³ kæ³¹³ tʂʰuŋ³¹³ tl</td><td>山芋干酒（？）</td></tr>
+<tr><td>难缠头</td><td>næ³⁵ tʂʰæ³⁵</td><td>难相处的人</td></tr>
+<tr><td>山尖子</td><td>sæ³¹³ tɕiɛ³¹³</td><td>山墙的上部</td></tr>
+<tr><td>散板</td><td>sæ⁴¹ pæ⁴¹</td><td>解体：木箱~了、联系~了</td></tr>
+<tr><td>蓝水</td><td>læ³⁵ ʂuei⁴¹</td><td>蓝墨水</td></tr>
+<tr><td>烂</td><td>læ⁵⁵</td><td>很、非常：~酸、~腥</td></tr>
+<tr><td>散灯</td><td>sæ⁴¹ təŋ³¹³</td><td>送葬路上点的灯火</td></tr>
+<tr><td>烂泥面子</td><td>læ⁵⁵ li³⁵ miɛ⁵⁵ tl</td><td>干土面儿</td></tr>
+<tr><td>干石洺</td><td>kæ³¹³ tuə³¹³ tuə³¹³</td><td>稠：稀饭~的</td></tr>
+<tr><td>烂沫淤</td><td>læ⁵⁵ mə⁴¹ y³¹³</td><td>淤泥</td></tr>
+<tr><td>敢</td><td>kæ⁴¹</td><td>当然：让我去那~好</td></tr>
+<tr><td>烂淤</td><td>læ⁵⁵ y³¹³</td><td>淤泥</td></tr>
+<tr><td>赶</td><td>kæ⁴¹</td><td>①向：~他要，莫朝我要 ②等到：这屋~明年再盖了</td></tr>
+<tr><td>簪</td><td>tsæ³¹³</td><td>投掷后插入：标枪~在地上</td></tr>
+<tr><td>赶旦</td><td>kæ⁴¹ tæ⁵⁵</td><td>不该说、不该做的：老实人单做~事</td></tr>
+<tr><td>崭脚</td><td>tsæ⁴¹ tɕyə³¹³</td><td>地面以下的石基础</td></tr>
+<tr><td>甚</td><td>ʂən⁴¹</td><td>整齐：一~齐</td></tr>
+<tr><td>堪堪</td><td>kʰæ³¹³ kʰæ³¹³</td><td>实在：~受不了</td></tr>
+<tr><td>站</td><td>tsæ⁵⁵</td><td>停：车到锦屏也不~~</td></tr>
+<tr><td>侃</td><td>kʰæ⁴¹</td><td>说、谈：胡~</td></tr>
+<tr><td>□</td><td>kʰæ³¹³</td><td>啄：鸡~米</td></tr>
+<tr><td>侃空</td><td>kʰæ⁴¹ kʰuŋ³¹³</td><td>说谎</td></tr>
+<tr><td>□</td><td>kʰæ³¹³</td><td>钉：钉子把鞋跟~上</td></tr>
+<tr><td>砍仗</td><td>kʰæ⁴¹ tʂaŋ⁵⁵</td><td>①打架 ②牛羊用角相抵</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>角相抵</td><td>tɕyə³¹³ ɕiaŋ⁴¹ ti⁴¹</td><td>（接左栏"砍仗"释义②）</td></tr>
+<tr><td>u ã</td><td>uã</td><td>（韵母标记，右栏接 uã 区）</td></tr>
+<tr><td>憨皮厚脸</td><td>xæ³¹³ pʰi³⁵ xəu⁵⁵ liɛ⁵⁵</td><td>不知趣</td></tr>
+<tr><td>□草</td><td>uã⁵⁵ tsʰau⁴¹</td><td>把横草理顺：~缮屋</td></tr>
+<tr><td>憨脸塔痴</td><td>xæ³¹³ liɛ⁴¹ tə³¹³ tʰɿ³¹³</td><td>憨不日痴（又憨又懒）</td></tr>
+<tr><td>关</td><td>kuæ³¹³</td><td>别：针~在帽子上</td></tr>
+<tr><td>憨不日痴</td><td>xæ³¹³ pə³¹³ zə³¹³ tʂʰɿ³¹³</td><td>又憨又懒</td></tr>
+<tr><td>关照</td><td>kuæ³¹³</td><td>①叮嘱：我~他好几回了也没见学会 ②告诉：你顺便~他一下 ③照应：多照应</td></tr>
+<tr><td>寒里</td><td>xæ³⁵ li⁴¹</td><td>冬天：~天、一~没上冻</td></tr>
+<tr><td>关针</td><td>kuæ³¹³ tʂən³¹³</td><td>别针</td></tr>
+<tr><td>寒潮</td><td>xæ³⁵ tʂʰau³⁵</td><td>冬天引人盐田卤水库中的海水</td></tr>
+<tr><td>惯</td><td>kuæ⁵⁵</td><td>摔：~碎了</td></tr>
+<tr><td>旱蜗螺螺</td><td>xæ⁵⁵ uo³¹³ luo³⁵ luo</td><td>蜗牛</td></tr>
+<tr><td>损炮</td><td>kuæ⁵⁵ pʰau⁵⁵</td><td>形同鞭炮的摔雷</td></tr>
+<tr><td>贯跤</td><td>kuæ⁵⁵ tɕiau³¹³</td><td>摔跤</td></tr>
+<tr><td>汗褟子</td><td>xæ⁵⁵ tʰə³¹³</td><td>夏天穿的中式心褂</td></tr>
+<tr><td>玩把戏</td><td>uæ³⁵ pə⁴¹ ɕi⁵⁵</td><td>演马戏</td></tr>
+<tr><td>晚星</td><td>uæ⁴¹ ɕiŋ³¹³</td><td>晚上</td></tr>
+<tr><td>掊</td><td>pʰəu⁴¹</td><td>手抓食物往嘴里塞</td></tr>
+<tr><td>俺们</td><td>æ⁴¹ mə</td><td>我，我们。在青少年中流行</td></tr>
+<tr><td>iě</td><td>iě</td><td>（韵母标记）</td></tr>
+<tr><td>褊窄</td><td>piɛ⁴¹ tsɛ³¹³</td><td>狭窄：屋子里~。也叫窄笈</td></tr>
+<tr><td>iã</td><td>iã</td><td>（韵母标记）</td></tr>
+<tr><td>辫</td><td>piɛ⁵⁵</td><td>~韭菜</td></tr>
+<tr><td>艰难</td><td>tɕiɛ³¹³ næ³⁵</td><td>物品很稀少：这东西~</td></tr>
+<tr><td>骗</td><td>piɛ⁵⁵</td><td>抬腿掠过：一~腿上了车子、~人</td></tr>
+<tr><td>艰涩</td><td>tɕiɛ³¹³ sə³¹³</td><td>①少：钱~ ②艰难：日子~</td></tr>
+<tr><td>绵</td><td>miɛ³⁵</td><td>①不脆：饼干搁~了 ②性格软：这人~里~气的 ③秤略低一点：三斤~~的</td></tr>
+<tr><td>拣口</td><td>tɕiɛ⁴¹ kʰəu⁴¹</td><td>妊娠反应时挑食</td></tr>
+<tr><td>铅丝</td><td>tɕiɛ³¹³ sɿ³¹³</td><td>铁丝</td></tr>
+<tr><td>绵槐</td><td>miɛ³⁵ xue³⁵</td><td>紫穗槐</td></tr>
+<tr><td>铅条</td><td>tɕiɛ³¹³ tʰiau³⁵</td><td>铅条</td></tr>
+<tr><td>鞅</td><td>miɛ⁴¹</td><td>折起来缝：裤子长了，~一下</td></tr>
+<tr><td>铅角子</td><td>tɕiɛ³¹³ kə³¹³ tl</td><td>硬币</td></tr>
+<tr><td>鞔鞋</td><td>miɛ⁴¹ ɕiɛ³⁵</td><td>在鞋面上缝上白布以示带孝</td></tr>
+<tr><td>咸□□</td><td>ɕiɛ³⁵ tsɛ³⁵ tɛ³⁵</td><td>味道略咸</td></tr>
+<tr><td>喊喝</td><td>xæ⁴¹ xə</td><td>大喊：你~什么，怕听不见</td></tr>
+<tr><td>面</td><td>miɛ⁵⁵</td><td>食物含纤维少：~山芋</td></tr>
+<tr><td>面□</td><td>miɛ⁵⁵ su⁵⁵</td><td>难为情的神态</td></tr>
+</table>
+<p><strong>注</strong>：右栏 OCR 跨栏混排严重（uã/iě/iã 多韵母交错），IPA 与上一条目常有错位，已按音系规律尽量还原，待二次审核对照源图。</p></div>
+</section>
+<section class="page-section" id="p2612">
+<div class="page-bar"><button class="btn-copy" data-pid="2612">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏（æ / iã 区）</h3>
+<h4 class="sub-title">æ 组（接 2611）</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>万一</td><td></td></tr>
+<tr><td>单葡</td><td>tæ³¹³ liau³¹³</td><td>独自行动</td></tr>
+<tr><td>单眼獾</td><td>tæ³¹³ iɛ⁴¹ ku³¹³</td><td>单眼皮</td></tr>
+<tr><td>单饼</td><td>tæ³¹³ piŋ⁴¹</td><td>薄面饼</td></tr>
+<tr><td>单动</td><td>tæ³¹³ kəʰɔ³¹³</td><td>特意；～为你做的</td></tr>
+<tr><td>单么</td><td>tæ³¹³ mə</td><td>可能：～是他干的</td></tr>
+<tr><td>单不了</td><td>tæ³¹³ pə³¹³ lɤ⁴¹</td><td></td></tr>
+<tr><td>淡不拉叽</td><td>tæ⁵⁵ pə lɤ³¹³ tɕi³¹³</td><td>味道淡</td></tr>
+<tr><td>且麦</td><td>tɕ'ie⁵⁵ mə³¹³</td><td>大麦</td></tr>
+<tr><td>但善</td><td>tæ⁵⁵ fæ³¹³</td><td>只要；你～认真，也不至于考不上重点中学</td></tr>
+<tr><td>蛋</td><td>tæ³⁵</td><td>蛋丸</td></tr>
+<tr><td>摊</td><td>tʰæ³¹³</td><td>到值班｜～准谁干</td></tr>
+<tr><td>弹绒</td><td>tʰæ³⁵ zəu³⁵</td><td>禽鸟交配</td></tr>
+<tr><td>叹性</td><td>tʰæ⁵⁵ tɕiŋ⁵⁵</td><td>失望；儿子一走不回，他也想～了</td></tr>
+<tr><td>探网</td><td>tʰæ⁴¹ uoŋ⁵⁵</td><td>装上长竹杆的小鱼网</td></tr>
+<tr><td>懒龙</td><td>læ⁴¹ loŋ³¹³</td><td>懒汉</td></tr>
+<tr><td>难为</td><td>læ³¹³ ueŋ³⁵</td><td>愁;犯～</td></tr>
+<tr><td>难懂头</td><td>læ³¹³ tɔ³¹³ tʰau³⁵</td><td>难相处的人</td></tr>
+<tr><td>难不成</td><td>læ³¹³ pə pə tɔ³⁵</td><td>难道……不成；～就这样子了</td></tr>
+<tr><td>蓝水</td><td>læ⁴¹ suei⁴¹</td><td>蓝墨水</td></tr>
+<tr><td>烂</td><td>læ⁵⁵</td><td>很非常；～酸｜～腥</td></tr>
+<tr><td>烂泥面子</td><td>læ⁵⁵ li³⁵ miɛ⁵⁵ tɕi⁵⁵</td><td>干土面儿</td></tr>
+<tr><td>烂淤淡</td><td>læ⁵⁵ ma³¹³ y³¹³</td><td>淤泥</td></tr>
+<tr><td>烂赞</td><td>læ⁵⁵ y³¹³</td><td>投掷后插入；标枪～在地上了</td></tr>
+<tr><td>静脚</td><td>tɕiŋ⁴¹ tɕiau³¹³</td><td>地面以下的石基础</td></tr>
+<tr><td>僅</td><td>tɕiŋ⁴¹</td><td>整齐；～～齐</td></tr>
+<tr><td>站</td><td>tɕã⁴¹³</td><td>停;车到锅沿也不～～</td></tr>
+<tr><td>□</td><td>tɕ'ɛ³¹³</td><td>贼:鸡～米</td></tr>
+<tr><td>□</td><td>tɕ'ɛ³¹³</td><td>钉:钉子把鞋跟～上</td></tr>
+</table>
+<h4 class="sub-title">iã 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>角相抵</td><td>tɕiau³¹³ ɕiaŋ³¹³ ti³</td><td>（相抵）</td></tr>
+<tr><td>憨皮厚脸</td><td>xæ³¹³ pʰi³⁵ xəu⁵⁵ liɛ⁵⁵</td><td>不知趣</td></tr>
+<tr><td>不知趣</td><td></td></tr>
+<tr><td>憨脸塔痴</td><td>xæ³¹³ liɛ⁴¹ tə³¹³ tʰɿ³¹³</td><td>憨不日痴（又憨又懒）</td></tr>
+<tr><td>憨不日痴</td><td>xæ³¹³ pə³¹³ zə³¹³ tʂʰɿ³¹³</td><td>又憨又懒</td></tr>
+<tr><td>寒里</td><td>xæ³⁵ li⁴¹</td><td>冬天：~天、一~没上冻</td></tr>
+<tr><td>寒潮</td><td>xæ³⁵ tʂʰau³⁵</td><td>冬天引盐田卤水库中的海水</td></tr>
+<tr><td>旱蜗螺螺</td><td>xæ⁵⁵ uo³¹³ luo³⁵ luo</td><td>蜗牛</td></tr>
+<tr><td>汗褟子</td><td>xæ⁵⁵ tʰə³¹³</td><td>夏天穿的中式心褂</td></tr>
+<tr><td>艰难</td><td>tɕiɛ³¹³ næ³⁵</td><td>物品很稀少：这东西～</td></tr>
+<tr><td>艰涩</td><td>tɕiɛ³¹³ sə¹³</td><td>①少：钱～ ②艰难：日子～</td></tr>
+<tr><td>拣口</td><td>tɕʰiɛ⁴¹ kʰəu⁴¹</td><td>妊娠反应时挑食</td></tr>
+<tr><td>铅丝</td><td>tɕʰiɛ³¹³ sɿ³¹³</td><td>铁丝</td></tr>
+<tr><td>铅条</td><td>tɕʰiɛ³¹³ tʰiau³⁵</td><td>铅条</td></tr>
+<tr><td>铅角子</td><td>tɕʰiɛ³¹³ kə³¹³ tl</td><td>硬币</td></tr>
+<tr><td>咸□□</td><td>ɕiɛ³¹³ tɕʰiɛ³¹³ kɛ³¹³</td><td>味道略咸</td></tr>
+<tr><td>喊喝</td><td>ɕiɛ³¹³ xɛ⁴¹</td><td>大喊：你～什么，怕听不见</td></tr>
+<tr><td>眼影</td><td>iɛ⁴¹ tɕʰŋ³¹³</td><td>眼睛中的分泌物</td></tr>
+<tr><td>眼屎</td><td>iɛ⁴¹ sɿ³¹³</td><td></td></tr>
+<tr><td>眼子</td><td>iɛ⁴¹ tɕl</td><td>软弱可欺的人</td></tr>
+<tr><td>眼下</td><td>iɛ⁴¹ tɕʰie⁵⁵</td><td>目前、现在</td></tr>
+<tr><td>眼眉</td><td>iɛ⁴¹ mei³⁵</td><td>眉毛</td></tr>
+<tr><td>眼尿</td><td>iɛ⁴¹ sei³¹³</td><td>眼泪、贬义</td></tr>
+<tr><td>眼蛋子</td><td>iɛ⁴¹ tʰɛ⁵⁵ tl</td><td>眼珠</td></tr>
+</table>
+<h3 class="section-title">右栏（uã / iɛ 区）</h3>
+<h4 class="sub-title">uã 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>□草</td><td>suã⁵⁵ sɔ⁴¹</td><td>把横草理顺：～缮屋</td></tr>
+<tr><td>关</td><td>kuã³¹³</td><td>别：针～在箱子上</td></tr>
+<tr><td>关照</td><td>kuã³¹³ tsɔ¹³</td><td>①叮嘱：我～他好几回了也没见学会 ②许你：你顺便～他一下来开会 ③照应：多照应</td></tr>
+<tr><td>关针</td><td>kuã³¹³ tsɛn³¹³</td><td>别针</td></tr>
+<tr><td>惯</td><td>kuã⁵⁵</td><td>摔：～碎了</td></tr>
+<tr><td>惯炮</td><td>kuã⁵⁵ pʰɔ³⁵</td><td>形同鞭炮的摔雷</td></tr>
+<tr><td>贯鼓</td><td>kuã⁵⁵ tɕʰiɛ³¹³</td><td>摔跤</td></tr>
+<tr><td>玩把戏</td><td>uã³⁵ pɛ⁴¹ tɕʰio⁵⁵</td><td>演马戏</td></tr>
+<tr><td>晚上</td><td>uã⁴¹ tɕʰiŋ³¹³</td><td>晚上</td></tr>
+</table>
+<h4 class="sub-title">iɛ 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>褊窄</td><td>piɛ⁴¹ tsɛ³¹³</td><td>狭窄：屋子里～。也叫窄笕</td></tr>
+<tr><td>辫</td><td>piɛ⁵⁵</td><td>～韭菜</td></tr>
+<tr><td>骗</td><td>piɛ⁵⁵</td><td>抬腿掠过：一～腿上了车子｜～人</td></tr>
+<tr><td>绵</td><td>miɛ⁵⁵</td><td>①不脆：饼干搁～了 ②性格软：这人～里～气的 ③秤略微低一点：三斤～的</td></tr>
+<tr><td>绵绳</td><td>miɛ³⁵ xuɛ³¹³</td><td>紫穗槐</td></tr>
+<tr><td>靓</td><td>miɛ⁴¹</td><td>折起来缝：裤子长了，～一下</td></tr>
+<tr><td>靓样</td><td>miɛ⁴¹ tɕʰia⁵⁵</td><td>在鞋面上缝上白布以示带孝</td></tr>
+<tr><td>面</td><td>miɛ⁵⁵</td><td>食物含纤维少：～山芋</td></tr>
+<tr><td>面□</td><td>miɛ⁵⁵ suã⁵⁵</td><td>难为情的神态（<strong>缺字待补</strong>）</td></tr>
+<tr><td>面子事</td><td>miɛ⁵⁵ tsɿ⁵⁵</td><td>要脸面的事</td></tr>
+<tr><td>越子事</td><td>miɛ⁵⁵ tsɿ⁵⁵</td><td>①路小～面的 ②走：他早～得了</td></tr>
+<tr><td>点</td><td>tie⁴¹</td><td>点种：～黄豆</td></tr>
+<tr><td>垫饥</td><td>tie⁵⁵ tɕi³¹³</td><td>饭前因太饿，先吃点食物</td></tr>
+<tr><td>天饧亮</td><td>tʰie³¹³ pʰau⁴¹ liou⁵⁵</td><td>天要亮时</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2613">
+<div class="page-bar"><button class="btn-copy" data-pid="2613">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">t-/tʰ- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>天响</td><td>tiɛ³¹³ ʂaŋ⁴¹</td><td>中午</td></tr>
+<tr><td>填坟</td><td>tiɛ³⁵ fən³⁵</td><td>为坟墓添土修饰</td></tr>
+<tr><td>甜</td><td>tiɛ³⁵</td><td>盐少味淡</td></tr>
+<tr><td>甜麻子</td><td>tiɛ³⁵ ma³⁵ tl</td><td>疤痕浅的麻子</td></tr>
+<tr><td>甜不拉叽</td><td>tʰiɛ³⁵ pə³¹³ la³¹³ tɕi³¹³</td><td>①甜味不正 ②盐少味淡：这汤~的</td></tr>
+<tr><td>甜不哕哕</td><td>tiɛ³⁵ pə³¹³ yə³¹³ yə³¹³</td><td>甜得发腻</td></tr>
+<tr><td>甜么哈哈</td><td>tiɛ³⁵ mə¹³ xa³¹³ xa³¹³</td><td>①甜味不正 ②恬不知耻的样子</td></tr>
+<tr><td>甜么索索</td><td>tiɛ³⁵ mə sɔ³¹³ sɔ³¹³</td><td>舔油</td></tr>
+<tr><td>蔫瘪</td><td>iɛ³¹³ pə</td><td>①植物蔫了 ②人没精神</td></tr>
+<tr><td>蔫死带黄</td><td>iɛ³¹³ sɿ⁴¹ tɛ⁵⁵ xuaŋ³⁵</td><td>蔫黄的样子</td></tr>
+</table>
+<h4 class="sub-title">ɕ-/ɕʰ- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>嫌好识歹</td><td>ɕiɛ³⁵ xau⁴¹ ʂɿ³¹³ tɛ⁴¹</td><td>挑剔、过份</td></tr>
+<tr><td>嫌饭</td><td>ɕiɛ³⁵ fæ⁵⁵</td><td>怀孕初期挑食</td></tr>
+<tr><td>嫌废</td><td>ɕiɛ³⁵ fei⁵⁵</td><td>嫌弃：不~饭，孬好都行</td></tr>
+<tr><td>现</td><td>ɕiɛ⁵⁵</td><td>现在：~去来不及了</td></tr>
+<tr><td>蚬子</td><td>ɕiɛ⁴¹</td><td>一种水中软体动物，肉可食</td></tr>
+<tr><td>檐口</td><td>iɛ³⁵ kʰəu⁴¹</td><td>屋檐</td></tr>
+<tr><td>舔腚鬼</td><td>tiɛ⁴¹ tiŋ⁵⁵ kuei⁴¹</td><td>献媚的人</td></tr>
+<tr><td>舔油</td><td>tiɛ⁴¹ iəu³⁵</td><td>献媚、讨好</td></tr>
+<tr><td>□</td><td>iɛ³⁵</td><td>挤着、夹着：手给车门~着了</td></tr>
+<tr><td>□鞋</td><td>iɛ⁴¹ ɕiɛ³⁵</td><td>把布条缉在鞋帮口上</td></tr>
+<tr><td>盐坨</td><td>iɛ³⁵ tʰuə³⁵</td><td>大盐堆</td></tr>
+<tr><td>盐硝</td><td>iɛ³⁵ ɕiau³¹³</td><td>盐碱：地里起~</td></tr>
+<tr><td>盐岭</td><td>iɛ³⁵ liŋ³¹³</td><td>大盐坨</td></tr>
+<tr><td>盐蝙蝠</td><td>iɛ³⁵ piɛ³¹³ fu</td><td>蝙蝠</td></tr>
+<tr><td>□</td><td>iɛ⁴¹</td><td>粘：煮熟了~的</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">l-/iě 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>粘胶胶</td><td>liɛ³⁵ tɕiə³¹³ tɕiə³¹³</td><td>粘：棒拐子煮熟了~的</td></tr>
+<tr><td>粘□</td><td>liɛ³⁵ kuaŋ</td><td>粘在锅底较稠的粥</td></tr>
+<tr><td>粘唧唧</td><td>liɛ³⁵ tɕi³¹³ tɕi³¹³</td><td>粘得使人不舒服：饼~的、烂泥~的</td></tr>
+<tr><td>粘个答答</td><td>liɛ³⁵ kə tə³¹³ tə³¹³</td><td>粘答答</td></tr>
+<tr><td>连</td><td>liɛ³⁵</td><td>用大针脚对缝起来</td></tr>
+<tr><td>跟</td><td>liɛ⁴¹</td><td>脚踩上去再转一下</td></tr>
+<tr><td>捻</td><td>liɛ⁴¹</td><td>把粗铁件锤细：~铜子</td></tr>
+<tr><td>埝</td><td>liɛ⁴¹</td><td>地方：~子、没~找</td></tr>
+<tr><td>棟枣子</td><td>liɛ⁵⁵ tsau⁴¹ l</td><td>棟树果儿</td></tr>
+<tr><td>棟枣树</td><td>liɛ⁵⁵ tsau⁴¹ ʂu⁵⁵</td><td>棟树</td></tr>
+</table>
+<h4 class="sub-title">õ/p-/pʰ-/m- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>扶</td><td>põ⁵⁵</td><td>①比：哪能和你~ ②哪能与……比：~你啊，你家有钱</td></tr>
+<tr><td>半拉拉</td><td>põ⁵⁵ la³¹³ la³¹³</td><td>一半：活干~走了</td></tr>
+<tr><td>半边</td><td>põ⁵⁵ piɛ³¹³</td><td>旁边：滚~去</td></tr>
+<tr><td>副</td><td>pʰu⁵⁵</td><td>轻剁：~肉</td></tr>
+<tr><td>盘</td><td>pʰɔ̃³⁵</td><td>①盘算：这事你~怎办 ②纠缠：把他~累了</td></tr>
+<tr><td>盘思</td><td>pʰɔ̃³⁵ sɿ</td><td>①打算：~去一次 ②考虑：正~这事怎做好</td></tr>
+<tr><td>盘心</td><td>pʰɔ̃³⁵ ɕiŋ³¹³</td><td>焦虑</td></tr>
+<tr><td>漫</td><td>mɔ̃⁵⁵</td><td>越过：~墙撂过去</td></tr>
+<tr><td>镘</td><td>mɔ̃⁵⁵</td><td>种子撒播后用锄耪着盖土</td></tr>
+</table>
+<h4 class="sub-title">tɕ-/tɕʰ-/k-/x- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>肩拐子</td><td>tɕiɛ³¹³ kuɛ⁴¹ tl</td><td>肩</td></tr>
+<tr><td>犍牛</td><td>tɕiɛ³¹³ liəu³⁵</td><td>阉过的公黄牛</td></tr>
+<tr><td>尖闹</td><td>tɕiɛ³³ lɔ⁵⁵</td><td>个性强，不易相处</td></tr>
+<tr><td>据</td><td>tɕy³¹³</td><td>擦：~脸、~澡、~桌布</td></tr>
+<tr><td>溅火</td><td>tɕiɛ⁵⁵ xuə⁴¹</td><td>淬火</td></tr>
+<tr><td>见</td><td>tɕiɛ⁵⁵</td><td>显得：这人~大、车子骑了一年还~新</td></tr>
+<tr><td>歼</td><td>tɕiɛ³¹³</td><td>割下穗头：~芦秫、~稗子</td></tr>
+<tr><td>千脚土</td><td>tɕiɛ³¹³ tɕyə³¹³ tʰu⁴¹</td><td>门前土</td></tr>
+<tr><td>断</td><td>tuõ⁵⁵</td><td>①追：~他了 ②另义</td></tr>
+<tr><td>断马头</td><td>tuõ⁵⁵ ma⁴¹ tʰəu³⁵</td><td>短触须的章鱼</td></tr>
+<tr><td>簖</td><td>tuõ⁵⁵</td><td>插在水里捕鱼的栅栏</td></tr>
+<tr><td>段</td><td>tuõ⁵⁵</td><td>地方：这~、那~</td></tr>
+<tr><td>断路</td><td>tuõ⁴¹ lu⁵⁵</td><td>拦路抢劫</td></tr>
+<tr><td>仙爹爹</td><td>ɕiɛ³¹³ tiɛ³¹³ tʰɿ³¹³</td><td>神汉</td></tr>
+<tr><td>仙奶奶</td><td>ɕiɛ³¹³ lɛ⁴¹ lɛ⁴¹</td><td>巫婆</td></tr>
+<tr><td>鲜甜</td><td>ɕiɛ³¹³ tiɛ³⁵</td><td>甘甜：桃~的</td></tr>
+<tr><td>鲜活灵</td><td>ɕiɛ³¹³ xuə³¹³ ləŋ³⁵</td><td>新鲜：菜~的</td></tr>
+</table>
+<p><strong>注</strong>：右栏 õ/p/m/tɕ/k/x 多韵母交错，IPA 上标 OCR 缺失较多，已按音系规律补全（标 pʰɔ̃/mɔ̃/tuõ 等），待审核确认。</p></div>
+</section>
+<section class="page-section" id="p2614">
+<div class="page-bar"><button class="btn-copy" data-pid="2614">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<h4 class="sub-title">t-/tʰ- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>段磨</td><td>tuõ⁵⁵ mɔ⁵⁵</td><td>把磨齿凿得深一些的</td></tr>
+<tr><td>团</td><td>tuõ³⁵</td><td>带、保育：~孙子</td></tr>
+<tr><td>团子</td><td>tuõ³⁵ tl</td><td>圆子：肉~</td></tr>
+<tr><td>团圆饼</td><td>tuõ³⁵ yõ³⁵ piŋ⁴¹</td><td>中秋节做的甜饼</td></tr>
+<tr><td>团近</td><td>tuõ³⁵ tɕiŋ⁵⁵</td><td>附近</td></tr>
+<tr><td>团媳子</td><td>tuõ³⁵ ɕi¹³ tl</td><td>童养媳</td></tr>
+<tr><td>转筋</td><td>tʂuæ⁵⁵ tɕiŋ³¹³</td><td>抽筋：腿肚~了</td></tr>
+<tr><td>转向</td><td>tʂuæ⁵⁵ ɕiaŋ⁵⁵</td><td>迷失了方向</td></tr>
+<tr><td>砖瘤子</td><td>tʂuæ³¹³ liəu³⁵</td><td>碎砖块</td></tr>
+</table>
+<h4 class="sub-title">tɕʰ-/k-/kʰ-/x- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>拳溜子</td><td>tɕyõ³⁵ liəu³¹³ tl</td><td>拳头</td></tr>
+<tr><td>暄饼</td><td>ɕyõ³¹³ piŋ⁴¹</td><td>发面饼</td></tr>
+<tr><td>旋顶</td><td>ɕyõ tiŋ⁴¹</td><td>人头秃顶</td></tr>
+<tr><td>圆坟</td><td>yõ³⁵ fən³⁵</td><td>清明扫墓时给坟墓添土</td></tr>
+<tr><td>元宝</td><td>yõ³⁵ pau⁴¹</td><td>①金锭、银锭 ②汤圆</td></tr>
+<tr><td>元宝篮子</td><td>yõ³⁵ pau⁴¹ læ³⁵ tl</td><td>元宝形竹篮</td></tr>
+<tr><td>乱岗子</td><td>luæ⁵⁵ kaŋ³¹³</td><td>乱葬岗子</td></tr>
+<tr><td>乱神</td><td>luæ⁵⁵ ʂən³⁵</td><td>添乱的人</td></tr>
+</table>
+<h4 class="sub-title">p-/pʰ-/m- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>棒花子</td><td>paŋ⁵⁵ xua³¹³</td><td>爆玉米花</td></tr>
+<tr><td>棒醋子</td><td>paŋ⁵⁵ tsʰə⁴¹ tl</td><td>玉米蜡儿，可</td></tr>
+<tr><td>棒头</td><td>paŋ⁵⁵ tʰə</td><td>玉米</td></tr>
+<tr><td>棒拐子</td><td>paŋ⁵⁵ kuɛ⁴¹</td><td>玉米穗儿</td></tr>
+<tr><td>棒面子</td><td>paŋ⁵⁵ miɛ⁵⁵ tl</td><td>细玉米面儿</td></tr>
+<tr><td>棒糈子</td><td>paŋ⁵⁵ ɕy³¹³ tl</td><td>粗玉米粉</td></tr>
+<tr><td>膀</td><td>paŋ⁴¹</td><td>涨：豆子泡~了、手泡~了</td></tr>
+<tr><td>膀弯子</td><td>paŋ⁴¹ uæ³¹³</td><td>肘部</td></tr>
+<tr><td>胖</td><td>paŋ⁵⁵</td><td>肥嫩：韭菜长得透~</td></tr>
+<tr><td>旁</td><td>pʰaŋ⁴¹</td><td>乱说：他说话~三~四的</td></tr>
+<tr><td>方才</td><td>faŋ³¹³ tsʰɛ³⁵</td><td>刚才</td></tr>
+<tr><td>方塘</td><td>faŋ³¹³ tʰaŋ³⁵</td><td>水塘</td></tr>
+<tr><td>仿影</td><td>faŋ⁴¹ iŋ⁴¹</td><td>描红</td></tr>
+<tr><td>软古冬</td><td>zuæ⁴¹ ku⁴¹ tuŋ³¹³</td><td>软和得使人不舒服：踩着个癞姑了~地吓一跳</td></tr>
+<tr><td>软不拉塌</td><td>zuæ⁴¹ pə³¹³ la³¹³ tʰə³¹³</td><td>①软：黄瓜晒~ ②懒洋洋的：~的没个精神</td></tr>
+<tr><td>软塌塌</td><td>zuæ⁴¹ tʰə³¹³ tʰə³¹³</td><td>软弱无力的样子</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">k-/kʰ-/x- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>当门</td><td>taŋ³¹³ mən³⁵</td><td>房内的地面</td></tr>
+<tr><td>当间</td><td>taŋ³¹³ tɕiɛ³¹³</td><td>房内的明间</td></tr>
+<tr><td>当天子</td><td>taŋ³¹³ tiɛ³¹³ tl</td><td>家院子</td></tr>
+<tr><td>宕</td><td>taŋ⁵⁵</td><td>轻轻地来回摩擦：刀在缸沿上~~就快了</td></tr>
+<tr><td>盪</td><td>taŋ⁵⁵</td><td>用两只容器来回倒，使流体食物变凉：把水~~再喝</td></tr>
+<tr><td>塘</td><td>tʰaŋ³⁵</td><td>水沟</td></tr>
+<tr><td>塘灰</td><td>tʰaŋ³⁵ xuei³¹³</td><td>灰尘</td></tr>
+<tr><td>烫头</td><td>tʰaŋ⁵⁵ tʰəu³⁵</td><td>烫发</td></tr>
+<tr><td>欢</td><td>xuæ̃⁵⁵</td><td>快：走~</td></tr>
+<tr><td>蜷黄蛋</td><td>tɕyõ³⁵ xuaŋ³⁵ tæ⁵⁵</td><td>不能孵化的蛋</td></tr>
+<tr><td>全面奶奶</td><td>tɕyõ³⁵ miɛ⁵⁵ lɛ⁴¹ lɛ</td><td>帮助料理喜事的老妇人，要求夫妻、儿女齐全</td></tr>
+<tr><td>齉</td><td>la⁵⁵</td><td>鼻子往上耸，表示不满、讥讽：鼻子往上一~，碜得要命</td></tr>
+<tr><td>张</td><td>tʂaŋ³¹³</td><td>①倒：~倒了、从墙上~下 ②张望：谁从门口~了一下 ③张开手接：我摆你~着 ④张开网平捞：~虾皮</td></tr>
+<tr><td>杠</td><td>kaŋ⁵⁵</td><td>①线条、细长的划痕：一道~ ②用线条删去：这几个字得~去</td></tr>
+<tr><td>掌</td><td>tʂaŋ⁴¹</td><td>①钉鞋底：~鞋 ②补：把墙上的豁~起来</td></tr>
+<tr><td>虹</td><td>kaŋ⁵⁵</td><td>①彩虹：单~、双~ ②出现彩虹：天~起来了</td></tr>
+<tr><td>涨</td><td>tʂaŋ⁴¹</td><td>一种炒鸡蛋的方法，蛋打在油锅里略炒后再加点水烧熟</td></tr>
+<tr><td>康</td><td>kʰaŋ³¹³</td><td>空心：萝卜~了</td></tr>
+<tr><td>炕</td><td>kʰaŋ⁵⁵</td><td>熥：~鱼、~饼</td></tr>
+<tr><td>夯</td><td>xaŋ³¹³</td><td>打：~你一顿</td></tr>
+<tr><td>绗</td><td>xaŋ³⁵</td><td>直行缝：~被子</td></tr>
+<tr><td>巷口子</td><td>xaŋ⁵⁵ kʰəu⁴¹</td><td>胡同口</td></tr>
+<tr><td>航里巴脏</td><td>xaŋ³¹³ li pə³¹³ tsaŋ³¹³</td><td>脏</td></tr>
+<tr><td>碳</td><td>tʰæ⁵⁵</td><td>磨擦：~痒</td></tr>
+<tr><td>伤饱</td><td>ʂaŋ³¹³ pau⁴¹</td><td>消化不良</td></tr>
+<tr><td>桑枣子</td><td>saŋ³¹³ tsau⁴¹</td><td>桑椹</td></tr>
+<tr><td>响头</td><td>ʂaŋ⁴¹ tʰəu³⁵</td><td>中午</td></tr>
+<tr><td>上眯</td><td>ʂaŋ⁵⁵ mi⁵⁵</td><td>困乏欲睡</td></tr>
+<tr><td>上路</td><td>ʂaŋ⁵⁵ lu⁵⁵</td><td>合乎规矩：做事不~</td></tr>
+<tr><td>上材</td><td>ʂaŋ⁵⁵ tsʰɛ³⁵</td><td>入殓</td></tr>
+<tr><td>上紧</td><td>ʂaŋ⁵⁵ tɕiŋ⁴¹</td><td>抓紧</td></tr>
+<tr><td>上冻</td><td>ʂaŋ⁵⁵ tuŋ⁵⁵</td><td>结冰</td></tr>
+<tr><td>上色</td><td>ʂaŋ⁵⁵ sə³¹³</td><td>易染上颜色：白布~</td></tr>
+</table>
+<p><strong>注</strong>：右栏 k-/x-/ʂ- 区条目密集，IPA 上标多处 OCR 缺失（如 tʰa⁴¹/kaŋ⁵⁵ 调值存疑），已按音系补，待审核。</p></div>
+</section>
+<section class="page-section" id="p2615">
+<div class="page-bar"><button class="btn-copy" data-pid="2615">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏（接 2614 右栏 ʂ-/k-/x- 区）</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>长鱼</td><td>tʂʰaŋ³⁵ y³⁵</td><td>黄鳝</td></tr>
+<tr><td>长脸</td><td>tʂʰaŋ³⁵ liɛ⁴¹</td><td>失望的样子</td></tr>
+<tr><td>藏猫猫</td><td>tsʰaŋ³⁵ mau³⁵ mau³⁵</td><td>捉迷藏</td></tr>
+<tr><td>藏蹦蹦</td><td>tsʰaŋ³⁵ pəŋ⁵⁵ pəŋ</td><td>捉迷藏（异名）</td></tr>
+<tr><td>藏蒙蒙</td><td>tsʰaŋ³⁵ məŋ³⁵ məŋ</td><td>捉迷藏（异名）</td></tr>
+<tr><td>刚才刚</td><td>tɕiaŋ³¹³ kɛ³⁵ tɕiaŋ³¹³</td><td>刚才</td></tr>
+<tr><td>讲古</td><td>tɕiaŋ⁴¹ ku⁴¹</td><td>讲故事</td></tr>
+<tr><td>讲古记</td><td>tɕiaŋ⁴¹ ku⁴¹ tɕi⁵⁵</td><td>讲故事（带"记"）</td></tr>
+<tr><td>犟筋头</td><td>tɕiaŋ⁵⁵ tɕiŋ³¹³ tʰəu³⁵</td><td>固执己见的人</td></tr>
+<tr><td>钱</td><td>tɕʰiɛ⁵⁵</td><td>扶：树倒了，两人~不起来</td></tr>
+<tr><td>浆网</td><td>tɕiaŋ³¹³ uaŋ⁴¹</td><td>用猪血染鱼网</td></tr>
+<tr><td>娘</td><td>liaŋ³⁵</td><td>婶子：二~、小~</td></tr>
+<tr><td>□</td><td>liaŋ³⁵ kaŋ³⁵</td><td>尖刻、厉害</td></tr>
+<tr><td>上路</td><td>ʂaŋ⁵⁵ lu⁵⁵</td><td>合乎规矩（右栏已列，此处疑重复）</td></tr>
+<tr><td>上材/上紧/上冻/上色</td><td>ʂaŋ⁵⁵ …</td><td>（见 2614 右栏，本页左栏疑为接续重复）</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">ɕ-/tɕ-/tɕʰ-/k-/kʰ-/x- 组</h4>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>香大姐</td><td>ɕiaŋ³¹³ ta⁵⁵ tɕiɛ</td><td>臭虫</td></tr>
+<tr><td>乡大头</td><td>ɕiaŋ³¹³ ta⁵⁵ tʰəu³⁵</td><td>没见过世面的乡下人</td></tr>
+<tr><td>阳口</td><td>iaŋ³⁵ kʰəu⁴¹</td><td>院墙下向外排水的通道</td></tr>
+<tr><td>羊二疯</td><td>iaŋ³⁵ ɛ⁵⁵ fəŋ³¹³</td><td>羊角疯</td></tr>
+<tr><td>养水滩</td><td>iaŋ⁴¹ ʂuei⁴¹ tʰæ³¹³</td><td>可引入盐田的海水池</td></tr>
+<tr><td>□</td><td>kaŋ⁴¹</td><td>①钻：从洞里~过去 ②直冲：车子一上路直~</td></tr>
+<tr><td>钢</td><td>kaŋ³¹³</td><td>给刀刃加钢：~刀、~锹</td></tr>
+<tr><td>钢丝车</td><td>kaŋ³¹³ sɿ³¹³ tʂʰə³¹³</td><td>自行车</td></tr>
+<tr><td>钢条</td><td>kaŋ³¹³ tʰiau³⁵</td><td>辐条</td></tr>
+<tr><td>钢钢</td><td>kaŋ³¹³ ka³¹³</td><td>行走有力：走路~的</td></tr>
+<tr><td>钢角子</td><td>kaŋ³¹³ kə³¹³</td><td>硬币</td></tr>
+<tr><td>钢菊子</td><td>kaŋ³¹³ tɕyə³¹³</td><td>蒺藜</td></tr>
+<tr><td>钢橘子</td><td>kaŋ³¹³ tɕyə³¹³</td><td>枳，枳的果</td></tr>
+<tr><td>印们</td><td>iŋ⁴¹ mə</td><td>我，我们（流行于青少年）</td></tr>
+<tr><td>响便</td><td>ʂaŋ⁴¹ piɛ⁵⁵</td><td></td></tr>
+<tr><td>响星</td><td>ʂaŋ⁴¹ ɕiŋ³¹³</td><td>流星</td></tr>
+<tr><td>伤饱</td><td>ʂaŋ³¹³ pau⁴¹</td><td>消化不良（见2614，疑重复）</td></tr>
+<tr><td>□</td><td>zɑŋ³⁵</td><td>累：腿发~</td></tr>
+<tr><td>庄圩</td><td>tʂuaŋ³¹³ uei³⁵</td><td>护庄的沟、堤、围墙</td></tr>
+</table>
+<p><strong>注</strong>：2615 为第四章方言词汇末页（2622 前尚有 2616–2622 共 7 页，待下批次）。本页 iaŋ/uaŋ 区与 2614 右栏 ʂ-/k-/x- 区连续，OCR 混排，IPA 上标多处缺失，已按音系补全，待审核。</p></div>
+</section>
+<section class="page-section" id="p2616">
+<div class="page-bar"><button class="btn-copy" data-pid="2616">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>奘</td><td>tsuaŋ⁴¹</td><td>①粗大、齐整：这堆萝卜整~的 ②弄整齐：~筷子\</td><td>~齐了 ③添光彩：~脸</td></tr>
+<tr><td>望呆</td><td>uaŋ⁵⁵ tɛ³¹³</td><td>呆呆地看</td></tr>
+<tr><td>望葵</td><td>uaŋ⁵⁵ kuei³⁵</td><td>向日葵</td></tr>
+<tr><td>疮黄</td><td>tʂʰuaŋ³¹³ xuaŋ³⁵</td><td>病态的脸色</td></tr>
+<tr><td>旺梢子</td><td>uaŋ⁵⁵ ʂau³¹³ tɿ</td><td>触须长的章鱼</td></tr>
+<tr><td>床面子</td><td>tʂʰuaŋ³⁵ miɛ⁵⁵</td><td>床沿的外部</td></tr>
+<tr><td>床桄</td><td>tʂʰuaŋ³⁵ kuaŋ³¹³</td><td>没铺席褥的光床</td></tr>
+<tr><td>噇</td><td>tʂʰuaŋ³⁵</td><td>吃，贬义</td></tr>
+<tr><td>□</td><td>pʰaŋ³¹³</td><td>溅：~了一身水（原书缺字）</td></tr>
+<tr><td>撞</td><td>tʂʰuaŋ⁵⁵</td><td>边抱着走边哄婴儿睡觉</td></tr>
+<tr><td>擬</td><td>ʂuɔŋ³¹³</td><td>用力过猛闪伤了身体；从墙上跳下来~了腿</td></tr>
+<tr><td>掇</td><td>ʂuɔŋ⁵⁵</td><td>用力往下摁；口袋~还能装点</td></tr>
+<tr><td>本历</td><td>pən⁴¹ li⁵⁵</td><td>阴历</td></tr>
+<tr><td>双眼箍</td><td>ʂuaŋ³¹³ iã⁴¹ kuə¹³</td><td>双眼皮</td></tr>
+<tr><td>笨癞蛙</td><td>pən⁵⁵ lɛ⁵⁵ uɛ³⁵</td><td>蠢笨的样子</td></tr>
+<tr><td>沥水</td><td>ʂua⁴¹</td><td>把菜～～（沥去水）</td></tr>
+<tr><td>碰</td><td>pʰəŋ⁵⁵</td><td>正在：~吃饭\</td><td>他~找你</td></tr>
+<tr><td>闷</td><td>mən³¹³</td><td>少言寡语：~种</td></tr>
+<tr><td>闷声拉气</td><td>mən³¹³ ʂəŋ³¹³ la³¹³ tɕʰi⁵⁵</td><td>沉默不语的样子</td></tr>
+<tr><td>蹲</td><td>tən³¹³</td><td>在：我不欢~家里</td></tr>
+<tr><td>□</td><td>mən³¹³</td><td>朽：棒泡久了，都~了（原书缺字）</td></tr>
+<tr><td>光</td><td>kuaŋ³¹³</td><td>总是：车后座的菜~掉</td></tr>
+<tr><td>扪</td><td>mən³⁵</td><td>给植物摘心去头</td></tr>
+<tr><td>门□后</td><td>mən³⁵ ie⁵⁵ xəu⁵⁵</td><td>门背后（原书缺字）</td></tr>
+<tr><td>门枕</td><td>mən³⁵ tʂən⁴¹</td><td>托住门轴的石墩</td></tr>
+<tr><td>光鱼</td><td>kuaŋ³¹³ y³⁵</td><td>又叫沙光鱼，海鱼的一种</td></tr>
+<tr><td>光光</td><td>kuaŋ³¹³ kuaŋ³¹³</td><td>①灵活的人：~不吃眼前亏 ②一点不剩：吃个~</td></tr>
+<tr><td>广广</td><td>kuaŋ⁴¹ kuaŋ⁴¹</td><td>多，普遍：人家那高楼都是~的</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>灯草席子</td><td>təŋ³¹³ tsʰau⁴¹ ɕi³⁵ ɕi³⁵</td><td>草席子</td></tr>
+<tr><td>光脸</td><td>kuaŋ⁵⁵ liɛ⁴¹</td><td>理发时修面</td></tr>
+<tr><td>灯潮</td><td>təŋ³¹³ tʂʰau³⁵</td><td>正月、二月引入养水滩的海水</td></tr>
+<tr><td>黄子</td><td>xuaŋ³⁵</td><td>东西，也指人，贬义：谁要那~\</td><td>那~不学好</td></tr>
+<tr><td>牛</td><td>təŋ³¹³ liəu³⁵</td><td>阉过的公水牛</td></tr>
+<tr><td>黄古子</td><td>xuaŋ³⁵ ku³¹³</td><td>小黄鱼</td></tr>
+<tr><td>□</td><td>tʰa⁴¹</td><td>①大口吃：几口就~了一个馒头 ②张大口用力咬：恨不得~你两口（原书缺字）</td></tr>
+<tr><td>黄芽菜</td><td>xuaŋ³⁵ ia³⁵ ɛ⁵⁵</td><td>长帮大白菜</td></tr>
+<tr><td>黄老鼠</td><td>xuaŋ³⁵ lau⁴¹</td><td>黄鼠狼</td></tr>
+<tr><td>□□</td><td>tɔʰ⁴¹ tɕʰi⁴¹</td><td>饭菜做得正好够吃（原书缺两字）</td></tr>
+<tr><td>黄狼子</td><td>xuaŋ³⁵ laŋ³¹³ tɿ</td><td>黄鼠狼</td></tr>
+<tr><td>炖</td><td>tən⁵⁵</td><td>煮：水~开了\</td><td>~饭</td></tr>
+<tr><td>谎精</td><td>xuaŋ⁴¹ tɕiŋ³¹³</td><td>爱撒谎的人</td></tr>
+<tr><td>熥</td><td>tʰəŋ³¹³</td><td>一种热敷法</td></tr>
+<tr><td>汪</td><td>uaŋ³¹³</td><td>煮：~豆腐</td></tr>
+<tr><td>豚猪</td><td>tʰən³⁵ u³¹³</td><td>没阉过的小母猪</td></tr>
+<tr><td>汪塘</td><td>uaŋ³¹³ tʰaŋ³⁵</td><td>水塘</td></tr>
+<tr><td>吞太阴</td><td>tʰən³¹³ tʰɛ⁵⁵ ir³¹³</td><td>日蚀</td></tr>
+<tr><td>往天</td><td>uaŋ⁴¹ tʰiɛ³¹³</td><td>往日</td></tr>
+<tr><td>吞日</td><td>tʰən³¹³ zə¹³</td><td>日蚀（异记）</td></tr>
+<tr><td>网脚</td><td>uaŋ⁴¹ tɕya¹³</td><td>拴在渔网底边的金属物</td></tr>
+<tr><td>吞月</td><td>tʰən³¹³ yə¹³</td><td>月蚀</td></tr>
+<tr><td>□</td><td>tʰən⁴¹</td><td>在泥水里踏：~烂泥（原书缺字）</td></tr>
+<tr><td>望笆</td><td>uaŋ⁵⁵ pa³¹³</td><td>摆放在桁条之上的芦苇笆</td></tr>
+<tr><td>吞子</td><td>tʰən⁵⁵ tɿ</td><td>嗓子</td></tr>
+<tr><td>吞眼子</td><td>tʰən⁵⁵ iɛ⁴¹ tɿ</td><td>嗓子眼</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2617">
+<div class="page-bar"><button class="btn-copy" data-pid="2617">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>吞嗓眼</td><td>tʰən⁵⁵ saŋ⁴¹ iɛ⁴¹</td><td>嗓子眼（异名）</td></tr>
+<tr><td>锋快</td><td>tʰən³¹³ kʰuɛ⁵⁵</td><td>锋利</td></tr>
+<tr><td>□</td><td>fən⁵⁵</td><td>虫子蛀了衣服、木器</td></tr>
+<tr><td>能虫</td><td>nəŋ³⁵ tsʰoŋ³⁵</td><td>手巧能干的人</td></tr>
+<tr><td>冰扎凉</td><td>piŋ³¹³ ʈʂa¹³ liaŋ³⁵</td><td>冰冷刺骨</td></tr>
+<tr><td>冷子</td><td>ləŋ⁴¹ tɿ</td><td>冰雹</td></tr>
+<tr><td>贫嘴寡舌</td><td>pʰiŋ³⁵ tsei⁴¹ kua⁴¹ sə¹³</td><td>言语尖酸刻薄，絮叨</td></tr>
+<tr><td>冷阵</td><td>ləŋ⁴¹ tʂən⁵⁵</td><td>冷一阵</td></tr>
+<tr><td>冷铺</td><td>ləŋ⁴¹ pʰu⁵⁵</td><td>死人睡的地铺</td></tr>
+<tr><td>顶</td><td>tiŋ⁴¹</td><td>到：~现在才来</td></tr>
+<tr><td>愣愣</td><td>ləŋ⁵⁵ ləŋ⁵⁵</td><td>等一会儿：~再来</td></tr>
+<tr><td>定真</td><td>tiŋ⁵⁵ tʂən³¹³</td><td>认真</td></tr>
+<tr><td>嫩绰</td><td>nən⁵⁵</td><td>嫩：菜炒~的</td></tr>
+<tr><td>腚盘子</td><td>tiŋ⁵⁵ pʰɔ³⁵ tɿ</td><td>臀部</td></tr>
+<tr><td>腚垂子</td><td>tiŋ⁵⁵ tʰuei³⁵ tɿ</td><td>臀部（异名）</td></tr>
+<tr><td>争嘴堂</td><td>tʂəŋ³¹³ tsei⁴¹ tʰaŋ³⁵</td><td>后脑勺的浅沟</td></tr>
+<tr><td>听门子</td><td>tʰiŋ³¹³ mən³⁵ tɿ</td><td>在门窗外听室内人讲话</td></tr>
+<tr><td>整</td><td>tʂəŋ⁴¹</td><td>①全部：几只鸡~拿去三块也不卖 ②抟塑：~泥蛋子</td></tr>
+<tr><td>听说</td><td>tʰiŋ³¹³ ʂuə¹³</td><td>听从别人的意见</td></tr>
+<tr><td>停床</td><td>tʰiŋ³⁵ tʂʰuaŋ³⁵</td><td>放尸体的门板</td></tr>
+<tr><td>正朝</td><td>tʂəŋ⁵⁵ tʂʰau³¹³</td><td>结婚的当天</td></tr>
+<tr><td>停停</td><td>tʰiŋ³⁵ tʰiŋ</td><td>完毕、做好：给弄~的，他才来</td></tr>
+<tr><td>正日</td><td>tʂəŋ⁵⁵ zə¹³</td><td>正日子</td></tr>
+<tr><td>阵头</td><td>tʂən⁵⁵ tʰəu³⁵</td><td>①双虹 ②雷阵雨：来~了</td></tr>
+<tr><td>停停当当</td><td>tʰiŋ³⁵ tʰiŋ³⁵ tʰaŋ⁵⁵ tʰaŋ⁵⁵</td><td>妥帖、就绪</td></tr>
+<tr><td>莛杆</td><td>tʰiŋ³⁵ kã</td><td>高粱杆连接穗头的那一节</td></tr>
+<tr><td>趁手</td><td>tʂʰən⁵⁵ ʂəu⁴¹</td><td>合手：家什用起来~</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>挺潮拉湿</td><td>tʰiŋ⁴¹ tʂʰau³⁵ la³¹³ ʂɿ¹³</td><td>潮乎乎的</td></tr>
+<tr><td>生卤</td><td>ʂəŋ³¹³ lu⁴¹</td><td>没熬过的卤块</td></tr>
+<tr><td>生疼</td><td>ʂəŋ³¹³ tʰəŋ³⁵</td><td>很疼</td></tr>
+<tr><td>生性</td><td>ʂəŋ³¹³ ɕiŋ⁵⁵</td><td>性格、脾气</td></tr>
+<tr><td>□</td><td>liŋ⁵⁵</td><td>零落：~树叶子（原书缺字）</td></tr>
+<tr><td>哂</td><td>ʂəŋ³¹³</td><td>讥讽：说话~人</td></tr>
+<tr><td>另肩</td><td>liŋ⁵⁵ tɕiɛ³¹³</td><td>一肩高一肩低：长~了</td></tr>
+<tr><td>损种</td><td>sən⁴¹ tʂoŋ⁴¹</td><td>坏种</td></tr>
+<tr><td>人情□□</td><td>zən³¹³ tɕʰiŋ³⁵ lɛ³¹³ lɛ³¹³</td><td>人情很重，含不满情绪</td></tr>
+<tr><td>筋□□</td><td>tɕiŋ³¹³ tsuɛ⁴¹ tuɛ⁴¹</td><td>结实、有韧性：咬在嘴里~的\</td><td>胳膊长~的</td></tr>
+<tr><td>任野</td><td>zən⁵⁵</td><td>肆无忌惮：~打</td></tr>
+<tr><td>经饿</td><td>tɕiŋ³¹³ ɣ³⁵</td><td>耐饿：吃饺子~</td></tr>
+<tr><td>跟</td><td>kən³¹³</td><td>如：大青年不~个女的有劲</td></tr>
+<tr><td>精</td><td>tɕiŋ³¹³</td><td>很，非常，表程度小：~矮\</td><td>~瘦\</td><td>~轻\</td><td>~稀</td></tr>
+<tr><td>跟脚</td><td>kən³¹³ tɕya¹³</td><td>鞋的大小合脚，便于走路</td></tr>
+<tr><td>精溜光</td><td>tɕiŋ³¹³ liəu³¹³ kuaŋ³¹³</td><td>裸体</td></tr>
+<tr><td>□</td><td>kən³¹³</td><td>低：头~着（原书缺字）</td></tr>
+<tr><td>精光溜神</td><td>tɕiŋ³¹³ kuaŋ³¹³ liəu³¹³ ʂən³⁵</td><td>光溜、干净</td></tr>
+<tr><td>坑得了</td><td>kʰəŋ⁴¹ tə¹³ lə</td><td>糟了、坏了：你不~吗，啥也做不好</td></tr>
+<tr><td>紧赶紧</td><td>tɕiŋ⁴¹ tɕiɛ⁴¹ tɕi⁴¹</td><td>紧上加紧：~才追上</td></tr>
+<tr><td>指</td><td>tʂʅ⁴¹ ka⁵⁵</td><td>紧紧抓住：这条大鱼~不住</td></tr>
+<tr><td>垢</td><td>kən⁵⁵</td><td>垢：牙~\</td><td>茶~\</td><td>尿~</td></tr>
+<tr><td>尽</td><td>tɕiŋ⁵⁵</td><td>①只管：饭很多~吃 ②任凭：要是不听话得~我打</td></tr>
+<tr><td>很</td><td>xən⁴¹</td><td>①厉害 ②严重：病~了 ③多：他家钱~了</td></tr>
+<tr><td>净光</td><td>tɕiŋ⁵⁵ kuaŋ³¹³</td><td>光：吃个~\</td><td>光~</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2618">
+<div class="page-bar"><button class="btn-copy" data-pid="2618">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>青皮二混子</td><td>tɕiŋ³¹³ pʰi³⁵ ɛ⁵⁵ xoŋ⁵⁵</td><td>地痞</td></tr>
+<tr><td>笼布</td><td>loŋ³⁵ pʰu⁵⁵</td><td>做豆腐、蒸馒头用的纱布</td></tr>
+<tr><td>青混子</td><td>tɕiŋ xoŋ⁵⁵</td><td>青鱼</td></tr>
+<tr><td>龙眼乌</td><td>loŋ³⁵ iã⁴¹ u³¹³</td><td>黎明或黄昏时</td></tr>
+<tr><td>亲亲</td><td>tɕʰiŋ³¹³ tɕiŋ³¹³</td><td>亲戚</td></tr>
+<tr><td>□死</td><td>tɕiŋ³⁵ sɿ⁴¹</td><td>自杀、自寻死路：~啊，往车上撞</td></tr>
+<tr><td>怎着</td><td>tsəŋ⁴¹ ʈʂəu⁵⁵</td><td>吓唬、治服：你能~谁</td></tr>
+<tr><td>种</td><td>tʂoŋ⁴¹</td><td>死灰复燃：~火做饭</td></tr>
+<tr><td>勤利</td><td>tɕiŋ³⁵ li</td><td>勤快</td></tr>
+<tr><td>粽猪</td><td>tsɔŋ⁵⁵ tʂu³¹³</td><td>没阉的小公猪</td></tr>
+<tr><td>兴</td><td>ɕiŋ³¹³</td><td>许可：不~这样干</td></tr>
+<tr><td>葱脆</td><td>tsʰɔŋ³¹³ tsʰuei⁵⁵</td><td>脆：大饼~</td></tr>
+<tr><td>星星</td><td>ɕiŋ³¹³ ɕiŋ³¹³</td><td>蜻蜓</td></tr>
+<tr><td>冲</td><td>tʂʰɔŋ⁵⁵</td><td>剪刀张开向前推进剪布：把布~开</td></tr>
+<tr><td>心话</td><td>ɕiŋ³¹³ xua⁵⁵</td><td>心里想、认为：你~是这样</td></tr>
+<tr><td>充能</td><td>tsʰɔŋ³¹³ ləŋ³⁵</td><td>逞能</td></tr>
+<tr><td>心口窝</td><td>ɕiŋ³¹³ kʰəu⁴¹ ɔ³¹³</td><td>胸口</td></tr>
+<tr><td>行</td><td>ɕiŋ³⁵</td><td>层：一~一~揭开</td></tr>
+<tr><td>铳</td><td>tsʰɔŋ⁵⁵</td><td>枪毙</td></tr>
+<tr><td>行行</td><td>ɕiŋ³⁵ ɕiŋ³⁵</td><td>①好好的：~的来打他一下 ②动词后缀，表示正在行进：干~\</td><td>走~\</td><td>吃~\</td><td>用~\</td><td>想~\</td><td>睡~</td></tr>
+<tr><td>冲</td><td>tʂʰɔŋ⁵⁵</td><td>正对着：树正~着大门</td></tr>
+<tr><td>送房</td><td>sɔŋ⁵⁵ faŋ³⁵</td><td>新婚之夜，在闹房人离开前放鞭炮</td></tr>
+<tr><td>麦麦</td><td>mɔŋ⁴¹ mə¹³</td><td>元麦</td></tr>
+<tr><td>□</td><td>kɔŋ⁴¹</td><td>钻：从洞里~过去（原书缺字）</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>滚堂莎子</td><td>kɔŋ⁴¹ tʂaŋ³⁵ ʂa³¹³ tɿ</td><td>盲肠炎</td></tr>
+<tr><td>兴</td><td>ɕiŋ⁵⁵</td><td>幸灾乐祸：人家惯倒了，看你的</td></tr>
+<tr><td>滚</td><td>kɔŋ⁴¹</td><td>很，热度大：~热\</td><td>~烫\</td><td>~水</td></tr>
+<tr><td>信壳子</td><td>ɕiŋ⁵⁵ kʰə¹³ tɿ</td><td>信封</td></tr>
+<tr><td>□</td><td>xɔŋ³¹³</td><td>熟透变软：~柿子\</td><td>烤山芋透~（原书缺字）</td></tr>
+<tr><td>信皮子</td><td>ɕiŋ⁵⁵ pʰi³⁵ tɿ</td><td>信封（异名）</td></tr>
+<tr><td>阴</td><td>ir³¹³</td><td>①阴险有心计 ②说话时暗中讽刺别人 ③故意刁难不肯出力</td></tr>
+<tr><td>荤</td><td>xuəŋ³¹³</td><td>低级下流：讲个~的</td></tr>
+<tr><td>横冲子</td><td>xuəŋ³⁵ tsʰɔŋ³¹³ tɿ</td><td>做事不加考虑的人</td></tr>
+<tr><td>阴缉</td><td>ir³¹³ tɕi¹³</td><td>故意刁难</td></tr>
+<tr><td>混子</td><td>xuəŋ⁵⁵ tɿ</td><td>草鱼</td></tr>
+<tr><td>因由</td><td>ir³¹³ iəu³⁵</td><td>①借口：没~找事 ②消磨时光的依托：咬着奶嘴当~</td></tr>
+<tr><td>温</td><td>uəŋ³¹³</td><td>很，程度深的：~臭\</td><td>~臊</td></tr>
+<tr><td>温淘</td><td>uəŋ³¹³ tʰau</td><td>没烧开的：~水\</td><td>~饭</td></tr>
+<tr><td>饮汤</td><td>ir⁴¹ tʰaŋ³¹³</td><td>米汤：做干饭撇~</td></tr>
+<tr><td>问</td><td>uən⁵⁵</td><td>介词，朝：你~她叫大姐</td></tr>
+<tr><td>瓮子</td><td>ɔŋ⁵⁵</td><td>脾气暴燥的人</td></tr>
+<tr><td>兄媳妇</td><td>ɕiɔŋ³¹³ ɕi³¹³ fu</td><td>弟弟的妻子</td></tr>
+<tr><td>懂</td><td>tɔŋ⁴¹</td><td>知道：他走了你~不~</td></tr>
+<tr><td>熊</td><td>ɕiɔŋ³⁵</td><td>①斥责：~他一顿 ②无能：~包\</td><td>~样子</td></tr>
+<tr><td>冻</td><td>tɔŋ⁵⁵</td><td>冰</td></tr>
+<tr><td>冻溜溜</td><td>tɔŋ⁵⁵ liə³⁵ liə</td><td>檐下冰锥</td></tr>
+<tr><td>揖</td><td>iɔŋ³¹³</td><td>用肩膀推、用手推：~门</td></tr>
+<tr><td>通腿</td><td>tʰɔŋ³¹³ tʰei⁴¹</td><td>两人各睡一头合盖一床被子</td></tr>
+<tr><td>拔</td><td>pə¹³</td><td>拿出：每人~十块钱</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2619">
+<div class="page-bar"><button class="btn-copy" data-pid="2619">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>拔会</td><td>pə¹³ xuei⁵⁵</td><td>凑份子钱</td></tr>
+<tr><td>□</td><td>pə¹³</td><td>放在冷水中浸泡：~西瓜（原书缺字）</td></tr>
+<tr><td>刹潮</td><td>ʂa¹³ tʂʰau³⁵</td><td>使潮气散发</td></tr>
+<tr><td>八带鱼</td><td>pə¹³ tɛ⁵⁵ y³⁵</td><td>章鱼</td></tr>
+<tr><td>刹刮</td><td>ʂa¹³ kuɛ¹³</td><td>批评、训斥</td></tr>
+<tr><td>趺</td><td>mə¹³</td><td>越过：从门口~过去</td></tr>
+<tr><td>杀</td><td>ʂa¹³</td><td>缝合：~棉裤\</td><td>~档</td></tr>
+<tr><td>发乌</td><td>fə¹³ u³¹³</td><td>不鲜艳：颜色~</td></tr>
+<tr><td>轧乎</td><td>kə¹³ xu</td><td>易与人相处、善交际：~人</td></tr>
+<tr><td>发水</td><td>fə¹³ ʂuei⁴¹</td><td>发洪水</td></tr>
+<tr><td>轧帮</td><td>kə¹³ paŋ³¹³</td><td>合伙（结帮）</td></tr>
+<tr><td>发躁</td><td>fə¹³ ʈʂau⁵⁵</td><td>着急</td></tr>
+<tr><td>轧伙</td><td>kə¹³ xuɔ⁴¹</td><td>合伙</td></tr>
+<tr><td>发热</td><td>fə¹³ zə¹³</td><td>儿童感冒发烧</td></tr>
+<tr><td>纥</td><td>kə¹³</td><td>把几股细绳拧成一根绳：~皮绳</td></tr>
+<tr><td>搭搭手</td><td>tə¹³ tə¹³ ʂəu⁴¹</td><td>帮帮手：~抬过去</td></tr>
+<tr><td>蛤蛆</td><td>kə¹³ liə¹³</td><td>蚌</td></tr>
+<tr><td>塌</td><td>tʰa¹³</td><td>脱漏：~班\</td><td>~了一班车</td></tr>
+<tr><td>塌肩</td><td>tʰa¹³ tɕiɛ³¹³</td><td>肩部前倾</td></tr>
+<tr><td>夹锅头</td><td>tɕia¹³ kuɔ¹³ təu³⁵</td><td>贪吃不顾妻儿的男子</td></tr>
+<tr><td>溻</td><td>tʰa¹³</td><td>汗水湿透衣服、被褥</td></tr>
+<tr><td>夏褂子</td><td>tʰa¹³ ɕia⁵⁵ kua⁵⁵ tɿ</td><td>夏天穿的褂子</td></tr>
+<tr><td>夹子</td><td>tɕia¹³ tɿ</td><td>贴在锅边烙熟的大饺子</td></tr>
+<tr><td>溻尿</td><td>tʰa¹³ sei³¹³</td><td>尿床</td></tr>
+<tr><td>夹搞</td><td>tɕia¹³ kau⁴¹</td><td>与人相处时又小气又别扭</td></tr>
+<tr><td>溻尿龙</td><td>tʰa¹³ sei³¹³ lɔŋ³⁵</td><td>常尿床的人</td></tr>
+<tr><td>蹋嘴</td><td>tʰa¹³ tsei⁴¹</td><td>偷吃</td></tr>
+<tr><td>瞎巴</td><td>ɕia¹³ pə</td><td>坏：学~了</td></tr>
+<tr><td>□青</td><td>pə¹³ tɕiŋ³¹³</td><td>牛羊偷吃禾苗（原书缺字）</td></tr>
+<tr><td>压</td><td>iə¹³</td><td>止：药太苦，喝口糖水~~</td></tr>
+<tr><td>捺</td><td>nə¹³</td><td>抑制：~~性子</td></tr>
+<tr><td>压秤</td><td>iə¹³ ʈʂəŋ</td><td>体积小份量重：黄豆~</td></tr>
+<tr><td>辣萝卜</td><td>la¹³ lɔ³⁵ pə</td><td>萝卜</td></tr>
+<tr><td>邋杂</td><td>la¹³ ʈʂa</td><td>不利落，脏</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>辙</td><td>tʂʰə¹³</td><td>下陷：墙跟～了</td></tr>
+<tr><td>扎</td><td>ʈʂa¹³</td><td>①生长：~牙 ②冰冷刺骨：凉水~牙</td></tr>
+<tr><td>刮秋风</td><td>kuɛ¹³ tɕʰiəu³¹³ fəŋ³¹³</td><td>公开索要钱物或高价派购廉价商品</td></tr>
+<tr><td>刷锅把子</td><td>ʈʂua¹³ kuɔ¹³ pa⁴¹</td><td>炊帚</td></tr>
+<tr><td>煤</td><td>mə¹³</td><td>煮：~菜\</td><td>老菜叶~~再炒吃</td></tr>
+<tr><td>滑皮滚子</td><td>xua¹³ pʰi³⁵ kɔŋ⁴¹</td><td>无沟齿的碌碡</td></tr>
+<tr><td>杂七八拉</td><td>ʈʂa¹³ tɕi¹³ pe¹³ la³¹³</td><td>乱而杂的样子</td></tr>
+<tr><td>滑光溜神</td><td>xua¹³ kuaŋ³¹³ liə³⁵ ʂən³⁵</td><td>裸体</td></tr>
+<tr><td>杂七五八</td><td>ʈʂa¹³ tɕi¹³ u⁴¹ pe¹³</td><td>乱七八糟</td></tr>
+<tr><td>袜桩子</td><td>uə¹³ ʈʂuaŋ³¹³</td><td>袜筒</td></tr>
+<tr><td>嚓呱</td><td>ʈʂa¹³ kua⁴¹</td><td>闲谈、交谈</td></tr>
+<tr><td>插手子</td><td>ʈʂa¹³ ʂəu⁴¹ tɿ</td><td>衣服上的口袋</td></tr>
+<tr><td>不好过</td><td>pə¹³ xɔ⁴¹ kɔ⁵⁵</td><td>生病了：我~</td></tr>
+<tr><td>刹</td><td>ʂa¹³</td><td>勒紧、捆牢：~车（把车上货物捆牢）\</td><td>麻袋~不死口</td></tr>
+<tr><td>不好受</td><td>pə¹³ xɔ⁴¹ ʂəu⁴¹</td><td>不舒服</td></tr>
+<tr><td>刹价</td><td>ʂa¹³ tɕia⁵⁵</td><td>讨价还价后价格降下</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2620">
+<div class="page-bar"><button class="btn-copy" data-pid="2620">复制本节</button></div>
+<div class="page-body"><h3 class="section-title">左栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>不断头</td><td>pə¹³ tuɔ⁵⁵ təu³⁵</td><td>连续不断：夜里行人~</td></tr>
+<tr><td>吃</td><td>ʈʂə¹³</td><td>①接受：我不~你这一套 ②承受：穿少了~不住冻\</td><td>一个月工资~不住 ③拿工资：一个月~二百块钱</td></tr>
+<tr><td>吃户</td><td>ʈʂə¹³ xu⁵⁵</td><td>舍得吃的人家</td></tr>
+<tr><td>吃酒</td><td>ʈʂə¹³ tɕi⁴¹</td><td>喝酒、喝喜酒</td></tr>
+<tr><td>白鲇子</td><td>pə¹³ kʰu³¹³ tɿ</td><td>海鱼的一种，形如小黄鱼，体表白色</td></tr>
+<tr><td>白喳喳</td><td>pə¹³ ʈʂa³¹³ ʈʂa³¹³</td><td>病态的面色</td></tr>
+<tr><td>拾</td><td>ʈʂə¹³</td><td>生育：~了个儿子</td></tr>
+<tr><td>十月朝</td><td>ʈʂə¹³ yə¹³ ʈʂau³¹³</td><td>①十月初一 ②婴儿出生十个月：过~</td></tr>
+<tr><td>脖项梗</td><td>pə¹³ ɕiaŋ⁵⁵ kən⁴¹</td><td>脖梗</td></tr>
+<tr><td>麦口</td><td>mə¹³ kʰəu⁴¹</td><td>收割小麦的时节</td></tr>
+<tr><td>食刀</td><td>ʈʂə¹³ tau³¹³</td><td>切菜刀</td></tr>
+<tr><td>木怵</td><td>mə¹³ ʈʂʰua¹³</td><td>愣住了：给说~了</td></tr>
+<tr><td>木疙瘩</td><td>mə¹³ kə¹³ tə</td><td>蚊虫叮咬而起的疙瘩</td></tr>
+<tr><td>石妮子</td><td>ʈʂə¹³ ni³⁵</td><td>石女</td></tr>
+<tr><td>石瘤子</td><td>ʈʂə¹³ liəu³⁵</td><td>小石块</td></tr>
+<tr><td>没魂</td><td>mə¹³ xuəŋ³⁵</td><td>精神恍惚的样儿</td></tr>
+<tr><td>涩哕哕</td><td>ʈʂə¹³ yə¹³ yə¹³</td><td>味很涩</td></tr>
+<tr><td>没得</td><td>mə¹³ tə</td><td>没有：~了\</td><td>~钱\</td><td>~数\</td><td>心里~底\</td><td>~影子的事</td></tr>
+</table>
+<h3 class="section-title">右栏</h3>
+<table class="data-table">
+<tr><th>词条</th><th>IPA</th><th>释义</th></tr>
+<tr><td>实诚</td><td>ʈʂə¹³ ʈʂʰəŋ³⁵</td><td>真诚实在</td></tr>
+<tr><td>得</td><td>tə¹³</td><td>到：要~天黑才能到南京</td></tr>
+<tr><td>实落</td><td>ʈʂə¹³ lua¹³</td><td>实在、踏实</td></tr>
+<tr><td>得得</td><td>tə¹³ tə¹³</td><td>紧紧的：车上挤～的</td></tr>
+<tr><td>实法</td><td>ʈʂə¹³ fa¹³</td><td>实在：~不愿意就算了</td></tr>
+<tr><td>色</td><td>sə¹³</td><td>样子：死~\</td><td>秽气~</td></tr>
+<tr><td>得了</td><td>tə¹³ lə</td><td>用在动词之后，表示动作完成：海~\</td><td>吃~\</td><td>没~\</td><td>走~</td></tr>
+<tr><td>色气</td><td>sə¹³ tɕi</td><td>脸色：~不好</td></tr>
+<tr><td>日头</td><td>zə¹³ tə</td><td>太阳</td></tr>
+<tr><td>特为</td><td>tə¹³ uei⁵⁵</td><td>有意的：谁~弄坏的</td></tr>
+<tr><td>日弄人</td><td>zə¹³ lɔŋ⁵⁵ zən³⁵</td><td>捉弄人</td></tr>
+<tr><td>勒</td><td>lə¹³</td><td>①握：手给他~痛了 ②捏、挤：~水</td></tr>
+<tr><td>虼子</td><td>kə¹³ tɿ¹³</td><td>蛇蛋</td></tr>
+<tr><td>勒勒措措</td><td>lə¹³ lə¹³ kʰə⁵⁵ kə⁵⁵</td><td>让别人做事又不大放心的样儿</td></tr>
+<tr><td>隔古</td><td>kə¹³ ku⁴¹</td><td>过去、从前</td></tr>
+<tr><td>隔占</td><td>kə¹³ ʈʂã⁵⁵</td><td>强占</td></tr>
+<tr><td>肋巴</td><td>lə¹³ pa³¹³</td><td>肋骨</td></tr>
+<tr><td>格噔</td><td>kə¹³ təŋ³¹³</td><td>吓得一愣：心里～一下</td></tr>
+<tr><td>窄扁</td><td>ʈʂɛ¹³ piɛ</td><td>空间小：屋里~</td></tr>
+<tr><td>角按席</td><td>kə¹³ ã⁵⁵ ɕi³⁵</td><td>编织精细、有花边的芦席</td></tr>
+<tr><td>窄巴</td><td>ʈʂɛ¹³ pa</td><td>窄小</td></tr>
+<tr><td>直轮</td><td>ʈʂə¹³ ləŋ³⁵</td><td>笔直：小树长~的</td></tr>
+<tr><td>合帐</td><td>kə¹³ ʈʂaŋ⁵⁵</td><td>合算</td></tr>
+<tr><td>值当</td><td>ʈʂə¹³ taŋ⁵⁵</td><td>值的：不~干的</td></tr>
+<tr><td>各样</td><td>kə¹³ iaŋ⁵⁵</td><td>与众不同，贬义：这人~</td></tr>
+<tr><td>值不当的</td><td>ʈʂə¹³ pə¹³ taŋ⁵⁵ tə</td><td>不值得</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2621">
+<div class="page-bar"><button class="btn-copy" data-pid="2621">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">第四章 方言词汇 · 书页 2621</h2>
+<h3 class="section-title">左栏</h3>
+<h4 class="sub-title">eə</h4>
+<p>各种 kʌ¹³ tsɔ⁴¹</p>
+<h4 class="sub-title">ʌ</h4>
+<p>髁头子 kʰʌ¹³ ——一只脚跳动；右脚破了，只好~着走</p>
+<p>髁头子 kʌ¹³ tʰəu³⁵ tl 膝盖</p>
+<p>咳嗽痨 kʌ¹³ sʌ¹³ lɔ³⁵ 长久咳嗽的人</p>
+<p>覆棚 fuʌ¹³ pəŋ³⁵ 室内顶棚子</p>
+<p>黑头呈子 xə¹³ tʰou³⁵ tʂəŋ³⁵ tl 匿名</p>
+<p>蹑 tuə¹³ 坐在地上用手撑着挪动</p>
+<p>掇 tuə¹³ 投、摔：~泥块状子</p>
+<p>掇垫 tuə¹³ tie⁵⁵ 收拾、整理</p>
+<p>黑窟 xə¹³ kʰuə¹³ 黑暗之处</p>
+<p>恶 ə¹³ ①很：~俊 | ~苦 ②全：头上~，脸~</p>
+<p>石 tuə¹³ 淋雨：衣服~湿了</p>
+<p>是灰 ③拼：~吃 | ~打人</p>
+<p>笃定 tuə¹³ tiŋ⁵⁵ 一定：~去 | 这事~</p>
+<p>恶嘟嘟 ə¹³ tu¹³ tu¹³ 特别：~来气 | ~是他干的</p>
+<p>臭</p>
+<p>□ tua¹³ 烫：水~手 | ~鸡</p>
+<p>扼颈 ə¹³ tɕiŋ⁵⁵ 打脑后</p>
+<p>秃膀子 tuə¹³ paŋ⁴¹ 短袖褂子</p>
+<p>托送 tuə¹³ soŋ⁵⁵ 投胎转世</p>
+<h4 class="sub-title">iə</h4>
+<p>络子 luə¹³ 用柳条、竹篾编的盛食物的筛子</p>
+<p>别 piə¹³ ①转动：把头~过去 ②转变：他就这个脾气，~不过他③绊：把他~倒了~着腿了④抬杠：他给~住了，不啃声了</p>
+<p>别别 piə¹³ piə¹³ 千万：这事~~莫忘了</p>
+<p>撇 piə¹³ 碗、盘等器皿口部不圆：~了碗</p>
+<p>撇 piə¹³ 舀取液体的上层：~水 | ~汤 | ~油</p>
+<p>撇光光 piə¹³ kuāŋ³¹³ kuāŋ 打水飘儿</p>
+<p>撇清 piə¹³ tɕiŋ³¹³ 夸耀自己的清白，无过。养汉老婆好~</p>
+<h4 class="sub-title">ia</h4>
+<p>铁权 tia¹³ tɕʰy³¹³ 挖土工具</p>
+<p>接嘴 tɕia³¹³ ei⁴¹ 乱插话</p>
+<p>接骨草 tɕia¹³ kuə¹³ sɔ⁴¹ 木贼</p>
+<p>着 tua¹³ ①派：~人去请 ②受：先前不知~了谁的气</p>
+<p>结壮 tɕia¹³ tua 老人身体结实健壮</p>
+<p>血 cia¹³ 非常：~好 | ~调皮</p>
+<p>出花 ua¹³ xuā¹³ 出水痘</p>
+<p>血对头 cia¹³ tei⁵⁵ təu 死对头</p>
+<p>出兽 ʂʌ⁵⁵ 偶然出错：~了，车子坏了</p>
+<p>血鳝 cia¹³ sã⁵⁵ 鳝鱼</p>
+<p>蝎虎子 ciə¹³ xu⁴¹ 壁虎</p>
+<p>出饭 u¹³ fã 做出来的饭显得多：籼米~，糯米不~</p>
+<p>锲 cia¹³ ①把楔子、钉子锤打到物体里边：~钉子 ②打：~你一顿</p>
+<p>出门子 ua¹³ məŋ³⁵ 出嫁</p>
+<h4 class="sub-title">uə（左栏续）</h4>
+<p>落 luə¹³ 处所、位置：各~看看</p>
+<p>落头 luə¹³ 在哪~ | 车上没~站</p>
+<p>落厅 luə¹³ tʰiŋ</p>
+<p>落 luə¹³ tuə 老实，无能：这人真~</p>
+<p>作 tuə¹³ 吵闹：一天~到晚 | 孩子~人</p>
+<p>作死 ua¹³ sɪ⁴¹ 找死：你~啊，乱跑</p>
+<p>作古正经 tua¹³ ku⁴¹ tʂəŋ⁵⁵ tɕiŋ³¹³ 一本正经的样儿</p>
+<p>作害 tua¹³ xε⁵⁵ 为害</p>
+<p>作腾 tua¹³ tʰə 有意吵闹</p>
+<p>作兴 u¹³ tɕiŋ³¹³ ①可能：~不来了 ②应该：不~这样 | 这事~你不~</p>
+<p>□ tu¹³ 用簸箕平筛着簸：把秕子~出来</p>
+<p>出来</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">uə</h4>
+<p>复三 fuə¹³ sã³¹³ 出殡三天之日给坟填土</p>
+<p>覆棚 fuə¹³ pəŋ³⁵ 室内顶棚子</p>
+<p>跟 tuə¹³ 坐在地上用手撑着挪动</p>
+<p>摞 luə¹³ 投、摔：~泥块</p>
+<p>摞垫 tuə¹³ tie⁵⁵ 收拾、整理</p>
+<p>话 tuə¹³ 淋雨；衣服～湿了</p>
+<p>笃定 tuə¹³ tiŋ⁵⁵ 一定：～去｜这事～</p>
+<p>□ tʰu¹³ 烫：水～手｜～鸡</p>
+<p>秃膀子 tuə¹³ paŋ⁴¹ 短袖褂子</p>
+<p>托送 tuə¹³ soŋ⁵⁵ 投胎转世</p>
+<p>络子 luə¹³ 用柳条、竹篾编的盛食物的筛子</p>
+<p>落 luə¹³ 处所、位置：各～看看</p>
+<p>落头 luə¹³ 在哪～｜车上没～站</p>
+<p>落厅 luə¹³ tʰiŋ</p>
+<p>落 luə¹³ tuə 老实，无能：这人真～</p>
+<p>作 tuə¹³ 吵闹：一天～到晚｜孩子～人</p>
+<p>作死 ua¹³ sɪ⁴¹ 找死：你～啊，乱跑</p>
+<p>作古正经 tua¹³ ku⁴¹ tʂəŋ⁵⁵ tɕiŋ³¹³ 一本正经的样儿</p>
+<p>作害 tua¹³ xε⁵⁵ 为害</p>
+<p>作腾 tua¹³ tʰə 有意吵闹</p>
+<p>作兴 u¹³ tɕiŋ³¹³ ①可能：～不来了 ②应该：不～这样｜这事～你不～</p>
+<p>□ tɔə¹³ 用簸箕平筛着簸：把秕子～</p>
+<p>出来</p>
+<p>着 tua¹³ ①派：～人去请 ②受：先前不知～了谁的气</p>
+<p>出花 ʂʌ¹³ xuā¹³ 出水痘</p>
+<p>出兽 ʂʌ⁵⁵ 偶然出错：～了，车子坏了</p>
+<p>出饭 u¹³ fã⁵⁵ 做出来的饭显得多：籼米～，糯米不～</p>
+<p>出门子 ua¹³ məŋ³⁵ 出嫁</p></div>
+</section>
+<section class="page-section" id="p2622">
+<div class="page-bar"><button class="btn-copy" data-pid="2622">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">第四章 方言词汇 · 书页 2622（末页）</h2>
+<h3 class="section-title">左栏</h3>
+<h4 class="sub-title">uə</h4>
+<p>出室 ʂuə¹³ sʌ¹³</p>
+<p>出客 ʂuə¹³ kʰʌ¹³ 外出做客</p>
+<p>促寿痨 ʂuə¹³ səu⁵⁵ lɔ³⁵ 爱说下流话的人</p>
+<p>促刮 uə¹³ kua¹³ ①捉弄：～人②奇怪</p>
+<p>促怪 uə¹³ kue⁵⁵</p>
+<p>促狭 uə³ tɕie³</p>
+<p>撮 ua¹³ 扶住往上推：～我上树｜～上墙了</p>
+<p>错开 uə¹³ kʰɛ³¹³ 挪开一点，使两者不接触</p>
+<p>焯 ʂuə¹³ 烧：火～手了</p>
+<p>焯 ʂuə¹³ 略煮一下：～菜</p>
+<p>割 ʂuə¹³ 细细地切割：～肉｜～菜</p>
+<p>读 ʂuə¹³ 详论；这人很～</p>
+<p>勺星 ʂuə¹³ tɕiŋ³¹³ 北斗星</p>
+<p>熟卤 ua¹³ lu⁴¹ 熬化的卤水，点豆腐用</p>
+<p>说事 ua¹³ 说合、劝架</p>
+<p>入□ zuə¹³ 执拗：这人真～</p>
+<p>入真 zuə¹³ tʂən³¹³ 认真</p>
+<p>入心 zua¹³ tɕʰiŋ³¹³ 专注、认真</p>
+<p>谷莠子 kuə¹³ iəu⁴¹ tl 狗尾草</p>
+<p>骨子 kuə¹³ tl 裕褙</p>
+<p>骨骨丁 kuə¹³ kuə¹³ tiŋ³¹³ 蒲公英</p>
+<p>枯月 kuə¹³ yə¹³ 不吉利的月份</p>
+<p>□敛 kuə¹³ lie 猛然受惊，身体一抖</p>
+<p>拥 kuə¹³ io 动弹，打针了，莫～</p>
+<h4 class="sub-title">i</h4>
+<p>踢腾 tiI¹³ tʰən 浪费：胡～,败家子</p>
+<p>脊梁盖子 ti¹³ liāŋ³⁵ kε⁵⁵ tl 脊梁</p>
+<p>活套 xua¹³ tʰau⁵⁵ 灵活：为人～</p>
+<p>活穆人 xua¹³ a⁵⁵ za 使人讨厌、害怕</p>
+<p>寂寂 tiI³ tɕiI³¹³ 悄悄地</p>
+<p>急逗 tɕi¹³ tʰou⁵⁵ 十分着急</p>
+<p>急枸 tɕiI¹³ xəu³¹³ 发急的样儿</p>
+<p>急眼 tɕʰi¹³ iæ⁴¹</p>
+<p>镬板 xuə¹³ pã³¹³ 木锅盖</p>
+<p>豁唇子 xu¹³ tʰou³⁵ tl 豁嘴</p>
+<p>缉慨 tɕiI¹³ kε⁵⁵ 故意捉弄人、不肯帮忙</p>
+<p>xuə¹³ 掴：～你个嘴头子｜～脸</p>
+<p>擢溜 xuə¹³ liaw ①搅动②挑拨</p>
+<p>泣仗 tɕitʰar⁵⁵ 哭丧棒</p>
+<h3 class="section-title">右栏</h3>
+<h4 class="sub-title">yə</h4>
+<p>嚼蛆 tɕyə¹³ tɕy³¹³ 毫无根据地乱说</p>
+<p>脚趾盖子 tɕya¹³ tl kε⁵⁵ tl 脚趾甲</p>
+<p>脚孤拐 tɕyə¹³ kua¹³ kue⁴¹ 脚踝骨</p>
+<p>脚头 tɕyə¹³ tʰou³⁵ 平躺后脚伸向的地方</p>
+<p>脚赶脚 təyə¹³ k ã⁴¹ tɕyə¹³ 一会儿：~到了</p>
+<p>脚面子 tɕyə¹³ mie⁵⁵ tl 脚背</p>
+<p>脖子 tɕyə¹³ 折：~断了 | ~树枝</p>
+<p>雀目眼 tyə¹³ mə¹³ i⁴¹ 夜盲症</p>
+<p>u 烧：火~手了</p>
+<p>发黑 tɕyə¹³ xa¹³ ①漆黑：晚上 ~ ②形容人生地不熟的境况：刚到那块两眼~</p>
+<p>焯 略煮一下：~菜</p>
+<p>ua³ 诡诈：这人很~</p>
+<p>雪 cyə¹³ 气味刺激人：这漆~眼</p>
+<p>雪蜡子 cya¹³ ε⁴¹ tl 霰</p>
+<p>宿 cyə¹³ 很：~绿 | ~蓝 | ~亮 | ~黑 | ~紫 | ~圆 | ~平 | ~甜</p>
+<p>噱 cyə¹³ 调唆：~人两口子吵仗</p>
+<p>y¹³ 折：~树枝</p>
+<p>约 y¹³ 大体量一下、估量轻重：~~看有多长 | ~~看有多重</p>
+<h4 class="sub-title">i</h4>
+<p>滴溜打挂 tiI¹³ liəu³¹³ ta⁴¹ kua^⁵⁵ ①挂满：~一树梨 ②槛楼：破衣烂衫~的</p>
+<p>剔陡溜崖 ti¹³ tʰə⁴¹ liəu³¹³ iε³⁵ 陡峭：山坡~</p>
+<p>踢腾 tiI¹³ tʰən 浪费</p>
+<p>脊梁盖子 ti¹³ liār³⁵ kε⁵⁵ tl 脊梁</p>
+<p>活套 xua¹³ tʰau⁵⁵ 灵活</p>
+<p>活穆人 xua¹³ a⁵⁵ za 使人讨厌</p>
+<p>寂寂 tiI³ tɕiI³¹³ 悄悄地</p>
+<p>急逗 tɕi¹³ tʰou⁵⁵ 十分着急</p>
+<p>急枸 tɕiI¹³ xəu³¹³ 发急的样儿</p>
+<p>急眼 tɕʰi¹³ i æ⁴¹</p>
+<p>镬板 xuə¹³ p ³¹³ 木锅盖</p>
+<p>豁唇子 xu¹³ tor³⁵ tl 豁嘴</p>
+<p>缉慨 tɕiI¹³ kε⁵⁵ 故意捉弄人、不肯帮忙</p>
+<p>xuə¹³ 掴：~你个嘴头子 | ~脸</p>
+<p>擢溜 xuə¹³ liaw ①搅动②挑拨</p>
+<p>泣仗 tɕirtar⁵⁵ 哭丧棒</p>
+<p>维伫 tɕʰi¹³ tɕʰəŋ⁵⁵ 哭丧棒</p>
+<p>泣仗 tɕi¹³ tɕʰəŋ⁵⁵ 哭丧棒</p></div>
+</section>
+<section class="page-section" id="p2623">
+<div class="page-bar"><button class="btn-copy" data-pid="2623">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">第五章 语法特点 · 书页 2623（混合页）</h2>
+<h3 class="section-title">上半部 · 第四章方言词汇尾巴（i / iə 声母）</h3>
+<div class="cols-wrap"><div class="col left">
+<div class="col-label">左栏</div>
+<div class="entry-line"><span class="entry-head">泣庆子</span> <span class="entry-body">tɕʰiŋ¹³ tɕʰiŋ⁵⁵ 蟋蟀；坡~</span></div>
+<div class="entry-line"><span class="entry-head">一时工</span> <span class="entry-body">i¹³ sɿ³⁵ kɔŋ³¹³ 一会儿</span></div>
+<div class="entry-line"><span class="entry-head">一麻黑</span> <span class="entry-body">i¹³ mə³⁵ xə¹³ 一律黑色：小猪~</span></div>
+<div class="entry-line"><span class="entry-head">一堆～</span> <span class="entry-body">i¹³ kʰue⁵⁵ tei³¹³ 一块儿：~去|放~</span></div>
+<div class="entry-line"><span class="entry-head">一展眼</span> <span class="entry-body">i¹³ tsæ⁴¹ i⁴¹ 瞬间</span></div>
+<div class="entry-line"><span class="entry-head">一发手</span> <span class="entry-body">i¹³ fæ¹³ səu⁴¹ 一次：~全给他了</span></div>
+<div class="entry-line"><span class="entry-head">一转脸</span> <span class="entry-body">i¹³ tɕuan⁴¹ liɛ⁴¹</span></div>
+<div class="entry-line"><span class="entry-head">一捞□</span> <span class="entry-body">i¹³ lɔ⁵⁵ tu⁴¹ 卖东西时不许挑拣，用秤盘从边上挨着铲起来称</span></div>
+<div class="entry-line"><span class="entry-head">一次头</span> <span class="entry-body">i¹³ tsʰɿ⁵⁵ təu³⁵ ~就用坏了</span></div>
+<div class="entry-line"><span class="entry-head">一伏时</span> <span class="entry-body">i¹³ fuə¹³ sɿ³⁵ 一天一夜</span></div>
+<div class="entry-line"><span class="entry-head">一条腿</span> <span class="entry-body">i¹³ tʰia⁵⁵ tei⁴¹ 一派，贬义：两人~</span></div>
+<div class="entry-line"><span class="entry-head">一憋气</span> <span class="entry-body">i¹³ piə¹³ tɕʰi⁵⁵ 一口气：~跑了三里</span></div>
+<div class="entry-line"><span class="entry-head">一溜</span> <span class="entry-body">i¹³ liəu⁵⁵</span></div>
+<div class="entry-line"><span class="entry-head">胰子</span> <span class="entry-body">i¹³ tɬ 肥皂</span></div>
+<div class="entry-line"><span class="entry-head">一漫高</span> <span class="entry-body">i¹³ mə⁵⁵ kɔ³¹³ 渐渐增高：山~</span></div>
+</div><!-- end left -->
+<div class="col right">
+<div class="col-label">右栏</div>
+<div class="entry-line"><span class="entry-head">一当</span> <span class="entry-body">i¹³ taŋ 稳当：你去办~</span></div>
+<div class="entry-line"><span class="entry-head">一上来</span> <span class="entry-body">i¹³ saŋ⁵⁵ lɛ³⁵ 一开头：~就发脾气</span></div>
+<div class="entry-line"><span class="entry-head">一平</span> <span class="entry-body">i¹³ pʰiŋ³⁵ 平整</span></div>
+<div class="entry-line"><span class="entry-head">一次</span> <span class="entry-body">~全给他了</span></div>
+<div class="entry-line"><span class="entry-head">一次头</span> <span class="entry-body">i¹³ tsʰɿ⁵⁵ təu³⁵ ~就用坏了</span></div>
+<div class="entry-line"><span class="entry-head">一伏时</span> <span class="entry-body">i¹³ fuə¹³ sɿ³⁵ 一天一夜</span></div>
+<div class="entry-line"><span class="entry-head">一憋气</span> <span class="entry-body">i¹³ piə¹³ tɕʰi⁵⁵ 一口气：~跑了三里</span></div>
+<div class="entry-line"><span class="entry-head">一溜</span> <span class="entry-body">i¹³ liəu⁵⁵</span></div>
+<div class="entry-line"><span class="entry-head">腻子</span> <span class="entry-body">i¹³ ŋə¹³ 肥皂</span></div>
+<div class="entry-line"><span class="entry-head">一漫高</span> <span class="entry-body">i¹³ mə⁵⁵ kɔ³¹³ 渐渐增高：山~</span></div>
+<div class="entry-line"><span class="entry-head">胰子</span> <span class="entry-body">i¹³ ŋə¹³ 肥皂</span></div>
+<div class="entry-line"><span class="entry-head">膊子</span> <span class="entry-body">i¹³ pɔ¹³ təu³¹³ 胳膊</span></div>
+<h3 class="section-title">下半部 · 第五章 语法特点</h3>
+<h4 class="sub-title">第五章 语 法 特 点</h4>
+<div class="entry-title">第一节 词法特点</div>
+<p>##### 一、词缀</p>
+<div class="entry-line"><span class="entry-head">1、前缀。</span> <span class="entry-body">新浦话的形容词有比较丰富的前缀，常用的有：透、怪、多、精、稀、宿、死、恶、瘟、烂、血、挺、焦、苦。这些形容词的前缀一般表示"很、非常"的意义，加深了形容词性质、状态的程度。例如：</span></div>
+<table class="data-table">
+<tr><th>左列</th><th></th><th>右列</th><th></th></tr>
+<tr><td><strong>透</strong>：~俊、~新、~熟、~肥</td><td></td><td><strong>精</strong>：~枵、~细、~稀、~轻、~窄</td></tr>
+<tr><td><strong>怪</strong>：~高、~好、~老实、~神气</td><td></td><td><strong>稀</strong>：~累、~松、~碎、~薄、贱</td></tr>
+<tr><td><strong>缩</strong>：~绿、~蓝、~紫、~青、~尖</td><td></td><td><strong>死</strong>：~热、~沉、~重、~笨、~慢</td></tr>
+<tr><td><strong>挺</strong>：~硬、~湿、~新、~快</td><td></td><td><strong>恶</strong>：~俊、~酸、~苦</td></tr>
+<tr><td><strong>焦</strong>：~干、~酸、~粘</td><td></td><td><strong>瘟</strong>：~腥、~臊、~臭</td></tr>
+<tr><td><strong>苦</strong>：~辣、~咸</td><td></td><td><strong>烂</strong>：~酸、~腥</td></tr>
+<tr><td><strong>多</strong>：~高、~厚、~重、~肥的</td><td></td><td><strong>血</strong>：~好、~调皮、~对头、~不讲理</td></tr>
+</table>
+<div class="entry-line"><span class="entry-head">2、后缀。</span> <span class="entry-body">新浦话的许多动词、名词、形容词都可以带后缀。新浦话的动词后缀主要有：<strong>巴、行行、头、查、悠、乎</strong>。它们具有使动词原义轻化、小化、动作随便、漫不经心的意思。例如：</span></div>
+<p>- <strong>巴</strong>：捏~、拉~、搓~、晃~、粘~</p>
+<p>- <strong>查</strong>：扒~、抠~</p>
+<p>- （后缀列表续下页）</p>
+</div></div><!-- close cols --></div>
+</section>
+<section class="page-section" id="p2624">
+<div class="page-bar"><button class="btn-copy" data-pid="2624">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">第五章 语法特点 · 书页 2624（续第一节）</h2>
+<h3 class="section-title">续 · 一、词缀（接上页）</h3>
+<h4 class="sub-title">后缀示例续</h4>
+<table class="data-table">
+<tr><th>左栏后缀</th><th>示例</th><th>右栏后缀</th><th>示例</th></tr>
+<tr><td><strong>行行</strong></td><td>干~、吃~、看~、睡~、玩~</td><td><strong>头</strong></td><td>有干~、有吃~、没玩~、没看~</td></tr>
+<tr><td><strong>乎</strong></td><td>摆~、炸~、热~、软~</td><td><strong>悠</strong></td><td>转~、晃~</td></tr>
+<tr><td><strong>悠</strong></td><td>转~、晃~</td><td></td><td></td></tr>
+</table>
+<p>新浦话名词后缀"子"很有特点。除了与普通话共有的"子"缀词外，新浦话还有普通话没有的"子"缀词。例如：</p>
+<p>手掌~、小腿~、牛犊~、鸡冠~、树枝~、蒜苗~、柿饼~、虾皮~、油果~、奶~</p>
+<p>饭盒~、手套~、牙刷~、针鼻~、鸡屋~、拐角~、雨点~、香炉~、木鱼~、乌~</p>
+<p>闺女~、侄女~、街滑~、土包~、斜眼~、豁嘴~、疯汉~、姑姑~、瘸腿~、媳~</p>
+<p>新浦话形容词的后缀主要有：乎、淫、濠、兮兮、不拉几、的慌。例如：</p>
+<p>悬乎、熟乎、热乎、苦淫、酸淫、热濠、粘兮兮、脏兮兮、神经兮兮、甜不拉几、酸不拉几、热的慌、冷的慌、闷的慌、喜的慌</p>
+<h4 class="sub-title">3、中缀</h4>
+<p>新浦话常用的中缀有：<strong>溜、不、把、乎</strong>。例如：</p>
+<table class="data-table">
+<tr><th>中缀</th><th>示例</th></tr>
+<tr><td><strong>溜</strong></td><td>嗲~嘴子、滴~打挂、稀~歪拽</td></tr>
+<tr><td><strong>把</strong></td><td>百~块、千~块、万~个</td></tr>
+<tr><td><strong>不</strong></td><td>左~拉子、黑~拢通、憨~拉几</td></tr>
+<tr><td><strong>乎</strong></td><td>血~流淋</td></tr>
+</table>
+<h3 class="section-title">二、形容词的生动形式</h3>
+<p>新浦话的形容词一般都有程度差别的细微变化，这种变化是通过形容词前边或后边加上词缀构成的。单音形容词加上词缀后，其含义和用法基本上没有变化，只是表示程度的不同，有的含义弱化了，有的含义强化了。把这种不同程度的变化叫做形容词的<strong>原级、弱化级、强化级、最高级</strong>。不是所有的形容词都可以构成完整的四级形式。形容词的弱化级、强化级、最高级不能再加上程度副词，如"苦"，可以构成"苦、苦淫的、恶苦、恶苦恶苦的"四级，但不能说"很苦淫的、非常恶苦、特别恶苦恶苦"。举例如下：</p>
+<h4 class="sub-title">四级对照表</h4>
+<table class="data-table">
+<tr><th>形容词</th><th>原级</th><th>弱化级</th><th>强化级</th><th>最高级</th></tr>
+<tr><td><strong>长</strong></td><td>长</td><td>长栓的</td><td>多长</td><td>多长多长的</td></tr>
+<tr><td><strong>辣</strong></td><td>辣</td><td>辣喉的</td><td>苦辣</td><td>苦辣苦辣的</td></tr>
+<tr><td><strong>厚</strong></td><td>厚</td><td>厚实的</td><td>多厚</td><td>多厚多厚的</td></tr>
+<tr><td><strong>疼</strong></td><td>疼</td><td>疼淫的</td><td>生疼</td><td>生疼生疼的</td></tr>
+<tr><td><strong>窄</strong></td><td>窄</td><td>窄溜的</td><td>精窄</td><td>精窄精窄的</td></tr>
+<tr><td><strong>潮</strong></td><td>潮</td><td>潮乎的</td><td>挺潮</td><td>挺潮挺潮的</td></tr>
+<tr><td><strong>胖</strong></td><td>胖</td><td>胖壮的</td><td>透胖</td><td>透胖透胖的</td></tr>
+<tr><td><strong>亮</strong></td><td>亮</td><td>亮堂的</td><td>宿亮</td><td>宿亮宿亮的</td></tr>
+<tr><td><strong>脆</strong></td><td>脆</td><td>脆葱的</td><td>葱脆</td><td>葱脆葱脆的</td></tr>
+<tr><td><strong>慢</strong></td><td>慢</td><td>慢腾的</td><td>慢慢腾腾的</td><td>—</td></tr>
+<tr><td><strong>软</strong></td><td>软</td><td>软乎的</td><td>溜软</td><td>溜软溜软的</td></tr>
+<tr><td><strong>红</strong></td><td>红</td><td>红腾的</td><td>通红</td><td>通红通红的</td></tr>
+</table>
+<p>形容词弱化级也可构成 <strong>"ABB"式</strong>，如"<strong>长栓栓、脆葱葱、亮堂堂、轻巧巧、热乎乎</strong>。"</p>
+<h3 class="section-title">三、"很"的用法</h3>
+<p>普通话中"很+动/形"、"形+得+很"的句式，在新浦话中也用。在新浦话中，"很"和语气词"了"构成<strong>"很了"</strong>，既可直接用在动词、形容词后边作补语，也可直接用在名词、代词后边作谓语。</p>
+<div class="entry-line"><span class="entry-head">1、动词后边加上"很了"表示动作次数多、程度高。</span> <span class="entry-body">如：</span></div>
+<p>①今天走很了，五十多里。②他给说很了，满脸通红。③想闺女想很了。④街上这几年变化很了。</p>
+<p>在表现动作效果的句子中，"很"重读，句子的意义是否定的。如果动词前再加上语气副词"还"，否定语气更强烈。如：</p>
+<p>①你支持很了！②你干很了！③我没你这个儿子，你还~</p></div>
+</section>
+<section class="page-section" id="p2625">
+<div class="page-bar"><button class="btn-copy" data-pid="2625">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">第五章 语法特点 · 书页 2625（续）</h2>
+<h3 class="section-title">续 · 三、"很"的用法（续）</h3>
+<p>有些动词的前边不能加<strong>"很"</strong>，但后边能加<strong>"很了"</strong>。如：①很走/走很了 ②很打/打很了</p>
+<p><strong>不是动词后边都可加"很了"</strong>，象下边的说法不存在：</p>
+<p>- ①开始（停止、结束、进行、继续）很了</p>
+<p>- ②在（存在、没有）很了</p>
+<p>- ③摆手（闭眼、认为、主张）很了</p>
+<p><strong>2、"很了"直接作形容词的补语</strong>，不仅表示程度高，有"太、极、非常"的意思，还有"过头了、多余了"的意思。如：</p>
+<p>①天黑狠了 ②他瘦很了 ③慢很了，快走点！④这人坏很了 ⑤绳子长很了</p>
+<p><strong>表示肯定、否定颜色的形容词后边的"很"</strong>，如果重读则整个句子的意思变为<strong>否定</strong>的。如果形容词前面再加上"还"，则否定语气更强烈。如：①你干净很了！②还美很了！</p>
+<p>非形形容词、偏正式形容词、带后缀的形容词，后边不能加"很了"。如：</p>
+<p>- ①大型（初级、天然）</p>
+<p>- ②通红（雪白、笔直）很了</p>
+<p>- ③新式（流利、水汪汪、灰不溜秋）很了</p>
+<p><strong>3、"很了"直接加在名词作谓语的词语</strong>，有"大、多、重、了不起"的意思。如：</p>
+<p>①这树很了 ②这麦子很了 ③类肉的斜钱很了 ④大娘的病很了 ⑤王家很了；三个大学生</p>
+<p><strong>表示抽象事物的名词</strong>（"能力、才能、成就、手续"等除外）、<strong>集合事物的名词</strong>，其后不能加"很了"。如：</p>
+<p>- ①文化（思想、品德、风格、风俗）很了</p>
+<p>- ②人类（书籍、纸张、马匹、车辆）很了</p>
+<p><strong>4、"很了"加在人称代词后边作谓语</strong>，有"了不起"的意思。"很"如果重读则句子的意思是否定的。如：</p>
+<p>①人家很了。②我很了，还是你很了。③他们还很了。</p>
+<p>"你还很头子了"这种句子中的"很"不必重读，整个句子也能表示强烈的否定语气。</p>
+<h3 class="section-title">四、几个特殊量词</h3>
+<div class="entry-line"><span class="entry-head">1、新浦话量词"个"使用范围较广。</span> <span class="entry-body">普通话不用"个"而新浦话用"个"作量词的例子如：</span></div>
+<p>一个手、一个桥、一个镜、一个板凳、一个手表、一个褂子、一个羊、一个米粒子</p>
+<p><strong>2、其他较特殊的常用量量词</strong>有：</p>
+<table class="data-table">
+<tr><th>量词</th><th>示例</th></tr>
+<tr><td><strong>坨 / 一块甘蔗</strong></td><td>膀子：干了一膀了、坐了一膀子、玩了一膀子</td></tr>
+<tr><td><strong>行 / 一行灰</strong></td><td>把（十个、双）：一把子鸡蛋、两把子鸡蛋、一把筷子</td></tr>
+<tr><td><strong>充 / 一充扑克</strong></td><td>帮子：客人来了一帮子，又来了一帮子</td></tr>
+<tr><td><strong>合 / 一合门（两扇门）</strong></td><td>生（周岁）：这小孩两生半了</td></tr>
+</table>
+<h3 class="section-title">五、自感动词语短句</h3>
+<p>新浦话的自感动词语短句由两部分组成，前一部分是<strong>表示外界刺激人体某一位置而引起不舒服感觉的动词</strong>，这种感觉是动作者的<strong>自身感受</strong>，而不是施动者有意造成的；后一部分是名词<strong>"人"或身体的某一位置</strong>。例如：</p>
+<table class="data-table">
+<tr><th>左栏</th><th></th><th>右栏</th><th></th></tr>
+<tr><td><strong>冰人</strong>：睡在地上~</td><td><strong>垫人</strong>：右鞋跟比左鞋跟高，~</td><td><strong>闷人</strong>：一个人在家里，~</td></tr>
+<tr><td><strong>磕人</strong>：饼干太干，~</td><td><strong>怕人</strong>：天乌黑的，好~</td><td><strong>硌脚</strong>：鞋里有沙子，~</td></tr>
+</table></div>
+</section>
+<section class="page-section" id="p2626">
+<div class="page-bar"><button class="btn-copy" data-pid="2626">复制本节</button></div>
+<div class="page-body"><h2 class="page-heading">第五章 语法特点 · 书页 2626（末页）</h2>
+<h3 class="section-title">第二节 句法特点</h3>
+<h4 class="sub-title">一、宾语前置</h4>
+<p>在新浦话中，<strong>宾语可以直接出现在动词谓语前边</strong>。如：</p>
+<p>①他饭吃了，话还没干。②他钢笔买来了。</p>
+<p>除此之外，动词后缀<strong>"行行"</strong>有"正在进行"的意思，用在句子里可以使宾语前置于动词谓语前。如：</p>
+<p>①他饭吃行行的出去了。②电视看行行的停电了。</p>
+<h4 class="sub-title">二、可能补语</h4>
+<p>普通话常用<strong>"得"</strong>连接补语的形式表示动作的可能，否定式用"不"，如：吃得了，吃不<strong>了</strong>。新浦话否定式与普通话相同，<strong>肯定式则有差异，可以省掉"得"</strong>。如：</p>
+<p>①能说清。②能买起了彩电。③吃饱他的。④雨下大了。</p>
+<h4 class="sub-title">三、被动句</h4>
+<p>在新浦话中，被动句往往<strong>不用"被"</strong>，而用<strong>"叫、给"</strong>两个介词表示被动关系。如：</p>
+<p>①他叫老师吵了。②茶杯叫人打了。③我给他吓一跳。④苹果给儿儿子吃光了。</p>
+<h4 class="sub-title">四、比较句</h4>
+<p>新浦话比较句的肯定式用<strong>"起"</strong>作介词引进比较的另一方，介词短语置于形容词之后，句序与普通话不同。如：</p>
+<p>①打春后，一天长起一天。②日子一天好起一天。③是靠强起索。</p>
+<p><strong>否定式比较句往往用"不见得"</strong>进行比较，如：①你不见得有他高。②他不见得比你强。</p>
+<h4 class="sub-title">五、反复问句</h4>
+<p>新浦话的反复问句主要有 <strong>"vp 不 / vp"、"v 没 vp"</strong> 两种，这两种形式都有省略式。例如：</p>
+<table class="data-table">
+<tr><th>vp 不 / 没 vp</th><th>vp 没 / 没 v</th><th>v 不 / 没 vp</th><th>vp 不 / 没有</th></tr>
+<tr><td>①你喝水不喝水？</td><td>你喝不喝？</td><td>你喝水不？</td><td>你喝不水不？</td></tr>
+<tr><td>②买票不买票？</td><td>买票不买？</td><td>买不买票？</td><td>买票不？</td></tr>
+<tr><td>③看过没看过？</td><td>看过没看？</td><td>看看没看过？</td><td>看过没有？</td></tr>
+</table></div>
+</section>
+</div>
+
+<!-- 回到顶部 -->
+<div id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- 页脚 -->
+<div class="footer">
+  <p>连云港市志 · 第五十九卷《方言》· 数字化工作站出品</p>
+</div>
+
+<script>
+// 复制按钮
+document.querySelectorAll('.btn-copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var sec = this.closest('.page-section');
+    var text = sec.querySelector('.page-body').innerText;
+    navigator.clipboard.writeText(text).then(function(){
+      btn.classList.add('copied');
+      btn.textContent = '已复制 ✓';
+      setTimeout(function(){ btn.classList.remove('copied'); btn.textContent='复制'; }, 1500);
+    });
+  });
+});
+
+// 回到顶部显隐
+var backTop = document.getElementById('back-top');
+window.addEventListener('scroll', function(){
+  if (window.scrollY > 400) backTop.classList.add('show');
+  else backTop.classList.remove('show');
+});
+
+// 目录点击后自动折叠（移动端友好）
+if (window.innerWidth < 680) {
+  document.querySelectorAll('#toc-list a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.querySelector('#toc-nav details').open = false;
+    });
+  });
+}
+</script>
+</body>
+</html>

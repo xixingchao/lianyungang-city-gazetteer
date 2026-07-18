@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+"""Verify LYG-下-T004 social relief object statistics continuation table."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "下" / "data" / "LYG-下-T004.json"
+
+COLUMNS = ["项目", "新浦区", "海州区", "云台区", "连云区", "赣榆县", "东海县", "灌云县"]
+
+ROWS = [
+    ["社会困难户救济-临时救济人次数", "1632", "3762", "9984", "3900", "18401", "35500", "22500"],
+    ["社会困难户救济-国家定期定量救济人次数", "21", "90", "18", "55", "2132", "315", "1036"],
+    ["社会散居孤老、残、幼救济-集体补助金额(万元)", "117.2", "", "", "", "", "830", ""],
+    ["社会散居孤老、残、幼救济-集体供养人数", "5", "188", "142", "", "2470", "4005", "2807"],
+    ["社会散居孤老、残、幼救济-集体供养金额(元)", "45", "1260", "850", "40", "19590", "25390", "14040"],
+    ["老工简退-国家定期定量救济人数", "58", "24", "34", "18", "8", "20", "156"],
+    ["老工简退-享受40%救济年末人数", "6", "9", "12", "7", "130", "124", "54"],
+    ["老工简退-享受定期定量救济年末人数", "6", "13", "19", "8", "252", "232", "164"],
+    ["国民党县、团以下宽释人员-城镇人数", "2", "3", "6", "8", "6", "", ""],
+    ["国民党县、团以下宽释人员-乡村人数", "", "", "", "", "12", "24", "21"],
+    ["国民党起义投诚人员-城镇人数", "", "", "", "", "", "24", ""],
+    ["国民党起义投诚人员-乡村人数", "", "", "", "", "", "72", ""],
+    ["五十年代退职人员-城镇人数", "5", "", "", "", "", "", ""],
+    ["五十年代退职人员-乡村人数", "", "", "", "", "", "16", ""],
+    ["小乡干部-城镇人数", "", "", "", "", "62", "48", "25"],
+    ["小乡干部-乡村人数", "", "", "", "", "177", "151", "265"],
+    ["老党员-城镇人数", "", "", "", "", "317", "549", "21"],
+    ["老党员-乡村人数", "", "", "15", "", "1546", "1667", "696"],
+    ["下放知青补助(人)", "", "", "", "", "", "1", "1"],
+    ["因公残国民党特救人员补助(人)", "", "", "", "", "", "4", ""],
+    ["宗教人员补助(人)", "", "", "", "", "", "", "8"],
+]
+
+PATCH = {
+    "title": "1990年连云港市社会救济工作对象情况表续表",
+    "table_number": "表43-5",
+    "page": 2004,
+    "pages": [2004],
+    "part": "part01",
+    "vol": "下",
+    "volume": "下",
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据页级OCR核录续页：workbench/ocr/paddle_ocr/下/part01/page_0033.txt；表题、表号和县区表头承接前页 workbench/ocr/paddle_ocr/下/part01/page_0032.txt。并参考 raw 坐标OCR workbench/ocr/raw/下/part01/page_0033.json 与 raw 文本 workbench/table_entries/下/raw/LYG-下-T004_2004.txt。仅录入 page_0033 可见续表项目；源页未见数值处保留空值；页级OCR将新浦区集体补助金额拆为117.与2，按同一列位合并为117.2。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != "LYG-下-T004":
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

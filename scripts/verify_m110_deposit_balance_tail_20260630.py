@@ -1,0 +1,118 @@
+# -*- coding: utf-8 -*-
+"""Verify deposit balance continuation table T110."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "中" / "data" / "LYG-中-T110.json"
+
+COLUMNS = [
+    "年份",
+    "合计(万元)",
+    "企业存款(万元)",
+    "财政性存款(万元)",
+    "特种存款(万元)",
+    "基建存款(万元)",
+    "城镇储蓄(万元)",
+    "农村储蓄(万元)",
+]
+
+ROWS = [
+    ["1957", "538", "138", "130", "30", "", "204", "36"],
+    ["1958", "1047", "503", "233", "50", "4", "236", "21"],
+    ["1959", "1142", "265", "437", "57", "33", "270", "80"],
+    ["1960", "1391", "512", "317", "46", "", "328", "188"],
+    ["1961", "1462", "479", "308", "63", "22", "327", "283"],
+    ["1962", "1940", "1039", "286", "75", "121", "196", "223"],
+    ["1963", "1407", "629", "309", "62", "94", "208", "105"],
+    ["1964", "1749", "792", "293", "126", "87", "270", "181"],
+    ["1965", "2138", "783", "623", "24", "67", "336", "305"],
+    ["1966", "2079", "831", "424", "154", "47", "367", "256"],
+    ["1967", "1941", "807", "354", "153", "1", "342", "284"],
+    ["1968", "2363", "1046", "291", "207", "120", "357", "342"],
+    ["1969", "3324", "1764", "423", "310", "159", "360", "308"],
+    ["1970", "3199", "1285", "501", "420", "177", "359", "449"],
+    ["1971", "4562", "1443", "1577", "427", "179", "407", "529"],
+    ["1972", "5230", "1340", "2012", "669", "13", "475", "721"],
+    ["1973", "4362", "1619", "748", "484", "", "528", "983"],
+    ["1974", "5373", "2197", "963", "479", "", "629", "1105"],
+    ["1975", "5901", "2397", "652", "444", "407", "688", "1313"],
+    ["1976", "7579", "3392", "726", "425", "653", "760", "1623"],
+    ["1977", "8641", "3352", "1245", "475", "996", "897", "1676"],
+    ["1978", "8631", "3655", "1040", "340", "871", "1122", "1803"],
+    ["1979", "8790", "4598", "1359", "344", "17", "1583", "2502"],
+    ["1980", "29135", "10060", "1532", "396", "3766", "11256", ""],
+    ["1981", "30359", "14491", "1071", "458", "6", "4888", "5808"],
+    ["1982", "37276", "10170", "1541", "533", "3", "10080", "2442"],
+    ["1983", "45561", "22729", "1581", "568", "21", "14201", "790"],
+    ["1984", "71760", "36696", "2102", "571", "", "15544", "8731"],
+    ["1985", "86054", "35880", "306", "540", "", "21729", "12270"],
+    ["1986", "122012", "49386", "1300", "663", "", "32757", "18782"],
+    ["1987", "150385", "54752", "2533", "634", "", "22557", ""],
+    ["1988", "162355", "60264", "1951", "", "", "62122", "22592"],
+    ["1989", "188053", "56257", "11904", "", "", "83983", "21384"],
+    ["1990", "207520", "68787", "3280", "", "", "111099", "24354"],
+]
+
+PATCH = {
+    "table_id": "LYG-中-T110",
+    "title": "1949~1990年连云港市各类存款余额统计表（续表）",
+    "table_number": "表40-6",
+    "page": 1780,
+    "pages": [1780],
+    "part": "part02",
+    "vol": "中",
+    "volume": "中",
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据页级OCR回源核录：表题、表号和表头见 workbench/ocr/paddle_ocr/中/part02/page_0359.txt；续表内容见 workbench/ocr/paddle_ocr/中/part02/page_0360.txt，并参考 raw OCR workbench/table_entries/中/raw/LYG-中-T110_1780.txt。原JSON为单列骨架且标题误列为储蓄种类表；源页未见数值的单元格保留空值，未用合计反推。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != PATCH["table_id"]:
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = sum(1 for table in tables if patch_entry(table))
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

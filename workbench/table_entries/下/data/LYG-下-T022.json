@@ -1,0 +1,49 @@
+{
+  "table_id": "LYG-下-T022",
+  "title": "1990年底连云港市专业干部技术职务情况表（续表）",
+  "table_number": "表46-6",
+  "page": 2174,
+  "pages": [
+    2174
+  ],
+  "part": "part01",
+  "vol": "下",
+  "columns": [
+    "系列",
+    "合计",
+    "未评聘",
+    "高级",
+    "中级",
+    "初级"
+  ],
+  "rows": [
+    [
+      "工艺美术",
+      "29",
+      "2",
+      "7",
+      "17",
+      "3"
+    ],
+    [
+      "体育",
+      "41",
+      "2",
+      "18",
+      "9",
+      "12"
+    ],
+    [
+      "艺术",
+      "20",
+      "13",
+      "5",
+      "2",
+      ""
+    ]
+  ],
+  "row_count": 3,
+  "col_count": 6,
+  "status": "verified",
+  "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/下/part01/page_0203.txt，并参考 raw OCR：workbench/table_entries/下/raw/LYG-下-T022_2174.txt。表题、表号、单位和列组依据前页 workbench/ocr/paddle_ocr/下/part01/page_0202.txt；本页为表46-6续上表，单位为人。艺术行末列源页/OCR未见数值，保留空值。注释见源页：不含驻连部、省属单位专业人员数；不含集体所有制单位专业人员数2121人。"
+}

@@ -1,0 +1,28 @@
+volumes:
+  - volume: "上"
+    parts:
+      - part: "part01"
+        source_dir: "E:\\codex_Learing\\09_project_东辛农场\\连云港市志(上)"
+        base_name: "连云港市志(上).1"
+      - part: "part02"
+        source_dir: "E:\\codex_Learing\\09_project_东辛农场\\连云港市志(上)"
+        base_name: "连云港市志(上).2"
+      - part: "part03"
+        source_dir: "E:\\codex_Learing\\09_project_东辛农场\\连云港市志(上)"
+        base_name: "连云港市志(上).3"
+  - volume: "中"
+    parts:
+      - part: "part01"
+        source_dir: "E:\\codex_Learing\\09_project_东辛农场\\连云港市志(中)"
+        base_name: "连云港市志(中).1"
+      - part: "part02"
+        source_dir: "E:\\codex_Learing\\09_project_东辛农场\\连云港市志(中)"
+        base_name: "连云港市志(中).2"
+  - volume: "下"
+    parts:
+      - part: "part01"
+        source_dir: "E:\\codex_Learing\\09_project_东辛农场\\连云港市志(下)"
+        base_name: "连云港市志(下).1"
+      - part: "part02"
+        source_dir: "E:\\codex_Learing\\09_project_东辛农场\\连云港市志(下)"
+        base_name: "连云港市志(下).2"

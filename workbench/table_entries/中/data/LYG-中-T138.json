@@ -1,0 +1,28 @@
+{
+  "table_id": "LYG-中-T138",
+  "title": "1984~1990年连云港市进口设备和产品情况表（首页）",
+  "table_number": "表35-5",
+  "page": 1611,
+  "pages": [
+    1611
+  ],
+  "part": "part02",
+  "vol": "中",
+  "columns": [
+    "单位",
+    "项目(单机)名称",
+    "金额(万美元)"
+  ],
+  "rows": [
+    [
+      "市纺织工业公司系统",
+      "项目21单机4件",
+      "2167.21"
+    ]
+  ],
+  "row_count": 1,
+  "col_count": 3,
+  "status": "verified",
+  "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/中/part02/page_0191.txt。仅录入源页可见的表35-5首页汇总行；续页见LYG-中-T082至LYG-中-T087。阅读版旧压平残文已替换为结构化 verified 表块。",
+  "volume": "中"
+}

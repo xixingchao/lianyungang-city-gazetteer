@@ -1,0 +1,137 @@
+# -*- coding: utf-8 -*-
+"""Repair final cross-paragraph 入 OCR candidate residues."""
+
+from __future__ import annotations
+
+import json
+import re
+from datetime import datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+TARGETS = [
+    ROOT / "output" / "final_reader" / "连云港市志_全书.html",
+    ROOT / "output" / "final_reader" / "连云港市志_中册.html",
+    ROOT / "output" / "final_reader" / "连云港市志_下册.html",
+]
+REPORT_JSON = ROOT / "output" / "reports" / "reader_ru_candidates_crosspara_batch171_20260707.json"
+REPORT_MD = ROOT / "output" / "reports" / "reader_ru_candidates_crosspara_batch171_20260707.md"
+PROGRESS = ROOT / "output" / "reports" / "progress" / "20260707_入字候选跨段补修第一百七十一批.md"
+MEMORY = ROOT / "PROJECT_MEMORY.md"
+TERMS = ["列人", "编人"]
+
+REPLACEMENTS = [
+    ("列</p><p>人省医药公司", "列入</p><p>省医药公司"),
+    ("编人预备</p><p>役", "编入预备</p><p>役"),
+    ("编人东海</p><p>县常备大队", "编入东海</p><p>县常备大队"),
+]
+
+LEFT_UNTOUCHED = [
+    "`宿迁人` 为籍贯/人物说明，保留。",
+    "`数值序列人行道面积`、`采编人员/在编人员/扩编人防` 等合法相邻字保留。",
+    "未做裸 `人 -> 入` 替换；未打开、展示或嵌入图片。",
+]
+
+
+def plain_text(html: str) -> str:
+    return re.sub(r"<[^>]+>", "", html)
+
+
+def contexts(plain: str, term: str) -> list[str]:
+    return [plain[max(0, m.start() - 65):m.start() + 95].replace("\n", " ") for m in re.finditer(term, plain)]
+
+
+def upsert_memory(marker: str, content: str) -> None:
+    old = MEMORY.read_text(encoding="utf-8") if MEMORY.exists() else ""
+    if marker not in old:
+        MEMORY.write_text(old.rstrip() + "\n\n" + content.strip() + "\n", encoding="utf-8")
+        return
+    start = old.index(marker)
+    next_start = old.find("\n## ", start + 1)
+    new = old[:start].rstrip() + "\n\n" + content.strip() + "\n"
+    if next_start != -1:
+        new += "\n" + old[next_start:].lstrip()
+    MEMORY.write_text(new, encoding="utf-8")
+
+
+def main() -> None:
+    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    pattern_counts = {old: 0 for old, _ in REPLACEMENTS}
+    results = []
+    for target in TARGETS:
+        before = target.read_text(encoding="utf-8")
+        before_plain = plain_text(before)
+        after = before
+        file_patterns = []
+        for old, new in REPLACEMENTS:
+            count = after.count(old)
+            if count:
+                after = after.replace(old, new)
+                pattern_counts[old] += count
+                file_patterns.append({"old": old, "new": new, "count": count})
+        target.write_text(after, encoding="utf-8")
+        after_plain = plain_text(after)
+        results.append({
+            "target": str(target),
+            "changed": sum(item["count"] for item in file_patterns),
+            "before_terms": {term: before_plain.count(term) for term in TERMS},
+            "after_terms": {term: after_plain.count(term) for term in TERMS},
+            "patterns": file_patterns,
+            "remaining_contexts": {term: contexts(after_plain, term) for term in TERMS if after_plain.count(term)},
+        })
+
+    total = sum(item["changed"] for item in results)
+    payload = {
+        "time": now,
+        "scope": "current reader cross-paragraph 入 OCR candidate repair",
+        "changed": total,
+        "pattern_counts": {k: v for k, v in pattern_counts.items() if v},
+        "targets": results,
+        "left_untouched": LEFT_UNTOUCHED,
+    }
+    REPORT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    lines = [
+        "# 入字候选跨段补修第一百七十一批",
+        "",
+        f"> 生成时间：{now}",
+        "",
+        "## 范围",
+        "",
+        "- 当前全书、中册、下册阅读稿。",
+        "- 定点修复跨段 `列入/编入` 高置信漏项。",
+        "- 未做裸 `人 -> 入` 替换；未打开、展示或嵌入图片。",
+        "",
+        "## 统计",
+        "",
+        f"- 修复：{total} 处",
+        "",
+        "## 替换项",
+        "",
+    ]
+    for old, count in sorted(((k, v) for k, v in pattern_counts.items() if v), key=lambda x: x[0]):
+        lines.append(f"- `{old}` -> `{dict(REPLACEMENTS)[old]}`：{count} 处")
+    lines.extend(["", "## 文件", ""])
+    for item in results:
+        after_bits = ", ".join(f"{k}:{v}" for k, v in item["after_terms"].items() if v)
+        lines.append(f"- `{item['target']}`：修复 {item['changed']} 处；剩余 {after_bits or '无'}")
+    lines.extend(["", "## 未处理边界", ""])
+    for item in LEFT_UNTOUCHED:
+        lines.append(f"- {item}")
+    report = "\n".join(lines) + "\n"
+    REPORT_MD.write_text(report, encoding="utf-8")
+    PROGRESS.write_text(report, encoding="utf-8")
+
+    marker = "## 2026-07-07 高置信 OCR 错字补修第一百七十一批：入字候选跨段"
+    upsert_memory(marker, f"""
+{marker}
+
+- 跟进 `batch170` 后跨段漏项，定点修复 `列入省医药公司`、`编入预备役`、`编入东海县常备大队`。
+- 本批修复 {total} 处；报告：`output/reports/reader_ru_candidates_crosspara_batch171_20260707.md`。
+- 保留 `宿迁人`、`数值序列人行道面积`、`采编人员/在编人员/扩编人防` 等合法相邻字；未打开、展示或嵌入图片。
+""")
+    print(json.dumps({"changed": total, "report": str(REPORT_MD)}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,111 @@
+# -*- coding: utf-8 -*-
+"""Verify industrial loan balance continuation table from page OCR."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA_DIR = ROOT / "workbench" / "table_entries" / "中" / "data"
+
+PATCHES = {
+    "LYG-中-T111": {
+        "title": "1949~1990年连云港市工业贷款余额统计表（续表）",
+        "table_number": "表40-7",
+        "page": 1783,
+        "pages": [1783],
+        "columns": ["年份", "合计", "国营生产", "物资供销", "集体工业", "工业结算", "乡镇工业", "其它"],
+        "rows": [
+            ["1958", "626.20", "626.20", "", "", "", "", ""],
+            ["1959", "1798.40", "1747.90", "50.50", "", "", "", ""],
+            ["1960", "2408.10", "2058.40", "340.20", "9.50", "", "", ""],
+            ["1961", "1587.40", "1287.60", "161.70", "138.10", "", "", ""],
+            ["1962", "775.70", "475.70", "235.70", "64.30", "", "", ""],
+            ["1963", "743.30", "256.70", "339.50", "30.70", "116.40", "", ""],
+            ["1964", "611.70", "122.40", "392.70", "40.60", "56.00", "", ""],
+            ["1965", "2976.70", "2522.90", "210.10", "83.70", "160.00", "468.00", ""],
+            ["1966", "4457.10", "3998.90", "202.10", "131.80", "124.30", "", ""],
+            ["1967", "4949.40", "4458.90", "314.20", "148.40", "27.90", "", ""],
+            ["1968", "6625.00", "5870.10", "443.70", "220.70", "90.50", "", ""],
+            ["1969", "10371.50", "9431.50", "516.40", "423.60", "", "", ""],
+            ["1970", "7606.80", "6374.50", "692.70", "539.60", "", "", ""],
+            ["1971", "5894.00", "4728.60", "757.50", "407.90", "", "", ""],
+            ["1972", "4467.90", "2857.00", "855.90", "708.10", "46.90", "", ""],
+            ["1973", "4884.00", "3006.30", "1022.30", "660.10", "148.20", "47.10", ""],
+            ["1974", "5562.50", "3642.80", "1018.70", "769.40", "84.70", "46.90", ""],
+            ["1975", "5829.70", "3607.60", "1196.30", "792.30", "176.60", "56.90", ""],
+            ["1976", "5916.00", "3667.30", "1133.10", "881.30", "167.50", "66.80", ""],
+            ["1977", "5632.10", "3260.40", "1073.80", "1012.00", "180.10", "105.80", ""],
+            ["1978", "6984.70", "4374.20", "975.00", "1169.20", "356.60", "109.70", ""],
+            ["1979", "7869.80", "5271.00", "904.90", "1280.20", "295.30", "118.40", ""],
+            ["1980", "9134.40", "6263.00", "802.70", "1575.60", "302.00", "191.10", ""],
+            ["1981", "13478.00", "9148.00", "1241.00", "2972.00", "117.00", "", ""],
+            ["1982", "15731.00", "10051.00", "1982.00", "3426.00", "272.00", "", ""],
+            ["1983", "18733.00", "11384.00", "2826.00", "4127.00", "354.00", "42.00", ""],
+            ["1984", "27848.00", "14761.00", "6158.00", "4939.00", "477.00", "1298.00", "215.00"],
+            ["1985", "33273.00", "17734.00", "7642.00", "5881.00", "266.00", "1537.00", "213.00"],
+            ["1986", "51418.00", "27664.00", "11633.00", "8596.00", "390.00", "2923.00", "212.00"],
+            ["1987", "56191.00", "28484.00", "12698.00", "11333.00", "21.00", "3377.00", "278.00"],
+            ["1988", "62940.00", "33723.00", "11404.00", "13017.00", "6.00", "4534.00", "256.00"],
+            ["1989", "76431.00", "44855.00", "11254.00", "15094.00", "", "5000.00", "228.00"],
+            ["1990", "99876.00", "65316.00", "11731.00", "17502.00", "", "5099.00", "228.00"],
+        ],
+        "status": "verified",
+        "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/中/part02/page_0363.txt，并参考 raw OCR：workbench/table_entries/中/raw/LYG-中-T111_1783.txt。表题和表号依据前页 workbench/ocr/paddle_ocr/中/part02/page_0362.txt；本页为表40-7续表，单位为万元。源页未列数值的单元格保留空白。",
+    }
+}
+
+for patch in PATCHES.values():
+    patch["row_count"] = len(patch["rows"])
+    patch["col_count"] = len(patch["columns"])
+
+
+def patch_entry(entry: dict) -> bool:
+    patch = PATCHES.get(entry.get("table_id"))
+    if not patch:
+        return False
+    changed = False
+    for key, value in patch.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    changed = 0
+    for table_id in PATCHES:
+        path = DATA_DIR / f"{table_id}.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if patch_entry(data):
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            changed += 1
+    return changed
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

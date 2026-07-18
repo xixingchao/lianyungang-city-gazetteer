@@ -1,0 +1,1107 @@
+[
+  {
+    "path": "config/book.yml",
+    "size": 623,
+    "sha256": "6ad23475c990391bc5b70c53b9863fb163bfae73ee51fe6a571f88995dc08c37"
+  },
+  {
+    "path": "input/source/page_mapping.csv",
+    "size": 27989,
+    "sha256": "54c89a8e56a4fd4b7014e79af4e1e8be1a4310aa501868fc7950593bc92b5ca2"
+  },
+  {
+    "path": "input/source/source_metadata.json",
+    "size": 856,
+    "sha256": "1a7792fa817c29c92e147cb5111418323c78e26ce77ca296e1414d296ce19604"
+  },
+  {
+    "path": "input/source/连云港市志_第五十九卷方言_源页_全新重做.pdf",
+    "size": 45146649,
+    "sha256": "5c0d9bd3c81409df9f0c420da6235eaa059ab18a01b4da5813b366acc900b2fb"
+  },
+  {
+    "path": "output/reader/连云港市志_第五十九卷方言_全新OCR草稿.html",
+    "size": 134648,
+    "sha256": "46adc7156f0912260962d8fd07ca5a7fc56190cd3356edcaa1dd8db0a9740ff2"
+  },
+  {
+    "path": "output/reader/连云港市志_第五十九卷方言_全新OCR草稿.md",
+    "size": 128673,
+    "sha256": "a3ab73f165a853cb86a4827e9d3d9e9b3029d110e4c7fcee6eb6c041b507f3ff"
+  },
+  {
+    "path": "output/reports/fresh_ocr_pilot_assessment.md",
+    "size": 1937,
+    "sha256": "e97427df150320e3a1abc774a116a77ead69d287e591e4ce25e13c37e1f43783"
+  },
+  {
+    "path": "output/reports/fresh_project_initial_audit.md",
+    "size": 607,
+    "sha256": "509e380ab425564e33ca7cb00d457b7c448ec12fcfc94a812f883681cb8c8e6c"
+  },
+  {
+    "path": "output/reports/ocr_draft_reader_summary.csv",
+    "size": 1432,
+    "sha256": "e7667e9e18179e66b43bdb24e747a74637418d31da437abe681848f0f1c621cd"
+  },
+  {
+    "path": "output/reports/rapidocr_full_report.csv",
+    "size": 17150,
+    "sha256": "55e2ad404d5ecdfc08a0f7dcf87ae3602d7dbd9ad1dc8e01ebfc73c261f5761c"
+  },
+  {
+    "path": "output/reports/rapidocr_full_report.md",
+    "size": 10323,
+    "sha256": "5face8092f02e6dc9ecf955ef74b0bd458a7ce3a5f141a0cd54ea4f7767abb9c"
+  },
+  {
+    "path": "output/reports/rapidocr_pilot_report.csv",
+    "size": 1464,
+    "sha256": "bd304bd7689f02a7ce47567e13be584e716ea6c796655a2ac536fe8e1bd15711"
+  },
+  {
+    "path": "output/reports/rapidocr_pilot_report.md",
+    "size": 1692,
+    "sha256": "2beac358ef545fd7ebe643cc7182c74bd89eaa4230d0a8511112f30bd7daf207"
+  },
+  {
+    "path": "output/reports/source_extraction_report.md",
+    "size": 645,
+    "sha256": "60bdbbe0522728c38153ce7c750e805645a06e4bb41c43b10da7546584d36713"
+  },
+  {
+    "path": "output/reports/volume59_local_baseline_final_report.md",
+    "size": 2445,
+    "sha256": "282807c3c75ab8aaa90ccdf60d60df85c0ad4fbff60421d0e74e08419036fbd1"
+  },
+  {
+    "path": "README.md",
+    "size": 1367,
+    "sha256": "19c6c131c47445872ba7921a5c5e98da035779cfc2b6a746e1e36db72f1f7cd8"
+  },
+  {
+    "path": "scripts/build_ocr_draft_reader.py",
+    "size": 4686,
+    "sha256": "574a67c6b7de5b5f6ef3f55b8f6d685d7047bf49973475adbdb48ff95dfec647"
+  },
+  {
+    "path": "scripts/extract_volume59_from_original.py",
+    "size": 5214,
+    "sha256": "97d7ac55c06ed3b77681a2f135f6b780d822ed89e2f70de38d3c2a7daff14ec5"
+  },
+  {
+    "path": "scripts/finalize_local_baseline.py",
+    "size": 6985,
+    "sha256": "ab169ddebd509739333215fbb1e54970a22c9096033d93ce58297eda04cf6189"
+  },
+  {
+    "path": "scripts/init_fresh_review_ledgers.py",
+    "size": 7613,
+    "sha256": "3e46c54ee710bb854d613a483018f28498857069c5fe47d16b0071479d3fd6b9"
+  },
+  {
+    "path": "scripts/run_rapidocr_all.py",
+    "size": 4705,
+    "sha256": "bca779e5d4648bb5caf84dcca6fb86d4924ba42107412e54aa17be9ca44d6b1b"
+  },
+  {
+    "path": "scripts/run_rapidocr_pilot.py",
+    "size": 3476,
+    "sha256": "9d821207df0ce75ae0435661d0a32383d1109bb015b463311c35fbab658fc9e4"
+  },
+  {
+    "path": "workbench/dialect/dialect_page_inventory_initial.csv",
+    "size": 8305,
+    "sha256": "21e79a28eb0842cd201867a270f7463e63a75a6f5cf3ef0754adb424b2e1ed09"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0295_vol_001_rapidocr.json",
+    "size": 8056,
+    "sha256": "7ecf213b6a17015e29e6960b76b5e39aa2afe8f938a1e46ee01a66c29d4576e2"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0295_vol_001_rapidocr.txt",
+    "size": 1784,
+    "sha256": "dcd092a737931423238e152bcfea13dc937abd7e0b342d53e58b113ddbeaf2a1"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0296_vol_002_rapidocr.json",
+    "size": 47037,
+    "sha256": "6c9f972d291966e351c72defc9ad4c074ccdf9b773ceb1c7b39027dc9dcc509f"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0296_vol_002_rapidocr.txt",
+    "size": 1880,
+    "sha256": "be2770e0989d146593458cae3e6f92e2aa9c149abf29fa2eb85376ee13cbc3c5"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0297_vol_003_rapidocr.json",
+    "size": 33749,
+    "sha256": "d1b7477218ce4de7fee7ddd65ecfb276f738d4212b9055cecf9d2e9cf41ceb54"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0297_vol_003_rapidocr.txt",
+    "size": 2666,
+    "sha256": "bcba78b4e11d1797d4f501a9e42505af75bcd0c4aa7ad5f944d84ce1e84e45e9"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0298_vol_004_rapidocr.json",
+    "size": 70442,
+    "sha256": "f5a32c1989a554643324fdf520a34fd8bb3452ebe3193e348c78da3dc7b9f2b4"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0298_vol_004_rapidocr.txt",
+    "size": 3093,
+    "sha256": "17e57e2fd03affbc631c2f9931d78f92de97ec5998f24a5e4d72ea8118215884"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0299_vol_005_rapidocr.json",
+    "size": 36801,
+    "sha256": "bab8c7aa25930fc3b7bea449dd17eb78c33cb4021865dbb92a8d1aa5e370438c"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0299_vol_005_rapidocr.txt",
+    "size": 2356,
+    "sha256": "3c154e8360aa8717f341b42f68b2506255fc7cd084f7ba0fa898a163c5d9be35"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0300_vol_006_rapidocr.json",
+    "size": 30203,
+    "sha256": "312cf9b4769814846b15c368b894a2c7139cbea6027b303e141cf76f9a841568"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0300_vol_006_rapidocr.txt",
+    "size": 1385,
+    "sha256": "717e79b778e38caa3d7f93e0b094aae7327cc8d0dd6deb77f7b2b1999a27e00e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0301_vol_007_rapidocr.json",
+    "size": 26679,
+    "sha256": "1b9be396a3d05c113d10101d85d67437cf861124eeece507df2c20b4c13d90b2"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0301_vol_007_rapidocr.txt",
+    "size": 2217,
+    "sha256": "fea25d04913044d3dab28865f3addee132801944c9163f7780a689c51ee0947e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0302_vol_008_rapidocr.json",
+    "size": 64726,
+    "sha256": "dc9e3a57ae60336fbe89914eb975074c0f1fedbb6384bbbb5e7ad47aa826e1f2"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0302_vol_008_rapidocr.txt",
+    "size": 1980,
+    "sha256": "bf7e22f0ca7f1ddfef44002a7e51a74555a45bbb4b5332c5daf860904171d904"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0303_vol_009_rapidocr.json",
+    "size": 32813,
+    "sha256": "2bc5b78b91a1c39731341b5341284b488682e0155809acaf72da3aa08da2ee1a"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0303_vol_009_rapidocr.txt",
+    "size": 2619,
+    "sha256": "f56e5245834f886c3e69429e953b2b6431b52bff680462dde2127433790ac546"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0304_vol_010_rapidocr.json",
+    "size": 45762,
+    "sha256": "8b9078343ce6a9ee9dc6b2cfe1ede73ef62056b19e7aa84af36d350518d5904c"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0304_vol_010_rapidocr.txt",
+    "size": 2710,
+    "sha256": "6f450a5ca0c35dc8f2cc4c1ddb54f4d9d961f4964eb56d07ae6ce2563cda6c5a"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0305_vol_011_rapidocr.json",
+    "size": 46215,
+    "sha256": "398f82933a4604cc9ec0a5c9ecd046d4ad667b3e455eeeb2b8e45da43c53b36c"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0305_vol_011_rapidocr.txt",
+    "size": 2524,
+    "sha256": "bf94cefe375cbf9704928b7992ec2cc352724540e4b91435abf14f3075ff406b"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0306_vol_012_rapidocr.json",
+    "size": 44526,
+    "sha256": "a522f82ed3327d3ecbb6ccbc256aaf4d22ad6fe43a0185f3d08d682565f720d3"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0306_vol_012_rapidocr.txt",
+    "size": 2489,
+    "sha256": "b88a85f22d47cc7df8b760a9c5472b1a3d901cb10ac8f01df2ffd2f8bb2736f6"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0307_vol_013_rapidocr.json",
+    "size": 45744,
+    "sha256": "eb13b867368ca43bb982ba744e3437154f684fdef70babadebba8b09a204cece"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0307_vol_013_rapidocr.txt",
+    "size": 2715,
+    "sha256": "cdec927d927ada4e4e9b162e44316940dcd770ee50a56de6c3739813c233f097"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0308_vol_014_rapidocr.json",
+    "size": 44655,
+    "sha256": "0c8da6e0eec03eacf60770d31172295bf930cd61326b04288856792ed0fb8bf0"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0308_vol_014_rapidocr.txt",
+    "size": 2289,
+    "sha256": "f65a9ad5b51e59679c96ed20a28a8cf3bbfe9789c7cf762122d192ab061dabc0"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0309_vol_015_rapidocr.json",
+    "size": 47658,
+    "sha256": "b4d5a73f74a15ab050918b1d8c2fbef49617616e31f635b504e57380b03b4311"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0309_vol_015_rapidocr.txt",
+    "size": 2648,
+    "sha256": "8447cbc9a56f1cd7f96cd20353b06680c84de3e9975c5608b3866afc6d68413e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0310_vol_016_rapidocr.json",
+    "size": 47106,
+    "sha256": "43480e2161b0cd001f293ebe6b5bc974aa486c7c762cbd694ee613dad19cfa01"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0310_vol_016_rapidocr.txt",
+    "size": 2751,
+    "sha256": "173b1b7fad7a1552276f534efdf45f2cfe5a08e1eac8ef76f9fd0a2fb38191a2"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0311_vol_017_rapidocr.json",
+    "size": 41553,
+    "sha256": "4a0377268743dd788d0bf6389f0e818af4e4d0abc6113df3cf8bcf6e4373f6fa"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0311_vol_017_rapidocr.txt",
+    "size": 2529,
+    "sha256": "6166add64139b076d78874836a359d1c910ecc6cdce3f3b4a2c52295056625c6"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0312_vol_018_rapidocr.json",
+    "size": 23924,
+    "sha256": "a4af852a7867cd953dc03a0297ad3b48f58740bcbd8de371f94d3ae290459044"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0312_vol_018_rapidocr.txt",
+    "size": 1763,
+    "sha256": "99b92410aa85b6fb3ef12286f22240135f0ec38968f4685ae8d214f7112afd79"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0313_vol_019_rapidocr.json",
+    "size": 36705,
+    "sha256": "b4de8d1ef3092f3a27bd58eb23eae9cb0903a876e2e2e2edd070e2add4920e3d"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0313_vol_019_rapidocr.txt",
+    "size": 2273,
+    "sha256": "07ee5ccf8ae1d15b037b723edeef15d02065a5c587bb56e4699195fc2cbdf7ad"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0314_vol_020_rapidocr.json",
+    "size": 63776,
+    "sha256": "7c99ba600865f7c7c75e172b54d27245b7436eadccbcd7b518baa10b84127ebc"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0314_vol_020_rapidocr.txt",
+    "size": 2541,
+    "sha256": "37c791fdd2fba4e69fc098399f5c51b0faa2b10333dbfe41d080b30b474a6b0e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0315_vol_021_rapidocr.json",
+    "size": 51250,
+    "sha256": "4b3b451add18e9edaf27fa98f2eb6c32957517e730df1e5b01d255c7f0df0aab"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0315_vol_021_rapidocr.txt",
+    "size": 2300,
+    "sha256": "5bde82b1a0856482aa9710e2f1627caf34640e1801726249a109a6454b0d96b8"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0316_vol_022_rapidocr.json",
+    "size": 61486,
+    "sha256": "c4f18e759dbc26b3f5f871206306206b7e19db40bb89de8af341d748672a0e5e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0316_vol_022_rapidocr.txt",
+    "size": 2681,
+    "sha256": "449b8d4b132e9d0eea17f9c1689a368bb44fbc97d446cf56729926ad1207a268"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0317_vol_023_rapidocr.json",
+    "size": 59398,
+    "sha256": "bbaf1615ab3b15d6d956979985aa5bf23fb6035304709f1aa9c24fbd533633e1"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0317_vol_023_rapidocr.txt",
+    "size": 2446,
+    "sha256": "1da5d3eda13856831ea03affe066fa433dc45318b23075aaba26e0e2cfa39e5a"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0318_vol_024_rapidocr.json",
+    "size": 53109,
+    "sha256": "b9ee1293fa3990722926c7b8041c9b5816ba158a7265e1b1feaacfa6c95280fa"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0318_vol_024_rapidocr.txt",
+    "size": 2431,
+    "sha256": "12877515ce5d61f964337448c3cb74bf0a6e0afe83e390eac85b6cc80ec3dff4"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0319_vol_025_rapidocr.json",
+    "size": 73296,
+    "sha256": "29a26052d25268408a5f9b42262759c2a718acb55bd467b7c079c0330b17b986"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0319_vol_025_rapidocr.txt",
+    "size": 2474,
+    "sha256": "c1a8bf78fbff304e7143d23436a0b6b28b2f638be04a4f463a38b5f8eacaac62"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0320_vol_026_rapidocr.json",
+    "size": 68896,
+    "sha256": "3bacb2f6119910fa30357c4663e6d0d4e1195393e442f8f4cc2ca3f116ba6c7b"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0320_vol_026_rapidocr.txt",
+    "size": 2072,
+    "sha256": "26c05f7def639fc3cb273dbbcfa9fefbff0cd5681c8f9b6592a9096fe2193b91"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0321_vol_027_rapidocr.json",
+    "size": 71893,
+    "sha256": "981b7782d5b57b162222f21f46dda3cbed7ec98b0dca24a99f19ca76a3f8de75"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0321_vol_027_rapidocr.txt",
+    "size": 2363,
+    "sha256": "903a61bc51102d76ea88ddee14a741448260322987059e05a3d881960467e797"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0322_vol_028_rapidocr.json",
+    "size": 73152,
+    "sha256": "741ba6d79b9449ca6253caaa4ded8140abccfbfab3cc0448d72b0a8cc51f1b64"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0322_vol_028_rapidocr.txt",
+    "size": 2404,
+    "sha256": "33db11daeffdb3191a1520f44f9dcf60786eeff39ed95c80294d6f62360556bf"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0323_vol_029_rapidocr.json",
+    "size": 63438,
+    "sha256": "407ad62271179e4c6aef7261cd39756bb9abf983daa568ae97ad55e8a1470702"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0323_vol_029_rapidocr.txt",
+    "size": 2517,
+    "sha256": "cd88358e05def3ec4d7f104d77b52b4a788419d555e3ccca8eb7aa78d924d4ee"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0324_vol_030_rapidocr.json",
+    "size": 75762,
+    "sha256": "576dd8f040648abcbf066ecc3b64423bbbfbc25514b1e6e6cb930686e900e20f"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0324_vol_030_rapidocr.txt",
+    "size": 2324,
+    "sha256": "41c9c04a3b004d88637cfc711dfbc2ff46f9ef9bfe78b405155bc5ad48d3c587"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0325_vol_031_rapidocr.json",
+    "size": 75715,
+    "sha256": "2a08b32213ef9976bf122e4635f3217e699db0864998732b52bde566e406105f"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0325_vol_031_rapidocr.txt",
+    "size": 2606,
+    "sha256": "81c1b5104a7acf754bdb2aa643ade5fef1b4e407f9db6f3a588d0e452cb41eb4"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0326_vol_032_rapidocr.json",
+    "size": 72798,
+    "sha256": "032802a001dd0b6e45f82537a7033b2a7759976a66e23a678f382e003cd371ae"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0326_vol_032_rapidocr.txt",
+    "size": 2344,
+    "sha256": "12e187906d8870e376ab6f625e88616f99f7ebb56983c8c4099e5db188ca060e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0327_vol_033_rapidocr.json",
+    "size": 67818,
+    "sha256": "d34f67106a18644fc1332248a449b1dc1f317d2554b67efe75bba98de03a37dd"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0327_vol_033_rapidocr.txt",
+    "size": 2339,
+    "sha256": "3deddd2abf7c2e4503581b2cb1f3c05e18ebda1e2a14ae5a8bbd90d2275716c1"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0328_vol_034_rapidocr.json",
+    "size": 57918,
+    "sha256": "341eff8e4e69c4306f1f3c6d983c16df9606f770ae52cb922a5b1f12e1a27c6e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0328_vol_034_rapidocr.txt",
+    "size": 2013,
+    "sha256": "f53355722fa25f199d9a23a6cc790c47ed3079c28b8cb2c8ae41401d9c8fc746"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0329_vol_035_rapidocr.json",
+    "size": 72709,
+    "sha256": "86313fc36e1708a4eaf9ce8b74daf0ce020233e5426c0c38bc7903df14e30b02"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0329_vol_035_rapidocr.txt",
+    "size": 2606,
+    "sha256": "5499055817153ab353ae326c61b23aea46fa1216630b3768f7f4457902998e27"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0330_vol_036_rapidocr.json",
+    "size": 74946,
+    "sha256": "19477292f7d73d480ab953c339f7192f8dbf36fde6b7ba307a4465ee800c4fc6"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0330_vol_036_rapidocr.txt",
+    "size": 2485,
+    "sha256": "d050b2ab61bf1ba97d08a40a3e0987e0142b1210587d7e2a467bc7ae385ad90a"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0331_vol_037_rapidocr.json",
+    "size": 62900,
+    "sha256": "53192e5f5593d7d60e67d01d49686b4da3311c23b728f407475037f92664522e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0331_vol_037_rapidocr.txt",
+    "size": 2336,
+    "sha256": "98fea8dbbe580cf94a0348107761423448003b6e4d9bb6028fa6c185d34f4eec"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0332_vol_038_rapidocr.json",
+    "size": 60258,
+    "sha256": "e553a92af53da7bd9d15512066ca19409f0079959f75bedc40f0b0431a8f2b87"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0332_vol_038_rapidocr.txt",
+    "size": 2344,
+    "sha256": "defcca657906ac1d477a6f1fa09bd475ffa3f36aa7707ab6a7a8d99d72392b0c"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0333_vol_039_rapidocr.json",
+    "size": 63953,
+    "sha256": "a938f25d604ec474c4da0b54412cbaee47b54bc0920cc86b2c18a5ddcfa50abf"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0333_vol_039_rapidocr.txt",
+    "size": 2438,
+    "sha256": "23cae87e2afab0baf84fad8c7508b3c7539dfe4068181920da511804037b364b"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0334_vol_040_rapidocr.json",
+    "size": 53208,
+    "sha256": "ffad1ae1222cc03d3968f38fe58b1769cbe02a6fdd7a93252dd1421d64df90ea"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0334_vol_040_rapidocr.txt",
+    "size": 2292,
+    "sha256": "ecc815283f071fc8d9526239f1c21ce601f7b256c850de56616d9072d4d45d28"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0335_vol_041_rapidocr.json",
+    "size": 66263,
+    "sha256": "c7e5205878e9b75fff93e6730c7df1469d7d5ce9a30202a0d493809e88ea2476"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0335_vol_041_rapidocr.txt",
+    "size": 2167,
+    "sha256": "720ed8e806e9e0771df1d25807de1b989ecc34af60ebec8686c9e2fa6b87eddb"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0336_vol_042_rapidocr.json",
+    "size": 73341,
+    "sha256": "3862ff528eb6bc7d29d68babdd743070f033605dce4c2a6c6547b56f9d8131fb"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0336_vol_042_rapidocr.txt",
+    "size": 2572,
+    "sha256": "8074162a98998ba0d6c682c91c1c4449e28e026f1d82fdb57c6f1aedb64cdc4a"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0337_vol_043_rapidocr.json",
+    "size": 61719,
+    "sha256": "7326b4988f878f50c812fa58cfaced5313bfb8467e530f70d2bac3506c36fb57"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0337_vol_043_rapidocr.txt",
+    "size": 2450,
+    "sha256": "65232ef101600adeca150c637e955d37b076818bd19f03f8f5b57322177f6a9c"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0338_vol_044_rapidocr.json",
+    "size": 69204,
+    "sha256": "54ec3f41b3c219147b0bd3ef83d2eb530795bcc0bc1ed36996e8f06ded2251c9"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0338_vol_044_rapidocr.txt",
+    "size": 2385,
+    "sha256": "7a1571bb080c3c26ed368ca6ac6471d81cee9f79bf0d7f06ea097789f06b3f22"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0339_vol_045_rapidocr.json",
+    "size": 38985,
+    "sha256": "0d63a22694e110323374b5264b3bc67d2bb70d54bf741b06e254c04022719ace"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0339_vol_045_rapidocr.txt",
+    "size": 2086,
+    "sha256": "b1bfa9d109f49d969977f7958ad3dad1f3e3914cc6f0a39b2834c4969a400eb8"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0340_vol_046_rapidocr.json",
+    "size": 29441,
+    "sha256": "fcb74dab6f6121a07e5972117a51befd1f5b8a94eb7e1e58d6a59cc5136ce26d"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0340_vol_046_rapidocr.txt",
+    "size": 3292,
+    "sha256": "1c8653f0f790c76a5107bc81ad582c4043aa56290c3a5439913fdcfe41054477"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0341_vol_047_rapidocr.json",
+    "size": 18035,
+    "sha256": "c74bf3d2c0a973551d5cb18306217140a8190f81b92aeb2f36eeb34884f0b3b4"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0341_vol_047_rapidocr.txt",
+    "size": 3180,
+    "sha256": "a825a72bc9b05ce771405d41cc3a5039462017f2054da92f20759a0ac2dd728d"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0342_vol_048_rapidocr.json",
+    "size": 14164,
+    "sha256": "052b7c347f97a1b3dc8bbd6b38fbd460dac7c327aba6f78b7836e30a3b961e3e"
+  },
+  {
+    "path": "workbench/ocr/rapidocr/page_0342_vol_048_rapidocr.txt",
+    "size": 1609,
+    "sha256": "ce8005a9da6f8ab9e13ff7709e2bbdc71ec28ceb95e318ef1049e7a6b1ad268f"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0295_vol_001_cropped_300dpi.jpg",
+    "size": 752656,
+    "sha256": "5d4c3183a6deaf9adee875a96d564322b78e3c5edeb7f6eb35dd85065263713c"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0296_vol_002_cropped_300dpi.jpg",
+    "size": 651965,
+    "sha256": "6cce53687c16cf19e5fd8afa4eee2841f555fec608b7bf2a23355a11c0c0e91f"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0297_vol_003_cropped_300dpi.jpg",
+    "size": 905265,
+    "sha256": "6d83acc0fa52a28a574d4005915ddac8c77dbde0ceade44471ffe5f1f073c023"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0298_vol_004_cropped_300dpi.jpg",
+    "size": 973019,
+    "sha256": "7ab34509ea05fdf6ade0f3c0b813cfde8200da5ff2295c22fa5afb41c64faf96"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0299_vol_005_cropped_300dpi.jpg",
+    "size": 809280,
+    "sha256": "7ec83d0c8c4a4c3de2428a3e22556af7e4a96bbdd8aed00c13c9c33928d19763"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0300_vol_006_cropped_300dpi.jpg",
+    "size": 578562,
+    "sha256": "1434f20ae1f2eaa38daa4d576796c7f2d313ff6f97233fe9af4daccc812b3ffe"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0301_vol_007_cropped_300dpi.jpg",
+    "size": 881160,
+    "sha256": "42c108737cce6b3c9c20ee2cb2ae762708b3f8a74a9129ede3a5afe15346beff"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0302_vol_008_cropped_300dpi.jpg",
+    "size": 868821,
+    "sha256": "99d1ca6a3953c364c2927edbcd42c857f29c19cc3a6b9673eb5d017f610dd0a0"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0303_vol_009_cropped_300dpi.jpg",
+    "size": 982413,
+    "sha256": "99fc8bf499aaf594b6b36beb1880f98d8102c729c87af2c887db83bf608e9969"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0304_vol_010_cropped_300dpi.jpg",
+    "size": 943049,
+    "sha256": "416a79af97344f7fd039df8be07019f690c4f612b9f49aad132369d9b05684b3"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0305_vol_011_cropped_300dpi.jpg",
+    "size": 865527,
+    "sha256": "0b87aa13037320606e0fc39656f232b5e7dacc3dc59ef44a9ea554263a33c1ec"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0306_vol_012_cropped_300dpi.jpg",
+    "size": 1011442,
+    "sha256": "d531b4395cd58cf8c3f352bb8c265dc7c0f521ef604f2389cb52a10a4ea4faed"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0307_vol_013_cropped_300dpi.jpg",
+    "size": 977910,
+    "sha256": "a071dc8fb4e56a7b44e12c1a0ac07b7dbba53b69c8deaa84e758b78ca834a400"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0308_vol_014_cropped_300dpi.jpg",
+    "size": 862471,
+    "sha256": "9a16b3a7f6e0fd163309a94c76a33bba723aea8df680a29fa08f5a8967ebc47c"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0309_vol_015_cropped_300dpi.jpg",
+    "size": 984242,
+    "sha256": "8d2091098175a71be387e7eb0f6267b8e194fcff6659103cec168246f34e2e7f"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0310_vol_016_cropped_300dpi.jpg",
+    "size": 973329,
+    "sha256": "2f9ca266c1323be837ba6958d34d42f15433dd3ef6593a7e5031451084443bc0"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0311_vol_017_cropped_300dpi.jpg",
+    "size": 972493,
+    "sha256": "f1e63c0ae34fc286a07eb6304df873968cb2fc43fec1c484e95ad72f88bd7608"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0312_vol_018_cropped_300dpi.jpg",
+    "size": 755482,
+    "sha256": "5c98669e1a07d07ba91e6834cb85763b8185ec3714bbd66cc515174bbfcc7cfa"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0313_vol_019_cropped_300dpi.jpg",
+    "size": 838943,
+    "sha256": "f3779f529bc2b2577ab60311d00efc41f2eec03a392bb3a32d9da845e723bd09"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0314_vol_020_cropped_300dpi.jpg",
+    "size": 813328,
+    "sha256": "04e3b9cc06a3f20f56c91b8cb8a08f25257edbe9952cb6d950c754b0ee77cf09"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0315_vol_021_cropped_300dpi.jpg",
+    "size": 767001,
+    "sha256": "33d9a65d4f7026cd31eb7a2c4688a4bde63c93f8a0aa53dd815c14f8ba58a7e4"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0316_vol_022_cropped_300dpi.jpg",
+    "size": 890019,
+    "sha256": "43bc70b292b944868c193f721ce5ad3fba0ff6892bd1c208c1178b4eb7edebf0"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0317_vol_023_cropped_300dpi.jpg",
+    "size": 815321,
+    "sha256": "dce419de71d47d054328ebd5659f56315b264dd0c6d121957628a576dbe1cffb"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0318_vol_024_cropped_300dpi.jpg",
+    "size": 838849,
+    "sha256": "bd37dd2e61f0d8860667c65adcd028ad5102066a8c5a4f775724564d6754847d"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0319_vol_025_cropped_300dpi.jpg",
+    "size": 848370,
+    "sha256": "f7470c88256bf353615d6284ea4379933ba3d9c4bbf0ac71f7277f057eb9be0e"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0320_vol_026_cropped_300dpi.jpg",
+    "size": 735910,
+    "sha256": "0340bdb229be53de6aebff8826f46aafe36d3033bc3d4c0780e6ef0878a53b3f"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0321_vol_027_cropped_300dpi.jpg",
+    "size": 808142,
+    "sha256": "f30af7de327ada045afd0ea99c8f4704b375512b797d00be60cfe8e645d3a555"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0322_vol_028_cropped_300dpi.jpg",
+    "size": 832215,
+    "sha256": "4ee7d24becba00a4bfafe5a280a045d3e1b6037c1664a7811fcad3b395ab94ff"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0323_vol_029_cropped_300dpi.jpg",
+    "size": 847735,
+    "sha256": "e2be1c7d33839869d84810f04708f43e141a0e201eba06b5929421a3188bccfe"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0324_vol_030_cropped_300dpi.jpg",
+    "size": 786320,
+    "sha256": "cc4a3afd4783f64ccc8ce0a37a41418834ff6fce7b892bfd23f4b1ea0ad31350"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0325_vol_031_cropped_300dpi.jpg",
+    "size": 896261,
+    "sha256": "9ac0565ea4c1f6213dc4a29bce673320abf3a87a4e6bd47f789d549358f2a8f5"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0326_vol_032_cropped_300dpi.jpg",
+    "size": 809066,
+    "sha256": "6b48f47e1322b84bddd2533343aa1c16f38032c091c0b7ff1eae0f14aa70a264"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0327_vol_033_cropped_300dpi.jpg",
+    "size": 793782,
+    "sha256": "10d4683368954eebd75025a7ba3f67d1e79f9e172c532ee89f3cbfddd972c8f0"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0328_vol_034_cropped_300dpi.jpg",
+    "size": 723228,
+    "sha256": "7b5d0da831c6fd65f9bdd2f0de57bb3b60f0b54dcd738ce10caae711672b96a0"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0329_vol_035_cropped_300dpi.jpg",
+    "size": 869905,
+    "sha256": "e6213fcce2568d77cad7c390596e06285fd59b9046948835f7a520c1539e0f3a"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0330_vol_036_cropped_300dpi.jpg",
+    "size": 858203,
+    "sha256": "813414fb3917937b5254d9d39d72c0133d6f78df207db5283e39c77a7772acd9"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0331_vol_037_cropped_300dpi.jpg",
+    "size": 856062,
+    "sha256": "7b3a1ef35a09d429fd1306596d3e109e85fee740b0a8289bdbc8273738fcc547"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0332_vol_038_cropped_300dpi.jpg",
+    "size": 842024,
+    "sha256": "6e7f97870e927c956d31cb4148a15c2fe16703bdf6ba1ca63bc9f28f2590998d"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0333_vol_039_cropped_300dpi.jpg",
+    "size": 828494,
+    "sha256": "b4ce99040ab6214e5f0e6c1194a054f0999c983b7995a1c502204c4f9d42f1c1"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0334_vol_040_cropped_300dpi.jpg",
+    "size": 820320,
+    "sha256": "9173841fea3cf14ce22f2d422d13ae7e9c06e7be9ddff282f2062574cd870b47"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0335_vol_041_cropped_300dpi.jpg",
+    "size": 766981,
+    "sha256": "8b34333cb25b7584b8545140947881964e5ff06bc8883235d1923241c4da2232"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0336_vol_042_cropped_300dpi.jpg",
+    "size": 845154,
+    "sha256": "2b079c96817049a95789be4c6986eb59150debeb41dfa08be4dae0e636f86c31"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0337_vol_043_cropped_300dpi.jpg",
+    "size": 810138,
+    "sha256": "6fa143573d48600a124e644b02517a942dccc1cdf6ff44e70f5f35da8d18f871"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0338_vol_044_cropped_300dpi.jpg",
+    "size": 832655,
+    "sha256": "539715ea082afe57649715cb1275c9a59a473018bf905ba4169c0122a2831c2a"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0339_vol_045_cropped_300dpi.jpg",
+    "size": 624570,
+    "sha256": "f35db720a51dd22ee360442ac878d0f030baab241c8c8062bd97ff23450506b7"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0340_vol_046_cropped_300dpi.jpg",
+    "size": 1065837,
+    "sha256": "dbbf8bb917e13a42d4e508eba31e12648b090ab4a45ac374e7af43df86a3fd99"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0341_vol_047_cropped_300dpi.jpg",
+    "size": 1003765,
+    "sha256": "78f3a4806811c7ef14746060755d70743b4f80285915528a4016272cb307bf0b"
+  },
+  {
+    "path": "workbench/page_images/cropped/page_0342_vol_048_cropped_300dpi.jpg",
+    "size": 636855,
+    "sha256": "477c6ed7a69a31f12c18805496ca98626779814a65fb2a29cd4b0b72a667e107"
+  },
+  {
+    "path": "workbench/page_images/original/page_0295_vol_001_original_300dpi.jpg",
+    "size": 766198,
+    "sha256": "0177425a3d5436bedfb92c07c43f74fd3e1ba2f465a77907147a67af17e6020e"
+  },
+  {
+    "path": "workbench/page_images/original/page_0296_vol_002_original_300dpi.jpg",
+    "size": 666816,
+    "sha256": "a5c2bbfc02cf5cfaaa9379e0a450c3edb6283f9a2013b4198701d42813ea6650"
+  },
+  {
+    "path": "workbench/page_images/original/page_0297_vol_003_original_300dpi.jpg",
+    "size": 909952,
+    "sha256": "b0391ee54fb239340fcb2cc0c7d4f2f6464d62ad36ae601c453a77c0f6dbf4b0"
+  },
+  {
+    "path": "workbench/page_images/original/page_0298_vol_004_original_300dpi.jpg",
+    "size": 1000577,
+    "sha256": "a27d18325242d80aeaf9b1bcf0dfaa1d4b94918199db35b96a2e5588c8170239"
+  },
+  {
+    "path": "workbench/page_images/original/page_0299_vol_005_original_300dpi.jpg",
+    "size": 832504,
+    "sha256": "56bfdda5cdac877b4c983e556b694ff207f507adc3df860e78ad940e873661ee"
+  },
+  {
+    "path": "workbench/page_images/original/page_0300_vol_006_original_300dpi.jpg",
+    "size": 590671,
+    "sha256": "60d72a4bc8740682c6b6b9cb6b3c2c1384624c2d50f913d9c9b3288b48242bbc"
+  },
+  {
+    "path": "workbench/page_images/original/page_0301_vol_007_original_300dpi.jpg",
+    "size": 886530,
+    "sha256": "8e5360069b605b2a348fbea82a11ffbdbdf9b90348db41f3ec43c378b8f3720a"
+  },
+  {
+    "path": "workbench/page_images/original/page_0302_vol_008_original_300dpi.jpg",
+    "size": 881078,
+    "sha256": "ba37fb03cb6464160175dac7c11c9e31f546195f905d5ca0614dfacb22c399f7"
+  },
+  {
+    "path": "workbench/page_images/original/page_0303_vol_009_original_300dpi.jpg",
+    "size": 1003518,
+    "sha256": "440d48daa31ba0e32094c51b13fa073ff078b9af3f447835b55a41a3f3c9930c"
+  },
+  {
+    "path": "workbench/page_images/original/page_0304_vol_010_original_300dpi.jpg",
+    "size": 945193,
+    "sha256": "15ea1b1d0a87aff880fd170f1234205cfab405f5ec58a2356311662c9a85350a"
+  },
+  {
+    "path": "workbench/page_images/original/page_0305_vol_011_original_300dpi.jpg",
+    "size": 869699,
+    "sha256": "c24221906ed62584027d7637ce03c42838d41f4e7637ee3267562eefeaacb9f2"
+  },
+  {
+    "path": "workbench/page_images/original/page_0306_vol_012_original_300dpi.jpg",
+    "size": 1015037,
+    "sha256": "4d920f5b5fe78c61e3dbcb8de354ddb11bbc659897d6efea3e249f9c7b488dac"
+  },
+  {
+    "path": "workbench/page_images/original/page_0307_vol_013_original_300dpi.jpg",
+    "size": 987007,
+    "sha256": "c27e56280c3b97483b753e37f82954dd9c69b80202b1ca24a5ca6a3f153f31d3"
+  },
+  {
+    "path": "workbench/page_images/original/page_0308_vol_014_original_300dpi.jpg",
+    "size": 884338,
+    "sha256": "b45b4ff007e07a21c0f9186aff76d41e98c772cb6145d22910bb169bfdc54ba5"
+  },
+  {
+    "path": "workbench/page_images/original/page_0309_vol_015_original_300dpi.jpg",
+    "size": 990312,
+    "sha256": "7d3aff8958115c70911f880e730d48b17b806990d1c1a896f1c514a96c0e00cf"
+  },
+  {
+    "path": "workbench/page_images/original/page_0310_vol_016_original_300dpi.jpg",
+    "size": 997399,
+    "sha256": "1be465cc2ca7fdb55fcf78075a05efd0a5821a822a4e34be66ea7a2cc4b8f87e"
+  },
+  {
+    "path": "workbench/page_images/original/page_0311_vol_017_original_300dpi.jpg",
+    "size": 988170,
+    "sha256": "cdb0ebe413ae1a955ece30113f545a1f4b19a4842b959096e7ab35678e93328d"
+  },
+  {
+    "path": "workbench/page_images/original/page_0312_vol_018_original_300dpi.jpg",
+    "size": 770460,
+    "sha256": "a773df6d26f4386deda8982f92f0ba00f1d20d109ae6369dc6b6c2d7b7b32110"
+  },
+  {
+    "path": "workbench/page_images/original/page_0313_vol_019_original_300dpi.jpg",
+    "size": 860869,
+    "sha256": "e418965e011ccbb3965b6ccde2a5a3c70321a98ff81ba4c1f9068080c53f4e22"
+  },
+  {
+    "path": "workbench/page_images/original/page_0314_vol_020_original_300dpi.jpg",
+    "size": 834060,
+    "sha256": "fbdd39872f135712c12949e6ce80be58afe5434d6686979cdd01ee8e3919c268"
+  },
+  {
+    "path": "workbench/page_images/original/page_0315_vol_021_original_300dpi.jpg",
+    "size": 789143,
+    "sha256": "5a3ef81b146e73c668a63bf42e7acb466edcb91f01e1f937e9fce35d8a7aa5f1"
+  },
+  {
+    "path": "workbench/page_images/original/page_0316_vol_022_original_300dpi.jpg",
+    "size": 890295,
+    "sha256": "1acb4d3ecf081dd32937618f93d14cb008e1e6c982d2fd0cbd288e0b80f7d0b1"
+  },
+  {
+    "path": "workbench/page_images/original/page_0317_vol_023_original_300dpi.jpg",
+    "size": 825692,
+    "sha256": "45390036a424952f070dcf7463a36f9968e09eabb2c3ad759a299fffefa59306"
+  },
+  {
+    "path": "workbench/page_images/original/page_0318_vol_024_original_300dpi.jpg",
+    "size": 851793,
+    "sha256": "0c076b67f4c27375a335ff3578058c89f0ee2bfa8450ee0214b63c568828ee56"
+  },
+  {
+    "path": "workbench/page_images/original/page_0319_vol_025_original_300dpi.jpg",
+    "size": 849840,
+    "sha256": "09c4be96efd886e432c15098a93574b20191be4dadad5f4530bb4ba71f22c806"
+  },
+  {
+    "path": "workbench/page_images/original/page_0320_vol_026_original_300dpi.jpg",
+    "size": 752609,
+    "sha256": "f6be628beea8b797044d4fcd88375f24592a324b316fa8a1ad958eb32cabb177"
+  },
+  {
+    "path": "workbench/page_images/original/page_0321_vol_027_original_300dpi.jpg",
+    "size": 814800,
+    "sha256": "98bf2c5f90602cd6db130a785c81cb80541922b9a2d6e44913d2362319a57ee7"
+  },
+  {
+    "path": "workbench/page_images/original/page_0322_vol_028_original_300dpi.jpg",
+    "size": 844457,
+    "sha256": "82282052feadeb8a971fa54bcd356b13f2b298ba8c99e56fb29d099d40d9851f"
+  },
+  {
+    "path": "workbench/page_images/original/page_0323_vol_029_original_300dpi.jpg",
+    "size": 850361,
+    "sha256": "f26324bdb82917b93f8af66bdf29ff484b5ea8d4eb335bd77f454d35ef47510c"
+  },
+  {
+    "path": "workbench/page_images/original/page_0324_vol_030_original_300dpi.jpg",
+    "size": 791725,
+    "sha256": "00d903a2fb24a9f08e393b50465938abd46af35843abc2dd530c1dac03ede8e6"
+  },
+  {
+    "path": "workbench/page_images/original/page_0325_vol_031_original_300dpi.jpg",
+    "size": 899856,
+    "sha256": "203440edb419935099cfb2516a00885aea12e5e145c5e05d8858d0450b04f5cd"
+  },
+  {
+    "path": "workbench/page_images/original/page_0326_vol_032_original_300dpi.jpg",
+    "size": 813110,
+    "sha256": "35b99942a25edf2e2dd9cb3639525147457f6dbd3e6f35b22a5d5ba6de1ccad2"
+  },
+  {
+    "path": "workbench/page_images/original/page_0327_vol_033_original_300dpi.jpg",
+    "size": 811323,
+    "sha256": "1c872c6927eaabf330700c0bc8c30369c10b876951163f7d820389ca85177019"
+  },
+  {
+    "path": "workbench/page_images/original/page_0328_vol_034_original_300dpi.jpg",
+    "size": 737213,
+    "sha256": "3842343f51ead8573c09d2206e9d9a28c92bd6ca80f3b51d3b294b795b21940f"
+  },
+  {
+    "path": "workbench/page_images/original/page_0329_vol_035_original_300dpi.jpg",
+    "size": 873858,
+    "sha256": "8fdcc1ee29fda5320ea52fb668459168ecce70b7452d2974b8299235a45afbc2"
+  },
+  {
+    "path": "workbench/page_images/original/page_0330_vol_036_original_300dpi.jpg",
+    "size": 860967,
+    "sha256": "aa4d9cb4a80088e469bd8b87032ad6bf7b23aef00171afd55cd3670b932b80a8"
+  },
+  {
+    "path": "workbench/page_images/original/page_0331_vol_037_original_300dpi.jpg",
+    "size": 861924,
+    "sha256": "f6f1710b64b42c79513b9692dc9c55c013d2a805a1ced14e59aef42beeda9bd9"
+  },
+  {
+    "path": "workbench/page_images/original/page_0332_vol_038_original_300dpi.jpg",
+    "size": 846942,
+    "sha256": "f8519aca24ff305e8987a804e40a07ebd622d2d167ac5ab1a062579b85bd1ef5"
+  },
+  {
+    "path": "workbench/page_images/original/page_0333_vol_039_original_300dpi.jpg",
+    "size": 831641,
+    "sha256": "e8b5bc493e74c19809af7b402d443877c32d2e521a5459d6f4c5d7fd40ae3693"
+  },
+  {
+    "path": "workbench/page_images/original/page_0334_vol_040_original_300dpi.jpg",
+    "size": 824212,
+    "sha256": "573bf33abd0a179f11220a7b94003e190b5eb8afa95dcbdebc0d3a238d2cb1f5"
+  },
+  {
+    "path": "workbench/page_images/original/page_0335_vol_041_original_300dpi.jpg",
+    "size": 769961,
+    "sha256": "a342bedf7111e4522a8d7b4500264c286429318785c5f19b4227430bc29066f8"
+  },
+  {
+    "path": "workbench/page_images/original/page_0336_vol_042_original_300dpi.jpg",
+    "size": 846526,
+    "sha256": "3e443e9cb4164de80edddc511eed914a5a9bb8bf2633c9815c351ade670c1e76"
+  },
+  {
+    "path": "workbench/page_images/original/page_0337_vol_043_original_300dpi.jpg",
+    "size": 815170,
+    "sha256": "d1ed1a755b16324a71ad4793dbbe3fc9aac626355873659c3e6e2d6119e590f4"
+  },
+  {
+    "path": "workbench/page_images/original/page_0338_vol_044_original_300dpi.jpg",
+    "size": 835306,
+    "sha256": "ad9cdd3f76e604394e1f7492540214d3d7b1cd6f10f1ea840b52ff664ea4774c"
+  },
+  {
+    "path": "workbench/page_images/original/page_0339_vol_045_original_300dpi.jpg",
+    "size": 634958,
+    "sha256": "e2bc297cada3e8ffc252e0247fba28f783fb494efb6d7b7ac69aa0d7225f49da"
+  },
+  {
+    "path": "workbench/page_images/original/page_0340_vol_046_original_300dpi.jpg",
+    "size": 1083434,
+    "sha256": "9f72f140384637b3e66095879ec621687d9babc53ea5805e77a602762627f9d2"
+  },
+  {
+    "path": "workbench/page_images/original/page_0341_vol_047_original_300dpi.jpg",
+    "size": 1009287,
+    "sha256": "b6defd35a0abdfdc9bb35d6c157b02102b57ec4e3870e3507185cb2993ab7750"
+  },
+  {
+    "path": "workbench/page_images/original/page_0342_vol_048_original_300dpi.jpg",
+    "size": 649971,
+    "sha256": "cb3f7804576e4c2a6ab2972ea4ceac140df44bf9a5107fc26678e1ce708a3480"
+  },
+  {
+    "path": "workbench/qa/本地完成态核验.json",
+    "size": 1480,
+    "sha256": "7d3d5e7f1d3079d5acb0deb96c3c0cfc9838aec077a45a384b87f4dddcbbb698"
+  },
+  {
+    "path": "workbench/review/全新重做执行任务单.md",
+    "size": 1260,
+    "sha256": "6aadbe60fd3d63c2c3453a1e6c9a944cb5a7381e6ff6fd0c6d1a03aa70b1090e"
+  },
+  {
+    "path": "workbench/review/阶段01_全新页级分流台账.csv",
+    "size": 23615,
+    "sha256": "dbc1ed1945cf59f0abadd3c3adede4667f1fe2ee7dfd45a7bb77ed842b79a26c"
+  },
+  {
+    "path": "workbench/review/阶段01_全新页级分流台账.md",
+    "size": 7166,
+    "sha256": "e91e27cc59aea44ff955ec51a7838a585390330dace485b1786efb7abba35d5b"
+  },
+  {
+    "path": "交付说明.md",
+    "size": 1529,
+    "sha256": "b20f6a6649a615bbe99a425355cf3846773b055fc43b7d48fb55e8d78f34798b"
+  },
+  {
+    "path": "本地维护说明_第59卷全新重做.md",
+    "size": 2445,
+    "sha256": "282807c3c75ab8aaa90ccdf60d60df85c0ad4fbff60421d0e74e08419036fbd1"
+  }
+]

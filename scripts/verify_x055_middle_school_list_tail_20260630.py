@@ -1,0 +1,122 @@
+# -*- coding: utf-8 -*-
+"""Verify LYG-下-T055 ordinary middle school list continuation page."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "下" / "data" / "LYG-下-T055.json"
+
+COLUMNS = [
+    "隶属",
+    "校名",
+    "创办年份",
+    "班数(个)",
+    "学生数(人)",
+    "教职工数小计(人)",
+    "专任教师(人)",
+]
+
+ROWS = [
+    ["赣榆县", "墩尚中学", "1958", "9", "580", "49", "42"],
+    ["赣榆县", "欢墩初级中学", "1958", "12", "633", "39", "38"],
+    ["赣榆县", "城东初级中学", "1971", "9", "478", "34", "26"],
+    ["赣榆县", "宋庄初级中学", "1971", "7", "335", "25", "20"],
+    ["赣榆县", "官河初级中学", "1972", "12", "564", "37", "31"],
+    ["赣榆县", "土城初级中学", "1958", "9", "517", "45", "31"],
+    ["赣榆县", "黑林初级中学", "1958", "12", "665", "40", "27"],
+    ["赣榆县", "吴山初级中学", "1972", "9", "456", "32", "12"],
+    ["赣榆县", "金山初级中学", "1968", "12", "600", "34", "32"],
+    ["赣榆县", "马站初级中学", "1971", "9", "495", "33", "26"],
+    ["赣榆县", "柘汪初级中学", "1958", "7", "402", "26", "18"],
+    ["赣榆县", "九里初级中学", "1972", "12", "646", "41", "31"],
+    ["赣榆县", "龙河初级中学", "1972", "10", "596", "32", "25"],
+    ["赣榆县", "夹山初级中学", "1972", "9", "425", "32", "24"],
+    ["赣榆县", "徐山初级中学", "1972", "9", "471", "35", "25"],
+    ["赣榆县", "门河初级中学", "1972", "9", "460", "30", "24"],
+    ["赣榆县", "大岭初级中学", "1971", "11", "583", "31", "27"],
+    ["赣榆县", "殷庄初级中学", "1971", "12", "665", "47", "35"],
+    ["赣榆县", "朱堵初级中学", "1960", "12", "602", "43", "32"],
+    ["赣榆县", "罗阳初级中学", "1971", "12", "554", "39", "30"],
+    ["赣榆县", "彭口初级中学", "1984", "9", "375", "26", "20"],
+    ["赣榆县", "陈巷初级中学", "1982", "8", "375", "22", "17"],
+    ["赣榆县", "马集前初级中学", "1984", "6", "320", "18", "17"],
+    ["赣榆县", "赣榆县联中56所", "", "", "", "", ""],
+    ["东海县", "东海县中学", "1958", "30", "1820", "146", "98"],
+    ["东海县", "东海县第二中学", "1979", "24", "1658", "112", "75"],
+    ["东海县", "白塔中学", "1956", "24", "1550", "98", "74"],
+    ["东海县", "房山中学", "1956", "18", "1359", "95", "53"],
+    ["东海县", "石榴中学", "1953", "18", "1213", "83", "53"],
+    ["东海县", "青湖中学", "1956", "20", "1221", "76", "57"],
+    ["东海县", "安峰中学", "1959", "18", "1167", "91", "51"],
+    ["东海县", "平明中学", "1957", "19", "1165", "83", "54"],
+    ["东海县", "桃林中学", "1956", "18", "1108", "74", "52"],
+    ["东海县", "双店中学", "1959", "17", "1026", "69", "49"],
+    ["东海县", "浦南中学", "1960", "18", "1000", "82", "51"],
+    ["东海县", "东海县第四中学", "1985", "15", "867", "64", "39"],
+    ["东海县", "西双湖中学", "1970", "14", "754", "72", "38"],
+]
+
+PATCH = {
+    "title": "1990年连云港市普通中学一览表（续表二）",
+    "table_number": "表50-11",
+    "page": 2351,
+    "pages": [2351],
+    "part": "part01",
+    "vol": "下",
+    "volume": "下",
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/下/part01/page_0380.txt；表题、表号和表头依据 workbench/ocr/paddle_ocr/下/part01/page_0378.txt；并参考 raw 文本 workbench/table_entries/下/raw/LYG-下-T055_2351.txt 与 raw OCR workbench/ocr/raw/下/part01/page_0380.json。此页为教育章表50-11续页，跨行隶属按源页向下展开；吴山初级中学专任教师页级OCR漏首位，按 raw 文本核为12。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != "LYG-下-T055":
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

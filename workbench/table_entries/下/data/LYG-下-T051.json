@@ -1,0 +1,33 @@
+{
+  "table_id": "LYG-下-T051",
+  "title": "1990年3月连云港市小学卫生工作基本情况调查表",
+  "table_number": "表50-8",
+  "page": 2342,
+  "pages": [
+    2342
+  ],
+  "part": "part01",
+  "vol": "下",
+  "columns": [
+    "项目",
+    "中心小学数",
+    "一般小学数"
+  ],
+  "rows": [
+    [
+      "学校数",
+      "112",
+      "1503"
+    ],
+    [
+      "在校学生数",
+      "81184",
+      "256114"
+    ]
+  ],
+  "row_count": 2,
+  "col_count": 3,
+  "status": "verified",
+  "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/下/part01/page_0371.txt；本条为表50-8首页。",
+  "volume": "下"
+}

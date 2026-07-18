@@ -1,0 +1,103 @@
+# -*- coding: utf-8 -*-
+"""Verify LYG-下-T103 revolutionary martyrs continuation page."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "下" / "data" / "LYG-下-T103.json"
+
+COLUMNS = [
+    "姓名",
+    "性别",
+    "出生年月",
+    "籍贯",
+    "参加革命年月",
+    "入党团年月",
+    "牺牲时所在军队及其职务",
+    "牺牲时间、地点、原因",
+    "何时何单位授何奖励",
+    "备注",
+]
+
+ROWS = [
+    ["张达清", "男", "1930.3", "云台区中云乡隔村", "1951.2", "", "志愿军班长", "1953年朝鲜上甘岭战斗牺牲", "", ""],
+    ["赵吾男", "男", "1922", "云台公社小村", "1947", "1948年2月入党", "退伍云台公社社员", "战争负伤，1959年3月伤口复发去世", "", "二等残废军人"],
+    ["王吉业", "男", "1930年", "云台区新滩村", "1948.10", "1950年入党", "零四九一部队三分队七连副连长", "1961年浙江海陵长川镇抢救战友牺牲", "立二等功三次", ""],
+    ["顾金元", "男", "1945.5", "云台区猴嘴镇", "1963.8", "团员", "六一七一部队四十八团指挥连班长", "1968年7月在山东历城因公牺牲", "", ""],
+    ["李传余", "男", "1947", "云台区朝阳乡韩李", "1965.3", "党员", "六四零九部队班长", "1969年浙江因公牺牲", "", ""],
+    ["顾守法", "男", "1903", "盐区", "1948", "", "华东野战军三纵八师二十二团战士", "1949年1月失踪", "1961年追认", ""],
+    ["杨二端", "男", "1911", "盐区", "1946", "", "华东野战军八纵二十二师六十七团战士", "1949年失踪", "1961年追认", ""],
+    ["胡锡成", "男", "1922", "盐区", "1948", "", "志愿军二十军五十八师一七二团战士", "1950年朝鲜战场失踪", "1961年追认", ""],
+    ["陆长俊", "男", "1912", "盐区", "1946", "", "志愿军二十八军八十二师二四四团战士", "1950年朝鲜战场失踪", "1961年追认", ""],
+    ["张步法", "男", "1923", "盐区", "1948", "", "志愿军二十五军卫生队战士", "1952年3月朝鲜战场失踪", "1961年追认", ""],
+    ["程景武", "男", "1923.6", "连云区墟沟镇西街", "1938", "1938年入党", "八路军南进纵队二团连指导员", "1940年郯城夹沟战斗牺牲", "", ""],
+    ["吴学忠", "男", "1917.5", "连云区墟沟镇海棠", "1943.8", "", "八路军老四团二营班长", "1944年赣榆因战牺牲", "", ""],
+    ["夏佐田", "男", "1923.6", "连云区宿城乡高庄", "1947", "党员", "志愿军三十军八十八师二六三团三营班长", "1950年朝鲜战场牺牲", "", ""],
+    ["苏立学", "男", "1926", "连云区墟沟西街", "1947", "", "志愿军三十八军一一四师三营战士", "1951年2月朝鲜战场牺牲", "", ""],
+    ["张同法", "男", "", "连云区连云镇", "1949", "", "志愿军战士", "1952年朝鲜战场失踪", "1961年追认", ""],
+]
+
+PATCH = {
+    "title": "连云港市市区革命烈士简况表（续表）",
+    "table_number": "",
+    "page": 2839,
+    "pages": [2839],
+    "part": "part02",
+    "vol": "下",
+    "volume": "下",
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/下/part02/page_0407.txt；表题依据本表首页 workbench/ocr/paddle_ocr/下/part02/page_0401.txt；并参考 raw 坐标 OCR：workbench/ocr/raw/下/part02/page_0407.json 与 raw 文本 workbench/table_entries/下/raw/LYG-下-T103_2839.txt。此条仅录入 page_0407 可见的连云港市市区革命烈士简况表续页记录。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != "LYG-下-T103":
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

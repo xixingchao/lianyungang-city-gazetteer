@@ -1,0 +1,103 @@
+# -*- coding: utf-8 -*-
+"""Verify LYG-下-T047 primary school list page with county boundary."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "下" / "data" / "LYG-下-T047.json"
+
+COLUMNS = ["表段", "校名", "班数(个)", "学生数(人)", "创办年份", "所辖一般小学数(所)"]
+
+ROWS = [
+    ["1990年东海县小学一览表（续表）", "岗埠中心小学", "10", "276", "1958", "17"],
+    ["1990年东海县小学一览表（续表）", "石梁河中心小学", "5", "180", "1946", "21"],
+    ["1990年东海县小学一览表（续表）", "白塔中心小学", "17", "853", "1910", "22"],
+    ["1990年东海县小学一览表（续表）", "张湾中心小学", "8", "299", "1949", "17"],
+    ["1990年东海县小学一览表（续表）", "桃林中心小学", "11", "519", "1911", "20"],
+    ["1990年东海县小学一览表（续表）", "安峰中心小学", "6", "229", "1959", "29"],
+    ["1990年东海县小学一览表（续表）", "李埝中心小学", "7", "230", "1950", "15"],
+    ["1990年东海县小学一览表（续表）", "曲阳中心小学", "12", "437", "1948", "11"],
+    ["1990年东海县小学一览表（续表）", "石埠中心小学", "5", "117", "1973", "8"],
+    ["1990年东海县小学一览表（续表）", "横沟中心小学", "10", "280", "1950", "11"],
+    ["1990年东海县小学一览表（续表）", "石榴中心小学", "11", "408", "1926", "20"],
+    ["1990年东海县小学一览表（续表）", "黄川中心小学", "8", "274", "1949", "29"],
+    ["1990年东海县小学一览表（续表）", "温泉中心小学", "5", "152", "1981", "6"],
+    ["1990年东海县小学一览表（续表）", "实验小学", "26", "1339", "1951", ""],
+    ["1990年东海县小学一览表（续表）", "其它", "", "", "", "4"],
+    ["1990年灌云县小学一览表", "苏光中心小学", "21", "1041", "1914", "3"],
+    ["1990年灌云县小学一览表", "杨集小学", "26", "1268", "1915", "2"],
+    ["1990年灌云县小学一览表", "精勤中心小学", "12", "554", "1898", "19"],
+    ["1990年灌云县小学一览表", "伊北中心小学", "15", "745", "1948", "19"],
+    ["1990年灌云县小学一览表", "燕尾中心小学", "14", "616", "1943", "5"],
+    ["1990年灌云县小学一览表", "向阳中心小学", "10", "394", "1961", "10"],
+    ["1990年灌云县小学一览表", "龙苴中心小学", "17", "788", "1912", "18"],
+    ["1990年灌云县小学一览表", "王集中心小学", "18", "996", "1950", "25"],
+    ["1990年灌云县小学一览表", "界圩中心小学", "18", "763", "1974", "25"],
+    ["1990年灌云县小学一览表", "沂北中心小学", "15", "615", "1959", "17"],
+    ["1990年灌云县小学一览表", "陡沟中心小学", "18", "683", "1930", "21"],
+]
+
+PATCH = {
+    "title": "1990年东海县小学一览表续页及灌云县小学一览表首页",
+    "table_number": "表50-3；表50-4",
+    "page": 2335,
+    "pages": [2335],
+    "part": "part01",
+    "vol": "下",
+    "volume": "下",
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/下/part01/page_0364.txt；表50-3标题依据前页 workbench/ocr/paddle_ocr/下/part01/page_0363.txt，表50-4标题见本页；并参考 raw 文本 workbench/table_entries/下/raw/LYG-下-T047_2335.txt。此页包含东海县小学一览表续页和灌云县小学一览表首页，故新增表段列区分来源；温泉中心小学创办年份 raw 误作 IS61，本次以页级OCR 1981 为准；实验小学源页未见所辖一般小学数，保留空值。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != "LYG-下-T047":
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

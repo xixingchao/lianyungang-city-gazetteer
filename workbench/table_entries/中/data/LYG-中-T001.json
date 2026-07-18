@@ -1,0 +1,42 @@
+{
+  "table_id": "LYG-中-T001",
+  "title": "1981~1990年连云港市玉雕工艺品生产经营情况表（续表）",
+  "table_number": "表17-1",
+  "page": 925,
+  "pages": [
+    925
+  ],
+  "part": "part01",
+  "vol": "中",
+  "columns": [
+    "年份",
+    "产量(万件)",
+    "产值(万元)",
+    "销售(万元)",
+    "利税总额(万元)",
+    "利润(万元)"
+  ],
+  "rows": [
+    [
+      "1989",
+      "0.21",
+      "20.50",
+      "8.13",
+      "-0.30",
+      "-1.20"
+    ],
+    [
+      "1990",
+      "0.07",
+      "23.85",
+      "12.90",
+      "-2.30",
+      "-2.60"
+    ]
+  ],
+  "row_count": 2,
+  "col_count": 6,
+  "status": "verified",
+  "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/中/part01/page_0022.txt，并参考 raw OCR：workbench/table_entries/中/raw/LYG-中-T001_925.txt。表题、表号和列组据前页表头 workbench/ocr/paddle_ocr/中/part01/page_0021.txt 补定。本页为续上表，仅录入源页可见的1989、1990两行；负数按源页录入。",
+  "volume": "中"
+}

@@ -1,0 +1,32 @@
+project:
+  name: "连云港市志"
+  slug: "lianyungang-shizhi"
+  output_name: "连云港市志"
+
+source:
+  type: "Apabi CEB"
+  source_root: "E:\\codex_Learing\\09_project_东辛农场"
+  reader_dir: "E:\\codex_Learing\\09_project_东辛农场\\市志电子版阅读软件ApabiReader"
+  source_policy: "原始 CEB/JPG/XML 不改名、不覆盖；工作站只登记或生成派生产物。"
+
+publication:
+  site_title: "地方志文库"
+  book_title: "连云港市志"
+  github_pages_slug: "lianyungang-shizhi"
+
+quality:
+  reference_package: "E:\\codex_Learing\\09_project_东辛农场\\成品归档\\东辛农场志_交付包_20260601_001759"
+  final_reader_embeds_structured_tables: true
+  forbidden_public_terms:
+    - "image_page"
+    - "ebook_page"
+    - "book_page"
+    - "导出说明"
+    - "校对说明"
+    - "{{TABLE"
+    - "table-continuation"
+
+current_stage:
+  id: "A"
+  name: "CEB 可转换性验证"
+  status: "in_progress"

@@ -1,0 +1,83 @@
+# -*- coding: utf-8 -*-
+"""Verify LYG-下-T039 1955 wage adjustment table from raw OCR."""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "output" / "structured_tables" / "index.html"
+DATA = ROOT / "workbench" / "table_entries" / "下" / "data" / "LYG-下-T039.json"
+
+COLUMNS = ["工厂名称", "职工人数(人)", "原工资总额(元)", "原报方案增资额(元)", "原报方案占原工资%", "核定方案增资额(元)", "核定方案占原工资%", "备注"]
+ROWS = [
+    ["新海发电厂", "165", "6419", "503.60", "7.85", "401.00", "6.25", ""],
+    ["新海自来水厂", "51", "1676", "94.60", "5.65", "86.50", "5.16", ""],
+    ["大成砖瓦厂", "10", "394", "31.50", "8.02", "31.5", "8.02", ""],
+    ["陇东火柴厂", "705", "15140", "581.70", "3.84", "615.40", "4.13", ""],
+    ["新海油厂", "240", "8128", "536.30", "6.60", "437.50", "5.38", ""],
+    ["新海印刷厂", "71", "2198", "133.40", "6.08", "", "5.47", ""],
+    ["海州面粉厂", "118", "4021", "454.80", "11.31", "441.00", "10.97", ""],
+    ["洪门酒厂", "100", "3197", "212.00", "6.63", "194.20", "6.08", ""],
+    ["利通汽车公司", "76", "2800", "327.00", "11.53", "310.00", "11.53", "公私合营"],
+    ["合计", "1536", "43973", "2918.60", "6.64", "2604.70", "5.92", ""],
+]
+
+PATCH = {
+    "title": "1955年新海连市调整国营企业和公私合营企业职工工资情况表",
+    "table_number": "表47-9",
+    "page": 2238,
+    "pages": [2238],
+    "columns": COLUMNS,
+    "rows": ROWS,
+    "row_count": len(ROWS),
+    "col_count": len(COLUMNS),
+    "status": "verified",
+    "notes": "已据raw OCR回源核录：workbench/table_entries/下/raw/LYG-下-T039_2238.txt；原JSON为单列待录入骨架。OCR中原报方案/核定方案列位交错，按表头和行内数值顺序整理；新海印刷厂核定方案增资额未清晰读出，保留空值，未猜补。",
+}
+
+
+def patch_entry(entry: dict) -> bool:
+    if entry.get("table_id") != "LYG-下-T039":
+        return False
+    changed = False
+    for key, value in PATCH.items():
+        if entry.get(key) != value:
+            entry[key] = value
+            changed = True
+    return changed
+
+
+def patch_json() -> int:
+    data = json.loads(DATA.read_text(encoding="utf-8"))
+    if patch_entry(data):
+        DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 1
+    return 0
+
+
+def patch_site() -> int:
+    text = SITE.read_text(encoding="utf-8")
+    match = re.search(r"const TABLES = (\[.*?\]);\s*\n\s*function escape", text, re.S)
+    if not match:
+        raise SystemExit("TABLES payload not found")
+    tables = json.loads(match.group(1))
+    changed = 0
+    for table in tables:
+        if patch_entry(table):
+            changed += 1
+    if changed:
+        text = text[: match.start(1)] + json.dumps(tables, ensure_ascii=False) + text[match.end(1) :]
+        SITE.write_text(text, encoding="utf-8")
+    return changed
+
+
+def main() -> None:
+    print(f"json_files_changed={patch_json()}")
+    print(f"site_entries_changed={patch_site()}")
+
+
+if __name__ == "__main__":
+    main()

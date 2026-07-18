@@ -1,0 +1,36 @@
+{
+  "table_id": "LYG-下-T105",
+  "title": "管理、技术人员工资标准",
+  "table_number": "表47-7",
+  "page": 2231,
+  "pages": [
+    2231
+  ],
+  "part": "part01",
+  "vol": "下",
+  "volume": "下",
+  "columns": [
+    "项目",
+    "厂长",
+    "技师",
+    "技术员",
+    "课长",
+    "一般职员",
+    "勤杂人员"
+  ],
+  "rows": [
+    [
+      "工资分",
+      "250~350",
+      "290~350",
+      "170~260",
+      "200~280",
+      "140~230",
+      "90~170"
+    ]
+  ],
+  "row_count": 1,
+  "col_count": 7,
+  "status": "verified",
+  "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/下/part01/page_0260.txt，并参考 raw OCR：workbench/ocr/raw/下/part01/page_0260.txt。raw OCR 漏识“厂长”，本轮以页级 OCR 为准。"
+}
