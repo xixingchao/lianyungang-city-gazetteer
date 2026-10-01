@@ -31,6 +31,8 @@ def main():
     ap.add_argument("--start", type=int, required=True)
     ap.add_argument("--end", type=int, required=True)
     ap.add_argument("--dpi", type=int, default=DPI)
+    ap.add_argument("--offset", type=int, default=0,
+                    help="全局页号 = PDF页码 + offset（上_1=0, 上_2=300, 上_3=605）")
     args = ap.parse_args()
 
     pdf = PDF_BASE / PDF_NAMES[args.part]
@@ -41,7 +43,8 @@ def main():
     scale = args.dpi / 72.0
     done = skipped = 0
     for page_no in range(args.start, args.end + 1):
-        out = outdir / f"page_{page_no:04d}.png"
+        img_no = page_no + args.offset
+        out = outdir / f"page_{img_no:04d}.png"
         if out.exists() and out.stat().st_size > 10000:
             skipped += 1
             continue
@@ -52,9 +55,10 @@ def main():
         done += 1
         page.close()
         if (done % 20) == 0:
-            print(f"rendered {done} ...")
+            print(f"rendered {done} ...", flush=True)
     doc.close()
-    print(f"part={args.part} range={args.start}-{args.end} rendered={done} skipped={skipped} -> {outdir}")
+    print(f"part={args.part} range={args.start}-{args.end} offset={args.offset} "
+          f"rendered={done} skipped={skipped} -> {outdir}", flush=True)
 
 
 if __name__ == "__main__":

@@ -87,14 +87,19 @@ def main():
     ap.add_argument("--engine", required=True, choices=["paddle", "rapid"])
     ap.add_argument("--start", type=int, required=True)
     ap.add_argument("--end", type=int, required=True)
+    ap.add_argument("--offset", type=int, default=0,
+                    help="全局页号 = PDF页码 + offset（上_1=0, 上_2=300, 上_3=605）")
     args = ap.parse_args()
 
     pages_dir = PAGES_BASE / args.part
     outdir = OCR_BASE / args.engine / args.part
     outdir.mkdir(parents=True, exist_ok=True)
-    pages = [PageRef(n, pages_dir / f"page_{n:04d}.png")
-             for n in range(args.start, args.end + 1)
-             if (pages_dir / f"page_{n:04d}.png").exists()]
+    pages = []
+    for n in range(args.start, args.end + 1):
+        img_no = n + args.offset
+        png = pages_dir / f"page_{img_no:04d}.png"
+        if png.exists():
+            pages.append(PageRef(img_no, png))
     print(f"{args.engine}: {len(pages)} pages, out -> {outdir}", flush=True)
 
     if args.engine == "paddle":
