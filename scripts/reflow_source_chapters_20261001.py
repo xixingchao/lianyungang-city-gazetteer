@@ -145,9 +145,11 @@ def reflow_text(md_text, fname, stats):
 
 
 def cross_page_join(text, stats):
-    """页锚跨页段落回接：上页末段无句末标点且下页首段非特殊段 → 合并。"""
+    """页锚跨页段落回接：上页末段无句末标点且下页首段非特殊段 → 合并。
+
+    合并跨越的页锚以内联注释保留在合并段内部（锚不丢）。
+    """
     parts = text.split("\n\n")
-    # 重建时需要感知页锚：锚是独立行
     merged = []
     i = 0
     while i < len(parts):
@@ -156,12 +158,14 @@ def cross_page_join(text, stats):
             merged.append(p)
             i += 1
             continue
-        # 找下一个正文段（跳过紧跟的页锚块：锚 + 两个空串）
+        # 找下一个正文段（沿途收集跨过的页锚）
         j = i + 1
+        skipped_anchors = []
         next_body = None
         while j < len(parts):
             s = parts[j].strip()
             if s.startswith("<!-- page-anchor:"):
+                skipped_anchors.append(s)
                 j += 1
                 continue
             if s == "":
@@ -170,17 +174,23 @@ def cross_page_join(text, stats):
             next_body = parts[j]
             break
         last = p.strip()
-        if (next_body is not None and last
-                and not is_title(last)
-                and not last.endswith(tuple(SENTENCE_END_CHARS))
-                and not is_year_entry(next_body.strip())
-                and not is_title(next_body.strip())
-                and not is_list_item(next_body.strip())
-                and not is_comment(next_body.strip())):
-            merged.append(p + next_body.strip())
+        can_join = (next_body is not None and last
+                    and not is_title(last)
+                    and not last.endswith(tuple(SENTENCE_END_CHARS))
+                    and not is_year_entry(next_body.strip())
+                    and not is_title(next_body.strip())
+                    and not is_list_item(next_body.strip())
+                    and not is_comment(next_body.strip()))
+        if can_join:
+            merged.append(p + "".join(skipped_anchors) + next_body.strip())
             stats["cross_page_joined"] += 1
-            # 跳过被合并的 next_body
             i = j + 1
+            continue
+        # 不合并：跨过的页锚也要原样保留
+        if skipped_anchors:
+            merged.append(p)
+            merged.extend(skipped_anchors)
+            i = j
             continue
         merged.append(p)
         i += 1
