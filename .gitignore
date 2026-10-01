@@ -10,3 +10,4 @@ output/reports/*
 !output/reports/progress/
 output/final_reader/obsolete/
 *.zip
+workbench/ocr_v2/pages/
