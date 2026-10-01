@@ -71,7 +71,11 @@ def v2_pages(md_path):
                 pages.append((cur, norm("".join(buf))))
             cur, buf = int(m.group(1)), []
             continue
-        if s.startswith("<!--") or s.startswith("#"):
+        if s.startswith("<!--"):
+            continue
+        if s.startswith("#"):
+            # 标题块：去掉 # 前缀纳入流（引擎流含标题文本，跳过会产生假 FLAG_M）
+            buf.append(re.sub(r"^#+\s*", "", s, flags=re.M))
             continue
         buf.append(re.sub(r"\{\{[^}]*\}\}", "", s))
     if cur is not None:

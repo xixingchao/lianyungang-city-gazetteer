@@ -64,7 +64,7 @@ def load_reader_blocks():
     blocks = []  # (kind, plain_text)
     pos = 0
     pattern = re.compile(
-        r"<h([1-4])[^>]*>(.*?)</h\1>|<p[^>]*>(.*?)</p>|<table[^>]*>.*?</table>", re.S)
+        r"<h([1-5])[^>]*>(.*?)</h\1>|<p[^>]*>(.*?)</p>|<table[^>]*>.*?</table>", re.S)
     last_p_text = ""
     for m in pattern.finditer(body):
         if m.group(1):       # heading
@@ -225,6 +225,8 @@ def main():
                 fh.write(f"### {txt}\n\n")
             elif kind == "h4":
                 fh.write(f"#### {txt}\n\n")
+            elif kind == "h5":
+                fh.write(f"##### {txt}\n\n")
             elif kind == "table":
                 fh.write(f"{{{{STRUCTURED_TABLE:{txt}}}}}\n\n")
             else:
