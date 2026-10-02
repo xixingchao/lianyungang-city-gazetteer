@@ -152,14 +152,22 @@ def main() -> None:
         "",
         "1. 最终阅读版 HTML：`连云港市志_最终阅读版.html`",
         "2. 最终阅读版 PDF：`连云港市志_最终阅读版.pdf`" if pdf_ok else "2. 最终阅读版 PDF：本次未生成，见下方说明",
-        "3. 交付质量门禁：`reports/连云港市志_交付质量门禁报告.md`",
-        "4. 章节结构审计：`reports/章节数据审计报告.md`",
-        "5. 项目记忆：`reports/PROJECT_MEMORY.md`",
-        "6. 结构化表格交付就绪审计：`reports/结构化表格交付就绪审计报告.md`",
-        "7. 表格回源核录优先队列：`reports/结构化表格回源核录优先队列.md`",
     ]
+    # 入口只列随包实际存在的报告（避免指向未随包文件）
+    entry_no = 3
+    for label, rel in (
+        ("交付质量门禁", "reports/连云港市志_交付质量门禁报告.md"),
+        ("章节结构审计", "reports/章节数据审计报告.md"),
+        ("方言卷双审遗留清单与判定说明（校勘记）", "reports/方言卷双审遗留清单与判定说明_20261002.md"),
+        ("项目记忆", "reports/PROJECT_MEMORY.md"),
+        ("结构化表格交付就绪审计", "reports/结构化表格交付就绪审计报告.md"),
+        ("表格回源核录优先队列", "reports/结构化表格回源核录优先队列.md"),
+    ):
+        if (PACKAGE / rel).exists():
+            note.append(f"{entry_no}. {label}：`{rel}`")
+            entry_no += 1
     if (PACKAGE / "structured_tables" / "index.html").exists():
-        note.append("8. 结构化表格入口：`structured_tables/index.html`")
+        note.append(f"{entry_no}. 结构化表格入口：`structured_tables/index.html`")
     # 从门禁报告实际解析问题计数（不再硬编码 issues=0）
     gate_issues = None
     gate_report = REPORTS / "连云港市志_交付质量门禁报告.md"
