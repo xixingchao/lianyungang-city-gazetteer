@@ -159,11 +159,23 @@ def main() -> None:
     ]
     if (PACKAGE / "structured_tables" / "index.html").exists():
         note.append("8. 结构化表格入口：`structured_tables/index.html`")
+    # 从门禁报告实际解析问题计数（不再硬编码 issues=0）
+    gate_issues = None
+    gate_report = REPORTS / "连云港市志_交付质量门禁报告.md"
+    if gate_report.exists():
+        gate_text = gate_report.read_text(encoding="utf-8", errors="replace")
+        m = re.search(r"## 问题计数\s*\n(.*?)(?:\n## |\Z)", gate_text, re.S)
+        if m:
+            gate_issues = sum(int(x) for x in re.findall(r"\|\s*(\d+)\s*\|", m.group(1)))
+        else:
+            gate_issues = 0 if "未通过交付质量门禁" not in gate_text else -1
     note.extend([
         "",
         "## 当前验收结论",
         "",
-        "- `scripts/audit_delivery_quality.py`：issues=0。",
+        (f"- `scripts/audit_delivery_quality.py`：issues={gate_issues}。"
+         if gate_issues is not None and gate_issues >= 0 else
+         "- `scripts/audit_delivery_quality.py`：见随包门禁报告（本次未解析到计数）。"),
         f"- `scripts/audit_full_reader.py`：Missing anchors=[]，H2={h2_count}，H3={h3_count}，Placeholders={placeholder_count}，TOC links={toc_links}。",
         "- 主阅读版已撤出未核结构化表、OCR 串行数字块、工作台说明、占位卡片、扫描页码/页码残留等读者可见非交付内容。", 
         "- 结构化表格已完成本轮回源核录清零，随包提供结构化表格入口和审计报告。", 

@@ -92,6 +92,22 @@ def build_volume_md() -> str:
     return "\n".join(out)
 
 
+def _zh_quotes(s: str) -> str:
+    """ASCII 双引号按出现次序配对替换为中文引号（阅读版门禁要求，避免 &quot; 转义残留）。"""
+    out, open_q = [], True
+    for ch in s:
+        if ch == '"':
+            out.append("“" if open_q else "”")
+            open_q = not open_q
+        else:
+            out.append(ch)
+    return "".join(out)
+
+
+def _esc(s: str) -> str:
+    return H.escape(_zh_quotes(s), quote=False)
+
+
 def to_html_block(md_text: str) -> str:
     """MD → 全书阅读版 HTML 片段（h2/h3/h4/p/ul/table）"""
     parts = []
@@ -122,14 +138,14 @@ def to_html_block(md_text: str) -> str:
                     continue
                 tag = "th" if r_i == 0 else "td"
                 parts.append("<tr>" + "".join(
-                    "<%s>%s</%s>" % (tag, H.escape(c), tag) for c in cells) + "</tr>")
+                    "<%s>%s</%s>" % (tag, _esc(c), tag) for c in cells) + "</tr>")
             parts.append("</table>")
             continue
         if line.startswith("#### "):
             if in_ul:
                 parts.append("</ul>")
                 in_ul = False
-            parts.append("<h4>%s</h4>" % H.escape(line[5:].strip()))
+            parts.append("<h4>%s</h4>" % _esc(line[5:].strip()))
         elif line.startswith("### "):
             if in_ul:
                 parts.append("</ul>")
@@ -138,19 +154,19 @@ def to_html_block(md_text: str) -> str:
             if title == "概述":
                 parts.append('<h3 id="第五十九卷-概述">概述</h3>')
             else:
-                parts.append("<h3>%s</h3>" % H.escape(title))
+                parts.append("<h3>%s</h3>" % _esc(title))
         elif line.startswith("## "):
             parts.append('<h2 id="第五十九卷-方言">第五十九卷 方言</h2>')
         elif line.startswith("- "):
             if not in_ul:
                 parts.append("<ul>")
                 in_ul = True
-            parts.append("<li>%s</li>" % H.escape(line[2:].strip()))
+            parts.append("<li>%s</li>" % _esc(line[2:].strip()))
         elif line.strip():
             if in_ul:
                 parts.append("</ul>")
                 in_ul = False
-            parts.append("<p>%s</p>" % H.escape(line.strip()))
+            parts.append("<p>%s</p>" % _esc(line.strip()))
         k += 1
     if in_ul:
         parts.append("</ul>")
