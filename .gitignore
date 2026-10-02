@@ -11,3 +11,6 @@ output/reports/*
 output/final_reader/obsolete/
 *.zip
 workbench/ocr_v2/pages/
+
+# vol59 接入备份（git 历史即备份）
+workbench/volume59/structured/backup_接入前/

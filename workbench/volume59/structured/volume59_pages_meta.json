@@ -1,0 +1,541 @@
+[
+ {
+  "page": 1,
+  "frontmatter": {
+   "volume_page": "1",
+   "pdf_page": "295",
+   "book_page": "\"\"",
+   "page_type": "卷首+正文说明",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（读300DPI页图）",
+   "draft_ref": "全新OCR草稿（置信0.8884）"
+  }
+ },
+ {
+  "page": 2,
+  "frontmatter": {
+   "volume_page": "2",
+   "pdf_page": "296",
+   "book_page": "2580",
+   "page_type": "正文+音标对照表×3",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（整页读 + 三表2倍裁切放大 + 表头3倍放大）"
+  }
+ },
+ {
+  "page": 3,
+  "frontmatter": {
+   "volume_page": "3",
+   "pdf_page": "297",
+   "book_page": "2581",
+   "page_type": "正文+音标对照表×2（跨页表1张）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（整页读 + 4处2-2.5倍裁切放大 + 例句3倍放大）"
+  }
+ },
+ {
+  "page": 4,
+  "frontmatter": {
+   "volume_page": "4",
+   "pdf_page": "298",
+   "book_page": "2582",
+   "page_type": "正文+音标对照表×2 + 声调章开头",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（整页读 + 两表2.2倍裁切放大 + 例句段2.2倍）"
+  }
+ },
+ {
+  "page": 5,
+  "frontmatter": {
+   "volume_page": "5",
+   "pdf_page": "299",
+   "book_page": "2583",
+   "page_type": "正文+词汇对照表×2块+人称例句表",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（整页读 + 词汇表2.2-3倍 + 例句3-6倍）"
+  }
+ },
+ {
+  "page": 6,
+  "frontmatter": {
+   "volume_page": "6",
+   "pdf_page": "300",
+   "book_page": "2584",
+   "page_type": "音系总表（第二章 声母18+韵母40）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（整页读 + 三块2.2倍 + 注3与iəu行3.5-4倍 + 页2表1新浦列3.5倍回查）"
+  }
+ },
+ {
+  "page": 7,
+  "frontmatter": {
+   "volume_page": "7",
+   "pdf_page": "301",
+   "book_page": "2585",
+   "page_type": "正文+声调表+连读变调表59-1+例词",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（整页读 + 四处2.2-3倍裁切放大 + 例词2.8倍）"
+  }
+ },
+ {
+  "page": 8,
+  "frontmatter": {
+   "volume_page": "8",
+   "pdf_page": "302",
+   "book_page": "2586",
+   "page_type": "连读变调例词23行 + 第三节声韵配合关系 + 表59-2",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（整页读 + 例词三段2.6倍 + 表59-2 2.5倍 + 疑点合并5倍放大）"
+  }
+ },
+ {
+  "page": 9,
+  "frontmatter": {
+   "volume_page": "9",
+   "pdf_page": "303",
+   "book_page": "2587",
+   "page_type": "第三章同音字汇开篇（ɿ/i/u 三韵部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（四象限2.6倍裁切逐块转录）",
+   "notation": "字下双线=文读记作〔文〕；单线=白读记作〔白〕；浪线=特殊读音记作〔特〕；□=有音无字（原文保留）；～=代替本字"
+  }
+ },
+ {
+  "page": 10,
+  "frontmatter": {
+   "volume_page": "10",
+   "pdf_page": "304",
+   "book_page": "2588",
+   "page_type": "第三章同音字汇（u 韵收尾 + ɪ 韵 + ɑ 韵）",
+   "status": "transcribed_draft2（双审 2026-10-01：页尾 ɑ 韵 ʂ/k/kʻ/x/ø 五行补录；调皮注文纠正；徐白读线）",
+   "transcriber": "视觉转录（四象限2.6倍 + tʂ/tʂʻ-ɑ组3.1倍精读）",
+   "notation": "同前页（〔文〕〔白〕〔特〕内联标注；□=有音无字；～=代替本字）"
+  }
+ },
+ {
+  "page": 11,
+  "frontmatter": {
+   "volume_page": "11",
+   "pdf_page": "305",
+   "book_page": "2589",
+   "page_type": "第三章同音字汇（iɑ/uɑ/o 韵 + ɛ 韵 p–l 组）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（四象限2.6倍 + 左栏o韵下部补裁2.6倍）",
+   "notation": "同前页（〔文〕〔白〕〔特〕；□=原书有音无字；～=代替本字）"
+  }
+ },
+ {
+  "page": 12,
+  "frontmatter": {
+   "volume_page": "12",
+   "pdf_page": "306",
+   "book_page": "2590",
+   "page_type": "第三章同音字汇（ɛ 韵收尾 + ɪɛ + ei + uei + ɔ 韵 p 组）",
+   "status": "transcribed_draft4（双审 2026-10-02 深夜：逐行高倍复核；补 kʻ②剋；定 锐/剑/缏/偏/呸/戛；判 l–kʻ 六行属 ei 韵）",
+   "transcriber": "视觉转录（四象限2.7倍 + ei下部补裁2.8倍）",
+   "notation": "同前页"
+  }
+ },
+ {
+  "page": 13,
+  "frontmatter": {
+   "volume_page": "13",
+   "pdf_page": "307",
+   "book_page": "2591",
+   "page_type": "第三章同音字汇（ɔ 韵收尾 + iɔ 韵 + əu 韵 + iəu 开头）",
+   "status": "transcribed_draft3（双审 2026-10-02 深夜：揄/剞/瘘/爊/㸆 定案；苕溲速度快断句；iɔ p①中间字存疑）",
+   "transcriber": "视觉转录（四象限2.7倍）",
+   "notation": "同前页"
+  }
+ },
+ {
+  "page": 14,
+  "frontmatter": {
+   "volume_page": "14",
+   "pdf_page": "308",
+   "book_page": "2592",
+   "page_type": "第三章同音字汇（iəu 收尾 + æ̃/uæ̃/ɛ̃ 全韵 + iɛ̃ p–m 组）",
+   "status": "transcribed_draft2（双审 2026-10-01：12x定案 骟/酋/掸/参/产/谄/黵/踡/靴/瞅/挽/褊贬/□扔 等；婉〔白〕）",
+   "transcriber": "视觉转录（四象限2.7倍）",
+   "notation": "同前页"
+  }
+ },
+ {
+  "page": 15,
+  "frontmatter": {
+   "volume_page": "15",
+   "pdf_page": "309",
+   "book_page": "2593",
+   "page_type": "第三章同音字汇（iɛ̃ 收尾 + y 韵 + õ/yõ 韵 + ɑŋ 韵大部）",
+   "status": "transcribed_draft2（双审 2026-10-01：õ 段九行重录；墒/搡/绱/响/臧/攮/缰 定案；补虹字；iɛ̃ ɕ 行白读线确认）",
+   "transcriber": "视觉转录（四象限+两栏底部补裁2.7倍）",
+   "notation": "同前页"
+  }
+ },
+ {
+  "page": 16,
+  "frontmatter": {
+   "volume_page": "16",
+   "pdf_page": "310",
+   "book_page": "2594",
+   "page_type": "第三章同音字汇（ɑŋ ø 收尾 + iɑŋ + uɑŋ 全韵 + əŋ 韵大部）",
+   "status": "transcribed_draft2（双审页16：5-12x复核+页尾 ø/iŋ 补录 2026-10-01）",
+   "transcriber": "视觉转录（四象限2.7倍）",
+   "notation": "同前页"
+  }
+ },
+ {
+  "page": 17,
+  "frontmatter": {
+   "volume_page": "17",
+   "pdf_page": "311",
+   "book_page": "2595",
+   "page_type": "第三章同音字汇（əŋ 收尾 + iŋ 韵 + oŋ 韵 + iɔŋ 韵 + aʔ 入声韵开头）",
+   "status": "transcribed_draft2（双审补录 2026-10-01：iŋ 左栏 m/t/tʻ/l/tɕ、oŋ 右栏 ʂ/z̩/k/kʻ/x/ø、ioŋ 四组、aʔ 行内字 全部 5x 复核）",
+   "transcriber": "视觉转录（四象限+底部补裁2.7倍）",
+   "notation": "同前页"
+  }
+ },
+ {
+  "page": 18,
+  "frontmatter": {
+   "volume_page": "18",
+   "pdf_page": "312",
+   "book_page": "2596",
+   "page_type": "第三章同音字汇（ɐʔ 收尾 + iɐʔ + uɐʔ + əʔ 全 + iəʔ + uəʔ + yəʔ 开头）",
+   "status": "transcribed_draft4（2026-10-02 收尾批：**第9处缺口补录**——右栏 iə（iəʔ）整段十行、右栏 uə（uəʔ）节 m/f/t/tʻ/l 五行及 tʂ 行前半、左栏 ə 节尾部 z̩/k/kʻ/x/ø 五行；原「右栏=左栏续行」判断作废。uə⑤t 行「独读毒牍犊督笃掇铎踱夺」为词汇章 #109 踱字互证）",
+   "transcriber": "视觉转录（四象限2.7倍；2026-10-02 缺口行右栏3x补读）",
+   "notation": "同前页"
+  }
+ },
+ {
+  "page": 19,
+  "frontmatter": {
+   "volume_page": "19",
+   "pdf_page": "313",
+   "book_page": "2597",
+   "page_type": "第三章同音字汇收尾（ɪ 韵）+ 第四章方言词汇开篇（体例 + ɿ 韵首 20 条）",
+   "status": "transcribed_draft4（双审 2026-10-02：12x 定案——却后一字=窃（订正 draft3\"窍\"，⑤入声行音系锁定）、疟（嶽排除）、跐足旁、译（讠旁）、臆/薏/哕；白读线补正：臆薏易有线、悦蟋无线；曝形字注记）",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 20,
+  "frontmatter": {
+   "volume_page": "20",
+   "pdf_page": "314",
+   "book_page": "2598",
+   "page_type": "第四章方言词汇（ɿ 韵收尾 + i 韵大部）",
+   "status": "transcribed_draft2（双审 2026-10-02：鼻眵（目+多，订正\"目青\"）、皅（白+皮）、哪 字形定案；利亮 IPA 原书作 li⁵⁵tɑŋ 与利当同（无介音标记））",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 21,
+  "frontmatter": {
+   "volume_page": "21",
+   "pdf_page": "315",
+   "book_page": "2599",
+   "page_type": "第四章方言词汇（i 韵收尾 + u 韵大部 + ɪ 韵 + ɑ 韵开头）",
+   "status": "transcribed_draft2（双审 2026-10-02：姨侄～婚续行补定、醋凳子/苦淫淫/趋（走旁）/虚嚷 定案；□(xu)确认原书印空框）",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 22,
+  "frontmatter": {
+   "volume_page": "22",
+   "pdf_page": "316",
+   "book_page": "2600",
+   "page_type": "第四章方言词汇（ɑ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 23,
+  "frontmatter": {
+   "volume_page": "23",
+   "pdf_page": "317",
+   "book_page": "2601",
+   "page_type": "第四章方言词汇（ɑ 韵收尾 + iɑ 韵 + uɑ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 24,
+  "frontmatter": {
+   "volume_page": "24",
+   "pdf_page": "318",
+   "book_page": "2602",
+   "page_type": "第四章方言词汇（ɑ 韵收尾 + o 韵大部 + ɛ 韵开头）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 25,
+  "frontmatter": {
+   "volume_page": "25",
+   "pdf_page": "319",
+   "book_page": "2603",
+   "page_type": "第四章方言词汇（ɛ 韵）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 26,
+  "frontmatter": {
+   "volume_page": "26",
+   "pdf_page": "320",
+   "book_page": "2604",
+   "page_type": "第四章方言词汇（ɛ 韵尾 + iɛ + uɛ + ei 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 27,
+  "frontmatter": {
+   "volume_page": "27",
+   "pdf_page": "321",
+   "book_page": "2605",
+   "page_type": "第四章方言词汇（ei 收尾 + uei 韵 + ɔ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 28,
+  "frontmatter": {
+   "volume_page": "28",
+   "pdf_page": "322",
+   "book_page": "2606",
+   "page_type": "第四章方言词汇（ɔ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 29,
+  "frontmatter": {
+   "volume_page": "29",
+   "pdf_page": "323",
+   "book_page": "2607",
+   "page_type": "第四章方言词汇（ɔ 韵收尾 + iɔ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 30,
+  "frontmatter": {
+   "volume_page": "30",
+   "pdf_page": "324",
+   "book_page": "2608",
+   "page_type": "第四章方言词汇（iɔ 韵收尾 + əu 韵开头）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 31,
+  "frontmatter": {
+   "volume_page": "31",
+   "pdf_page": "325",
+   "book_page": "2609",
+   "page_type": "第四章方言词汇（əu 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 32,
+  "frontmatter": {
+   "volume_page": "32",
+   "pdf_page": "326",
+   "book_page": "2610",
+   "page_type": "第四章方言词汇（əu 收尾 + iəu 韵 + æ̃ 韵开头）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 33,
+  "frontmatter": {
+   "volume_page": "33",
+   "pdf_page": "327",
+   "book_page": "2611",
+   "page_type": "第四章方言词汇（æ̃ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 34,
+  "frontmatter": {
+   "volume_page": "34",
+   "pdf_page": "328",
+   "book_page": "2612",
+   "page_type": "第四章方言词汇（æ̃ 收尾 + uæ̃ + iæ̃ 收尾 + iɛ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 35,
+  "frontmatter": {
+   "volume_page": "35",
+   "pdf_page": "329",
+   "book_page": "2613",
+   "page_type": "第四章方言词汇（iɛ 韵大部 + õ 韵开头）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 36,
+  "frontmatter": {
+   "volume_page": "36",
+   "pdf_page": "330",
+   "book_page": "2614",
+   "page_type": "第四章方言词汇（õ 韵收尾 + ɑŋ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 37,
+  "frontmatter": {
+   "volume_page": "37",
+   "pdf_page": "331",
+   "book_page": "2615",
+   "page_type": "第四章方言词汇（ɑŋ 韵收尾 + iɑŋ 韵 + uɑŋ 开头）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 38,
+  "frontmatter": {
+   "volume_page": "38",
+   "pdf_page": "332",
+   "book_page": "2616",
+   "page_type": "第四章方言词汇（uɑŋ 韵收尾 + əŋ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 39,
+  "frontmatter": {
+   "volume_page": "39",
+   "pdf_page": "333",
+   "book_page": "2617",
+   "page_type": "第四章方言词汇（əŋ 韵收尾 + iŋ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 40,
+  "frontmatter": {
+   "volume_page": "40",
+   "pdf_page": "334",
+   "book_page": "2618",
+   "page_type": "第四章方言词汇（iŋ 收尾 + oŋ/ioŋ 韵 + ə 韵开头）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 41,
+  "frontmatter": {
+   "volume_page": "41",
+   "pdf_page": "335",
+   "book_page": "2619",
+   "page_type": "第四章方言词汇（aʔ 韵 + iəʔ 韵 + uəʔ 韵 + əʔ 韵开头）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 42,
+  "frontmatter": {
+   "volume_page": "42",
+   "pdf_page": "336",
+   "book_page": "2620",
+   "page_type": "第四章方言词汇（əʔ 韵大部）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 43,
+  "frontmatter": {
+   "volume_page": "43",
+   "pdf_page": "337",
+   "book_page": "2621",
+   "page_type": "第四章方言词汇（əʔ 收尾 + iə 韵 + uə 韵）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 44,
+  "frontmatter": {
+   "volume_page": "44",
+   "pdf_page": "338",
+   "book_page": "2622",
+   "page_type": "第四章方言词汇（uə 收尾 + yə 韵 + iɪ 韵）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 45,
+  "frontmatter": {
+   "volume_page": "45",
+   "pdf_page": "339",
+   "book_page": "2623",
+   "page_type": "第四章方言词汇收官 + 第五章语法开篇（第一节词法·一、词）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 46,
+  "frontmatter": {
+   "volume_page": "46",
+   "pdf_page": "340",
+   "book_page": "2624",
+   "page_type": "第五章语法（第一节词法：后缀续·中缀·形容词四级·\"很\"的用法）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 47,
+  "frontmatter": {
+   "volume_page": "47",
+   "pdf_page": "341",
+   "book_page": "2625",
+   "page_type": "第五章语法（\"很了\"续 + 特殊量词 + 自感动词短语）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ },
+ {
+  "page": 48,
+  "frontmatter": {
+   "volume_page": "48",
+   "pdf_page": "342",
+   "book_page": "2626",
+   "page_type": "第五章语法（第二节句法·全书末页）",
+   "status": "transcribed_draft1",
+   "transcriber": "视觉转录（六区2.7倍）"
+  }
+ }
+]
