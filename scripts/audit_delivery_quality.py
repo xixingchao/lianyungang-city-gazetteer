@@ -67,7 +67,11 @@ def audit() -> list[Issue]:
             ("可见处理说明", any(token in non_table_text for token in ("源 OCR", "核对型", "处理说明", "原阅读版裸占位"))),
             ("HTML转义残留", "&lt;" in strip_structured_tables(line) or "&gt;" in strip_structured_tables(line) or "&quot;" in strip_structured_tables(line)),
             ("英文总述粘连/页码残留", bool(re.search(r"GENERALSUMMARY|General Summary[:：.]?\s*\d|Histroy of LianYunGang|yearsago|trans-portation", non_table_text))),
-            ("疑似表格正文串行", bool(re.search(r"表\s*\d+\s*-\s*\d+", non_table_text)) and len(non_table_text) >= 160),
+            # 表格残文串成正文时长行内几乎没有句末标点；正常正文提到"表 X-Y"时句号成串，据此排除误报。
+            ("疑似表格正文串行",
+             bool(re.search(r"表\s*\d+\s*-\s*\d+", non_table_text))
+             and len(non_table_text) >= 160
+             and non_table_text.count("。") <= 2),
         ]
         for kind, matched in checks:
             if matched:
