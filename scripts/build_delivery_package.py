@@ -34,6 +34,7 @@ REPORT_FILES = [
     REPORTS / "progress" / "20260701_全量已核结构化表格嵌回主阅读版.md",
     REPORTS / "progress" / "方言卷双审遗留清单与判定说明_20261002.md",
     REPORTS / "progress" / "20261002_批次4_第五卷道路表回源核录与残文撤出.md",
+    REPORTS / "progress" / "20261002_连接号专项_一X一Y与孤立一核定.md",
     ROOT / "PROJECT_MEMORY.md",
 ]
 
