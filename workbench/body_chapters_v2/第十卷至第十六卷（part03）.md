@@ -878,6 +878,12 @@
 
 本节汇集已回源核录的结构化表格，表内数据可追溯到随表记录的源页。
 
+{{STRUCTURED_TABLE:LYG-上-T178}}
+
+{{STRUCTURED_TABLE:LYG-上-T179}}
+
+{{STRUCTURED_TABLE:LYG-上-T180}}
+
 {{STRUCTURED_TABLE:未编号-5478}}
 
 {{STRUCTURED_TABLE:未编号-5479}}
