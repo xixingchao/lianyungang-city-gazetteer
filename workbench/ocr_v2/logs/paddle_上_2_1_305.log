@@ -1,0 +1,171 @@
+paddle: 305 pages, out -> E:\codex_Learing\project_è¿äº‘æ¸¯å¸‚å¿—\repo\workbench\ocr_v2\ocr\paddle\ä¸Š_2
+ĞÅÏ¢: ÓÃÌá¹©µÄÄ£Ê½ÎŞ·¨ÕÒµ½ÎÄ¼ş¡£
+C:\Users\52744\AppData\Roaming\Python\Python313\site-packages\paddle\utils\cpp_extension\extension_utils.py:715: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+WARNING: OMP_NUM_THREADS set to 2, not 1. The computation speed will not be optimized if you use data parallel. It will fail if this PaddlePaddle binary is compiled with OpenBlas since OpenBlas does not support multi-threads.
+PLEASE USE OMP_NUM_THREADS WISELY.
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\52744\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\52744\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+paddle page 301: 3 lines
+paddle page 302: 21 lines
+paddle page 303: 63 lines
+paddle page 304: 75 lines
+paddle page 305: 97 lines
+paddle page 306: 76 lines
+paddle page 307: 11 lines
+paddle page 308: 24 lines
+paddle page 309: 25 lines
+paddle page 310: 21 lines
+paddle page 311: 95 lines
+paddle page 312: 25 lines
+paddle page 313: 22 lines
+paddle page 314: 29 lines
+paddle page 315: 6 lines
+paddle page 316: 18 lines
+paddle page 317: 23 lines
+paddle page 318: 28 lines
+paddle page 319: 16 lines
+paddle page 320: 57 lines
+paddle page 321: 76 lines
+paddle page 322: 73 lines
+paddle page 323: 74 lines
+paddle page 324: 96 lines
+paddle page 325: 71 lines
+paddle page 326: 77 lines
+paddle page 327: 16 lines
+paddle page 328: 29 lines
+paddle page 329: 35 lines
+paddle page 330: 39 lines
+paddle page 331: 12 lines
+paddle page 332: 22 lines
+paddle page 333: 32 lines
+paddle page 334: 36 lines
+paddle page 335: 23 lines
+paddle page 336: 34 lines
+paddle page 337: 35 lines
+paddle page 338: 158 lines
+paddle page 339: 35 lines
+paddle page 340: 32 lines
+paddle page 341: 36 lines
+paddle page 342: 38 lines
+paddle page 343: 265 lines
+paddle page 344: 273 lines
+paddle page 345: 37 lines
+paddle page 346: 239 lines
+paddle page 347: 242 lines
+paddle page 348: 231 lines
+paddle page 349: 69 lines
+paddle page 350: 39 lines
+paddle page 351: 66 lines
+paddle page 352: 168 lines
+paddle page 353: 150 lines
+paddle page 354: 36 lines
+paddle page 355: 67 lines
+paddle page 356: 143 lines
+paddle page 357: 136 lines
+paddle page 358: 93 lines
+paddle page 359: 34 lines
+paddle page 360: 36 lines
+paddle page 361: 38 lines
+paddle page 362: 40 lines
+paddle page 363: 38 lines
+paddle page 364: 37 lines
+paddle page 365: 34 lines
+paddle page 366: 174 lines
+paddle page 367: 36 lines
+paddle page 368: 38 lines
+paddle page 369: 181 lines
+paddle page 370: 61 lines
+paddle page 371: 38 lines
+paddle page 372: 63 lines
+paddle page 373: 35 lines
+paddle page 374: 32 lines
+paddle page 375: 35 lines
+paddle page 376: 37 lines
+paddle page 377: 35 lines
+paddle page 378: 34 lines
+paddle page 379: 34 lines
+paddle page 380: 38 lines
+paddle page 381: 35 lines
+paddle page 382: 32 lines
+paddle page 383: 34 lines
+paddle page 384: 38 lines
+paddle page 385: 36 lines
+paddle page 386: 32 lines
+paddle page 387: 39 lines
+paddle page 388: 119 lines
+paddle page 389: 38 lines
+paddle page 390: 39 lines
+paddle page 391: 36 lines
+paddle page 392: 39 lines
+paddle page 393: 98 lines
+paddle page 394: 92 lines
+paddle page 395: 39 lines
+paddle page 396: 38 lines
+paddle page 397: 66 lines
+paddle page 398: 23 lines
+paddle page 399: 32 lines
+paddle page 400: 39 lines
+paddle page 401: 198 lines
+paddle page 402: 197 lines
+paddle page 403: 151 lines
+paddle page 404: 131 lines
+paddle page 405: 235 lines
+paddle page 406: 33 lines
+paddle page 407: 98 lines
+paddle page 408: 108 lines
+paddle page 409: 220 lines
+paddle page 410: 70 lines
+paddle page 411: 58 lines
+paddle page 412: 50 lines
+paddle page 413: 34 lines
+paddle page 414: 38 lines
+paddle page 415: 32 lines
+paddle page 416: 36 lines
+paddle page 417: 26 lines
+paddle page 418: 173 lines
+paddle page 419: 29 lines
+paddle page 420: 29 lines
+paddle page 421: 64 lines
+paddle page 422: 32 lines
+paddle page 423: 35 lines
+paddle page 424: 30 lines
+paddle page 425: 46 lines
+paddle page 426: 119 lines
+paddle page 427: 31 lines
+paddle page 428: 115 lines
+paddle page 429: 17 lines
+paddle page 430: 20 lines
+paddle page 431: 34 lines
+paddle page 432: 37 lines
+paddle page 433: 192 lines
+paddle page 434: 256 lines
+paddle page 435: 124 lines
+paddle page 436: 85 lines
+paddle page 437: 138 lines
+paddle page 438: 186 lines
+paddle page 439: 137 lines
+paddle page 440: 90 lines
+paddle page 441: 194 lines
+paddle page 442: 39 lines
+paddle page 443: 36 lines
+paddle page 444: 38 lines
+paddle page 445: 144 lines
+paddle page 446: 38 lines
+paddle page 447: 60 lines
+paddle page 448: 147 lines
+paddle page 449: 37 lines
+paddle page 450: 34 lines

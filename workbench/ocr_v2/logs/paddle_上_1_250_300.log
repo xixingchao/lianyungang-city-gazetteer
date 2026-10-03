@@ -1,0 +1,73 @@
+paddle: 51 pages, out -> E:\codex_Learing\project_è¿žäº‘æ¸¯å¸‚å¿—\repo\workbench\ocr_v2\ocr\paddle\ä¸Š_1
+ÐÅÏ¢: ÓÃÌá¹©µÄÄ£Ê½ÎÞ·¨ÕÒµ½ÎÄ¼þ¡£
+C:\Users\52744\AppData\Roaming\Python\Python313\site-packages\paddle\utils\cpp_extension\extension_utils.py:715: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+WARNING: OMP_NUM_THREADS set to 2, not 1. The computation speed will not be optimized if you use data parallel. It will fail if this PaddlePaddle binary is compiled with OpenBlas since OpenBlas does not support multi-threads.
+PLEASE USE OMP_NUM_THREADS WISELY.
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\52744\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\52744\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+ReduceMeanCheckIfOneDNNSupport
+paddle page 250: 33 lines
+paddle page 251: 31 lines
+paddle page 252: 34 lines
+paddle page 253: 35 lines
+paddle page 254: 32 lines
+paddle page 255: 31 lines
+paddle page 256: 37 lines
+paddle page 257: 37 lines
+paddle page 258: 37 lines
+paddle page 259: 35 lines
+paddle page 260: 37 lines
+paddle page 261: 37 lines
+paddle page 262: 37 lines
+paddle page 263: 33 lines
+paddle page 264: 34 lines
+paddle page 265: 35 lines
+paddle page 266: 36 lines
+paddle page 267: 35 lines
+paddle page 268: 35 lines
+paddle page 269: 37 lines
+paddle page 270: 37 lines
+paddle page 271: 37 lines
+paddle page 272: 29 lines
+paddle page 273: 30 lines
+paddle page 274: 36 lines
+paddle page 275: 34 lines
+paddle page 276: 36 lines
+paddle page 277: 37 lines
+paddle page 278: 37 lines
+paddle page 279: 24 lines
+paddle page 280: 33 lines
+paddle page 281: 147 lines
+paddle page 282: 176 lines
+paddle page 283: 94 lines
+paddle page 284: 265 lines
+paddle page 285: 35 lines
+paddle page 286: 33 lines
+paddle page 287: 34 lines
+paddle page 288: 84 lines
+paddle page 289: 219 lines
+paddle page 290: 122 lines
+paddle page 291: 242 lines
+paddle page 292: 344 lines
+paddle page 293: 27 lines
+paddle page 294: 35 lines
+paddle page 295: 37 lines
+paddle page 296: 37 lines
+paddle page 297: 34 lines
+paddle page 298: 35 lines
+paddle page 299: 38 lines
+paddle page 300: 37 lines
+DONE
