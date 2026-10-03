@@ -48,6 +48,8 @@ REPORT_FILES = [
     REPORTS / "progress" / "20261003_逐卷通读第18轮_政务自然区县人口.md",
     REPORTS / "progress" / "20261003_逐卷通读第19轮_总述大事记附录序凡例_收官.md",
     REPORTS / "progress" / "通读待核清单总表_20261003.md",
+    REPORTS / "progress" / "压平表格残片审计_20261003.md",
+    REPORTS / "progress" / "压平表格残片分类_20261003.md",
     ROOT / "PROJECT_MEMORY.md",
 ]
 
