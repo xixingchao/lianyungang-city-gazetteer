@@ -3204,6 +3204,10 @@ pH、溶解氧、化学需氧量、硝酸盐氮、亚硝酸盐氮、活性磷酸
 
 <!-- page-anchor: LYG-S-0515 -->
 
+{{STRUCTURED_TABLE:LYG-上-T181}}
+
+{{STRUCTURED_TABLE:LYG-上-T182}}
+
 ## 第九卷农林业
 
 ### 概述

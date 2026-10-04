@@ -3,10 +3,7 @@
   "title": "1949~1990年连云港市境内国营盐场产量统计表（续表）",
   "table_number": "表13-8",
   "pages": [
-    749,
-    751,
-    754,
-    756
+    751
   ],
   "columns": [
     "年份",
@@ -121,5 +118,6 @@
   "row_count": 11,
   "col_count": 7,
   "status": "verified",
-  "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/上/part03/page_0146.txt，并参考 raw OCR：workbench/table_entries/上/raw/LYG-上-T036_749.txt。表题、表号和单位依据前页 workbench/ocr/paddle_ocr/上/part03/page_0145.txt；本页为表13-8续上表，单位为吨。原JSON列序与源页不一致，本轮按源页列序重录为年份、青口盐场、台北盐场、台南盐场、徐圩盐场、灌西盐场、合计。"
+  "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/上/part03/page_0146.txt，并参考 raw OCR：workbench/table_entries/上/raw/LYG-上-T036_749.txt。表题、表号和单位依据前页 workbench/ocr/paddle_ocr/上/part03/page_0145.txt；本页为表13-8续上表，单位为吨。原JSON列序与源页不一致，本轮按源页列序重录为年份、青口盐场、台北盐场、台南盐场、徐圩盐场、灌西盐场、合计。 2026-10-04 复核：pages 原误记[749,751,754,756]（749=表13-7页，754=表13-9页，756=表13-10页）；本续表真身仅=PDF页751（印刷页669）。",
+  "page": 751
 }

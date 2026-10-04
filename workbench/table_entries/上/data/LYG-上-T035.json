@@ -3,8 +3,7 @@
   "title": "民国13~36年(1924~1947年)部分年份连云港市境内各盐场年产量统计表",
   "table_number": "表13-7",
   "pages": [
-    743,
-    745
+    749
   ],
   "columns": [
     "年份(民国)",
@@ -195,5 +194,6 @@
   "row_count": 22,
   "col_count": 6,
   "status": "verified",
-  "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/上/part03/page_0144.txt，并参考 raw OCR：workbench/table_entries/上/raw/LYG-上-T036_749.txt。原JSON列序误置为合计在前，本轮按源页列序重录为年份、涛青场、板浦场、中正场、济南场、合计，单位为吨。民国35年仅见中正场49736、济南场18344，其他栏及合计栏保留空值；民国36年各值按坐标OCR列位核定。"
+  "notes": "已据页级OCR回源核录：workbench/ocr/paddle_ocr/上/part03/page_0144.txt，并参考 raw OCR：workbench/table_entries/上/raw/LYG-上-T036_749.txt。原JSON列序误置为合计在前，本轮按源页列序重录为年份、涛青场、板浦场、中正场、济南场、合计，单位为吨。民国35年仅见中正场49736、济南场18344，其他栏及合计栏保留空值；民国36年各值按坐标OCR列位核定。 2026-10-04 复核：pages 原误记[743,745]（实为表13-5/13-6 页）；表13-7 主表真身=PDF页749（印刷页667），数据经与该页300dpi 图核对一致。",
+  "page": 749
 }

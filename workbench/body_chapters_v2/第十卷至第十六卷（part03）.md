@@ -900,6 +900,8 @@
 
 <!-- page-anchor: LYG-S-0677 -->
 
+{{STRUCTURED_TABLE:LYG-上-T183}}
+
 ## 第十一卷畜牧业
 
 ### 概述
@@ -2274,6 +2276,10 @@
 
 {{STRUCTURED_TABLE:未编号-6119}}
 
+{{STRUCTURED_TABLE:LYG-上-T184}}
+{{STRUCTURED_TABLE:LYG-上-T185}}
+{{STRUCTURED_TABLE:LYG-上-T186}}
+
 ## 第十四卷轻（手）工业
 
 ### 概述
@@ -3433,6 +3439,8 @@
 {{STRUCTURED_TABLE:未编号-6668}}
 
 <!-- page-anchor: LYG-S-0831 -->
+
+{{STRUCTURED_TABLE:LYG-上-T187}}
 
 ## 第十五卷纺织工业
 
