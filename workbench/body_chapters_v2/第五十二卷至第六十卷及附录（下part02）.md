@@ -2860,6 +2860,10 @@
 
 <!-- page-anchor: LYG-2596 -->
 
+{{STRUCTURED_TABLE:LYG-下-T136}}
+{{STRUCTURED_TABLE:LYG-下-T137}}
+{{STRUCTURED_TABLE:LYG-下-T138}}
+
 ## 第五十五卷卫生
 
 ### 概述
@@ -3870,6 +3874,8 @@
 
 <!-- page-anchor: LYG-2648 -->
 
+{{STRUCTURED_TABLE:LYG-下-T139}}
+
 ## 第五十六卷体育
 
 ### 概述
@@ -4642,6 +4648,9 @@
 
 <!-- page-anchor: LYG-2689 -->
 
+{{STRUCTURED_TABLE:LYG-下-T140}}
+{{STRUCTURED_TABLE:LYG-下-T141}}
+
 ## 第五十七卷宗教
 
 ### 概述
@@ -4931,6 +4940,10 @@
 <!-- 未回贴：阅读版无对应文本（残文清除或整段改写） -->
 
 <!-- page-anchor: LYG-2708 -->
+
+{{STRUCTURED_TABLE:LYG-下-T142}}
+{{STRUCTURED_TABLE:LYG-下-T143}}
+{{STRUCTURED_TABLE:LYG-下-T144}}
 
 ## 第五十八卷民俗
 
