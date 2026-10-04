@@ -121,7 +121,18 @@ def table_sort_key(table: dict) -> tuple[int, str]:
     return page, str(table.get("table_id", ""))
 
 
+INLINE_IDS_PATH = ROOT / "workbench" / "table_entries" / "inline_ids.json"
+
+
+def load_inline_ids() -> set:
+    """Tables inlined into the reader body are excluded from volume-end embeds."""
+    if not INLINE_IDS_PATH.exists():
+        return set()
+    return set(json.loads(INLINE_IDS_PATH.read_text(encoding="utf-8")))
+
+
 def load_tables() -> list[dict]:
+    inline_ids = load_inline_ids()
     tables: list[dict] = []
     for path in sorted(TABLE_ROOT.glob("*/*/*.json")):
         table = json.loads(path.read_text(encoding="utf-8"))
@@ -129,6 +140,8 @@ def load_tables() -> list[dict]:
             continue
         rows = table.get("rows") or []
         if not rows:
+            continue
+        if str(table.get("table_id")) in inline_ids:
             continue
         tables.append(table)
     return tables
