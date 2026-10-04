@@ -846,6 +846,9 @@
 
 <!-- page-anchor: LYG-0964 -->
 
+{{STRUCTURED_TABLE:LYG-中-T184}}
+{{STRUCTURED_TABLE:LYG-中-T185}}
+
 ## 第十八卷食品工业
 
 ### 概述
@@ -1772,6 +1775,8 @@
 {{STRUCTURED_TABLE:未编号-7991}}
 
 <!-- page-anchor: LYG-1017 -->
+
+{{STRUCTURED_TABLE:LYG-中-T186}}
 
 ## 第十九卷医药
 
@@ -3139,6 +3144,10 @@
 
 <!-- page-anchor: LYG-1095 -->
 
+{{STRUCTURED_TABLE:LYG-中-T187}}
+{{STRUCTURED_TABLE:LYG-中-T188}}
+{{STRUCTURED_TABLE:LYG-中-T189}}
+
 ## 第二十一卷机械工业
 
 ### 概述
@@ -4023,6 +4032,8 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 
 {{STRUCTURED_TABLE:未编号-8950}}
 
+{{STRUCTURED_TABLE:LYG-中-T190}}
+
 ## 第二十二卷电子工业
 
 ### 概述
@@ -4624,6 +4635,8 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 <!-- 未回贴：阅读版无对应文本（残文清除或整段改写） -->
 
 <!-- page-anchor: LYG-1172 -->
+
+{{STRUCTURED_TABLE:LYG-中-T191}}
 
 ## 第二十三卷建材工业
 
@@ -5809,6 +5822,9 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 
 <!-- page-anchor: LYG-1233 -->
 
+{{STRUCTURED_TABLE:LYG-中-T192}}
+{{STRUCTURED_TABLE:LYG-中-T193}}
+
 ## 第二十五卷电力工业
 
 ### 概述
@@ -6642,6 +6658,8 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 
 <!-- page-anchor: LYG-1282 -->
 
+{{STRUCTURED_TABLE:LYG-中-T194}}
+
 ## 第二十六卷矿产
 
 ### 概述
@@ -7290,6 +7308,8 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 
 <!-- page-anchor: LYG-1322 -->
 
+{{STRUCTURED_TABLE:LYG-中-T195}}
+
 ## 第二十八卷开发区
 
 ### 概述
@@ -7611,6 +7631,8 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 {{STRUCTURED_TABLE:未编号-10510}}
 
 <!-- page-anchor: LYG-1339 -->
+
+{{STRUCTURED_TABLE:LYG-中-T196}}
 
 ## 第二十九卷口岸
 
@@ -8999,4 +9021,6 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 {{STRUCTURED_TABLE:未编号-11116}}
 
 {{STRUCTURED_TABLE:未编号-11117}}
+
+{{STRUCTURED_TABLE:LYG-中-T197}}
 
