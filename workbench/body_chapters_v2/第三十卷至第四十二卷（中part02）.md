@@ -915,6 +915,8 @@
 
 <!-- page-anchor: LYG-1485 -->
 
+{{STRUCTURED_TABLE:LYG-中-T198}}
+
 ## 第三十一卷邮电
 
 ### 概述
@@ -3054,6 +3056,11 @@ $99
 
 <!-- page-anchor: LYG-1578 -->
 
+{{STRUCTURED_TABLE:LYG-中-T199}}
+{{STRUCTURED_TABLE:LYG-中-T200}}
+{{STRUCTURED_TABLE:LYG-中-T201}}
+{{STRUCTURED_TABLE:LYG-中-T202}}
+
 ## 第三十四卷供销
 
 ### 概述
@@ -4718,6 +4725,9 @@ $99
 
 <!-- page-anchor: LYG-1630 -->
 
+{{STRUCTURED_TABLE:LYG-中-T203}}
+{{STRUCTURED_TABLE:LYG-中-T204}}
+
 ## 第三十六卷粮油购销
 
 ### 概述
@@ -5578,6 +5588,10 @@ $99
 
 <!-- page-anchor: LYG-1678 -->
 
+{{STRUCTURED_TABLE:LYG-中-T205}}
+{{STRUCTURED_TABLE:LYG-中-T206}}
+{{STRUCTURED_TABLE:LYG-中-T207}}
+
 ## 第三十七卷物资流通
 
 ### 概述
@@ -5901,6 +5915,8 @@ $99
 {{STRUCTURED_TABLE:未编号-13830}}
 
 <!-- page-anchor: LYG-1699 -->
+
+{{STRUCTURED_TABLE:LYG-中-T208}}
 
 ## 第三十八卷财政
 
@@ -8010,6 +8026,13 @@ $99
 
 <!-- page-anchor: LYG-1818 -->
 
+{{STRUCTURED_TABLE:LYG-中-T209}}
+{{STRUCTURED_TABLE:LYG-中-T210}}
+{{STRUCTURED_TABLE:LYG-中-T211}}
+{{STRUCTURED_TABLE:LYG-中-T212}}
+{{STRUCTURED_TABLE:LYG-中-T213}}
+{{STRUCTURED_TABLE:LYG-中-T214}}
+
 ## 第四十一卷政党
 
 ### 概述
@@ -9133,6 +9156,10 @@ $99
 {{STRUCTURED_TABLE:未编号-15189}}
 
 <!-- page-anchor: LYG-1896 -->
+
+{{STRUCTURED_TABLE:LYG-中-T215}}
+{{STRUCTURED_TABLE:LYG-中-T216}}
+{{STRUCTURED_TABLE:LYG-中-T217}}
 
 ## 第四十二卷政务
 
