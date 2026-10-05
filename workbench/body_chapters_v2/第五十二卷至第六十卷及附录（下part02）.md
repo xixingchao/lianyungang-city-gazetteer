@@ -5311,7 +5311,7 @@
 ### 第二章　语音系统
 <!-- page-anchor: vol59-p005 -->
 
-派是 213，这一带的老派及青泉小片的其他地方是 35。海伊小片多数是 41。
+**派是** 213，这一带的老派及青泉小片的其他地方是 35。海伊小片多数是 41。
 4. 去声。在青泉小片是高降调，在海伊小片是高平调。
 5. 入声。分布在海伊小片及方言的过渡带的南部，有长调、短调的差异。新浦、海州、云台山区、墟沟、连云到板浦、伊山是 24，灌云的东部、东南部是 4，张湾、龙苴到南岗是 3。
 #### 第二节　词汇语法差别
@@ -5452,7 +5452,7 @@
 | ø | 文 | 羊 | 伟 | 玉 |
 ### 第三章　同音字汇
 <!-- page-anchor: vol59-p009 -->
-本字汇收常用字 4400 多个，先按韵母分部，同韵的字按声母排列，声韵相同的字按声调排列。有音无字者用"□"表示，后加小字注解。举例时用"～"代替本字。字下加双线表示文读音，字下加单线表示白读音，字下加浪线表示特殊读音。数码①②③④⑤代表阴平、阳平、上声、去声、入声。
+**本字汇收常用字** 4400 多个，先按韵母分部，同韵的字按声母排列，声韵相同的字按声调排列。有音无字者用"□"表示，后加小字注解。举例时用"～"代替本字。字下加双线表示文读音，字下加单线表示白读音，字下加浪线表示特殊读音。数码①②③④⑤代表阴平、阳平、上声、去声、入声。
 #### ɿ
 - tʂ　①资姿咨龇兹滋～生孳孜辎淄知蜘栀　支枝之芝肢脂指～头　②□～僵:物品僵硬　③紫姊子仔梓纸只～有咫旨指～南趾止址　④自恣字治滞制智至致雉挚置志痣
 - tʂʻ　①雌滋～水迲跑:吓～了痴疵眵嗤　②词祠辞迟瓷磁慈池驰弛持刺～溜　③此齿耻匙汤～　④翅刺赐次伺～候厕炽寺〔白〕洪门～
@@ -8472,7 +8472,7 @@
 
 1.1950年苏北首届工业劳动模范代表会议劳动模范
 
-沈玉连周正金 袁良记 李承起 孙广敖 马长松 杨再三 王学才，时宝玉 范培良 王殿国 石金章朱从月 孟昭发 伏贯阶
+**沈玉连周正金** 袁良记 李承起 孙广敖 马长松 杨再三 王学才，时宝玉 范培良 王殿国 石金章朱从月 孟昭发 伏贯阶
 
 蔺从友 王恒树
 
@@ -8484,7 +8484,7 @@
 
 <!-- page-anchor: LYG-2841 -->
 
-苏士珍 郑必中 赵召风 张剑秋 牟元桢 李文纲 张楼 余玉瑛 沈涛 黄海萍 盛立安 周恒柱
+**苏士珍** 郑必中 赵召风 张剑秋 牟元桢 李文纲 张楼 余玉瑛 沈涛 黄海萍 盛立安 周恒柱
 
 邵世衡 刘隆芝 陈大川 宋爱东 孙秀英 韩俊达 王厚余 马德骏 顾振廷 傅现明 唐文宜 李达洲
 
@@ -8510,7 +8510,7 @@
 
 朱爱贞 林则馨 花开秋 张志由 牟许智 房柱 王维娥 张延焕 王畴英 李秉铎 陈光华 蔡高鹏
 
-杨儒林 陶敬渠·孙景玉 马荣 姜福厚 董源清 许永杰 杜振美 萧明华 李晨哲 杨学志 姬莲英 程忠岭
+**杨儒林** 陶敬渠·孙景玉 马荣 姜福厚 董源清 许永杰 杜振美 萧明华 李晨哲 杨学志 姬莲英 程忠岭
 
 <!-- page-anchor: LYG-2842 -->
 
@@ -8534,7 +8534,7 @@
 
 徐庭贵 庄惠生 白奉忠 徐中凡 张敏芝 李永富 李鑫 包明山 于佃楼 房柱 赵桂顶 吴加元
 
-许可 韩继芳 杨玉珍 李成永 赵斯林. 钱文锦 许仕 李家春 夏广鑫 毕德华 阎承先 杨在金
+**许可** 韩继芳 杨玉珍 李成永 赵斯林. 钱文锦 许仕 李家春 夏广鑫 毕德华 阎承先 杨在金
 
 杨在柏 金同才 徐庭俊 杨以余 张兴运 刘维祥 成春竹 范庆祝 李学英 刘长青 王一和 王禹忠
 
@@ -8560,7 +8560,7 @@
 
 葛维民 郑全山 马从开 张顺才 史开珍 夏绍林 李兰芳 陈敬发 徐佃好 单少芳 刘玉涧 李英武
 
-郑庚昌 赵玺 李传华 赵士翠 孙玉珍 周勇 王寿明 徐立权 许佃军 于桂莲 穆志金 徐兴海
+**郑庚昌** 赵玺 李传华 赵士翠 孙玉珍 周勇 王寿明 徐立权 许佃军 于桂莲 穆志金 徐兴海
 
 范庆本 孙道佑 毛志成 高佃俊 刘英 周锦华 卢占生 胡希禹 王统鹏 顾良健 郑昌凤 李德堂
 
@@ -8636,7 +8636,7 @@
 
 薛玉霞 陈怀国 张义丰 鲍祯连 许其富 夏伦田 顾廷文 李腾 马旭升 刘仲明 王学仁 王淑兰
 
-孔宪东 潘延年 陆效珍 徐允山 宋玉斋 5年4月江苏省先进集体、劳动模范表彰大会劳动模范
+**孔宪东** 潘延年 陆效珍 徐允山 宋玉斋 5年4月江苏省先进集体、劳动模范表彰大会劳动模范
 
 15.1985
 
@@ -8652,7 +8652,7 @@
 
 季后甲 朱守雨 许维全 鲍家桢 李兆霞 徐子龄 王胜德 田世香 仲兆香 徐允宪 徐茂林 周华林
 
-王元 尚庆树 齐华国 贾仁松 梅正友 汪通 周桂珍 柴俊 武传华 黎正宇 刘春祥 王士杰
+**王元** 尚庆树 齐华国 贾仁松 梅正友 汪通 周桂珍 柴俊 武传华 黎正宇 刘春祥 王士杰
 
 李桂立 龚成屯 李克俭 王贯春 鲍俊云 胡全胜 顾永华 刘颁华 李传花 刘德芳 王明成 叶汝春
 
@@ -8700,7 +8700,7 @@
 
 1983年
 
-邓瑞珍 王星南 张荣花 李秀兰 王淑兰 孙广英 李腾姜自尊 王长霞 张翠英 刘安兰 刘炜 秦裕珊
+**邓瑞珍** 王星南 张荣花 李秀兰 王淑兰 孙广英 李腾姜自尊 王长霞 张翠英 刘安兰 刘炜 秦裕珊
 
 蒋菊兰 邵是玺李萍
 
@@ -8720,9 +8720,9 @@
 
 陈勇 赵乃霞 李道香 陈质明 胡月华 王用华 张庆曙 仲伟珍 张兴奋 刘炜 柳洪惠 马爱红
 
-张爱丰 关华 沈文娟 朱月萍 顾洪梅 封海玲 谈红 周瑞荣 李艾莉 倪秀梅 孙兴荣 陈桂秋
+**张爱丰** 关华 沈文娟 朱月萍 顾洪梅 封海玲 谈红 周瑞荣 李艾莉 倪秀梅 孙兴荣 陈桂秋
 
-柏继英 闫振朵 童良云 卞素英 毕伟 傅美媛 牟敦秀 蒋平 周学芸 丁翠兰 张铬芬 王克勤
+**柏继英** 闫振朵 童良云 卞素英 毕伟 傅美媛 牟敦秀 蒋平 周学芸 丁翠兰 张铬芬 王克勤
 
 <!-- page-anchor: LYG-2845 -->
 
@@ -8736,7 +8736,7 @@
 
 1988年
 
-惠康英 王佃巧 杨善花 李玲玲 刘济张材 孙桂兰 朱孔娟 吴竟霞 杨步英 徐云昌 柏继英 林淑娟
+**惠康英** 王佃巧 杨善花 李玲玲 刘济张材 孙桂兰 朱孔娟 吴竟霞 杨步英 徐云昌 柏继英 林淑娟
 
 高丽芳 李茂兰 鲍恩娟 林蔡治 王文英 卞家媛 乔乃荣 冯同蓉 陈建霞 侍民丽 黄聪秀 王永秀
 
@@ -8744,7 +8744,7 @@
 
 六、全国体育冠军名录
 
-许学宁 沈亚平 张惠明 张新霞 卜庆娟 尤新利 朱凤霞 陈玉霞李扬氵 韩永年 唐雨 谭洪海
+**许学宁** 沈亚平 张惠明 张新霞 卜庆娟 尤新利 朱凤霞 陈玉霞李扬氵 韩永年 唐雨 谭洪海
 
 ## 附录
 
@@ -9656,7 +9656,7 @@
 
 (七）
 
-Lianyungang had once been a distribution center of grain and oil in the north of Jiangsu Province and south of Shandong Province, and a regional trading center.
+**Lianyungang** had once been a distribution center of grain and oil in the north of Jiangsu Province and south of Shandong Province, and a regional trading center.
 
 After 1949, under the system of the planned economy, the state-owned businesses took an important part in developing the industry, providing the supplies, and promoting the commodity circulation between the city and its rural area. Nevertheless, the monopolized operation and the single circulation system also prevented the further development of the economy.
 
@@ -9734,7 +9734,7 @@ There were plenty of commodities, with a smooth circulation, a flourishing marke
 
 After April 1984 when Lianyungang was listed as one of the 14 open port cities in China, the export-oriented economy was made a rapid progress by grasping the turning point of developing foreign trade.
 
-Grasping the opportunity of opening up, Lianyungang paid much attention to how to take the advantages of the port, resource and zone bit, and how to overcome the disadvantages of the weak economic technology and the low level of the export-oriented economy, what's more, took the economic and technical development district as a window, and developed the communication of economy, trade, culture and technology with other countries.
+**Grasping** the opportunity of opening up, Lianyungang paid much attention to how to take the advantages of the port, resource and zone bit, and how to overcome the disadvantages of the weak economic technology and the low level of the export-oriented economy, what's more, took the economic and technical development district as a window, and developed the communication of economy, trade, culture and technology with other countries.
 
 <!-- page-anchor: LYG-2897 -->
 
@@ -9744,7 +9744,7 @@ In 1986, the purchase value of the foreign trade commodities reached more than 2
 
 In 1990, the total value of the foreign trade commodities had already reached 1.115 billion Yuan. There were 18 categories of the exported goods and more than 500 varieties. Remarkable progress have been made in utilizing foreign capital.
 
-Foreign capital has been introduced as early as 1980, and to 1985 it had introduced 6 foreign investments accounting to 1.11 million Yuan in practical utilization. During the 7th Five Year Plan （ 1986--1990 ), it had introduced 66 foreign capitals, and 63.3 million Yuan in practical use, with an annual increasing rate of 16.7% .
+**Foreign** capital has been introduced as early as 1980, and to 1985 it had introduced 6 foreign investments accounting to 1.11 million Yuan in practical utilization. During the 7th Five Year Plan （ 1986--1990 ), it had introduced 66 foreign capitals, and 63.3 million Yuan in practical use, with an annual increasing rate of 16.7% .
 
 It promoted the construction of the basic installations, improved the investment environment by utilizing the foreign capital, meanwhile it also promoted the level of the modernized installation of enterprises, accelerated the adjustment of the industrial structure and the product structure, and reinforced the synthetic economic power by introducing the advanced technology and equipment.
 
