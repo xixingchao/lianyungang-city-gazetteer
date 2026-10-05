@@ -201,6 +201,10 @@ def group_tables(tables: list[dict]) -> tuple[dict[str, list[dict]], list[str]]:
 
 
 def embed() -> tuple[int, list[str]]:
+    # B-MODE NO-OP: all verified tables are inlined into the reader body.
+    # Re-enabling volume-end embeds requires clearing inline_ids.json first.
+    print("B-MODE NO-OP: all tables inlined; volume-end embed disabled (embedded=0)")
+    return 0, []
     tables = load_tables()
     grouped, unplaced = group_tables(tables)
     text = remove_existing_embeds(HTML_PATH.read_text(encoding="utf-8"))
