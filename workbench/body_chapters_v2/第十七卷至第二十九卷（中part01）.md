@@ -7874,6 +7874,8 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 
 {{STRUCTURED_TABLE:LYG-中-T043}}
 
+{{STRUCTURED_TABLE:LYG-中-T261}}
+
 
 <!-- page-anchor: LYG-1358 -->
 
@@ -8285,6 +8287,8 @@ G7025弓锯床、GZS7125高效全自动号锯床、半自动弓锯床等。
 <!-- 未回贴：阅读版无对应文本（残文清除或整段改写） -->
 
 {{STRUCTURED_TABLE:LYG-中-T269}}
+
+{{STRUCTURED_TABLE:LYG-中-T265}}
 
 {{STRUCTURED_TABLE:LYG-中-T270}}
 
