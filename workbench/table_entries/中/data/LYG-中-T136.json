@@ -16,7 +16,7 @@
     "源页",
     "源页可见条目"
   ],
-  "status": "verified",
+  "status": "work-residue",
   "notes": "已据页级OCR回源保守核录：workbench/ocr/paddle_ocr/中/part02/page_0417.txt 至 page_0421.txt。源页为组织沿革图式，横向连线关系复杂；本表按源页可见条目和时间序列逐行转录，不强行推断未闭合括号、跨栏连线或上下层级关系。",
   "volume": "中",
   "rows": [

@@ -145,7 +145,7 @@
   ],
   "row_count": 18,
   "col_count": 5,
-  "status": "verified",
+  "status": "work-residue",
   "notes": "已据页级OCR核录：workbench/ocr/paddle_ocr/下/part02/page_0214.txt；并参考 raw 坐标OCR workbench/ocr/raw/下/part02/page_0214.json。表题、表号和复合表头承接前页 workbench/ocr/paddle_ocr/下/part02/page_0213.txt；本页为表55-1续表，按机构行保留源页可见数值序列。",
   "volume": "下"
 }

@@ -677,7 +677,7 @@
   ],
   "row_count": 94,
   "col_count": 5,
-  "status": "verified",
+  "status": "work-residue",
   "notes": "已据 raw 坐标OCR核录：workbench/ocr/raw/上/part01/page_0174.json 至 page_0177.json；并参考页级OCR workbench/ocr/paddle_ocr/上/part01/page_0174.txt 至 page_0177.txt。原题名串为物候表，回源确认实际为自然环境卷表1-20；源表为宽表且站名、灾害性质多为竖排合并单元格，本轮按年份行保留横向可见文本序列，不据相邻行或合计关系反推月度小格。",
   "page": 174,
   "part": "part01",

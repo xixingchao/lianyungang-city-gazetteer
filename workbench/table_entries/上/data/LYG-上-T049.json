@@ -52,7 +52,7 @@
   ],
   "row_count": 5,
   "col_count": 4,
-  "status": "verified",
+  "status": "work-residue",
   "notes": "已据 raw OCR 回源核录：workbench/ocr/raw/上/part03/page_0034.txt 至 page_0038.txt。表10-17位于第十卷第四章灌溉第一节小型灌区后、第二节提水灌溉前。源页为长跨页宽表，OCR横向错位明显，本条先按源页保留可见文本序列，避免将残文误拆为伪精确列。",
   "volume": "上"
 }
