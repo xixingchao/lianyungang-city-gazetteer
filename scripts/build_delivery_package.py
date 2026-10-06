@@ -149,7 +149,7 @@ def main() -> None:
     h2_count = len(re.findall(r"<h2(?:\s|>)", reader_text))
     h3_count = len(re.findall(r"<h3(?:\s|>)", reader_text))
     placeholder_count = len(re.findall(r'class="table-placeholder"', reader_text))
-    embedded_tables = len(re.findall(r'class="verified-table-block"', reader_text))
+    embedded_tables = len(re.findall(r'<section class="verified-table-block', reader_text))
 
     pdf_ok, pdf_note = generate_pdf()
 
