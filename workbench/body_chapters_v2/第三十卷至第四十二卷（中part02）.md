@@ -3010,6 +3010,8 @@ $99
 
 {{STRUCTURED_TABLE:LYG-中-T334}}
 
+{{STRUCTURED_TABLE:LYG-中-T340}}
+
 ## 第三十四卷供销
 
 ### 概述
