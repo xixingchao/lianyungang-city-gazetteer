@@ -14,3 +14,9 @@ workbench/ocr_v2/pages/
 
 # vol59 接入备份（git 历史即备份）
 workbench/volume59/structured/backup_接入前/
+
+# 可再生的大体积中间产物与交付包：不进版本库（本地/归档目录保留）
+workbench/ocr_v2/pages/
+workbench/volume59/crops/
+workbench/volume59/pages/
+output/package/连云港市志_交付包*/
