@@ -7,7 +7,7 @@
 - **正文真值**：`workbench/body_chapters_v2/` 分卷 Markdown（含页锚与 `{{STRUCTURED_TABLE:…}}` 占位）；阅读版 `output/final_reader/连云港市志_全书.html`；线上 https://xixingchao.github.io/lianyungang-city-gazetteer/ （docs/ 同步）。
 - **门禁**：`scripts/audit_delivery_quality.py`、`scripts/audit_full_reader.py`、`scripts/audit_flattened_remnants_20261006.py` 全部 issues=0；每批修改均 reader+v2 双端同步。
 - **照录原则**：原书印误（数字矛盾、届次错位、用字不一、OCR 空格表号等）一律照录并在表 JSON notes 注明，不静默改写。
-- 交付包：`output/package/` 下最新一版（reader HTML + PDF + 表格站 + 报告）。留痕教训：盘点表号必须用容错正则；检测脚本改后先用已知正反例自检再执行删除。
+- 交付包：**不再进版本库**，本地归档在 `E:\codex_Learing\project_连云港市志\交付包_YYYYMMDD_HHMMSS\`（reader HTML + PDF + 表格站 + 报告）；可再生中间产物（OCR 页图、方言卷裁片）已移出版本控制并入 .gitignore（2026-10-07 版本库瘦身，仓库 926MB→约 160MB）。留痕教训：盘点表号必须用容错正则；检测脚本改后先用已知正反例自检再执行删除。
 
 ## 2026-07-01 全量已核结构化表格嵌回主阅读版
 
